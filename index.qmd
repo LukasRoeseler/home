@@ -7,6 +7,8 @@ about:
 ---
 
 ::: {#me}
+## About
+
 I am a postdoctoral researcher at the University of Münster, Germany and the managing director of the recently founded [Münster Center for Open Science](https://www.uni-muenster.de/MueCOS/en/index.html).
 
 ## Mission
