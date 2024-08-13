@@ -1,0 +1,31 @@
+---
+title: "Open Science"
+---
+
+## Research and Methods
+
+-   Research philosophy: I endorse the [Mertonian Norms](https://en.wikipedia.org/wiki/Mertonian_norms) of sciences and humanities.
+
+-   Open File Drawer: Almost all of my research projects are openly available, including file-drawer reports of [null results](https://osf.io/v643q) and failed studies. Most of my running and completed projects can be accessed via my [OSF profile](https://osf.io/tqx69/).
+
+-   Big Team Science: I have been participating in large-scale collaborations that further open science (e.g., [Multi100](https://osf.io/7snkz), [SCORE](https://mgto.org/)) and I am a member of the Framework for Open and Reproducible Research Training (FORRT).
+
+-   Transparency: Most of my research articles include the [21 word solution](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2160588), all of them have Open Data, Code, and have been published openly as pre-prints. I signed the Commitment to Research Transparency in 2021 (http://www.researchtransparency.org/signatories/) and encourage you to do so, too! I also publish rejected research proposals for which I have been the first author ([example](https://osf.io/854vt/), [example](https://osf.io/x6bqh/)).
+
+## Reviewing and Scientific Discourse
+
+-   Open Access, Open Data, Open Materials: As a reviewer, I do not recommend manuscripts to be published if I do not have access to the data and materials, except if sharing them is prohibited by ethical or legal reasons. I have signed the [PRO initiative](https://www.opennessinitiative.org/signatories/).
+
+-   Citation metrics: I oppose the use of citation metrics for research assessment and have [signed the San Francisco Declaration of Research Assessment](https://sfdora.org/signers/?_signers_keyword=r%C3%B6seler).
+
+-   Open Reviews: Since spring 2024 I have been posting my reviews [online](https://osf.io/pbnw7/). I advocate for truly open peer review, that is, openly linking research objects with reviews regardless of journals\' decisions to publish or not to publish said objects. If you wish to have a manuscript reviewed by me, I encourage you to post it as a pre- print. I also use pubpeer.com for post-publication peer review.
+
+## Open Educational Resources, Teaching, and Supervision
+
+-   Slides: Slides of my presentations, lectures, seminars, and workshops are mostly [available online](https://osf.io/at29b/).
+
+-   Student researchers: I regularly include student researchers in research projects and encourage them to take lead roles and to make their valuable contributions visible using transparent statements such as [CRediT ](https://credit.niso.org/)(https://osf.io/ed8xa).
+
+-   Grading: As a supervisor, I do not grade research by how exciting or innovative the outcomes are but by whether it is theoretically and methodologically sound. I encourage young scientists to conduct replication studies and warn them that depending on their field, other researchers may not recognize the value of these studies.
+
+-   I have been writing a German book on Open Science and how the sciences are becoming more and more open. You can read it for free [here](https://github.com/LukasRoeseler/opensciencebuch/).

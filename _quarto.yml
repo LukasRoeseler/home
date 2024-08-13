@@ -3,24 +3,25 @@ project:
   output-dir: docs
   
 website:
-  title: "MY WEB SITE"
+  title: "Lukas Röseler"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - projects.qmd
+      - openscience.qmd
     tools:
       - icon: twitter
-        href: https://twitter.com/
+        href: https://twitter.com/aufdroeseler
       - icon: github
-        href: https://github.com/YOURUSERNAME/YOURREPO
+        href: https://github.com/LukasRoeseler/home
   page-footer:
-    right: "Built with [Quarto](https://quarto.org/)"
-    left: "&copy; Copyright 2023, YOUR NAME"
+    right: "Built with [Quarto](https://quarto.org/) and [jtr13's website template](https://github.com/jtr13/website-template)."
+    left: "&copy; Copyright 2024, Lukas Röseler"
 
 format:
   html:
-    theme: cerulean
+    theme: materia
     toc: true
 
 editor: source

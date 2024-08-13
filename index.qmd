@@ -1,19 +1,11 @@
 ---
-title: "About Me"
+title: "Dr. Lukas Röseler"
 about:
   id: me
   template: broadside
-  image: img/profile.png
+  image: img/profile.jpg
 ---
 
-:::{#me}
-
-## Goals
-
-## Education
-
-## Experience
-
+::: {#me}
+I am a postdoctoral researcher at the University of Münster, Germany and the managing director of the recently founded [Münster Center for Open Science](https://www.uni-muenster.de/MueCOS/en/index.html).
 :::
-
-Thanks for checking out my web site!
