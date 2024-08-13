@@ -18,13 +18,13 @@ title: "Open Science"
 
 -   Citation metrics: I oppose the use of citation metrics for research assessment and have [signed the San Francisco Declaration of Research Assessment](https://sfdora.org/signers/?_signers_keyword=r%C3%B6seler).
 
--   Open Reviews: Since spring 2024 I have been posting my reviews [online](https://osf.io/pbnw7/). I advocate for truly open peer review, that is, openly linking research objects with reviews regardless of journals\' decisions to publish or not to publish said objects. If you wish to have a manuscript reviewed by me, I encourage you to post it as a pre- print. I also use pubpeer.com for post-publication peer review.
+-   Open Reviews: Since spring 2024 I have been posting my reviews [online](https://osf.io/pbnw7/). I advocate for truly open peer review, that is, openly linking research objects with reviews regardless of journals' decisions to publish or not to publish said objects. If you wish to have a manuscript reviewed by me, I encourage you to post it as a pre- print. I also use pubpeer.com for post-publication peer review.
 
 ## Open Educational Resources, Teaching, and Supervision
 
 -   Slides: Slides of my presentations, lectures, seminars, and workshops are mostly [available online](https://osf.io/at29b/).
 
--   Student researchers: I regularly include student researchers in research projects and encourage them to take lead roles and to make their valuable contributions visible using transparent statements such as [CRediT ](https://credit.niso.org/)(https://osf.io/ed8xa).
+-   Student researchers: I regularly include student researchers in research projects and encourage them to take lead roles and to make their valuable contributions visible using transparent statements such as [CRediT](https://credit.niso.org/)(https://osf.io/ed8xa).
 
 -   Grading: As a supervisor, I do not grade research by how exciting or innovative the outcomes are but by whether it is theoretically and methodologically sound. I encourage young scientists to conduct replication studies and warn them that depending on their field, other researchers may not recognize the value of these studies.
 

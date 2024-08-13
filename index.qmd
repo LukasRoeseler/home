@@ -2,10 +2,22 @@
 title: "Dr. Lukas Röseler"
 about:
   id: me
-  template: broadside
+  template: trestles
   image: img/profile.jpg
 ---
 
 ::: {#me}
 I am a postdoctoral researcher at the University of Münster, Germany and the managing director of the recently founded [Münster Center for Open Science](https://www.uni-muenster.de/MueCOS/en/index.html).
+
+## Mission
+
+My goal is to improve the accessibility and quality of research.
+
+## Education
+
+-   2021: PhD in Psychology
+
+-   2017: M.Sc. in Consumer Psychology and Market Research
+
+-   2016: B.Sc. in Business Psychology
 :::

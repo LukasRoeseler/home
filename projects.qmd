@@ -1,77 +1,19 @@
 ---
 title: "Research"
+bibliography: references.bib
+bibliographystyle: apa
+nocite: |
+  @*
 ---
 
 My research covers the topics of Replications, Meta-Science, and Judgment and Decision Making (e.g., Anchoring Effects).
 
-# Research Articles
+# Talks, Presentations, Workshops, and Teaching
 
-## 2024
-
--   @Roseler.2024
-
--   @Roseler.2024b
-
-## 2023
-
--   @roseler2023predicting
-
--   @Roseler.2023b
-
--   @Roseler.2023c
-
--   @Roseler.2023d
-
--   @Roseler.2023e
-
-## 2022
-
--   @Roseler.2022b
-
--   @Roseler.2022c
-
--   @Roseler.2022d
-
--   @Roseler.2022e
-
--   @Roseler.2022f
-
--   @Roseler.2022g
-
-## 2021
-
--   @Roseler.2021d
-
--   @Roseler.2021c
-
--   @Roseler.2021e
-
--   @Roseler.2021f
-
--   Dissertation: @Roseler.2021
-
-## 2020 and earlier
-
--   @Roseler.2020
-
--   @Roseler.2020b
-
--   @Roseler.2020c
-
--   @Roseler.2020d
-
--   @Roseler.2020e
-
--   @Roseler.2019
-
--   @Roseler.2019b
-
--   Bachelor's thesis: @Roseler.
+You can find slides from my workshops, lectures, talks, and seminars in this OSF repository: <https://osf.io/at29b/>
 
 # Research proposals
 
 -   @Roseler.2022
 
-# Talks, Presentations, Workshops, and Teaching
-
-You can find slides from my workshops, lectures, talks, and seminars in this OSF repository: <https://osf.io/at29b/>
+# Research Articles
