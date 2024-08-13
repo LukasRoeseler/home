@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Research",
+    "section": "",
+    "text": "My research covers the topics of Replications, Meta-Science, and Judgment and Decision Making (e.g., Anchoring Effects)."
+  },
+  {
+    "objectID": "projects.html#section",
+    "href": "projects.html#section",
+    "title": "Research",
+    "section": "2024",
+    "text": "2024\n\n@Roseler.2024\n@Roseler.2024b"
+  },
+  {
+    "objectID": "projects.html#section-1",
+    "href": "projects.html#section-1",
+    "title": "Research",
+    "section": "2023",
+    "text": "2023\n\n@roseler2023predicting\n@Roseler.2023b\n@Roseler.2023c\n@Roseler.2023d\n@Roseler.2023e"
+  },
+  {
+    "objectID": "projects.html#section-2",
+    "href": "projects.html#section-2",
+    "title": "Research",
+    "section": "2022",
+    "text": "2022\n\n@Roseler.2022b\n@Roseler.2022c\n@Roseler.2022d\n@Roseler.2022e\n@Roseler.2022f\n@Roseler.2022g"
+  },
+  {
+    "objectID": "projects.html#section-3",
+    "href": "projects.html#section-3",
+    "title": "Research",
+    "section": "2021",
+    "text": "2021\n\n@Roseler.2021d\n@Roseler.2021c\n@Roseler.2021e\n@Roseler.2021f\nDissertation: @Roseler.2021"
+  },
+  {
+    "objectID": "projects.html#and-earlier",
+    "href": "projects.html#and-earlier",
+    "title": "Research",
+    "section": "2020 and earlier",
+    "text": "2020 and earlier\n\n@Roseler.2020\n@Roseler.2020b\n@Roseler.2020c\n@Roseler.2020d\n@Roseler.2020e\n@Roseler.2019\n@Roseler.2019b\nBachelor’s thesis: @Roseler."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Dr. Lukas Röseler",
+    "section": "",
+    "text": "I am a postdoctoral researcher at the University of Münster, Germany and the managing director of the recently founded Münster Center for Open Science."
+  },
+  {
+    "objectID": "openscience.html",
+    "href": "openscience.html",
+    "title": "Open Science",
+    "section": "",
+    "text": "Research philosophy: I endorse the Mertonian Norms of sciences and humanities.\nOpen File Drawer: Almost all of my research projects are openly available, including file-drawer reports of null results and failed studies. Most of my running and completed projects can be accessed via my OSF profile.\nBig Team Science: I have been participating in large-scale collaborations that further open science (e.g., Multi100, SCORE) and I am a member of the Framework for Open and Reproducible Research Training (FORRT).\nTransparency: Most of my research articles include the 21 word solution, all of them have Open Data, Code, and have been published openly as pre-prints. I signed the Commitment to Research Transparency in 2021 (http://www.researchtransparency.org/signatories/) and encourage you to do so, too! I also publish rejected research proposals for which I have been the first author (example, example)."
+  },
+  {
+    "objectID": "openscience.html#research-and-methods",
+    "href": "openscience.html#research-and-methods",
+    "title": "Open Science",
+    "section": "",
+    "text": "Research philosophy: I endorse the Mertonian Norms of sciences and humanities.\nOpen File Drawer: Almost all of my research projects are openly available, including file-drawer reports of null results and failed studies. Most of my running and completed projects can be accessed via my OSF profile.\nBig Team Science: I have been participating in large-scale collaborations that further open science (e.g., Multi100, SCORE) and I am a member of the Framework for Open and Reproducible Research Training (FORRT).\nTransparency: Most of my research articles include the 21 word solution, all of them have Open Data, Code, and have been published openly as pre-prints. I signed the Commitment to Research Transparency in 2021 (http://www.researchtransparency.org/signatories/) and encourage you to do so, too! I also publish rejected research proposals for which I have been the first author (example, example)."
+  },
+  {
+    "objectID": "openscience.html#reviewing-and-scientific-discourse",
+    "href": "openscience.html#reviewing-and-scientific-discourse",
+    "title": "Open Science",
+    "section": "Reviewing and Scientific Discourse",
+    "text": "Reviewing and Scientific Discourse\n\nOpen Access, Open Data, Open Materials: As a reviewer, I do not recommend manuscripts to be published if I do not have access to the data and materials, except if sharing them is prohibited by ethical or legal reasons. I have signed the PRO initiative.\nCitation metrics: I oppose the use of citation metrics for research assessment and have signed the San Francisco Declaration of Research Assessment.\nOpen Reviews: Since spring 2024 I have been posting my reviews online. I advocate for truly open peer review, that is, openly linking research objects with reviews regardless of journals' decisions to publish or not to publish said objects. If you wish to have a manuscript reviewed by me, I encourage you to post it as a pre- print. I also use pubpeer.com for post-publication peer review."
+  },
+  {
+    "objectID": "openscience.html#open-educational-resources-teaching-and-supervision",
+    "href": "openscience.html#open-educational-resources-teaching-and-supervision",
+    "title": "Open Science",
+    "section": "Open Educational Resources, Teaching, and Supervision",
+    "text": "Open Educational Resources, Teaching, and Supervision\n\nSlides: Slides of my presentations, lectures, seminars, and workshops are mostly available online.\nStudent researchers: I regularly include student researchers in research projects and encourage them to take lead roles and to make their valuable contributions visible using transparent statements such as CRediT(https://osf.io/ed8xa).\nGrading: As a supervisor, I do not grade research by how exciting or innovative the outcomes are but by whether it is theoretically and methodologically sound. I encourage young scientists to conduct replication studies and warn them that depending on their field, other researchers may not recognize the value of these studies.\nI have been writing a German book on Open Science and how the sciences are becoming more and more open. You can read it for free here."
+  }
+]
