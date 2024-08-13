@@ -4,20 +4,44 @@ about:
   id: me
   template: trestles
   image: img/profile.jpg
+  links:
+    - icon: bluesky
+      text: Bluesky
+      href: https://bsky.app/profile/aufdroeseler.bsky.social
+    - icon: github
+      text: Github
+      href: https://github.com/lukasroeseler
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/lukas-röseler-598720298/
+    - icon: osf
+      text: OSF
+      href: https://osf.io/tqx69/
+    - icon: researchgate
+      text: Researchgate
+      href: https://www.researchgate.net/profile/Lukas-Roeseler
+    - icon: www
+      text: Institutional Website
+      href: https://www.uni-muenster.de/PsyIFP/AEBack/members/Lukas_Roeseler.html
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/aufdroeseler
 ---
 
 ::: {#me}
-## About
+### About
 
-I am a postdoctoral researcher at the University of Münster, Germany and the managing director of the recently founded [Münster Center for Open Science](https://www.uni-muenster.de/MueCOS/en/index.html).
+I am a postdoctoral researcher at the University of Münster, Germany and the managing director of the recently founded [Münster Center for Open Science](https://www.uni-muenster.de/MueCOS/en/index.html). I see myself as a strong proponent for Open Science and [Open Scholarship](https://forrt.org/glossary/english/open_scholarship/).
 
-## Mission
+### Mission
 
-My goal is to improve the accessibility and quality of research.
+My goal is to improve the accessibility and quality of research. I am standing up for replication research to be routinely conducted and to be acknowledged as an integral part of a healthy science. Therefore, I am actively working on the [FORRT Replication Database](https://forrt-replications.shinyapps.io/fred_explorer/) and plan to launch an interdisciplinary and open journal for *Replication Research* in 2025.
 
-## Education
+In August 2024, I made the first version of my German WIP book on Open Science public. I made it available online for free, because not doing so would contradict the very purpose of Open Science: [lukasroeseler.github.io/opensciencebuch/](#0)
 
--   2021: PhD in Psychology
+### Education
+
+-   2021: PhD in Psychology (first generation)
 
 -   2017: M.Sc. in Consumer Psychology and Market Research
 

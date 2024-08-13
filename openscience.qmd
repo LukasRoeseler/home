@@ -24,7 +24,7 @@ title: "Open Science"
 
 -   Slides: Slides of my presentations, lectures, seminars, and workshops are mostly [available online](https://osf.io/at29b/).
 
--   Student researchers: I regularly include student researchers in research projects and encourage them to take lead roles and to make their valuable contributions visible using transparent statements such as [CRediT](https://credit.niso.org/)(https://osf.io/ed8xa).
+-   Student researchers: I regularly include student researchers in research projects and encourage them to take lead roles and to make their valuable contributions visible using transparent statements such as [CRediT](https://credit.niso.org/) (https://osf.io/ed8xa).
 
 -   Grading: As a supervisor, I do not grade research by how exciting or innovative the outcomes are but by whether it is theoretically and methodologically sound. I encourage young scientists to conduct replication studies and warn them that depending on their field, other researchers may not recognize the value of these studies.
 
