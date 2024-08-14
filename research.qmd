@@ -4,7 +4,7 @@ bibliography: references.bib
 bibliographystyle: apa
 ---
 
-My research covers Replications, Meta-Science, and Judgment and Decision Making (e.g., Anchoring Effects). I invite you to comment on it via [PubPeer](https://pubpeer.com) if you find errors or things worth pointing out. You can give me anonymous feedback via [this Google form](#0).
+My research covers Replications, Meta-Science, and Judgment and Decision Making (e.g., Anchoring Effects).
 
 ::: {.callout-note icon="false"}
 # Ongoing Projects
@@ -17,7 +17,6 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 -   I have been writing a [German book on Open Science that is available online](lukasroeseler.github.io/opensciencebuch/).
 
 -   I upload most slides and materials from my workshops, lectures, talks, and seminars to this OSF repository: [https://osf.io/at29b/](#0){.uri}
-
 
 # Research Articles (peer-reviewed)
 

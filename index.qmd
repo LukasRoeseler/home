@@ -14,17 +14,23 @@ about:
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/lukas-röseler-598720298/
-    - icon: osf
+    - icon: database-fill
       text: OSF
       href: https://osf.io/tqx69/
-    - icon: researchgate
+    - icon: database-fill
       text: Researchgate
       href: https://www.researchgate.net/profile/Lukas-Roeseler
-    - icon: www
+    - icon: border-width
       text: Institutional Website
       href: https://www.uni-muenster.de/PsyIFP/AEBack/members/Lukas_Roeseler.html
-    - icon: twitter
-      text: Twitter
+    - icon: bar-chart-steps
+      text: FReD Explorer
+      href: https://forrt-replications.shinyapps.io/fred_explorer/
+    - icon: file-check
+      text: FReD Annotator
+      href: https://twitter.com/aufdroeseler
+    - icon: grid-3x3-gap
+      text: FORRT Replication Hub
       href: https://twitter.com/aufdroeseler
 ---
 

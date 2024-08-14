@@ -20,6 +20,12 @@ title: "Open Science"
 
 -   Open Reviews: Since spring 2024 I have been posting my reviews [online](https://osf.io/pbnw7/). I advocate for truly open peer review, that is, openly linking research objects with reviews regardless of journals' decisions to publish or not to publish said objects. If you wish to have a manuscript reviewed by me, I encourage you to post it as a pre- print. I also use pubpeer.com for post-publication peer review.
 
+::: {.callout-note icon="false"}
+## Errors
+
+Conducting research is a complex endeavour. Thereby, errors happen and can only be corrected if there is a way to point them out. If you find errors or things worth pointing out, I invite you to comment on my research publicly via [PubPeer](#0). Moreover, I am open to criticism and suggestions surrounding my research, talks, workshops, and other interactions surrounding science. You can give me anonymous feedback via [this Google form](#0).
+:::
+
 ## Open Educational Resources, Teaching, and Supervision
 
 -   Slides: Slides of my presentations, lectures, seminars, and workshops are mostly [available online](https://osf.io/at29b/).
