@@ -31,7 +31,7 @@ about:
       href: https://forrt-replications.shinyapps.io/fred_annotator/
     - icon: book
       text: Open Science Book
-      href: lukasroeseler.github.io/opensciencebuch/
+      href: https://lukasroeseler.github.io/opensciencebuch/ 
     - icon: grid-3x3-gap
       text: FORRT Replication Hub
       href: https://forrt.org/replication-hub
