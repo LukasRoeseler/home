@@ -7,20 +7,20 @@ bibliographystyle: apa
 My research covers Replications, Meta-Science, and Judgment and Decision Making (e.g., Anchoring Effects).
 
 ::: callout-note
-# Ongoing Project: FORRT Replication Database (FReD)
+# Ongoing project: FORRT Replication Database (FReD)
 
 ![I am actively working on the [FORRT Replication Database](https://forrt-replications.shinyapps.io/fred_explorer/). Get in touch if you would like to contribute. All materials are stored in the corresponding [OSF project](https://osf.io/9r62x/).](images/red_banner_yt.png){width="800"}
 :::
 
 ::: callout-note
-## Ongoing Project: Interdisciplinary Journal for Replication Research
+## Ongoing project: Interdisciplinary Journal for Replication Research
 
 ![](images/logo.png){alt="Test"}
 
 Together with an interdisciplinary team of Open Science experts, I am creating a [publication platform for replication research](https://lukasroeseler.github.io/replicationresearch_mockup/). Get in touch if you seek for ways to publish replication research or if you want to help making replications mainstream.
 :::
 
-# Open Educational Resources
+# Open educational resources
 
 -   I have been writing a [German book on Open Science, which is available online](lukasroeseler.github.io/opensciencebuch/).
 
@@ -28,7 +28,7 @@ Together with an interdisciplinary team of Open Science experts, I am creating a
 
 -   Together with experts from the University of Münster's psychology open science commission, I have been preparing an interdisciplinary guide to Open Science (German, WIP): <https://lukasroeseler.github.io/MueCOS-Infomodule/>
 
-# Research Articles (peer-reviewed)
+# Research articles (peer-reviewed)
 
 -   **Röseler, L.**, Bögler, H. L., Koßmann, L., Krueger, S., Bickenbach, S., Bühler, R., ... Sing, J. (in press). Replicating Epley and Gilovich: Need for Cognition, Cognitive Load, and Forewarning do not Moderate Anchoring Effects. *Journal of Comments and Replications in Economics*. <https://doi.org/10.31234/osf.io/bgp3m>
 
@@ -64,7 +64,7 @@ Together with an interdisciplinary team of Open Science experts, I am creating a
 
 -   **Röseler, L.** (2020, September). *Anchoring Effects: Resolving the Contradictions of Personality Moderator Research (Doctoral Thesis)*. University of Bamberg. <https://osf.io/34sv6>
 
-# Research Articles (pre-prints)
+# Research articles (pre-prints)
 
 -   **Röseler, L.**, Doetsch, C. A., Förster, N., Bruzsa, A., Deublein, M., Rieger, E., Schmidt, C., Seitz, A., &Wild, A. (2024). No Evidence for the Affective Expectation Model: Replication of Geers and Lassiter (2003). <https://doi.org/10.31234/osf.io/akfzh>
 
@@ -92,11 +92,9 @@ Together with an interdisciplinary team of Open Science experts, I am creating a
 
 -   **Röseler, L.**, Schütz, A., & Starker, U. (2019). Cognitive Ability does not and cannot Correlate with Susceptibility to Anchoring Effects. <https://doi.org/10.31234/osf.io/bnsx2>
 
-# Books
+# Books and book chapters
 
 -   **Röseler, L.** (in preparation). Open Science: Wie sich die Wissenschaft öffnet (0.1th ed.). https://doi.org/10.17605/OSF.IO/2QXWV
-
-# Book chapters
 
 -   Jané, M., Xiao, Q., Yeung, S., Ben-Shachar, M. S., Caldwell, A., Cousineau, D., \... **Röseler, L.**, ... & Feldman, G. (2024). Guide to Effect Sizes and Confidence Intervals. <http://dx.doi.org/10.17605/OSF.IO/D8C4G>
 
@@ -121,7 +119,7 @@ Together with an interdisciplinary team of Open Science experts, I am creating a
 This is a selection of research proposals that I created alone or together with other researchers.
 
 | Proposal                                 | Role          | Program and Funder                     | Link                    | Status       |
-|-----------------|-------------|----------------|-------------|-------------|
+|---------------|---------------|---------------|---------------|---------------|
 | Moderators of Anchoring Effects          | First author  | DFG, Sachbeihilfe                      | <https://osf.io/x6bqh/> | rejected     |
 | Formation of a Replication Journal       | First author  | Topical Program, University of Münster | <https://osf.io/9vgx7/> | under review |
 | Expanding the Replication Database       | First author  | Ideenlabor, University of Münster      | <https://osf.io/854vt/> | rejected     |
