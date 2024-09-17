@@ -2,7 +2,7 @@
 title: "Open Science"
 ---
 
-*Yes, we will question everything, everything once again. And we shall advance not in seven-league boots, but at a snail's pace. And what we find today we shall strike out from the record tomorrow, and only write it in again when we have once more discovered it. And what we wish to find, if we do find it, we shall regard with especial distrust.* (Brecht, Life of Galileo)
+*Yes, we will question everything, everything once again. And we shall advance not in seven-league boots, but at a snail's pace. And what we find today we shall strike out from the record tomorrow, and only write it in again when we have once more discovered it. And what we wish to find, if we do find it, we shall regard with special distrust.* (Brecht, Life of Galileo)
 
 ## Research and Methods
 
