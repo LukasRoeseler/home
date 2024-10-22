@@ -22,7 +22,7 @@ website:
 format:
   html:
     theme: Cosmo
-    toc: true
+    toc: false
 
 editor: source
 
