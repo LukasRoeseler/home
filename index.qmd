@@ -22,7 +22,7 @@ about:
       href: https://www.researchgate.net/profile/Lukas-Roeseler
     - icon: border-width
       text: Institutional Website
-      href: https://www.uni-muenster.de/PsyIFP/AEBack/members/Lukas_Roeseler.html
+      href: https://www.uni-muenster.de/PsyIFP/AEBack/members/roeseler.html
     - icon: bar-chart-steps
       text: FReD Explorer
       href: https://forrt-replications.shinyapps.io/fred_explorer/
