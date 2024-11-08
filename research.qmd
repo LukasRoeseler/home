@@ -131,6 +131,8 @@ Together with an interdisciplinary team of Open Science experts, I am creating a
 
 # Research articles (peer-reviewed)
 
+-   Hoghe, J., **Röseler, L.**, Limmer, R., Walther, C., & Schütz, A. (2024). Berufliche Stressoren und Ressourcen von Genesungsbegleiter\* innen/Peer-Berater\* innen in der Sozialpsychiatrie. *Psychiatrische Praxis*. https://doi.org/10.1055/a-2383-8057
+
 -   **Röseler, L.**, Bögler, H. L., Koßmann, L., Krueger, S., Bickenbach, S., Bühler, R., ... Sing, J. (in press). Replicating Epley and Gilovich: Need for Cognition, Cognitive Load, and Forewarning do not Moderate Anchoring Effects. *Journal of Comments and Replications in Economics*. <https://doi.org/10.31234/osf.io/bgp3m>
 
 -   **Röseler, L.**, Weber, L., Stich, E., Helgerth, K., Günther, M., Wagner, F.-S., & Schütz, A. (in press). Measurements of Susceptibility to Anchoring are Unreliable: Meta-Analytic Evidence From More Than 50,000 Anchored Estimates. *Meta Psychology.* <https://doi.org/10.31234/osf.io/b6t35>
