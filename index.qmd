@@ -46,12 +46,12 @@ I am a postdoctoral researcher at the University of Münster, Germany and the ma
 
 My goal is to improve the accessibility and quality of research. I am standing up for replication research to be routinely conducted and to be acknowledged as an integral part of a healthy science. Therefore, together with a large team of researchers, I am actively working on the [FORRT Replication Database](https://forrt-replications.shinyapps.io/fred_explorer/). We plan to launch an interdisciplinary and open journal for [*Replication Research*](https://lukasroeseler.github.io/replicationresearch_mockup/) in 2025.
 
-In August 2024, I made the first version of my German WIP book on Open Science public. I made it available online for free, because not doing so would contradict the very purpose of Open Scholarship: [lukasroeseler.github.io/opensciencebuch/](#0)
+In August 2024, I made the first version of my German WIP book on Open Science public. I made it available online for free, because not doing so would contradict the very purpose of Open Scholarship: [lukasroeseler.github.io/opensciencebuch/](lukasroeseler.github.io/opensciencebuch/)
 
 ::: {.callout-important icon="false"}
 **Save the date: Replication Research Symposium 2025 // May 14-16 in Münster, Germany**
 
-The [Münster Center for Open Science](#0) and [FORRT](#0) are hosting an international symposium on replication research. Across three days, participants and experts from different areas discuss why and how replication and reproduction studies should be conducted and published in the social, cognitive, and behavioral sciences. The symposium will shape and define the scope of the interdisciplinary journal [*Replication Research*](#0), which will launch in late 2025.
+The [Münster Center for Open Science](https://www.uni-muenster.de/MueCOS/en/index.html) and [FORRT](forrt.org) are hosting an international symposium on replication research. Across three days, participants and experts from different areas discuss why and how replication and reproduction studies should be conducted and published in the social, cognitive, and behavioral sciences. The symposium will shape and define the scope of the interdisciplinary journal [Replication Research](replicationresearch.org), which will launch in late 2025.
 :::
 
 ### Education
