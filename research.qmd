@@ -47,6 +47,8 @@ DT::datatable(researchtable
 
 # Research articles (peer-reviewed)
 
+-   Weber, L., & **Röseler, L.** (2025). Testing the Reliability of Anchoring Susceptibility Scores. *Europe’s Journal of Psychology*, *21*(1), 1-10. <https://doi.org/10.5964/ejop.9891>
+
 -   **Röseler, L.**, Weber, L., Helgerth, K. A., Stich, E., Günther, M., Tegethoff, P., Wagner, F., & Schütz, A. (2024). Measurements of Susceptibility to Anchoring are Unreliable: Meta-Analytic Evidence From More Than 50,000 Anchored Estimates. *Meta-Psychology*, *8*. <https://doi.org/10.15626/MP.2022.3236>
 
 -   Hoghe, J., **Röseler, L.**, Limmer, R., Walther, C., & Schütz, A. (2024). Berufliche Stressoren und Ressourcen von Genesungsbegleiter\* innen/Peer-Berater\* innen in der Sozialpsychiatrie. *Psychiatrische Praxis*. https://doi.org/10.1055/a-2383-8057
@@ -99,8 +101,6 @@ DT::datatable(researchtable
 -   **Röseler, L.**, Incerti, L., Seida, C., Rebholz, T., Papenmeier, F. (2023). *Falsifying the Insufficient Adjustment Model: No Evidence for Unidirectional Adjustment From Anchors*. Advance online publication. <https://osf.io/8cwpy>
 
 -   **Röseler, L.**, Gendlina, T., Krapp, J., Labusch, N., & Schütz, A. (2022). Successes and Failures of Replications: A Meta-Analysis of Independent Replication Studies Based on the OSF Registries. Advance online publication. <https://doi.org/10.31222/osf.io/8psw2>
-
--   Weber, L., & **Röseler, L.** (2022). Testing the Reliability of Anchoring Susceptibility Scores. Advance online publication. <https://doi.org/10.31234/osf.io/2kfh3>
 
 -   Wolf, D., **Röseler, L.**, Leder, J., & Schütz, A. (2022). The Red-Anger Effect: Is it Nothing More Than Demand Characteristics? Advance online publication. <https://doi.org/10.31234/osf.io/ntukz>
 
