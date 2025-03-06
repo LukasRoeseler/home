@@ -14,13 +14,19 @@ title: "Open Science"
 
 -   Transparency: Most of my research articles include the [21 word solution](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2160588), all of them have Open Data, Code, and have been published openly as pre-prints. I signed the Commitment to Research Transparency in 2021 (http://www.researchtransparency.org/signatories/) and encourage you to do so, too! I also publish rejected research proposals for which I have been the first author ([example](https://osf.io/854vt/), [example](https://osf.io/x6bqh/)).
 
+## Boycott of Commercial Journals
+
+-   As a first author, I pledge to submit my research to journals that are free to read, free to publish, and have an open license (e.g., CC-By), that is, Diamond Open Access journals. I rarely agree to do reviews for non diamond OA journals and if so, I recommend that the editors to flip the journal. In all other situations, I endorse Open Access with the a ranking of Diamond \> Green \> Gold. I believe that every researchers needs to know that the current publication system is a [big](https://treemaps.openapc.net/apcdata/openapc/publisher#/period=) [waste of money](https://royalsocietypublishing.org/doi/10.1098/rsos.230206).
+
+-   I endorse the [Free Journal Network](https://freejournals.org), the [OA finder](https://finder.open-access.network), and [Peer Community in](https://peercommunityin.org/current-pcis/).
+
 ## Reviewing and Scientific Discourse
 
 -   Open Access, Open Data, Open Materials: As a reviewer, I do not recommend manuscripts to be published if I do not have access to the data and materials, except if sharing them is prohibited by ethical or legal reasons. I have signed the [PRO initiative](https://www.opennessinitiative.org/signatories/).
 
 -   Citation metrics: I oppose the use of citation metrics for research assessment and have [signed the San Francisco Declaration of Research Assessment](https://sfdora.org/signers/?_signers_keyword=r%C3%B6seler).
 
--   Open Reviews: Since spring 2024 I have been posting my reviews [online](https://osf.io/pbnw7/). I advocate for truly open peer review, that is, openly linking research objects with reviews regardless of journals' decisions to publish or not to publish said objects. If you wish to have a manuscript reviewed by me, I encourage you to post it as a pre- print. I also use pubpeer.com for post-publication peer review.
+-   Open Reviews: Since spring 2024 I have been posting my reviews [online](https://osf.io/pbnw7/). I advocate for truly open peer review, that is, openly linking research objects with reviews regardless of journals' decisions to publish or not to publish said objects. If you wish to have a manuscript reviewed by me, I encourage you to post it as a pre-print. I also use pubpeer.com for post-publication peer review.
 
 ::: {.callout-note icon="false"}
 ## Errors
@@ -32,7 +38,7 @@ Conducting research is a complex endeavour. Thereby, errors happen and can only 
 
 -   Slides: Slides of my presentations, lectures, seminars, and workshops are mostly [available online](https://osf.io/at29b/).
 
--   Student researchers: I regularly include student researchers in research projects and encourage them to take lead roles and to make their valuable contributions visible using transparent statements such as [CRediT](https://credit.niso.org/) (https://osf.io/ed8xa).
+-   Student researchers: I regularly include student researchers in research projects and encourage them to take lead roles and to make their valuable contributions visible using transparent statements such as [CRediT](https://credit.niso.org/) (<https://osf.io/ed8xa>).
 
 -   Grading: As a supervisor, I do not grade research by how exciting or innovative the outcomes are but by whether it is theoretically and methodologically sound. I encourage young scientists to conduct replication studies and warn them that depending on their field, other researchers may not recognize the value of these studies.
 

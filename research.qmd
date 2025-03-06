@@ -47,9 +47,11 @@ DT::datatable(researchtable
 
 # Research articles (peer-reviewed)
 
--   Weber, L., & **Röseler, L.** (2025). Testing the Reliability of Anchoring Susceptibility Scores. *Europe’s Journal of Psychology*, *21*(1), 1-10. <https://doi.org/10.5964/ejop.9891>
+-   Hoghe, J., **Röseler, L.**, Limmer, R., Walther, C., & Schütz, A. (2025). Die Bedeutung personaler Ressourcen und personaler Risikofaktoren für die Bewältigung beruflicher Belastungen bei Genesungsbegleiter/-innen/Peer Berater/-innen. In Zeitschrift für Arbeitswissenschaft. <https://doi.org/10.1007/s41449-025-00460-x>
 
--   **Röseler, L.**, Weber, L., Helgerth, K. A., Stich, E., Günther, M., Tegethoff, P., Wagner, F., & Schütz, A. (2024). Measurements of Susceptibility to Anchoring are Unreliable: Meta-Analytic Evidence From More Than 50,000 Anchored Estimates. *Meta-Psychology*, *8*. <https://doi.org/10.15626/MP.2022.3236>
+-   Weber, L., & **Röseler, L.** (2025). Testing the Reliability of Anchoring Susceptibility Scores. *Europe’s Journal of Psychology*, *21*(1), 1-10. <https://doi.org/10.5964/ejop.9891>
+
+-   **Röseler, L.**, Weber, L., Helgerth, K. A., Stich, E., Günther, M., Tegethoff, P., Wagner, F., & Schütz, A. (2024). Measurements of Susceptibility to Anchoring are Unreliable: Meta-Analytic Evidence From More Than 50,000 Anchored Estimates. *Meta-Psychology*, *8*. <https://doi.org/10.15626/MP.2022.3236>
 
 -   Hoghe, J., **Röseler, L.**, Limmer, R., Walther, C., & Schütz, A. (2024). Berufliche Stressoren und Ressourcen von Genesungsbegleiter\* innen/Peer-Berater\* innen in der Sozialpsychiatrie. *Psychiatrische Praxis*. https://doi.org/10.1055/a-2383-8057
 
@@ -90,7 +92,7 @@ DT::datatable(researchtable
 
 -   **Röseler, L.** (2024). CODECHECK certificate 2024-005. Zenodo. [https://doi.org/10.5281/zenodo.13945051](#0)
 
--   **Röseler, L.**, Doetsch, C. A., Förster, N., Bruzsa, A., Deublein, M., Rieger, E., Schmidt, C., Seitz, A., &Wild, A. (2024). No Evidence for the Affective Expectation Model: Replication of Geers and Lassiter (2003). <https://doi.org/10.31234/osf.io/akfzh>
+-   **Röseler, L.**, Doetsch, C. A., Förster, N., Bruzsa, A., Deublein, M., Rieger, E., Schmidt, C., Seitz, A., & Wild, A. (2024). No Evidence for the Affective Expectation Model: Replication of Geers and Lassiter (2003). <https://doi.org/10.31234/osf.io/akfzh>
 
 -   **Röseler, L.** (2024). Exploring Categorical Colors. <https://doi.org/10.31234/osf.io/gj76p>
 
