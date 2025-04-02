@@ -160,6 +160,8 @@ This is a selection of research proposals that I created alone or together with 
 
 # Invited Talks
 
+-   **Röseler, L.** (2025, March). The FORRT Replication Hub: A Comprehensive Approach to Support Replication Research. Invited talk at the RWI Essen. <https://osf.io/9fkw7>
+
 -   **Röseler, L.** (2024, November). Die FORRT Replication Hub: Ein Ansatz zur Unterstützung interdisziplinärer Replikationsforschung. Invited talk at the Technical University of Dortmund. <https://osf.io/g3wke>
 
 -   **Röseler, L.** (2024, September). Creating the Münster Center for Open Science. Invited talk (online) at the Open Science Day in Mannheim. <https://osf.io/ha46c>
@@ -229,3 +231,9 @@ This is a selection of research proposals that I created alone or together with 
 -   **Röseler, L.** (2018, July). *The Concept of Generalizability in Psychology and Economics*. Poster session presented at the European Congress of Methodology, Jena. [https://doi.org/13140/RG.2.2.14400.64007](https://doi.org/10.13140/RG.2.2.14400.64007)
 
 -   Lichters, M., Lantz, I., Glassl, S., Möslein, R., Nährig, K., **Röseler, L.**, & Scharf, A. (2016, September). *The use of immersive technologies in consumer testing revised: The role of contextual cues in evaluating cappuccinos in Sensory Labs, Virtual Realities, and at the actual Point of Consumption*. Poster session presented at the European Conference on Sensory and Consumer Research Eurosense, Dijon. <https://doi.org/10.13140/RG.2.2.19699.32809>
+
+# Blog Post / Science Communication
+
+-   Interview on FORRT's activities for the ZBW (together with Flavio Azevedo: Lukas Wallrich, Leticia Micheli, Kelly Lloyd, Helena Hartmann, and John Shaw.): <https://open-science-future.zbw.eu/en/forrt-open-science-initiative/>
+
+-   Blog post on the FORRT Replication Hub for The Replication Network: <https://replicationnetwork.com/2025/02/08/roseler-replication-research-symposium-and-journal/>
