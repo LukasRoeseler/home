@@ -142,21 +142,23 @@ DT::datatable(researchtable
 
 This is a selection of research proposals that I created alone or together with other researchers as the first author. Most proposals for which I am not the first author are not listed.
 
-+--------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
-| Proposal                                         | Year of submission | Role          | Program and Funder                     | Link                                                                     | Status   |
-+==================================================+====================+===============+========================================+==========================================================================+==========+
-| Moderators of Anchoring Effects                  | 2022               | First author  | DFG, Sachbeihilfe                      | <https://osf.io/x6bqh/>                                                  | rejected |
-+--------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
-| Formation of a Replication Journal               | 2024               | First author  | Topical Program, University of Münster | <https://osf.io/9vgx7/>                                                  | accepted |
-+--------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
-| Diamond Open Access Journal Support              | 2024               | First Author  | openaccess.nrw                         | <https://osf.io/a82fe>                                                   | accepted |
-+--------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
-| Expanding the Replication Database               | 2023               | First author  | Ideenlabor, University of Münster      | <https://osf.io/854vt/>                                                  | rejected |
-+--------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
-| Expanding the FORRT Replication Database         | 2024               | Second author | DFG, Meta-REP Priority Program         | ------------------------------------------------------------------------ | rejected |
-+--------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
-| Creating a university-wide Open Science Strategy | 2024               | Second author | Road2Openness, Stifterverband          | ------------------------------------------------------------------------ | rejected |
-+--------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
++--------------------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
+| Proposal                                                     | Year of submission | Role          | Program and Funder                     | Link                                                                     | Status   |
++==============================================================+====================+===============+========================================+==========================================================================+==========+
+| Moderators of Anchoring Effects                              | 2022               | First author  | DFG, Sachbeihilfe                      | <https://osf.io/x6bqh/>                                                  | rejected |
++--------------------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
+| Formation of a Replication Journal                           | 2024               | First author  | Topical Program, University of Münster | <https://osf.io/9vgx7/>                                                  | accepted |
++--------------------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
+| Diamond Open Access Journal Support                          | 2024               | First author  | openaccess.nrw                         | <https://osf.io/a82fe>                                                   | accepted |
++--------------------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
+| Diamond Open Access Journal Support (expression of interest) | 2025               | First author  | ZBW Olecon                             | ------------------------------------------------------------------------ | rejected |
++--------------------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
+| Expanding the Replication Database                           | 2023               | First author  | Ideenlabor, University of Münster      | <https://osf.io/854vt/>                                                  | rejected |
++--------------------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
+| Expanding the FORRT Replication Database                     | 2024               | Second author | DFG, Meta-REP Priority Program         | ------------------------------------------------------------------------ | rejected |
++--------------------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
+| Creating a university-wide Open Science Strategy             | 2024               | Second author | Road2Openness, Stifterverband          | ------------------------------------------------------------------------ | rejected |
++--------------------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
 
 # Invited Talks
 
@@ -177,6 +179,8 @@ This is a selection of research proposals that I created alone or together with 
 -   **Röseler, L.** (2020, August). *Auflösung der Widersprüche aus mehr oder weniger als 10 Jahren Ankereffekt-Forschung*. Invited talk (online) at the University of Magdeburg, Magdeburg.
 
 # Presentations
+
+-   **Röseler\*, L.** & Hätscher\*, O. (2025, April). Opening up your research with OSF and Github. Workshop at the FDM-Werkstatt. <https://osf.io/gwkfm> \*shared first authorhip.
 
 -   **Röseler, L.** (2024, November). Und was wir heute finden, werden wir morgen von der Tafel streichen und erst wieder anschreiben, wenn wir es noch einmal gefunden haben: Die Bedeutung von Replikationen in den Sozialwissenschaften. Talk at the Philosophy of Science Public Lecture Series. [https://osf.io/zexb7](#0), recording available (<https://www.uni-muenster.de/Wissenschaftstheorie/ringvorlesung/aktuelleRV.html>)
 
