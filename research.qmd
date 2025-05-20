@@ -15,7 +15,7 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 ::: callout-note
 ## Ongoing project: Interdisciplinary Journal for Replication Research
 
-![](images/rr_blue.jpg){width="800"}Together with an interdisciplinary team of Open Science experts, I am creating a [publication platform for replication research](https://lukasroeseler.github.io/replicationresearch_mockup/). Get in touch if you seek for ways to publish replication research or if you want to help making replications mainstream.
+![](images/rr_blue.jpg){width="800"}Together with an interdisciplinary team of Open Science experts, I am creating the diamond open access journal [Replication Research (R2)](replicationresearch.org). Get in touch if you seek for ways to publish replication research or if you want to support reproductions and replications.
 :::
 
 # Open educational resources
