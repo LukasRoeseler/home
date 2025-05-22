@@ -162,6 +162,8 @@ This is a selection of research proposals that I created alone or together with 
 
 # Invited Talks
 
+-   **Röseler, L.** (2025, May). Panelist in Keynote Panel 1: The Future of Open Science. SIPS online 2025.
+
 -   **Röseler, L.** (2025, March). The FORRT Replication Hub: A Comprehensive Approach to Support Replication Research. Invited talk at the RWI Essen. <https://osf.io/9fkw7>
 
 -   **Röseler, L.** (2024, November). Die FORRT Replication Hub: Ein Ansatz zur Unterstützung interdisziplinärer Replikationsforschung. Invited talk at the Technical University of Dortmund. <https://osf.io/g3wke>
@@ -180,7 +182,13 @@ This is a selection of research proposals that I created alone or together with 
 
 # Presentations
 
--   **Röseler\*, L.** & Hätscher\*, O. (2025, April). Opening up your research with OSF and Github. Workshop at the FDM-Werkstatt. <https://osf.io/gwkfm> \*shared first authorhip.
+-   **Röseler, L.** (2025, May). We cannot solve the replication crisis without replications. Talk at SIPS online 2025. [https://osf.io/xat5s](#0)
+
+-   **Röseler, L.** (2025, May). Expanding and Strengthening the FORRT Replication Hub. Hackathon at SIPS online 2025. <https://osf.io/c6uak>
+
+-   **Röseler, L.** (2025, May). Das Münster Center for Open Science. Presentation at the CDSC Colloquium. <https://osf.io/hwbf6>
+
+-   **Röseler, L.** (2025, April). Wie wir mit Open Science Probleme des Wissenschaftssystems lösen. Presentation in a M. Sc. seminar Science Communication. <https://osf.io/2e7bf>
 
 -   **Röseler, L.** (2024, November). Und was wir heute finden, werden wir morgen von der Tafel streichen und erst wieder anschreiben, wenn wir es noch einmal gefunden haben: Die Bedeutung von Replikationen in den Sozialwissenschaften. Talk at the Philosophy of Science Public Lecture Series. [https://osf.io/zexb7](#0), recording available (<https://www.uni-muenster.de/Wissenschaftstheorie/ringvorlesung/aktuelleRV.html>)
 
@@ -235,6 +243,18 @@ This is a selection of research proposals that I created alone or together with 
 -   **Röseler, L.** (2018, July). *The Concept of Generalizability in Psychology and Economics*. Poster session presented at the European Congress of Methodology, Jena. [https://doi.org/13140/RG.2.2.14400.64007](https://doi.org/10.13140/RG.2.2.14400.64007)
 
 -   Lichters, M., Lantz, I., Glassl, S., Möslein, R., Nährig, K., **Röseler, L.**, & Scharf, A. (2016, September). *The use of immersive technologies in consumer testing revised: The role of contextual cues in evaluating cappuccinos in Sensory Labs, Virtual Realities, and at the actual Point of Consumption*. Poster session presented at the European Conference on Sensory and Consumer Research Eurosense, Dijon. <https://doi.org/10.13140/RG.2.2.19699.32809>
+
+# Workshop and Conference Materials
+
+-   **Röseler, L.** (2025, June). Workshop on Reproductions and Replications, online.
+
+-   **Röseler, L.** (2025, June). Workshop on Open Science as a Career Asset at the Center for Emerging Researchers, Münster, online. <https://osf.io/g7yz4>
+
+-   **Röseler, L.**, Moser, V., Schüller, S., & Förster, C. (2025, May). Replication Research Symposium: Book of Abstracts. Replication Research Symposium (R2S), Münster, Germany. <https://doi.org/10.5281/zenodo.15487804>
+
+-   **Röseler\*, L.** & Hätscher\*, O. (2025, April). Opening up your research with OSF and Github. Workshop at the FDM-Werkstatt. <https://osf.io/gwkfm> \*shared first authorhip.
+
+-   **Röseler, L.** (2024). Workshop on Preregistration at the Center for Emerging Researchers, Münster (online): <https://osf.io/64teq>
 
 # Blog Post / Science Communication
 
