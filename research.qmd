@@ -252,7 +252,7 @@ This is a selection of research proposals that I created alone or together with 
 
 -   **Röseler, L.** (2025, June). Workshop on Open Science as a Career Asset at the Center for Emerging Researchers, Münster, online. <https://osf.io/g7yz4>
 
--   **Röseler, L.** (2025, June). Wozu Open Science? \[What is Open Science good for?\]. Interview for Public Marketing, <https://www.publicmarketing.eu/_rubric/detail.php?rubric=Kultur-Bildung&nr=62970>. Unpaywalled version of my section available here.
+-   **Röseler, L.** (2025, June). Wozu Open Science? \[What is Open Science good for?\]. Interview for Public Marketing, <https://www.publicmarketing.eu/_rubric/detail.php?rubric=Kultur-Bildung&nr=62970>. Unpaywalled version of my section available [here](https://github.com/LukasRoeseler/home/blob/main/docs/250422_Umfrage%20Open%20Science%20Publicmarketing.pdf).
 
 -   **Röseler, L.**, Moser, V., Schüller, S., & Förster, C. (2025, May). Replication Research Symposium: Book of Abstracts. Replication Research Symposium (R2S), Münster, Germany. <https://doi.org/10.5281/zenodo.15487804>
 
