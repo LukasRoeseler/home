@@ -88,7 +88,9 @@ DT::datatable(researchtable
 
 -   **Röseler, L.** (2020, September). *Anchoring Effects: Resolving the Contradictions of Personality Moderator Research (Doctoral Thesis)*. University of Bamberg. <https://osf.io/34sv6>
 
-# Research articles (pre-prints)
+# Research articles (preprints)
+
+-   Rebholz, T. R., Groß, J., & **Röseler, L.** (2025, June 24). \[*Stage 1 Registered Report*\] Assimilation to External Cues: Comparing the Reliability of Anchoring Effects, Advice Taking, and Hindsight Bias and Exploring its Determinants. <https://doi.org/10.31234/osf.io/5u8br_v1>
 
 -   Reed, W. R., **Röseler, L.**, Saam, M., Wallrich, L. (2025). No Room at the Inn? The Case for Specialized Replication Journals. *Working Papers in Economics 25/10*, University of Canterbury, Department of Economics and Finance. <https://www.wiso.uni-hamburg.de/forschung/forschungslabor/working-papers/pdfs-wp/wp88.pdf>
 
