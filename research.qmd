@@ -166,7 +166,7 @@ This is a selection of research proposals that I created alone or together with 
 
 # Invited Talks
 
--   **Röseler, L.** (2025, May). Panelist in Keynote Panel 1: The Future of Open Science. SIPS online 2025.
+-   **Röseler, L.** (2025, May). Panelist in Keynote Panel 1: The Future of Open Science. SIPS online 2025. Recording: <https://www.youtube.com/watch?v=MpLbeLTcw6E>
 
 -   **Röseler, L.** (2025, March). The FORRT Replication Hub: A Comprehensive Approach to Support Replication Research. Invited talk at the RWI Essen. <https://osf.io/9fkw7>
 
