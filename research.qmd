@@ -186,6 +186,8 @@ This is a selection of research proposals that I created alone or together with 
 
 # Presentations
 
+-   **Röseler, L.** (2025, June). Metascience won't solve the replication crisis: Replications across the pyramid of culture change. Virtual symposium at Metascience online 2025. <https://osf.io/zq2rc>
+
 -   **Röseler, L.** (2025, May). We cannot solve the replication crisis without replications. Talk at SIPS online 2025. [https://osf.io/xat5s](#0)
 
 -   **Röseler, L.** (2025, May). Expanding and Strengthening the FORRT Replication Hub. Hackathon at SIPS online 2025. <https://osf.io/c6uak>
