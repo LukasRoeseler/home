@@ -26,25 +26,6 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 
 -   Together with experts from the University of Münster's psychology open science commission, I have been preparing an interdisciplinary guide to Open Science (German, WIP): <https://lukasroeseler.github.io/MueCOS-Infomodule/>
 
-# Research articles (table)
-
-*Scroll right to see more variables. **Open Access Types**: Diamond: No fees for publishing or reading. Gold: Fees for publishing, no fees for reading. Green: Only pre-print is available. **Student collaboration** indicates whether student researchers were involved as co-authors.*
-
-```{r}
-#| echo: false
-#| warning: false
-
-library(DT)
-researchtable <- openxlsx::read.xlsx("research.xlsx")
-DT::datatable(researchtable
-               , selection = "none"
-               , rownames = FALSE
-               , options = list(pageLength = 40, dom = "tip", bPaginate = FALSE)
-              #, filter = "top"
-              )
-
-```
-
 # Research articles (peer-reviewed)
 
 -   Hoghe, J., **Röseler, L.**, Limmer, R., Walther, C., & Schütz, A. (2025). Die Bedeutung personaler Ressourcen und personaler Risikofaktoren für die Bewältigung beruflicher Belastungen bei Genesungsbegleiter/-innen/Peer Berater/-innen. In Zeitschrift für Arbeitswissenschaft. <https://doi.org/10.1007/s41449-025-00460-x>
@@ -132,7 +113,7 @@ DT::datatable(researchtable
 
 -   **Röseler, L.**, Wallrich, L. (2024). *FReD: Interfaces to the FORRT Replication Database*. R package version 0.0.0.9001, <http://forrt.org/FReD/>.
 
--   **Röseler, L.**, Kaiser, L., Doetsch, C., Weber, L., Klett, N., Krapp, J., Seida, C., Schütz, A., Barth, C., Cummins, J., Dienlin, T., Elsherif, M., Förster, N., Genschow, O., Gnambs, T., Hartmann, H., Hilbert, L., Holgado, D., Hussey, I., Korbmacher, M., Kulke, L., Liu, Y., Lohkamp, F., Lou, N., Oomen, D., Papenmeier, F., Paruzel-Czachura, M., Pavlov, Y., Pavlović, Z., Pypno, K., Rausch, M., Rebholz, T., Ross, R., Sperl, M., Thürmer, L., Vaughn, L., Zaneva, M. (2024).*ReD: Replication Database, Version 0.4.22*.<https://dx.doi.org/10.17605/OSF.IO/9r62x>
+-   **Röseler, L.**, Kaiser, L., Doetsch, C., Weber, L., Klett, N., Krapp, J., Seida, C., Schütz, A., Barth, C., Cummins, J., Dienlin, T., Elsherif, M., Förster, N., Genschow, O., Gnambs, T., Hartmann, H., Hilbert, L., Holgado, D., Hussey, I., Korbmacher, M., Kulke, L., Liu, Y., Lohkamp, F., Lou, N., Oomen, D., Papenmeier, F., Paruzel-Czachura, M., Pavlov, Y., Pavlović, Z., Pypno, K., Rausch, M., Rebholz, T., Ross, R., Sperl, M., Thürmer, L., Vaughn, L., Zaneva, M. (2024).*ReD: Replication Database, Version 0.4.22*. <https://dx.doi.org/10.17605/OSF.IO/9r62x>
 
 -   **Röseler, L.**, Weber, L., Stich, E., Günther, M., Helgerth, K. A. C., Wagner, F. S., Antunovic, M., Bahník, S., Barrera, F., Baumeister, R. F., Bermeitinger, C., Bickenbach, S. L. C., Blank, P. A., Blower, F. B. N., Bögler, H. L., Boo, F. L., Boruchowicz, C., Bühler, R. L., Burgmer, P., Cheek, N., N., Dohle, S., Dorsch, L., Dück, M. S., Halali, E.., Fels, S.-A., Fischer, A. L., Frech, M.-L., Freira, L., Friedinger, K., Genschow, O., Harris, A., Häusser, J. A., Hedgebeth, M., Henkel, M., Horvath, D., Hügel, J. C., Igna, E. L. E., Imhoff, R., Intelmann, P., Ioannidis, K., Karg, A. H., Klamar, A., Klein, C., Klusmann, B., Knappe, E., Köppel, L.-M., Koßmann, L., Kraft, P., Kroworsch, M. K., Krueger, S. M., Kühling, S., Lagator, S., Lammers, J., Loschelder, D. D., Milstein, N., Molden, D. C., Navajas, J., Norem, J., K., Novak, J. Onuki, Y., Page, E., Panse, F., Papenmeier, F., Pavlovic, Z., Rebholz, T. R., Rinn, R., Rodgers, S., Röseler, J. J., Roßmaier, K. V., Sartorio, M., Scheelje, L., Schindler, S., Schreiner, N. B., Schreiter, M. L., Seida, C., Shanks, D. R., Siems, M.-C., Stitz, M., Starkulla, M., Stäglich, M., Thies, K., Thum, E., Undorf, M., Unger, B. D., Urlichich, D., Vadillo, M. A., Wackershauser-Sablotny, V., Wagner, F. S., Wessel, I., Wolf, H., Zhou, A., Zimdahl, M., & Schütz, A. (2022). OpAQ: Open Anchoring Quest, Version 1.1.42.94. <https://dx.doi.org/10.17605/OSF.IO/YGNVB>. Available online at <https://metaanalyses.shinyapps.io/OpAQ/>.
 
@@ -146,27 +127,31 @@ DT::datatable(researchtable
 
 This is a selection of research proposals that I created alone or together with other researchers as the first author. Most proposals for which I am not the first author are not listed.
 
-+--------------------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
-| Proposal                                                     | Year of submission | Role          | Program and Funder                     | Link                                                                     | Status   |
-+==============================================================+====================+===============+========================================+==========================================================================+==========+
-| Moderators of Anchoring Effects                              | 2022               | First author  | DFG, Sachbeihilfe                      | <https://osf.io/x6bqh/>                                                  | rejected |
-+--------------------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
-| Formation of a Replication Journal                           | 2024               | First author  | Topical Program, University of Münster | <https://osf.io/9vgx7/>                                                  | accepted |
-+--------------------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
-| Diamond Open Access Journal Support                          | 2024               | First author  | openaccess.nrw                         | <https://osf.io/a82fe>                                                   | accepted |
-+--------------------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
-| Diamond Open Access Journal Support (expression of interest) | 2025               | First author  | ZBW Olecon                             | ------------------------------------------------------------------------ | rejected |
-+--------------------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
-| Expanding the Replication Database                           | 2023               | First author  | Ideenlabor, University of Münster      | <https://osf.io/854vt/>                                                  | rejected |
-+--------------------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
-| Expanding the FORRT Replication Database                     | 2024               | Second author | DFG, Meta-REP Priority Program         | ------------------------------------------------------------------------ | rejected |
-+--------------------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
-| Creating a university-wide Open Science Strategy             | 2024               | Second author | Road2Openness, Stifterverband          | ------------------------------------------------------------------------ | rejected |
-+--------------------------------------------------------------+--------------------+---------------+----------------------------------------+--------------------------------------------------------------------------+----------+
++--------------------------------------------------------------+--------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------+------------------+
+| Proposal                                                     | Year of submission | Role            | Program and Funder                     | Link                                                                     | Status           |
++==============================================================+====================+=================+========================================+==========================================================================+==================+
+| Moderators of Anchoring Effects                              | 2022               | First author    | DFG, Sachbeihilfe                      | [https://osf.io/x6bqh](https://osf.io/x6bqh/){.uri}                      | rejected         |
++--------------------------------------------------------------+--------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------+------------------+
+| Formation of a Replication Journal                           | 2024               | First author    | Topical Program, University of Münster | [https://osf.io/9vgx7](https://osf.io/9vgx7/){.uri}                      | accepted         |
++--------------------------------------------------------------+--------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------+------------------+
+| Diamond Open Access Journal Support                          | 2024               | First author    | openaccess.nrw                         | <https://osf.io/a82fe>                                                   | accepted         |
++--------------------------------------------------------------+--------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------+------------------+
+| Diamond Open Access Journal Support (expression of interest) | 2025               | First author    | ZBW Olecon                             | ------------------------------------------------------------------------ | rejected         |
++--------------------------------------------------------------+--------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------+------------------+
+| Expanding the Replication Database                           | 2023               | First author    | Ideenlabor, University of Münster      | [https://osf.io/854vt](https://osf.io/854vt/){.uri}                      | rejected         |
++--------------------------------------------------------------+--------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------+------------------+
+| Expanding the FORRT Replication Database                     | 2024               | Second author   | DFG, Meta-REP Priority Program         | ------------------------------------------------------------------------ | rejected         |
++--------------------------------------------------------------+--------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------+------------------+
+| Creating a university-wide Open Science Strategy             | 2024               | Second author   | Road2Openness, Stifterverband          | ------------------------------------------------------------------------ | rejected         |
++--------------------------------------------------------------+--------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------+------------------+
+| Making Replications Count                                    | 2024               | Co-Investigator | UKRI                                   | ------------------------------------------------------------------------ | accepted         |
++--------------------------------------------------------------+--------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------+------------------+
+| Breaking the Wall of the Urge for Innovation                 | 2025               | First author    | Falling Walls Lab Münster              | <https://osf.io/f486v>                                                   | decision pending |
++--------------------------------------------------------------+--------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------+------------------+
 
 # Invited Talks
 
--   **Röseler, L.** (2025, July). Building your career on solid ground: The power of repetitive research for ECRs. Invited key note talk at the 1st Oldenburg Open Science Conference 2025.
+-   **Röseler, L.** (2025, July). Building your career on solid ground: The power of repetitive research for ECRs. Invited key note talk at the 1st Oldenburg Open Science Conference 2025. <https://osf.io/u7f2e>
 
 -   **Röseler, L.** (2025, May). Panelist in Keynote Panel 1: The Future of Open Science. SIPS online 2025. Recording: <https://www.youtube.com/watch?v=MpLbeLTcw6E>
 
@@ -208,13 +193,13 @@ This is a selection of research proposals that I created alone or together with 
 
 -   **Röseler, L.** (2023, November). Eine Replikationendatenbank als Fundament vertrauenswürdiger Sozialwissenschaften. Talk (online) at the Annual Day of Research Data, Münster, Germany.
 
--   **Röseler, L.**, Wallrich, L., & Bushman, B., J. (2023, March). *Creating interactive ShinyApps for Meta-Analyses with metaUI.* Talk (online) at the Evidence Synthesis and Meta-Analysis in R Conference (ESMARConf).
+-   **Röseler, L.**, Wallrich, L., & Bushman, B., J. (2023, March). *Creating interactive ShinyApps for Meta-Analyses with metaUI.* Talk (online) at the Evidence Synthesis and Meta-Analysis in R Conference (ESMARConf). <https://www.youtube.com/watch?v=yRmjBBiE2Io>
 
--   Wallrich, L., **Röseler, L.**, & Bushman, B., J. (2023, March). *Live* *Tutorial for* *Creating interactive ShinyApps for Meta-Analyses with metaUI.* Talk (online) at the Evidence Synthesis and Meta-Analysis in R Conference (ESMARConf).
+-   Wallrich, L., **Röseler, L.**, & Bushman, B., J. (2023, March). *Live* *Tutorial for* *Creating interactive ShinyApps for Meta-Analyses with metaUI.* Talk (online) at the Evidence Synthesis and Meta-Analysis in R Conference (ESMARConf). <https://www.youtube.com/watch?v=iaTMFzWfCe0>
 
--   Tegethoff, P., Klug, C., & **Röseler, L.** (2023, March). *How strong is Psychology's fundament? A Meta-Analysis of Classical Psychological Findings.* Talk at the 64th Conference of Experimental Psychologists, Trier, Germany.
+-   Tegethoff, P., Klug, C., & **Röseler, L.** (2023, March). *How strong is Psychology's fundament? A Meta-Analysis of Classical Psychological Findings.* Talk at the 64th Conference of Experimental Psychologists, Trier, Germany.
 
--   **Röseler, L.**, Gendlina, T., Klett, N., Krapp, J., Labusch, N., & Schütz, A. (2023, March). *The Replication Database: Making transparent what replicated and what did not.* Talk at the 64th Conference of Experimental Psychologists, Trier, Germany.
+-   **Röseler, L.**, Gendlina, T., Klett, N., Krapp, J., Labusch, N., & Schütz, A. (2023, March). *The Replication Database: Making transparent what replicated and what did not.* Talk at the 64th Conference of Experimental Psychologists, Trier, Germany.
 
 -   Förster, N., **Röseler, L.**, & Felser, G. (2023, March). *Replication of the Chameleon Effect (Chartrand & Bargh, 1999, Study 1)*. Talk at the 64th Conference of Experimental Psychologists, Trier, Germany.
 
@@ -222,9 +207,9 @@ This is a selection of research proposals that I created alone or together with 
 
 -   **Röseler, L.,** Weber, L., Stich, E., Günther, M., & Schütz, A. (2021, September). *The Open Anchoring Quest (OpAQ): Tackling the reliability problem and boosting the power of anchoring research*. Talk (online) at the Biennial Conference of the German Psychological Society - Personality Psychology and Psychological Diagnostics (DPPD) Section, Ulm, Germany.
 
--   **Röseler, L.** (2021, March). *Are some people more susceptible to anchoring effects than others?*Talk (online) at the 63^rd^ Conference of Experimental Psychologists, Ulm, Germany.
+-   **Röseler, L.** (2021, March). *Are some people more susceptible to anchoring effects than others?* Talk (online) at the 63^rd^ Conference of Experimental Psychologists, Ulm, Germany.
 
--   Körner, R., **Röseler, L.**, & Schütz, A. (2021, March). *A comprehensive and preregistered meta-analysis on the effects of experimentally induced body positions: Effects on self-perception but not on physiology.*Talk (online) at the 63^rd^ Conference of Experimental Psychologists, Ulm, Germany.
+-   Körner, R., **Röseler, L.**, & Schütz, A. (2021, March). *A comprehensive and preregistered meta-analysis on the effects of experimentally induced body positions: Effects on self-perception but not on physiology.*Talk (online) at the 63^rd^ Conference of Experimental Psychologists, Ulm, Germany.
 
 -   **Röseler, L.** (2019, July). *Erwartungen an Produkte und ihr Einfluss auf die Bewertung*. Präsentation von Forschungsergebnissen an der Hochschule Harz, Wernigerode.
 
@@ -233,8 +218,6 @@ This is a selection of research proposals that I created alone or together with 
 -   **Röseler, L.** (2016, September). *Ein Anker ist nicht wie der andere: Die Abhängigkeit des Ankereffekts von Aufgabentyp und Anwendungssituation.* In G. Felser (Chair), *Konsumentenpsychologie*. 50. Kongress der Deutschen Gesellschaft für Psychologie, Leipzig.
 
 -   **Röseler, L.** (2016, April). *Emotion und Kognition*. Presentation at Planspieltagung Simulation und Wirklichkeit, Wernigerode.
-
--   First place at the Harz University of Applied Sciences Research Show Science Slam, 2015. *Aus zweiter Hand: Fördernde und hemmende Bedingungen der Nutzung von Gebrauchtwaren.*
 
 # Posters
 
@@ -258,8 +241,6 @@ This is a selection of research proposals that I created alone or together with 
 
 -   **Röseler, L.** (2025, June). Workshop on Open Science as a Career Asset at the Center for Emerging Researchers, Münster, online. <https://osf.io/g7yz4>
 
--   **Röseler, L.** (2025, June). Wozu Open Science? \[What is Open Science good for?\]. Interview for Public Marketing, <https://www.publicmarketing.eu/_rubric/detail.php?rubric=Kultur-Bildung&nr=62970>. Unpaywalled version of my section available [here](https://github.com/LukasRoeseler/home/blob/main/docs/250422_Umfrage%20Open%20Science%20Publicmarketing.pdf).
-
 -   **Röseler, L.**, Moser, V., Schüller, S., & Förster, C. (2025, May). Replication Research Symposium: Book of Abstracts. Replication Research Symposium (R2S), Münster, Germany. <https://doi.org/10.5281/zenodo.15487804>
 
 -   **Röseler\*, L.** & Hätscher\*, O. (2025, April). Opening up your research with OSF and Github. Workshop at the FDM-Werkstatt. <https://osf.io/gwkfm> \*shared first authorhip.
@@ -268,6 +249,29 @@ This is a selection of research proposals that I created alone or together with 
 
 # Blog Post / Science Communication
 
+-   Interview for Public Marketing on "Why Open Science?", <https://www.publicmarketing.eu/_rubric/detail.php?rubric=Kultur-Bildung&nr=62970>. Unpaywalled version and English translation available at [https://doi.org/10.5281/zenodo.15772307](#0).
+
+-   Interview for Nature Index on the FORRT Replication Database "No more hunting for replication studies", <https://doi.org/10.1038/d41586-024-02598-w>.
+
 -   Interview on FORRT's activities for the ZBW (together with Flavio Azevedo: Lukas Wallrich, Leticia Micheli, Kelly Lloyd, Helena Hartmann, and John Shaw.): <https://open-science-future.zbw.eu/en/forrt-open-science-initiative/>
 
 -   Blog post on the FORRT Replication Hub for The Replication Network: <https://replicationnetwork.com/2025/02/08/roseler-replication-research-symposium-and-journal/>
+
+------------------------------------------------------------------------
+
+# Research articles (table)
+
+*Scroll right to see more variables. **Open Access Types**: Diamond: No fees for publishing or reading. Gold: Fees for publishing, no fees for reading. Green: Only pre-print is available. **Student collaboration** indicates whether student researchers were involved as co-authors.*
+
+```{r}
+#| echo: false 
+#| warning: false  
+
+library(DT) 
+researchtable <- openxlsx::read.xlsx("research.xlsx") 
+DT::datatable(researchtable                
+              , selection = "none"                
+              , rownames = FALSE                
+              , options = list(pageLength = 40, dom = "tip", bPaginate = FALSE)               #, filter = "top"               
+              ) 
+```
