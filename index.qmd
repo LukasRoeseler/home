@@ -34,7 +34,7 @@ about:
       href: https://lukasroeseler.github.io/opensciencebuch/
     - icon: book
       text: Repetitive Research Handbook
-      href: https://forrt.org/replication_guide/
+      href: https://forrt.org/replication_handbook
     - icon: grid-3x3-gap
       text: FORRT Replication Hub
       href: https://forrt.org/replication-hub
@@ -47,9 +47,9 @@ I am a postdoctoral researcher at the University of Münster, Germany and the ma
 
 ### Mission
 
-My goal is to improve the accessibility and quality of research. I am standing up for repetitive research (e.g., reproductions, replications) to be routinely conducted and to be acknowledged as an integral part of a healthy science. Therefore, together with a large team of researchers, I am actively working on the [FORRT Replication Hub](https://forrt.org/replication-hub).
+My goal is to improve the accessibility and quality of research. I am standing up for repetitive research (e.g., reproductions, replications) to be routinely conducted and to be acknowledged as an integral part of a healthy science. Therefore, together with a large team of researchers, I am actively working on the [FORRT Replication Hub](https://forrt.org/replication-hub) where we provide researchers with tools to find replications, conduct replications, and publish them.
 
-In August 2024, I made the first version of my German WIP book on Open Science public. I made it available online for free, because not doing so would contradict the very purpose of Open Scholarship: [lukasroeseler.github.io/opensciencebuch/](lukasroeseler.github.io/opensciencebuch/)
+In August 2024, I made the first version of my German WIP book on Open Science public. I made it available online for free, because not doing so would contradict the very purpose of Open Scholarship: [lukasroeseler.github.io/opensciencebuch](lukasroeseler.github.io/opensciencebuch/). Together with a team of experts, we have published a handbook for reproduction and replication studies in September 2025: <https://forrt.org/replication_handbook>.
 
 ::: {.callout-note appearance="simple" icon="false"}
 **Replication Research will launch on 10-10-2025**

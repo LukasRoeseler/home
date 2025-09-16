@@ -20,11 +20,15 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 
 # Open educational resources
 
+-   Together with a team of experts, I have published an open access handbook for reproduction and replication studies: <https://forrt.org/replication_handbook>
+
 -   I have been writing a [German book on Open Science, which is available online](lukasroeseler.github.io/opensciencebuch/).
 
 -   I upload most slides and materials from my workshops, lectures, talks, and seminars to this OSF repository: [https://osf.io/at29b/](#0){.uri}
 
 -   Together with experts from the University of Münster's psychology open science commission, I have been preparing an interdisciplinary guide to Open Science (German, WIP): <https://lukasroeseler.github.io/MueCOS-Infomodule/>
+
+-   
 
 # Research articles (peer-reviewed)
 
@@ -102,6 +106,8 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 -   **Röseler, L.**, Schütz, A., & Starker, U. (2019). Cognitive Ability does not and cannot Correlate with Susceptibility to Anchoring Effects. <https://doi.org/10.31234/osf.io/bnsx2>
 
 # Books and book chapters
+
+-   **Röseler, L.\****,* Wallrich, L.\*, Hartmann, H., Hüffmeier, J., Goltermann, J., Pennington, C. R., Boyce, V., Field, S. M., Pittelkow, M.-M., Silverstein, P., van Ravenzwaaij, D., Azevedo, F. (2025). *Handbook for Reproduction and Replication Studies.* Retrieved from [https://forrt.org/replication_handbook](#0), [https://doi.org/10.5281/zenodo.16990114](#0) \*shared first authorship
 
 -   **Röseler, L.** (2025). Open Science: Wie sich die Wissenschaft öffnet (0.2). Zenodo. [https://doi.org/10.17605/OSF.IO/2QXWV](#0)
 
