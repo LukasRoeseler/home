@@ -259,7 +259,11 @@ This is a selection of research proposals that I created alone or together with 
 
 -   **Röseler, L.** (2024). Workshop on Preregistration at the Center for Emerging Researchers, Münster (online): <https://osf.io/64teq>
 
-# Blog Post / Science Communication
+# Blog Post, Interviews, Science Communication
+
+-   Interview for Laborjournal. "Wiederholung wird gesellschaftsfähig" \["Repetition becomes socially acceptable"\]. <https://www.laborjournal.de/editorials/3363.php>
+
+-   Interview for University of Münster Newsportal. "Das System ist nicht auf Wiederholungen ausgelegt" \["The system is not made for repetitions"\]. <https://www.uni-muenster.de/news/view.php?cmdid=15002&lang=de>
 
 -   Interview for Public Marketing on "Why Open Science?", <https://www.publicmarketing.eu/_rubric/detail.php?rubric=Kultur-Bildung&nr=62970>. Unpaywalled version and English translation available at [https://doi.org/10.5281/zenodo.15772307](#0).
 
