@@ -28,9 +28,9 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 
 -   Together with experts from the University of Münster's psychology open science commission, I have been preparing an interdisciplinary guide to Open Science (German, WIP): <https://lukasroeseler.github.io/MueCOS-Infomodule/>
 
--   
-
 # Research articles (peer-reviewed)
+
+-   **Röseler, L**., Wallrich, L., Adler, S., Oppong Boakye, P., Evans, T. R., Goltermann, J., Haven, T., Horstmann, J., Korbmacher, M., Müller, M., Verheyen, S., Visser, I., & Azevedo, F. (2025). A Community Model for Rigorous and Inclusive Scholarship: Inaugural Editorial of Replication Research (R2). *Replication Research*, *1*. [https://doi.org/10.17879/replicationresearch-2025-9022](#0)
 
 -   Hoghe, J., **Röseler, L.**, Limmer, R., Walther, C., & Schütz, A. (2025). Die Bedeutung personaler Ressourcen und personaler Risikofaktoren für die Bewältigung beruflicher Belastungen bei Genesungsbegleiter/-innen/Peer Berater/-innen. In Zeitschrift für Arbeitswissenschaft. <https://doi.org/10.1007/s41449-025-00460-x>
 
@@ -74,6 +74,12 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 -   **Röseler, L.** (2020, September). *Anchoring Effects: Resolving the Contradictions of Personality Moderator Research (Doctoral Thesis)*. University of Bamberg. <https://osf.io/34sv6>
 
 # Research articles (preprints)
+
+-   **Röseler, L.**, Wallrich, L., Adler, S., Evans, T. R., Goltermann, J., Gut, U., Korbmacher, M., Oppong Boakye, P., Verheyen, S., Visser, I., & Azevedo, F. (2025). Replication Research Constitution (R2 Launch). Zenodo. <https://doi.org/10.5281/zenodo.17279413>
+
+-   **Röseler, L.**, Wallrich, L., Adler, S., Back, M., Busch, N., Dienlin, T., Evans, T. R., Goltermann, J., Hartmann, H., Horstmann, J., Korbmacher, M., Oppong Boakye, P., Richter, H., Richter, M., Silverstein, P., Steltenpohl, C. N., Syed, M., Vaidis, D., Verheyen, S., … Azevedo, F. (2025). Replication Research: Journal Description (R2 Launch). Zenodo. <https://doi.org/10.5281/zenodo.17241396>
+
+-   **Röseler, L.**, Wallrich, L., Adler, S., Back, M., Busch, N., Dienlin, T., Evans, T. R., Goltermann, J., Hartmann, H., Horstmann, J., Korbmacher, M., Oppong Boakye, P., Richter, H., Richter, M., Silverstein, P., Steltenpohl, C. N., Syed, M., Vaidis, D., Verheyen, S., … Azevedo, F. (2025). Replication Research: Journal Description (R2 Launch). Zenodo. <https://doi.org/10.5281/zenodo.17241396>
 
 -   Rebholz, T. R., Groß, J., & **Röseler, L.** (2025, June 24). \[*Stage 1 Registered Report*\] Assimilation to External Cues: Comparing the Reliability of Anchoring Effects, Advice Taking, and Hindsight Bias and Exploring its Determinants. <https://doi.org/10.31234/osf.io/5u8br_v1>
 
