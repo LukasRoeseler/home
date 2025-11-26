@@ -75,6 +75,8 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 
 # Research articles (preprints)
 
+-   **Röseler, L.** (2025, November 24). Preregistrations without Code do not Prevent P-Hacking. MetaArxiv. <https://doi.org/10.31222/osf.io/v259t_v1> 
+
 -   **Röseler, L.**, Wallrich, L., Adler, S., Evans, T. R., Goltermann, J., Gut, U., Korbmacher, M., Oppong Boakye, P., Verheyen, S., Visser, I., & Azevedo, F. (2025). Replication Research Constitution (R2 Launch). Zenodo. <https://doi.org/10.5281/zenodo.17279413>
 
 -   **Röseler, L.**, Wallrich, L., Adler, S., Back, M., Busch, N., Dienlin, T., Evans, T. R., Goltermann, J., Hartmann, H., Horstmann, J., Korbmacher, M., Oppong Boakye, P., Richter, H., Richter, M., Silverstein, P., Steltenpohl, C. N., Syed, M., Vaidis, D., Verheyen, S., … Azevedo, F. (2025). Replication Research: Journal Description (R2 Launch). Zenodo. <https://doi.org/10.5281/zenodo.17241396>
