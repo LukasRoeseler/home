@@ -30,6 +30,8 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 
 # Research articles (peer-reviewed)
 
+-   Reed, W. R., **Röseler, L.**, Saam, M., & Wallrich, L. (2025). No Room at the Inn? The Case for Dedicated Replication Journals. *Journal of Behavioral and Experimental Economics*, 102502. <https://doi.org/10.1016/j.socec.2025.102502>
+
 -   **Röseler, L**., Wallrich, L., Adler, S., Oppong Boakye, P., Evans, T. R., Goltermann, J., Haven, T., Horstmann, J., Korbmacher, M., Müller, M., Verheyen, S., Visser, I., & Azevedo, F. (2025). A Community Model for Rigorous and Inclusive Scholarship: Inaugural Editorial of Replication Research (R2). *Replication Research*, *1*. [https://doi.org/10.17879/replicationresearch-2025-9022](#0)
 
 -   Hoghe, J., **Röseler, L.**, Limmer, R., Walther, C., & Schütz, A. (2025). Die Bedeutung personaler Ressourcen und personaler Risikofaktoren für die Bewältigung beruflicher Belastungen bei Genesungsbegleiter/-innen/Peer Berater/-innen. In Zeitschrift für Arbeitswissenschaft. <https://doi.org/10.1007/s41449-025-00460-x>
@@ -81,11 +83,7 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 
 -   **Röseler, L.**, Wallrich, L., Adler, S., Back, M., Busch, N., Dienlin, T., Evans, T. R., Goltermann, J., Hartmann, H., Horstmann, J., Korbmacher, M., Oppong Boakye, P., Richter, H., Richter, M., Silverstein, P., Steltenpohl, C. N., Syed, M., Vaidis, D., Verheyen, S., … Azevedo, F. (2025). Replication Research: Journal Description (R2 Launch). Zenodo. <https://doi.org/10.5281/zenodo.17241396>
 
--   **Röseler, L.**, Wallrich, L., Adler, S., Back, M., Busch, N., Dienlin, T., Evans, T. R., Goltermann, J., Hartmann, H., Horstmann, J., Korbmacher, M., Oppong Boakye, P., Richter, H., Richter, M., Silverstein, P., Steltenpohl, C. N., Syed, M., Vaidis, D., Verheyen, S., … Azevedo, F. (2025). Replication Research: Journal Description (R2 Launch). Zenodo. <https://doi.org/10.5281/zenodo.17241396>
-
 -   Rebholz, T. R., Groß, J., & **Röseler, L.** (2025, June 24). \[*Stage 1 Registered Report*\] Assimilation to External Cues: Comparing the Reliability of Anchoring Effects, Advice Taking, and Hindsight Bias and Exploring its Determinants. <https://doi.org/10.31234/osf.io/5u8br_v1>
-
--   Reed, W. R., **Röseler, L.**, Saam, M., Wallrich, L. (2025). No Room at the Inn? The Case for Specialized Replication Journals. *Working Papers in Economics 25/10*, University of Canterbury, Department of Economics and Finance. <https://www.wiso.uni-hamburg.de/forschung/forschungslabor/working-papers/pdfs-wp/wp88.pdf>
 
 -   **Röseler, L.** (2024). CODECHECK certificate 2024-005. Zenodo. [https://doi.org/10.5281/zenodo.13945051](#0)
 
