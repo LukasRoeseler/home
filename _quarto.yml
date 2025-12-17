@@ -13,12 +13,12 @@ website:
       - collaborate.qmd
   page-footer:
     right: "Built with [Quarto](https://quarto.org/) and [Joyce Robbins' website template](https://github.com/jtr13/website-template)."
-    left: "&copy; Copyright 2025, Lukas Röseler"
+    left: "&copy; Copyright 2026, Lukas Röseler"
 
 format:
   html:
     theme: Cosmo
-    toc: false
+    toc: true
 
 editor: source
 

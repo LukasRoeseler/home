@@ -32,8 +32,6 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 
 -   Reed, W. R., **Röseler, L.**, Saam, M., & Wallrich, L. (2025). No Room at the Inn? The Case for Dedicated Replication Journals. *Journal of Behavioral and Experimental Economics*, 102502. <https://doi.org/10.1016/j.socec.2025.102502>
 
--   **Röseler, L**., Wallrich, L., Adler, S., Oppong Boakye, P., Evans, T. R., Goltermann, J., Haven, T., Horstmann, J., Korbmacher, M., Müller, M., Verheyen, S., Visser, I., & Azevedo, F. (2025). A Community Model for Rigorous and Inclusive Scholarship: Inaugural Editorial of Replication Research (R2). *Replication Research*, *1*. [https://doi.org/10.17879/replicationresearch-2025-9022](#0)
-
 -   Hoghe, J., **Röseler, L.**, Limmer, R., Walther, C., & Schütz, A. (2025). Die Bedeutung personaler Ressourcen und personaler Risikofaktoren für die Bewältigung beruflicher Belastungen bei Genesungsbegleiter/-innen/Peer Berater/-innen. In Zeitschrift für Arbeitswissenschaft. <https://doi.org/10.1007/s41449-025-00460-x>
 
 -   Weber, L., & **Röseler, L.** (2025). Testing the Reliability of Anchoring Susceptibility Scores. *Europe’s Journal of Psychology*, *21*(1), 1-10. <https://doi.org/10.5964/ejop.9891>
@@ -79,10 +77,6 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 
 -   **Röseler, L.** (2025, November 24). Preregistrations without Code do not Prevent P-Hacking. MetaArxiv. <https://doi.org/10.31222/osf.io/v259t_v1> 
 
--   **Röseler, L.**, Wallrich, L., Adler, S., Evans, T. R., Goltermann, J., Gut, U., Korbmacher, M., Oppong Boakye, P., Verheyen, S., Visser, I., & Azevedo, F. (2025). Replication Research Constitution (R2 Launch). Zenodo. <https://doi.org/10.5281/zenodo.17279413>
-
--   **Röseler, L.**, Wallrich, L., Adler, S., Back, M., Busch, N., Dienlin, T., Evans, T. R., Goltermann, J., Hartmann, H., Horstmann, J., Korbmacher, M., Oppong Boakye, P., Richter, H., Richter, M., Silverstein, P., Steltenpohl, C. N., Syed, M., Vaidis, D., Verheyen, S., … Azevedo, F. (2025). Replication Research: Journal Description (R2 Launch). Zenodo. <https://doi.org/10.5281/zenodo.17241396>
-
 -   Rebholz, T. R., Groß, J., & **Röseler, L.** (2025, June 24). \[*Stage 1 Registered Report*\] Assimilation to External Cues: Comparing the Reliability of Anchoring Effects, Advice Taking, and Hindsight Bias and Exploring its Determinants. <https://doi.org/10.31234/osf.io/5u8br_v1>
 
 -   **Röseler, L.** (2024). CODECHECK certificate 2024-005. Zenodo. [https://doi.org/10.5281/zenodo.13945051](#0)
@@ -120,6 +114,16 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 -   Jané, M., Xiao, Q., Yeung, S., Ben-Shachar, M. S., Caldwell, A., Cousineau, D., ... **Röseler, L.**, ... & Feldman, G. (2024). Guide to Effect Sizes and Confidence Intervals. <http://dx.doi.org/10.17605/OSF.IO/D8C4G>
 
 -   **Röseler, L.**, & Schütz, A. (2022). Open Science. In A. Schütz, M. Brand, S. Steins-Loeber, (Eds.), *Psychologie: Eine Einführung in ihre Grundlagen und Anwendungsfelder* (6th ed., pp. 187--198). Kohlhammer.
+
+# Editorial Activities
+
+-   **Röseler, L**., Wallrich, L., Adler, S., Oppong Boakye, P., Evans, T. R., Goltermann, J., Haven, T., Horstmann, J., Korbmacher, M., Müller, M., Verheyen, S., Visser, I., & Azevedo, F. (2025). A Community Model for Rigorous and Inclusive Scholarship: Inaugural Editorial of Replication Research (R2). *Replication Research*, *1*. [https://doi.org/10.17879/replicationresearch-2025-9022](#0)
+
+-   Müller, M., **Röseler, L.**, & Wallrich, L. (2025). Initial Editorial Assessment Form (Replication Research) (1.0). Zenodo. <https://doi.org/10.5281/zenodo.17911973>
+
+-   **Röseler, L.**, Wallrich, L., Adler, S., Evans, T. R., Goltermann, J., Gut, U., Korbmacher, M., Oppong Boakye, P., Verheyen, S., Visser, I., & Azevedo, F. (2025). Replication Research Constitution (R2 Launch). Zenodo. <https://doi.org/10.5281/zenodo.17279413>
+
+-   **Röseler, L.**, Wallrich, L., Adler, S., Back, M., Busch, N., Dienlin, T., Evans, T. R., Goltermann, J., Hartmann, H., Horstmann, J., Korbmacher, M., Oppong Boakye, P., Richter, H., Richter, M., Silverstein, P., Steltenpohl, C. N., Syed, M., Vaidis, D., Verheyen, S., … Azevedo, F. (2025). Replication Research: Journal Description (R2 Launch). Zenodo. <https://doi.org/10.5281/zenodo.17241396>
 
 # Software
 
