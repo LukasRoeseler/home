@@ -30,6 +30,8 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 
 # Research articles (peer-reviewed)
 
+-   **Röseler, L.**, Incerti, L., Rebholz, T. R., Seida, C., & Papenmeier, F. (2025). Falsifying the insufficient adjustment model: No evidence for unidirectional adjustment from anchors. *Meta-Psychology*, *9*. <https://doi.org/10.15626/MP.2024.4137>
+
 -   Reed, W. R., **Röseler, L.**, Saam, M., & Wallrich, L. (2025). No Room at the Inn? The Case for Dedicated Replication Journals. *Journal of Behavioral and Experimental Economics*, 102502. <https://doi.org/10.1016/j.socec.2025.102502>
 
 -   Hoghe, J., **Röseler, L.**, Limmer, R., Walther, C., & Schütz, A. (2025). Die Bedeutung personaler Ressourcen und personaler Risikofaktoren für die Bewältigung beruflicher Belastungen bei Genesungsbegleiter/-innen/Peer Berater/-innen. In Zeitschrift für Arbeitswissenschaft. <https://doi.org/10.1007/s41449-025-00460-x>
@@ -88,8 +90,6 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 -   **Röseler, L.**, & Schütz, A. (2024). Assimilation and Contrast are Everywhere. <https://doi.org/10.31234/osf.io/krwcn>
 
 -   **Röseler, L.** (2023). *Predicting Replication Rates with Z-Curve: A Brief Exploratory Validation Study Using the Replication Database*. Advance online publication. <https://osf.io/preprints/metaarxiv/ewb2t>
-
--   **Röseler, L.**, Incerti, L., Seida, C., Rebholz, T., Papenmeier, F. (2023). *Falsifying the Insufficient Adjustment Model: No Evidence for Unidirectional Adjustment From Anchors*. Advance online publication. <https://osf.io/8cwpy>
 
 -   **Röseler, L.**, Gendlina, T., Krapp, J., Labusch, N., & Schütz, A. (2022). Successes and Failures of Replications: A Meta-Analysis of Independent Replication Studies Based on the OSF Registries. Advance online publication. <https://doi.org/10.31222/osf.io/8psw2>
 
