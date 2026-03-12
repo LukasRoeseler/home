@@ -77,9 +77,13 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 
 # Research articles (preprints)
 
--   **Röseler, L.** (2025, November 24). Preregistrations without Code do not Prevent P-Hacking. MetaArxiv. <https://doi.org/10.31222/osf.io/v259t_v1> 
+-   Wallrich, L., vaz, K. G., Weinerova, J., **Röseler, L.**, Gupta, A., Kan-Kilinc, B., … Azevedo, F. (2026, March 9). FLoRA-Notify: A Protocol for a Cluster-Randomised Controlled Trial to Assess the Impact of Notifying Preprint Authors About Replication Studies. <https://doi.org/10.31222/osf.io/qnckf_v1>
 
--   Rebholz, T. R., Groß, J., & **Röseler, L.** (2025, June 24). \[*Stage 1 Registered Report*\] Assimilation to External Cues: Comparing the Reliability of Anchoring Effects, Advice Taking, and Hindsight Bias and Exploring its Determinants. <https://doi.org/10.31234/osf.io/5u8br_v1>
+-   Rebholz, T. R., Groß, J., & **Röseler, L.** (2026, February 10). Assimilation to External Cues: Comparing the Reliability of Anchoring Effects, Advice Taking, and Hindsight Bias and Exploring its Determinants. <https://doi.org/10.31234/osf.io/5u8br_v3>
+
+-   Hartmann, H., Azevedo, F., **Röseler, L.**, Wallrich, L., Aldoh, A., Elsherif, M. M., … Leech, G. (2025, December 3). Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences. https://doi.org/10.31222/osf.io/ad2w6_v2
+
+-   **Röseler, L.** (2025, November 24). Preregistrations without Code do not Prevent P-Hacking. MetaArxiv. <https://doi.org/10.31222/osf.io/v259t_v1> 
 
 -   **Röseler, L.** (2024). CODECHECK certificate 2024-005. Zenodo. [https://doi.org/10.5281/zenodo.13945051](#0)
 
@@ -189,6 +193,10 @@ This is a selection of research proposals that I created alone or together with 
 
 # Presentations
 
+-   **Röseler, L.** (2026, March 4). Replication Journal Showcase: Replication Research (R2). Love Replications Week (LRW). Zenodo. <https://doi.org/10.5281/zenodo.18864153>
+
+-   **Röseler, L.** (2026, March 4). Getting your replication report ready for submission. Love Replications Week (LRW), Online. Zenodo. <https://doi.org/10.5281/zenodo.18757230>
+
 -   **Röseler, L.** (2025, June). Metascience won't solve the replication crisis: Replications across the pyramid of culture change. Virtual symposium at Metascience online 2025. <https://osf.io/zq2rc>
 
 -   **Röseler, L.** (2025, May). We cannot solve the replication crisis without replications. Talk at SIPS online 2025. [https://osf.io/xat5s](#0)
@@ -237,6 +245,8 @@ This is a selection of research proposals that I created alone or together with 
 
 # Posters
 
+-   **Röseler, L.**, Moser, V., & Oppong Boakye, P. (2026). Poster: Münster Center for Open Science. Zenodo. <https://doi.org/10.5281/zenodo.18537522>
+
 -   Hoghe, J., **Röseler, L.**, Limmer, R. E., Walther, C., Schütz, A. (2022). *Die sozialpsychiatrische Versorgungsorganisation aus Sicht von Mitarbeitenden. Welche Potenziale und Risiken nehmen Beschäftigte in Peer-Arbeit bezüglich ihrer Arbeitsbedingungen wahr?* Poster session presented at the 21. Deutscher Kongress für Versorgungsforschung (DKVF). <https://doi.org/10.3205/22dkvf185> (German Medical Science GMS Publishing House).
 
 -   **Röseler, L.**, Schütz, A., Seida, C., Fels, S., Prinz, E., Heller, A., ... Wieczorek, S. (2020, March). *Tidying up the Anchoring Shelf: Failures to Replicate Subliminal Anchoring.* Poster session to be presented at the cancelled 62nd Conference of Experimental Psychologists, Jena. [https://doi.org/13140/RG.2.2.24734.89928/1](https://doi.org/10.13140/RG.2.2.24734.89928/1)
@@ -253,6 +263,10 @@ This is a selection of research proposals that I created alone or together with 
 
 # Workshop and Conference Materials
 
+-   **Röseler, L.** (2026, March). Love Replications Week, online. <https://forrt.org/LoveReplicationsWeek/>
+
+-   **Röseler, L.** (2026, January). Open Science Professional at the Center for Emerging Researchers, online.
+
 -   **Röseler, L.** (2025, June). Workshop on Reproductions and Replications, online.
 
 -   **Röseler, L.** (2025, June). Workshop on Open Science as a Career Asset at the Center for Emerging Researchers, Münster, online. <https://osf.io/g7yz4>
@@ -264,6 +278,8 @@ This is a selection of research proposals that I created alone or together with 
 -   **Röseler, L.** (2024). Workshop on Preregistration at the Center for Emerging Researchers, Münster (online): <https://osf.io/64teq>
 
 # Blog Post, Interviews, Science Communication
+
+-   Q&A for Center for Open Science's Blog: "Building a Publishing Model for Replication: Q&A with the Senior Editors of Replication Research". <https://www.cos.io/blog/building-a-publishing-model-for-replication-qa-with-the-senior-editors-of-replication-research>
 
 -   Interview for Laborjournal. "Wiederholung wird gesellschaftsfähig" \["Repetition becomes socially acceptable"\]. <https://www.laborjournal.de/editorials/3363.php>
 
