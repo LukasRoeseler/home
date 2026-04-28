@@ -1,10 +1,18 @@
 ---
 title: "Dr. Lukas Röseler"
+subtitle: "Postdoctoral Researcher & Managing Director of the Münster Center for Open Science"
 about:
   id: me
   template: trestles
   image: img/profile_osig.jpg
+  image-shape: rounded
   links:
+    - icon: building
+      text: Institution
+      href: https://www.uni-muenster.de/PsyIFP/AEBack/members/roeseler.html
+    - icon: envelope
+      text: Email
+      href: mailto:lukas.roeseler@uni-muenster.de
     - icon: bluesky
       text: Bluesky
       href: https://bsky.app/profile/aufdroeseler.bsky.social
@@ -17,55 +25,39 @@ about:
     - icon: database-fill
       text: OSF
       href: https://osf.io/tqx69/
-    - icon: database-fill
-      text: Researchgate
+    - icon: book-fill
+      text: ResearchGate
       href: https://www.researchgate.net/profile/Lukas-Roeseler
-    - icon: border-width
-      text: Institutional Website
-      href: https://www.uni-muenster.de/PsyIFP/AEBack/members/roeseler.html
-    - icon: bar-chart-steps
-      text: FReD Explorer
-      href: https://forrt-replications.shinyapps.io/fred_explorer/
-    - icon: file-check
-      text: FReD Annotator
-      href: https://forrt-replications.shinyapps.io/fred_annotator/
-    - icon: book
-      text: Open Science Book (GER)
-      href: https://lukasroeseler.github.io/opensciencebuch/
-    - icon: book
-      text: Repetitive Research Handbook
-      href: https://forrt.org/replication_handbook
-    - icon: grid-3x3-gap
-      text: FORRT Replication Hub
-      href: https://forrt.org/replication-hub
+toc: false # Turns off the Table of Contents specifically for the homepage to keep it clean
 ---
 
-:::: {#me}
-### About
+:::{#me}
 
-I am a postdoctoral researcher at the University of Münster, Germany and the managing director of the [Münster Center for Open Science](https://www.uni-muenster.de/MueCOS/en/index.html). I see myself as a strong proponent for Open Science and [Open Scholarship](https://forrt.org/glossary/english/open_scholarship/).
+*(He/Him)* | [🔊 Pronunciation](#) 
 
-### Mission
+## About Me
+I am a postdoctoral researcher at the University of Münster, Germany, and the managing director of the Münster Center for Open Science. I see myself as a strong proponent for Open Science and Open Scholarship.
 
-My goal is to improve the accessibility and quality of research. I am standing up for repetitive research (e.g., reproductions, replications) to be routinely conducted and to be acknowledged as an integral part of a healthy science. Therefore, together with a large team of researchers, I am actively working on the [FORRT Replication Hub](https://forrt.org/replication-hub) where we provide researchers with tools to find replications, conduct replications, and publish them.
+## Mission
+My goal is to improve the accessibility and quality of research. I advocate for repetitive research (e.g., reproductions, replications) to be routinely conducted and acknowledged as an integral part of healthy science. 
 
-In August 2024, I made the first version of my German [WIP book on Open Science](https://lukasroeseler.github.io/opensciencebuch) public. I made it available online for free, because not doing so would contradict the very purpose of Open Scholarship. Together with a team of experts, we have published a [handbook for reproduction and replication](https://forrt.org/replication_handbook) studies in September 2025 and launched a diamond open access [journal for reproductions and replications](replicationresearch.org) in October 2025.
+To achieve this, I actively collaborate with a large team of researchers on the **FORRT Replication Hub**, where we provide scholars with tools to find, conduct, and publish replications.
 
-::: {.callout-note appearance="simple" icon="false"}
-**Replication Research is open for submissions**
+## Featured Projects & Resources
+* 🌐 [FORRT Replication Hub](https://forrt.org/replication-hub)
+* 📘 [Reproductions and Replications Handbook](https://forrt.org/replication_handbook)
+* 📖 [Open Science Book (German)](https://lukasroeseler.github.io/opensciencebuch/)
 
-The [Münster Center for Open Science](https://www.uni-muenster.de/MueCOS/en/index.html) and [FORRT](forrt.org) are hosting the multidisciplinary journal [Replication Research](https://replicationresearch.org) (R2), which is now open for submissions.
+## Education
+* **PhD in Psychology** (2021) — *First-generation academic*
+* **M.Sc. in Consumer Psychology and Market Research** (2017)
+* **B.Sc. in Business Psychology** (2016)
+
 :::
 
-### Education
+<br>
 
--   2021: PhD in Psychology (first generation)
-
--   2017: M.Sc. in Consumer Psychology and Market Research
-
--   2016: B.Sc. in Business Psychology
-
-------------------------------------------------------------------------
-
-Lukas Röseler (he/him; [pronounciation](https://namedrop.io/lukasroseler))
-::::
+::: {.callout-tip icon=false}
+## Call for Submissions: *Replication Research (R2)*
+The Münster Center for Open Science and FORRT are hosting the multidisciplinary, diamond open-access journal **Replication Research (R2)** that launched in fall 2025. The journal is now open for submissions for reproductions and replications. 
+:::

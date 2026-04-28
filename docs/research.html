@@ -35,10 +35,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -66,26 +68,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
-
-<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-
-<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-
-<script src="site_libs/datatables-binding-0.34.0/datatables.js"></script>
-
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-
-<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-
-<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
-
-<script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
-
-<link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
-
-<script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
-
 
 
 </head>
@@ -124,8 +106,16 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Collaborate</span></a>
   </li>  
 </ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/lukasroeseler"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -139,19 +129,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#open-educational-resources" id="toc-open-educational-resources" class="nav-link active" data-scroll-target="#open-educational-resources">Open educational resources</a></li>
-  <li><a href="#research-articles-peer-reviewed" id="toc-research-articles-peer-reviewed" class="nav-link" data-scroll-target="#research-articles-peer-reviewed">Research articles (peer-reviewed)</a></li>
-  <li><a href="#research-articles-preprints" id="toc-research-articles-preprints" class="nav-link" data-scroll-target="#research-articles-preprints">Research articles (preprints)</a></li>
-  <li><a href="#books-and-book-chapters" id="toc-books-and-book-chapters" class="nav-link" data-scroll-target="#books-and-book-chapters">Books and book chapters</a></li>
-  <li><a href="#editorial-activities" id="toc-editorial-activities" class="nav-link" data-scroll-target="#editorial-activities">Editorial Activities</a></li>
-  <li><a href="#software" id="toc-software" class="nav-link" data-scroll-target="#software">Software</a></li>
-  <li><a href="#research-proposals" id="toc-research-proposals" class="nav-link" data-scroll-target="#research-proposals">Research proposals</a></li>
-  <li><a href="#invited-talks" id="toc-invited-talks" class="nav-link" data-scroll-target="#invited-talks">Invited Talks</a></li>
-  <li><a href="#presentations" id="toc-presentations" class="nav-link" data-scroll-target="#presentations">Presentations</a></li>
-  <li><a href="#posters" id="toc-posters" class="nav-link" data-scroll-target="#posters">Posters</a></li>
-  <li><a href="#workshop-and-conference-materials" id="toc-workshop-and-conference-materials" class="nav-link" data-scroll-target="#workshop-and-conference-materials">Workshop and Conference Materials</a></li>
-  <li><a href="#blog-post-interviews-science-communication" id="toc-blog-post-interviews-science-communication" class="nav-link" data-scroll-target="#blog-post-interviews-science-communication">Blog Post, Interviews, Science Communication</a></li>
-  <li><a href="#research-articles-table" id="toc-research-articles-table" class="nav-link" data-scroll-target="#research-articles-table">Research articles (table)</a></li>
+  <li><a href="#research-articles-searchable-table" id="toc-research-articles-searchable-table" class="nav-link active" data-scroll-target="#research-articles-searchable-table">Research Articles — Searchable Table</a></li>
   </ul>
 </nav>
     </div>
@@ -177,135 +155,402 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<!-- ═══ DARK MODE TOGGLE (injected into navbar) ═══ -->
+<script>
+(function(){
+  /* restore saved preference immediately to avoid flash */
+  var saved = localStorage.getItem('lr-theme');
+  if(saved) document.documentElement.setAttribute('data-bs-theme', saved);
+})();
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  /* Build toggle button */
+  var btn = document.createElement('button');
+  btn.id = 'darkmode-toggle';
+  btn.title = 'Toggle light / dark mode';
+  btn.setAttribute('aria-label', 'Toggle light/dark mode');
+  btn.innerHTML = `
+    <!-- Moon icon (shown in light mode) -->
+    <svg class="moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+    <!-- Sun icon (shown in dark mode) -->
+    <svg class="sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="12" cy="12" r="5"/>
+      <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>`;
+  btn.onclick = function(){
+    var isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
+    var next = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-bs-theme', next);
+    localStorage.setItem('lr-theme', next);
+  };
+
+  /* Append to right side of navbar */
+  var navRight = document.querySelector('.navbar-nav.ms-auto, .navbar .navbar-collapse .navbar-nav:last-child, .navbar-collapse');
+  if(navRight){
+    var li = document.createElement('li');
+    li.className = 'nav-item d-flex align-items-center';
+    li.appendChild(btn);
+    navRight.appendChild(li);
+  } else {
+    /* fallback: append to navbar container */
+    var nb = document.querySelector('.navbar .container, .navbar .container-fluid');
+    if(nb) nb.appendChild(btn);
+  }
+});
+</script>
+
+<!-- ═══ WORD CLOUD ═══ -->
+<div id="wordcloud-wrapper">
+  <canvas id="wc-canvas" width="800" height="220" style="width:100%;height:auto;display:block"></canvas>
+  <p class="wc-note">Key topics from my research — based on Google Scholar profile</p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.1.0/wordcloud2.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  /* Word list derived from Google Scholar profile keywords & publication titles */
+  var words = [
+    ['Anchoring Effects', 42],
+    ['Replication', 38],
+    ['Meta-Analysis', 30],
+    ['Open Science', 28],
+    ['Judgment & Decision Making', 24],
+    ['Reproducibility', 22],
+    ['Preregistration', 18],
+    ['Replication Database', 18],
+    ['Susceptibility', 16],
+    ['Adjustment', 15],
+    ['Ego Depletion', 13],
+    ['Open Data', 12],
+    ['Self-Control', 12],
+    ['Body Position', 11],
+    ['Psychological Science', 10],
+    ['Effect Sizes', 10],
+    ['Meta-Science', 10],
+    ['P-Hacking', 9],
+    ['Subliminal Priming', 8],
+    ['Publication Bias', 8],
+    ['Social Psychology', 8],
+    ['Personality', 7],
+    ['Dominance', 7],
+    ['Prestige', 6],
+    ['Generalizability', 6],
+    ['Emotion', 6],
+    ['FLoRA', 6],
+    ['FORRT', 5],
+    ['Validity', 5],
+    ['Transparency', 5]
+  ];
+
+  function getAccent(){
+    return getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#03a1fc';
+  }
+  function getText(){
+    return getComputedStyle(document.documentElement).getPropertyValue('--text-muted').trim() || '#5a6278';
+  }
+
+  function drawCloud(){
+    var canvas = document.getElementById('wc-canvas');
+    if(!canvas) return;
+    var ctx = canvas.getContext('2d');
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    var accent = getAccent();
+    var muted  = getText();
+
+    /* Generate shades of accent + muted */
+    var palette = [accent, accent, accent, muted, muted,
+                   accent+'cc', accent+'99', muted+'dd', muted+'aa'];
+
+    WordCloud(canvas, {
+      list: words,
+      gridSize: Math.round(16 * canvas.offsetWidth / 800),
+      weightFactor: function(size){ return Math.pow(size, 0.85) * (canvas.offsetWidth / 800) * 2.2; },
+      fontFamily: 'DM Sans, sans-serif',
+      fontWeight: '600',
+      color: function(){ return palette[Math.floor(Math.random()*palette.length)]; },
+      rotateRatio: 0,
+      rotationSteps: 1,
+      backgroundColor: 'transparent',
+      drawOutOfBound: false,
+      shrinkToFit: true,
+      shuffle: false
+    });
+  }
+
+  drawCloud();
+
+  /* Redraw on theme change */
+  var obs = new MutationObserver(function(){ setTimeout(drawCloud, 80); });
+  obs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-bs-theme'] });
+});
+</script>
+
+<!-- ═══ PROJECT SLIDESHOW (Karteikarten) ═══ -->
+<div class="project-slideshow">
+  <div class="project-cards-outer">
+    <div class="project-cards-track" id="ss-track">
+
+      <!-- Card 1: FLoRA / FORRT Replication Hub -->
+      <div class="project-card">
+        <div class="card-logo-wrap">
+          <img src="https://forrt.org/flora-explorer/logo.svg" alt="FLoRA logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" style="max-height:52px;width:auto">
+          <!-- fallback text logo if SVG fails -->
+          <div style="display:none;align-items:center;gap:8px">
+            <svg viewbox="0 0 40 40" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="18" stroke="#03a1fc" stroke-width="2.5"></circle>
+              <text x="50%" y="55%" text-anchor="middle" fill="#03a1fc" font-size="14" font-family="DM Sans,sans-serif" font-weight="700" dy=".1em">FL</text>
+            </svg>
+            <span style="font-weight:700;font-size:1.1rem;color:var(--accent)">FLoRA</span>
+          </div>
+        </div>
+        <h3 class="anchored">FORRT Replication Hub &amp; FLoRA Database</h3>
+        <p>I am a lead on the FORRT Replication Hub, home to <strong>FLoRA</strong> — the world's largest curated database of replication studies, tracking reproductions and replications across the sciences and humanities. Get in touch if you would like to contribute data or expertise.</p>
+        <a href="https://forrt.org/replication-hub" target="_blank" class="card-cta">
+          <svg viewbox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          Visit FORRT Replication Hub
+        </a>
+      </div>
+
+      <!-- Card 2: Replication Research Journal (R2) -->
+      <div class="project-card">
+        <div class="card-logo-wrap">
+          <img src="images/rr_blue.jpg" alt="Replication Research logo" style="max-height:52px;width:auto;border-radius:6px" onerror="this.style.display='none'">
+        </div>
+        <h3 class="anchored">Replication Research (R2) — Diamond Open Access Journal</h3>
+        <p>Together with an interdisciplinary team of Open Science experts, I am founding and editing <strong>Replication Research (R2)</strong> — a diamond open access journal dedicated to publishing replication and reproduction studies. No fees for authors or readers. Get in touch if you want to submit replication work or support the initiative.</p>
+        <a href="https://replicationresearch.org" target="_blank" class="card-cta">
+          <svg viewbox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          Visit Replication Research
+        </a>
+      </div>
+
+      <!-- Card 3: Replication Journal Federation -->
+      <div class="project-card">
+        <div class="card-logo-wrap">
+          <!-- Inline SVG recreation of the RJF logo (coloured circles) -->
+          <svg width="56" height="56" viewbox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Replication Journal Federation logo">
+            <!-- central light circle -->
+            <circle cx="60" cy="60" r="18" fill="#d6eaf8" stroke="#aed6f1" stroke-width="1.5"></circle>
+            <!-- 6 surrounding coloured circles -->
+            <circle cx="60" cy="22" r="14" stroke="#2471a3" stroke-width="2.2" fill="none"></circle>
+            <circle cx="93" cy="41" r="14" stroke="#e67e22" stroke-width="2.2" fill="none"></circle>
+            <circle cx="93" cy="79" r="14" stroke="#16a085" stroke-width="2.2" fill="none"></circle>
+            <circle cx="60" cy="98" r="14" stroke="#c0392b" stroke-width="2.2" fill="none"></circle>
+            <circle cx="27" cy="79" r="14" stroke="#8e44ad" stroke-width="2.2" fill="none"></circle>
+            <circle cx="27" cy="41" r="14" stroke="#f1c40f" stroke-width="2.2" fill="none"></circle>
+          </svg>
+          <span style="font-weight:700;font-size:1.05rem;color:var(--text);margin-left:10px;line-height:1.3">Replication Journal<br>Federation</span>
+        </div>
+        <h3 class="anchored">Replication Journal Federation</h3>
+        <p>I am coordinating the <strong>Replication Journal Federation</strong> — a growing international network of journals committed to publishing replication and reproduction studies. The Federation promotes cross-journal standards, visibility, and discoverability of replication research across disciplines.</p>
+        <a href="https://replicationresearch.org" target="_blank" class="card-cta">
+          <svg viewbox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          Learn more
+        </a>
+      </div>
+
+    </div><!-- /track -->
+  </div><!-- /outer -->
+
+  <!-- Navigation -->
+  <div class="slideshow-nav">
+    <button class="ss-btn" id="ss-prev" onclick="ssPrev()" aria-label="Previous card">
+      <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    </button>
+    <div class="ss-dots" id="ss-dots"></div>
+    <button class="ss-btn" id="ss-next" onclick="ssNext()" aria-label="Next card">
+      <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var track = document.getElementById('ss-track');
+  var dotsEl = document.getElementById('ss-dots');
+  var total = 3, current = 0;
+
+  /* Build dots */
+  for(var i=0;i<total;i++){
+    var d = document.createElement('button');
+    d.className = 'ss-dot' + (i===0?' active':'');
+    d.setAttribute('aria-label','Card '+(i+1));
+    d.dataset.idx = i;
+    d.onclick = function(){ ssGoTo(+this.dataset.idx); };
+    dotsEl.appendChild(d);
+  }
+
+  function ssGoTo(n){
+    current = (n+total)%total;
+    track.style.transform = 'translateX(-'+current*100+'%)';
+    dotsEl.querySelectorAll('.ss-dot').forEach(function(d,i){
+      d.classList.toggle('active', i===current);
+    });
+  }
+
+  window.ssPrev = function(){ ssGoTo(current-1); };
+  window.ssNext = function(){ ssGoTo(current+1); };
+
+  /* Auto-advance every 7 s */
+  setInterval(function(){ ssGoTo(current+1); }, 7000);
+})();
+</script>
 <p>My research covers Replications, Meta-Science, and Judgment and Decision Making (e.g., Anchoring Effects).</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Ongoing project: FORRT Replication Database (FReD)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/red_banner_yt.png" class="img-fluid figure-img" width="800"></p>
-<figcaption>I am actively working on the <a href="https://forrt-replications.shinyapps.io/fred_explorer/">FORRT Replication Database</a>. Get in touch if you would like to contribute. All materials are stored in the corresponding <a href="https://osf.io/9r62x/">OSF project</a>.</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Ongoing project: Interdisciplinary Journal for Replication Research
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><img src="images/rr_blue.jpg" class="img-fluid" width="800">Together with an interdisciplinary team of Open Science experts, I am creating the diamond open access journal <a href="replicationresearch.org">Replication Research (R2)</a>. Get in touch if you seek for ways to publish replication research or if you want to support reproductions and replications.</p>
-</div>
-</div>
-<section id="open-educational-resources" class="level1">
-<h1>Open educational resources</h1>
+<!-- helper SVGs used throughout the page -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ico-chevron" viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></polyline></symbol>
+</svg>
+
+<!-- collapsible section macro (reused below) -->
+<script>
+function makeCollapsible(el){
+  /* wraps an existing <h2> + following siblings into a <details> */
+  /* — we use static HTML <details> elements instead, see below — */
+}
+</script>
+<details class="collapsible-section" open="">
+<summary class="collapsible-trigger">
+  <div class="coll-chevron"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem" class="anchored">Open Educational Resources</h2>
+</summary>
+<div class="section-body">
 <ul>
 <li><p>Together with a team of experts, I have published an open access handbook for reproduction and replication studies: <a href="https://forrt.org/replication_handbook" class="uri">https://forrt.org/replication_handbook</a></p></li>
-<li><p>I have been writing a <a href="lukasroeseler.github.io/opensciencebuch/">German book on Open Science, which is available online</a>.</p></li>
-<li><p>I upload most slides and materials from my workshops, lectures, talks, and seminars to this OSF repository: <a href="#0" class="uri">https://osf.io/at29b/</a></p></li>
+<li><p>I have been writing a <a href="https://lukasroeseler.github.io/opensciencebuch/">German book on Open Science, which is available online</a>.</p></li>
+<li><p>I upload most slides and materials from my workshops, lectures, talks, and seminars to this OSF repository: <a href="https://osf.io/at29b/" class="uri">https://osf.io/at29b/</a></p></li>
 <li><p>Together with experts from the University of Münster’s psychology open science commission, I have been preparing an interdisciplinary guide to Open Science (German, WIP): <a href="https://lukasroeseler.github.io/MueCOS-Infomodule/" class="uri">https://lukasroeseler.github.io/MueCOS-Infomodule/</a></p></li>
 </ul>
-</section>
-<section id="research-articles-peer-reviewed" class="level1">
-<h1>Research articles (peer-reviewed)</h1>
+</div></details>
+
+<details class="collapsible-section" open="">
+<summary class="collapsible-trigger">
+  <div class="coll-chevron"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem" class="anchored">Research Articles (Peer-Reviewed)</h2>
+</summary>
+<div class="section-body">
 <ul>
-<li><p><strong>Röseler, L.</strong>, Incerti, L., Rebholz, T. R., Seida, C., &amp; Papenmeier, F. (2025). Falsifying the insufficient adjustment model: No evidence for unidirectional adjustment from anchors.&nbsp;<em>Meta-Psychology</em>,&nbsp;<em>9</em>. <a href="https://doi.org/10.15626/MP.2024.4137" class="uri">https://doi.org/10.15626/MP.2024.4137</a></p></li>
-<li><p>Reed, W. R., <strong>Röseler, L.</strong>, Saam, M., &amp; Wallrich, L. (2025). No Room at the Inn? The Case for Dedicated Replication Journals.&nbsp;<em>Journal of Behavioral and Experimental Economics</em>, 102502. <a href="https://doi.org/10.1016/j.socec.2025.102502" class="uri">https://doi.org/10.1016/j.socec.2025.102502</a></p></li>
-<li><p>Hoghe, J., <strong>Röseler, L.</strong>, Limmer, R., Walther, C., &amp; Schütz, A. (2025). Die Bedeutung personaler Ressourcen und personaler Risikofaktoren für die Bewältigung beruflicher Belastungen bei Genesungsbegleiter/-innen/Peer Berater/-innen. In Zeitschrift für Arbeitswissenschaft. <a href="https://doi.org/10.1007/s41449-025-00460-x" class="uri">https://doi.org/10.1007/s41449-025-00460-x</a></p></li>
+<li><p>Aczel, B., Szaszi, B., Clelland, H.T. … <strong>Röseler, L.</strong>, … et al.&nbsp;Investigating the analytical robustness of the social and behavioural sciences. Nature 652, 135–142 (2026). <a href="https://doi.org/10.1038/s41586-025-09844-9" class="uri">https://doi.org/10.1038/s41586-025-09844-9</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Incerti, L., Rebholz, T. R., Seida, C., &amp; Papenmeier, F. (2025). Falsifying the insufficient adjustment model: No evidence for unidirectional adjustment from anchors. <em>Meta-Psychology</em>, <em>9</em>. <a href="https://doi.org/10.15626/MP.2024.4137" class="uri">https://doi.org/10.15626/MP.2024.4137</a></p></li>
+<li><p>Reed, W. R., <strong>Röseler, L.</strong>, Saam, M., &amp; Wallrich, L. (2025). No Room at the Inn? The Case for Dedicated Replication Journals. <em>Journal of Behavioral and Experimental Economics</em>, 102502. <a href="https://doi.org/10.1016/j.socec.2025.102502" class="uri">https://doi.org/10.1016/j.socec.2025.102502</a></p></li>
+<li><p>Hoghe, J., <strong>Röseler, L.</strong>, Limmer, R., Walther, C., &amp; Schütz, A. (2025). Die Bedeutung personaler Ressourcen und personaler Risikofaktoren für die Bewältigung beruflicher Belastungen bei Genesungsbegleiter/-innen/Peer Berater/-innen. <em>Zeitschrift für Arbeitswissenschaft.</em> <a href="https://doi.org/10.1007/s41449-025-00460-x" class="uri">https://doi.org/10.1007/s41449-025-00460-x</a></p></li>
 <li><p>Weber, L., &amp; <strong>Röseler, L.</strong> (2025). Testing the Reliability of Anchoring Susceptibility Scores. <em>Europe’s Journal of Psychology</em>, <em>21</em>(1), 1-10. <a href="https://doi.org/10.5964/ejop.9891" class="uri">https://doi.org/10.5964/ejop.9891</a></p></li>
 <li><p><strong>Röseler, L.</strong>, Weber, L., Helgerth, K. A., Stich, E., Günther, M., Tegethoff, P., Wagner, F., &amp; Schütz, A. (2024). Measurements of Susceptibility to Anchoring are Unreliable: Meta-Analytic Evidence From More Than 50,000 Anchored Estimates. <em>Meta-Psychology</em>, <em>8</em>. <a href="https://doi.org/10.15626/MP.2022.3236" class="uri">https://doi.org/10.15626/MP.2022.3236</a></p></li>
-<li><p>Hoghe, J., <strong>Röseler, L.</strong>, Limmer, R., Walther, C., &amp; Schütz, A. (2024). Berufliche Stressoren und Ressourcen von Genesungsbegleiter* innen/Peer-Berater* innen in der Sozialpsychiatrie.&nbsp;<em>Psychiatrische Praxis</em>. https://doi.org/10.1055/a-2383-8057</p></li>
-<li><p><strong>Röseler, L.</strong>, Bögler, H. L., Koßmann, L., Krueger, S., Bickenbach, S., Bühler, R., della Guardia, J., Köppel, L.-M. A, Möhring, J., Ponader, S., Roßmaier, K., Sing, J. (2024). Need for Cognition, Cognitive Load, and Forewarning do not Moderate Anchoring Effects. A Replication Study of Epley &amp; Gilovich (Journal of Behavioral Decision Making, 2005; Psychological Science, 2006). <em>Journal of Comments and Replications in Economics, 3</em>(2024-6). <a href="https://doi.org/10.18718/81781.38" class="uri">https://doi.org/10.18718/81781.38</a></p></li>
-<li><p><strong>Röseler, L.</strong>, Kaiser, L., Doetsch, C., Klett, N., Seida, C., Schütz, A., Aczel, B., Adelina, N., Agostini, V., Alarie, S., Albayrak-Aydemir, N., Aldoh, A., Al-Hoorie, A. H., Azevedo, F., Baker, B. J., Barth, C. L., Beitner, J., Brick, C., Brohmer, H., Chandrashekar, S. P., Chung, K. L., Cockcroft, J. P., Cummins, J., Diveica, V., Dumbalska, T., Efendic, E., Elsherif, M., Evans, T., Feldman, G., Fillon, A., Förster, N., Frese, J., Genschow, O., Giannouli, V., Gjoneska, B., Gnambs, T., Gourdon-Kanhukamwe, A., Graham, C. J., Hartmann, H., Haviva, C., Herderich, A., Hilbert, L. P., Holgado, D., Hussey, I., Ilchovska, Z. G., Kalandadze, T., Karhulahti, V.-M., Kasseckert, L., Klingelhöfer-Jens, M., Koppold, A., Korbmacher, M., Kulke, L., Kuper, N., LaPlume, A., Leech, G., Lohkamp, F., Lou, N. M., Lynott, D., Maier, M., Meier, M., Montefinese, M., Moreau, D., Mrkva, K., Nemcova, M., Oomen, D., Packheiser, J., Pandey, S., Papenmeier, F., Paruzel-Czachura, M., Pavlov, Y. G., Pavlović, Z., Pennington, C. R., Pittelkow, M.-M., Plomp, W., Plonski, P. E., Pronizius, E., Pua, A. A., Pypno-Blajda, K., Rausch, M., Rebholz, T. R., Richert, E., Röer, J. P., Ross, R., Schmidt, K., Skvortsova, A., Sperl, M. F. J., Tan, A. W. M., Thürmer, J. L., Tołopiło, A., Vanpaemel, W., Vaughn, L. A., Verheyen, S., Wallrich, L., Weber, L., Wolska, J. K., Zaneva, M., &amp; Zhang, Y. (2024). The Replication Database: Documenting the Replicability of Psychological Science.<br>
-<em>Journal of Open Psychology Data,</em> 12: 8, pp.&nbsp;1–23. DOI:&nbsp;<a href="https://doi.org/10.5334/jopd.101" class="uri">https://doi.org/10.5334/jopd.101</a></p></li>
-<li><p><strong>Röseler, L.</strong>, Felser, G., Asberger, J., &amp; Schütz, A. (2024). The Effect of Variety on Perceived Quantity: Failures to Replicate Redden and Hoch (2009). Meta-Psychology, 8. <a href="https://doi.org/10.15626/MP.2020.2639" class="uri">https://doi.org/10.15626/MP.2020.2639</a></p></li>
-<li><p><strong>Röseler, L.</strong>, Weber, L., Helgerth, K., Stich, E., Günther, M., Tegethoff, P., Wagner, F. S., Ambrus, E., Antunovic, M., Barrera-Lemarchand, F., Halali, E., Ioannidis, K., Genschow, O., McKay, R., Milstein, N., Molden, D. C., Papenmeier, F., Pavlovic, Z., Rinn, R., Schreiter, M. L., Zimdahl, M. F., Allen, E., Bahník, Š., Bermeitinger, C., Blower, F. B. N., Bögler, H. L., Burgmer, P., Cheek, N. N., Dorsch, L., Fels, S. A., Frech, M.-L., Freira, L., Harris, A. J. L., Hartig, B., Häusser, J. A., Hedgebeth, M. V., Henkel, M., Horvath, D., Imhoff, R., Intelmann, P., Klamar, A., Knappe, E., Köppel, L.-M., Krueger, S. M., Lagator, S., López Bóo, F., Navajas, J., Norem, J. K., Novak, J., Onuki, Y., Page, E., Pearton, J., Ponader, S., Rebholz, T. R., Rostekova, A., Sartorio, M., Schindler, S., Seida, C., Shanks, D. R., Siems, M.-C., Speekenbrink, M., Stäglich, P., Starkulla, M., Stitz, M., Straube, T., Thies, K., Thum, E., Ueda, K., Undorf, M., Urlichich, D., Vadillo, M. A., Wolf, H., Zhou, A., &amp; Schütz, A. (2024). Correction: The Open Anchoring Quest Dataset: Anchored Estimates from 96 Studies on Anchoring Effects. <em>Journal of Open Psychology Data,</em> 12: 8, pp.&nbsp;1–3. <a href="https://doi.org/10.5334/jopd.92" class="uri">https://doi.org/10.5334/jopd.92</a></p></li>
+<li><p>Hoghe, J., <strong>Röseler, L.</strong>, Limmer, R., Walther, C., &amp; Schütz, A. (2024). Berufliche Stressoren und Ressourcen von Genesungsbegleiter* innen/Peer-Berater* innen in der Sozialpsychiatrie. <em>Psychiatrische Praxis</em>. https://doi.org/10.1055/a-2383-8057</p></li>
+<li><p><strong>Röseler, L.</strong>, Bögler, H. L., Koßmann, L., Krueger, S., Bickenbach, S., Bühler, R., della Guardia, J., Köppel, L.-M. A, Möhring, J., Ponader, S., Roßmaier, K., Sing, J. (2024). Need for Cognition, Cognitive Load, and Forewarning do not Moderate Anchoring Effects. <em>Journal of Comments and Replications in Economics, 3</em>(2024-6). <a href="https://doi.org/10.18718/81781.38" class="uri">https://doi.org/10.18718/81781.38</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Kaiser, L., Doetsch, C., et al.&nbsp;(2024). The Replication Database: Documenting the Replicability of Psychological Science. <em>Journal of Open Psychology Data,</em> 12: 8, pp.&nbsp;1–23. <a href="https://doi.org/10.5334/jopd.101" class="uri">https://doi.org/10.5334/jopd.101</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Felser, G., Asberger, J., &amp; Schütz, A. (2024). The Effect of Variety on Perceived Quantity: Failures to Replicate Redden and Hoch (2009). <em>Meta-Psychology</em>, 8. <a href="https://doi.org/10.15626/MP.2020.2639" class="uri">https://doi.org/10.15626/MP.2020.2639</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Weber, L., Helgerth, K., et al.&nbsp;(2024). Correction: The Open Anchoring Quest Dataset. <em>Journal of Open Psychology Data,</em> 12: 8, pp.&nbsp;1–3. <a href="https://doi.org/10.5334/jopd.92" class="uri">https://doi.org/10.5334/jopd.92</a></p></li>
 <li><p>Adler, S. J., <strong>Röseler, L.</strong>, &amp; Schöniger, M. K. (2023). A toolbox to evaluate the trustworthiness of published findings. <em>Journal of Business Research</em>, <em>167</em>, 114189. <a href="https://doi.org/10.1016/j.jbusres.2023.114189" class="uri">https://doi.org/10.1016/j.jbusres.2023.114189</a></p></li>
-<li><p><strong>Röseler, L.</strong>, Weber, L., Helgerth, K., Stich, E., Günther, M., Tegethoff, P., Wagner, F., Antunovic, M., BarreraLemarchand, F., Halali, E., Ioannidis, K., Genschow, O., Milstein, N., Molden, D. C., Papenmeier, F., Pavlovic, Z., Rinn, R., Schreiter, M. L., Zimdahl, M. F., Bahník, Š., Bermeitinger, C., Blower, F. B. N., Bögler, H. L., Burgmer, P., Cheek, N. N., Dorsch, L., Fels, S., Frech, M.-L., Freira, L., Harris, A. J. L., Häusser, J. A., Hedgebeth, M. V., Henkel, M., Horvath, D., Intelmann, P., Klamar, A., Knappe, E., Köppel, L.-M., Krueger, S. M., Lagator, S., Lopez-Boo, F., Navajas, J., Norem, J. K., Novak, J., Onuki, Y., Page, E., Rebholz, T. R., Sartorio, M., Schindler, S., Shanks, D. R., Siems, M.-C., Stäglich, P., Starkulla, M., Stitz, M., Straube, T., Thies, K., Thum, E., Ueda, K., Undorf, M., Urlichich, D., Vadillo, M. A., Wolf, H., Zhou, A., &amp; Schütz, A. (2022). The Open Anchoring Quest Dataset: Anchored Estimates from 96 Studies on Anchoring Effects. <em>Journal of Open Psychology Data, 10</em>(16), pp.&nbsp;1–12. <a href="http://doi.org/10.5334/jopd.67" class="uri">http://doi.org/10.5334/jopd.67</a></p></li>
-<li><p>Delios, A., Clemente, E., Wu, T., Tan, H., Wang, Y., Gordon, M., Viganola, D., Chen, Z., Dreber, A., Johannesson, M., Pfeiffer, T., <strong>Generalizability Tests Forecasting Collaboration</strong>, &amp; Uhlmann, E.L. (2022). Examining the context sensitivity of research findings from archival data. <em>Proceedings of the National Academy of Sciences</em>. <a href="https://doi.org/10.1073/pnas.212037711" class="uri">https://doi.org/10.1073/pnas.212037711</a></p></li>
-<li><p>Körner*, R., <strong>Röseler*, L.</strong>, Schütz, A., &amp; Bushman, B. J. (2022). Dominance and prestige: Meta-analytic review of experimentally induced body position effects on behavioral, self-report, and physiological dependent variables.<em>Psychological Bulletin, 148</em>(1-2), 67–85. <a href="https://doi.org/10.1037/bul0000356" class="uri">https://doi.org/10.1037/bul0000356</a> *shared first authorship</p></li>
-<li><p>Wolf, D., Leder, J., <strong>Röseler, L.</strong>, &amp; Schütz, A. (2021). Does Facial Redness Really Affect Emotion Perception? Evidence for Limited Generalisability of Effects of Facial Redness on Emotion Perception in a Large Sample. <em>Cognition and Emotion</em>. 35(8), 1607–1617. <a href="https://doi.org/10.1080/02699931.2021.1979473" class="uri">https://doi.org/10.1080/02699931.2021.1979473</a></p></li>
-<li><p><strong>Röseler, L.</strong>, Schütz, A., Blank, P. A., Dück, M., Fels, S., Kupfer, J., Scheelje, L., &amp; Seida, C. (2021). Evidence against subliminal anchoring: Two close, highly powered, preregistered, and failed replication attempts. <em>Journal of Experimental Social Psychology</em>, <em>92</em>, 104066. <a href="https://doi.org/10.1016/j.jesp.2020.104066" class="uri">https://doi.org/10.1016/j.jesp.2020.104066</a></p></li>
-<li><p><strong>Röseler, L.</strong>, Ebert, J., Schütz, A., &amp; Baumeister, R. F. (2021). The upsides and downsides of high self-control: Evidence for effects of similarity and situation dependency. <em>Europe’s Journal of Psychology</em>, <em>17</em>(1), 1–16. <a href="https://doi.org/10.5964/ejop.2639" class="uri">https://doi.org/10.5964/ejop.2639</a></p></li>
-<li><p>Körner, R., <strong>Röseler, L.</strong>, &amp; Schütz, A. (2021). Commentary on Elkjær et al.’s (2020) meta-analysis on expansive versus contractive nonverbal displays.<em>Perspectives on Psychological Science, 17</em>(1), 305–307. <a href="https://doi.org/10.1177/1745691620984474" class="uri">https://doi.org/10.1177/1745691620984474</a></p></li>
-<li><p>Tierney, W., Hardy, J. H., III., Ebersole, C., Viganola, D., Clemente, E., Gordon, M., Hoogeveen, S., Haaf, J., Dreber, A.A., Johannesson, M., Pfeiffer, T., Chapman, H., Gantman, A., Vanaman, M., DeMarree, K., Igou, E., Wylie, J., Storbeck J., Andreychik, M.R., McPhetres, J., Vaughn, L.A., … <strong>Röseler, L.,</strong> …Uhlmann, E. L.(2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. <em>Journal of Experimental Social Psychology, 93,</em> 104060. <a href="https://doi.org/10.1016/j.jesp.2020.104060" class="uri">https://doi.org/10.1016/j.jesp.2020.104060</a></p></li>
-<li><p><strong>Röseler, L.</strong>, Schütz, A., Baumeister, R. F., &amp; Starker, U. (2020). Does ego depletion reduce judgment adjustment for both internally and externally generated anchors? <em>Journal of Experimental Social Psychology</em>, <em>87</em>, 103942. <a href="https://doi.org/10.1016/j.jesp.2019.103942" class="uri">https://doi.org/10.1016/j.jesp.2019.103942</a></p></li>
-<li><p>Landy, J. F., Jia, M. L., Ding, I. L., Viganola, D., Tierney, W., Dreber, A., Johannesson, M., Pfeiffer, T., Ebersole, C. R., Gronau, Q. F., Ly, A., van den Bergh, D., Marsman, M., Derks, K., Wagenmakers, E.-J., Proctor, A., Bartels, D. M., Bauman, C. W., Brady, W. J.,… <strong>Röseler, L.</strong>, … Uhlmann, E. L. (2020). Crowdsourcing hypothesis tests: Making transparent how design choices shape research results. <em>Psychological Bulletin</em>, <em>146</em>(5), 451–479. <a href="https://doi.org/10.1037/bul0000220" class="uri">https://doi.org/10.1037/bul0000220</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Weber, L., Helgerth, K., et al.&nbsp;(2022). The Open Anchoring Quest Dataset: Anchored Estimates from 96 Studies on Anchoring Effects. <em>Journal of Open Psychology Data, 10</em>(16), pp.&nbsp;1–12. <a href="http://doi.org/10.5334/jopd.67" class="uri">http://doi.org/10.5334/jopd.67</a></p></li>
+<li><p>Delios, A., Clemente, E., Wu, T., et al.&nbsp;(2022). Examining the context sensitivity of research findings from archival data. <em>PNAS</em>. <a href="https://doi.org/10.1073/pnas.212037711" class="uri">https://doi.org/10.1073/pnas.212037711</a></p></li>
+<li><p>Körner*, R., <strong>Röseler*, L.</strong>, Schütz, A., &amp; Bushman, B. J. (2022). Dominance and prestige: Meta-analytic review of experimentally induced body position effects. <em>Psychological Bulletin, 148</em>(1-2), 67–85. <a href="https://doi.org/10.1037/bul0000356" class="uri">https://doi.org/10.1037/bul0000356</a></p></li>
+<li><p>Wolf, D., Leder, J., <strong>Röseler, L.</strong>, &amp; Schütz, A. (2021). Does Facial Redness Really Affect Emotion Perception? <em>Cognition and Emotion</em>, 35(8), 1607–1617. <a href="https://doi.org/10.1080/02699931.2021.1979473" class="uri">https://doi.org/10.1080/02699931.2021.1979473</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Schütz, A., Blank, P. A., Dück, M., Fels, S., Kupfer, J., Scheelje, L., &amp; Seida, C. (2021). Evidence against subliminal anchoring. <em>Journal of Experimental Social Psychology</em>, <em>92</em>, 104066. <a href="https://doi.org/10.1016/j.jesp.2020.104066" class="uri">https://doi.org/10.1016/j.jesp.2020.104066</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Ebert, J., Schütz, A., &amp; Baumeister, R. F. (2021). The upsides and downsides of high self-control. <em>Europe’s Journal of Psychology</em>, <em>17</em>(1), 1–16. <a href="https://doi.org/10.5964/ejop.2639" class="uri">https://doi.org/10.5964/ejop.2639</a></p></li>
+<li><p>Körner, R., <strong>Röseler, L.</strong>, &amp; Schütz, A. (2021). Commentary on Elkjær et al.’s (2020) meta-analysis. <em>Perspectives on Psychological Science, 17</em>(1), 305–307. <a href="https://doi.org/10.1177/1745691620984474" class="uri">https://doi.org/10.1177/1745691620984474</a></p></li>
+<li><p>Tierney, W., Hardy, J. H., III., Ebersole, C., et al.&nbsp;(2021). A creative destruction approach to replication. <em>Journal of Experimental Social Psychology, 93,</em> 104060. <a href="https://doi.org/10.1016/j.jesp.2020.104060" class="uri">https://doi.org/10.1016/j.jesp.2020.104060</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Schütz, A., Baumeister, R. F., &amp; Starker, U. (2020). Does ego depletion reduce judgment adjustment? <em>Journal of Experimental Social Psychology</em>, <em>87</em>, 103942. <a href="https://doi.org/10.1016/j.jesp.2019.103942" class="uri">https://doi.org/10.1016/j.jesp.2019.103942</a></p></li>
+<li><p>Landy, J. F., Jia, M. L., Ding, I. L., et al.&nbsp;(2020). Crowdsourcing hypothesis tests. <em>Psychological Bulletin</em>, <em>146</em>(5), 451–479. <a href="https://doi.org/10.1037/bul0000220" class="uri">https://doi.org/10.1037/bul0000220</a></p></li>
 <li><p><strong>Röseler, L.</strong> (2020, September). <em>Anchoring Effects: Resolving the Contradictions of Personality Moderator Research (Doctoral Thesis)</em>. University of Bamberg. <a href="https://osf.io/34sv6" class="uri">https://osf.io/34sv6</a></p></li>
 </ul>
-</section>
-<section id="research-articles-preprints" class="level1">
-<h1>Research articles (preprints)</h1>
+</div></details>
+
+<details class="collapsible-section">
+<summary class="collapsible-trigger">
+  <div class="coll-chevron"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem" class="anchored">Research Articles (Preprints)</h2>
+</summary>
+<div class="section-body">
 <ul>
-<li><p>Wallrich, L., vaz, K. G., Weinerova, J., <strong>Röseler, L.</strong>, Gupta, A., Kan-Kilinc, B., … Azevedo, F. (2026, March 9). FLoRA-Notify: A Protocol for a Cluster-Randomised Controlled Trial to Assess the Impact of Notifying Preprint Authors About Replication Studies. <a href="https://doi.org/10.31222/osf.io/qnckf_v1" class="uri">https://doi.org/10.31222/osf.io/qnckf_v1</a></p></li>
-<li><p>Rebholz, T. R., Groß, J., &amp; <strong>Röseler, L.</strong> (2026, February 10). Assimilation to External Cues: Comparing the Reliability of Anchoring Effects, Advice Taking, and Hindsight Bias and Exploring its Determinants. <a href="https://doi.org/10.31234/osf.io/5u8br_v3" class="uri">https://doi.org/10.31234/osf.io/5u8br_v3</a></p></li>
-<li><p>Hartmann, H., Azevedo, F., <strong>Röseler, L.</strong>, Wallrich, L., Aldoh, A., Elsherif, M. M., … Leech, G. (2025, December 3). Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences. https://doi.org/10.31222/osf.io/ad2w6_v2</p></li>
-<li><p><strong>Röseler, L.</strong> (2025, November 24). Preregistrations without Code do not Prevent P-Hacking. MetaArxiv. <a href="https://doi.org/10.31222/osf.io/v259t_v1" class="uri">https://doi.org/10.31222/osf.io/v259t_v1</a>&nbsp;</p></li>
-<li><p><strong>Röseler, L.</strong> (2024). CODECHECK certificate 2024-005. Zenodo. <a href="#0">https://doi.org/10.5281/zenodo.13945051</a></p></li>
-<li><p><strong>Röseler, L.</strong>, Doetsch, C. A., Förster, N., Bruzsa, A., Deublein, M., Rieger, E., Schmidt, C., Seitz, A., &amp; Wild, A. (2024). No Evidence for the Affective Expectation Model: Replication of Geers and Lassiter (2003). <a href="https://doi.org/10.31234/osf.io/akfzh" class="uri">https://doi.org/10.31234/osf.io/akfzh</a></p></li>
+<li><p>Wallrich, L., vaz, K. G., Weinerova, J., <strong>Röseler, L.</strong>, et al.&nbsp;(2026). FLoRA-Notify: A Protocol for a Cluster-Randomised Controlled Trial. <a href="https://doi.org/10.31222/osf.io/qnckf_v1" class="uri">https://doi.org/10.31222/osf.io/qnckf_v1</a></p></li>
+<li><p>Rebholz, T. R., Groß, J., &amp; <strong>Röseler, L.</strong> (2026). Assimilation to External Cues. <a href="https://doi.org/10.31234/osf.io/5u8br_v3" class="uri">https://doi.org/10.31234/osf.io/5u8br_v3</a></p></li>
+<li><p>Hartmann, H., Azevedo, F., <strong>Röseler, L.</strong>, et al.&nbsp;(2025). Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences. <a href="https://doi.org/10.31222/osf.io/ad2w6_v2" class="uri">https://doi.org/10.31222/osf.io/ad2w6_v2</a></p></li>
+<li><p><strong>Röseler, L.</strong> (2025). Preregistrations without Code do not Prevent P-Hacking. <em>MetaArxiv.</em> <a href="https://doi.org/10.31222/osf.io/v259t_v1" class="uri">https://doi.org/10.31222/osf.io/v259t_v1</a></p></li>
+<li><p><strong>Röseler, L.</strong> (2024). CODECHECK certificate 2024-005. Zenodo. <a href="https://doi.org/10.5281/zenodo.13945051" class="uri">https://doi.org/10.5281/zenodo.13945051</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Doetsch, C. A., Förster, N., et al.&nbsp;(2024). No Evidence for the Affective Expectation Model. <a href="https://doi.org/10.31234/osf.io/akfzh" class="uri">https://doi.org/10.31234/osf.io/akfzh</a></p></li>
 <li><p><strong>Röseler, L.</strong> (2024). Exploring Categorical Colors. <a href="https://doi.org/10.31234/osf.io/gj76p" class="uri">https://doi.org/10.31234/osf.io/gj76p</a></p></li>
 <li><p><strong>Röseler, L.</strong>, &amp; Schütz, A. (2024). Assimilation and Contrast are Everywhere. <a href="https://doi.org/10.31234/osf.io/krwcn" class="uri">https://doi.org/10.31234/osf.io/krwcn</a></p></li>
-<li><p><strong>Röseler, L.</strong> (2023). <em>Predicting Replication Rates with Z-Curve: A Brief Exploratory Validation Study Using the Replication Database</em>. Advance online publication. <a href="https://osf.io/preprints/metaarxiv/ewb2t" class="uri">https://osf.io/preprints/metaarxiv/ewb2t</a></p></li>
-<li><p><strong>Röseler, L.</strong>, Gendlina, T., Krapp, J., Labusch, N., &amp; Schütz, A. (2022). Successes and Failures of Replications: A Meta-Analysis of Independent Replication Studies Based on the OSF Registries. Advance online publication. <a href="https://doi.org/10.31222/osf.io/8psw2" class="uri">https://doi.org/10.31222/osf.io/8psw2</a></p></li>
-<li><p>Wolf, D., <strong>Röseler, L.</strong>, Leder, J., &amp; Schütz, A. (2022). The Red-Anger Effect: Is it Nothing More Than Demand Characteristics? Advance online publication. <a href="https://doi.org/10.31234/osf.io/ntukz" class="uri">https://doi.org/10.31234/osf.io/ntukz</a></p></li>
+<li><p><strong>Röseler, L.</strong> (2023). Predicting Replication Rates with Z-Curve. <a href="https://osf.io/preprints/metaarxiv/ewb2t" class="uri">https://osf.io/preprints/metaarxiv/ewb2t</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Gendlina, T., Krapp, J., Labusch, N., &amp; Schütz, A. (2022). Successes and Failures of Replications. <a href="https://doi.org/10.31222/osf.io/8psw2" class="uri">https://doi.org/10.31222/osf.io/8psw2</a></p></li>
+<li><p>Wolf, D., <strong>Röseler, L.</strong>, Leder, J., &amp; Schütz, A. (2022). The Red-Anger Effect. <a href="https://doi.org/10.31234/osf.io/ntukz" class="uri">https://doi.org/10.31234/osf.io/ntukz</a></p></li>
 <li><p><strong>Röseler, L.</strong>, &amp; Schütz, A. (2022). Hanging the Anchor Off a New Ship: A Meta-Analysis of Anchoring Effects. <a href="https://doi.org/10.31234/osf.io/wf2tn" class="uri">https://doi.org/10.31234/osf.io/wf2tn</a></p></li>
-<li><p><strong>Röseler, L.</strong>, Schütz, A. (2021). What You Expect is What You Get: The Role of Affective Expectations in Real-World Experiences. <a href="https://doi.org/10.31219/osf.io/2tr6q" class="uri">https://doi.org/10.31219/osf.io/2tr6q</a></p></li>
-<li><p><strong>Röseler, L.</strong>, Schütz, A., Dolling, I. K., Friedinger, K., Hösch, Y., Hügel, J. C., Igna, E., Karg, A., Kühling, S., Schäffer, D., Zhou, A., &amp; Röseler, J. J. (2020). The Stepwise Anchoring Paradigm: Measuring Reliable Components of Anchoring and Adjustment as the Next Step in Moderator Research. <a href="https://doi.org/10.31234/osf.io/hjbwp" class="uri">https://doi.org/10.31234/osf.io/hjbwp</a></p></li>
-<li><p><strong>Röseler, L.</strong>, Wolf, D., Leder, J., &amp; Schütz, A. (2020). Test-Retest Reliability is not a Measure of Reliability or Stability: A Friendly Reminder. <a href="https://doi.org/10.31234/osf.io/mt49r" class="uri">https://doi.org/10.31234/osf.io/mt49r</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Schütz, A. (2021). What You Expect is What You Get. <a href="https://doi.org/10.31219/osf.io/2tr6q" class="uri">https://doi.org/10.31219/osf.io/2tr6q</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Schütz, A., Dolling, I. K., et al.&nbsp;(2020). The Stepwise Anchoring Paradigm. <a href="https://doi.org/10.31234/osf.io/hjbwp" class="uri">https://doi.org/10.31234/osf.io/hjbwp</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Wolf, D., Leder, J., &amp; Schütz, A. (2020). Test-Retest Reliability is not a Measure of Reliability or Stability. <a href="https://doi.org/10.31234/osf.io/mt49r" class="uri">https://doi.org/10.31234/osf.io/mt49r</a></p></li>
 <li><p><strong>Röseler, L.</strong>, Schütz, A., &amp; Starker, U. (2019). Cognitive Ability does not and cannot Correlate with Susceptibility to Anchoring Effects. <a href="https://doi.org/10.31234/osf.io/bnsx2" class="uri">https://doi.org/10.31234/osf.io/bnsx2</a></p></li>
 </ul>
-</section>
-<section id="books-and-book-chapters" class="level1">
-<h1>Books and book chapters</h1>
+</div></details>
+
+<details class="collapsible-section">
+<summary class="collapsible-trigger">
+  <div class="coll-chevron"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem" class="anchored">Books and Book Chapters</h2>
+</summary>
+<div class="section-body">
 <ul>
-<li><p><strong>Röseler, L.*</strong><em>,</em>&nbsp;Wallrich, L.*, Hartmann, H., Hüffmeier, J., Goltermann, J., Pennington, C. R., Boyce, V., Field, S. M., Pittelkow, M.-M., Silverstein, P., van Ravenzwaaij, D., Azevedo, F. (2025).&nbsp;<em>Handbook for Reproduction and Replication Studies.</em> Retrieved from&nbsp;<a href="#0">https://forrt.org/replication_handbook</a>, <a href="#0">https://doi.org/10.5281/zenodo.16990114</a>&nbsp;*shared first authorship</p></li>
-<li><p><strong>Röseler, L.</strong> (2025). Open Science: Wie sich die Wissenschaft öffnet (0.2). Zenodo. <a href="#0">https://doi.org/10.17605/OSF.IO/2QXWV</a></p></li>
-<li><p>Jané, M., Xiao, Q., Yeung, S., Ben-Shachar, M. S., Caldwell, A., Cousineau, D., … <strong>Röseler, L.</strong>, … &amp; Feldman, G. (2024). Guide to Effect Sizes and Confidence Intervals. <a href="http://dx.doi.org/10.17605/OSF.IO/D8C4G" class="uri">http://dx.doi.org/10.17605/OSF.IO/D8C4G</a></p></li>
-<li><p><strong>Röseler, L.</strong>, &amp; Schütz, A. (2022). Open Science. In A. Schütz, M. Brand, S. Steins-Loeber, (Eds.), <em>Psychologie: Eine Einführung in ihre Grundlagen und Anwendungsfelder</em> (6th ed., pp.&nbsp;187–198). Kohlhammer.</p></li>
+<li><p><strong>Röseler, L.*</strong>, Wallrich, L.*, Hartmann, H., et al.&nbsp;(2025). <em>Handbook for Reproduction and Replication Studies.</em> <a href="https://forrt.org/replication_handbook" class="uri">https://forrt.org/replication_handbook</a> *shared first authorship</p></li>
+<li><p><strong>Röseler, L.</strong> (2025). Open Science: Wie sich die Wissenschaft öffnet (0.2). Zenodo. <a href="https://doi.org/10.17605/OSF.IO/2QXWV" class="uri">https://doi.org/10.17605/OSF.IO/2QXWV</a></p></li>
+<li><p>Jané, M., Xiao, Q., Yeung, S., et al.&nbsp;(2024). Guide to Effect Sizes and Confidence Intervals. <a href="http://dx.doi.org/10.17605/OSF.IO/D8C4G" class="uri">http://dx.doi.org/10.17605/OSF.IO/D8C4G</a></p></li>
+<li><p><strong>Röseler, L.</strong>, &amp; Schütz, A. (2022). Open Science. In A. Schütz, M. Brand, S. Steins-Loeber (Eds.), <em>Psychologie: Eine Einführung</em> (6th ed., pp.&nbsp;187–198). Kohlhammer.</p></li>
 </ul>
-</section>
-<section id="editorial-activities" class="level1">
-<h1>Editorial Activities</h1>
+</div></details>
+
+<details class="collapsible-section">
+<summary class="collapsible-trigger">
+  <div class="coll-chevron"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem" class="anchored">Editorial Activities</h2>
+</summary>
+<div class="section-body">
 <ul>
-<li><p><strong>Röseler, L</strong>., Wallrich, L., Adler, S., Oppong Boakye, P., Evans, T. R., Goltermann, J., Haven, T., Horstmann, J., Korbmacher, M., Müller, M., Verheyen, S., Visser, I., &amp; Azevedo, F. (2025). A Community Model for Rigorous and Inclusive Scholarship: Inaugural Editorial of Replication Research (R2).&nbsp;<em>Replication Research</em>, <em>1</em>. <a href="#0">https://doi.org/10.17879/replicationresearch-2025-9022</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Wallrich, L., Adler, S., et al.&nbsp;(2025). A Community Model for Rigorous and Inclusive Scholarship: Inaugural Editorial of Replication Research (R2). <em>Replication Research</em>, <em>1</em>. <a href="https://doi.org/10.17879/replicationresearch-2025-9022" class="uri">https://doi.org/10.17879/replicationresearch-2025-9022</a></p></li>
 <li><p>Müller, M., <strong>Röseler, L.</strong>, &amp; Wallrich, L. (2025). Initial Editorial Assessment Form (Replication Research) (1.0). Zenodo. <a href="https://doi.org/10.5281/zenodo.17911973" class="uri">https://doi.org/10.5281/zenodo.17911973</a></p></li>
-<li><p><strong>Röseler, L.</strong>, Wallrich, L., Adler, S., Evans, T. R., Goltermann, J., Gut, U., Korbmacher, M., Oppong Boakye, P., Verheyen, S., Visser, I., &amp; Azevedo, F. (2025). Replication Research Constitution (R2 Launch). Zenodo.&nbsp;<a href="https://doi.org/10.5281/zenodo.17279413" class="uri">https://doi.org/10.5281/zenodo.17279413</a></p></li>
-<li><p><strong>Röseler, L.</strong>, Wallrich, L., Adler, S., Back, M., Busch, N., Dienlin, T., Evans, T. R., Goltermann, J., Hartmann, H., Horstmann, J., Korbmacher, M., Oppong Boakye, P., Richter, H., Richter, M., Silverstein, P., Steltenpohl, C. N., Syed, M., Vaidis, D., Verheyen, S., … Azevedo, F. (2025). Replication Research: Journal Description (R2 Launch). Zenodo. <a href="https://doi.org/10.5281/zenodo.17241396" class="uri">https://doi.org/10.5281/zenodo.17241396</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Wallrich, L., Adler, S., et al.&nbsp;(2025). Replication Research Constitution (R2 Launch). Zenodo. <a href="https://doi.org/10.5281/zenodo.17279413" class="uri">https://doi.org/10.5281/zenodo.17279413</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Wallrich, L., Adler, S., et al.&nbsp;(2025). Replication Research: Journal Description (R2 Launch). Zenodo. <a href="https://doi.org/10.5281/zenodo.17241396" class="uri">https://doi.org/10.5281/zenodo.17241396</a></p></li>
 </ul>
-</section>
-<section id="software" class="level1">
-<h1>Software</h1>
+</div></details>
+
+<details class="collapsible-section">
+<summary class="collapsible-trigger">
+  <div class="coll-chevron"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem" class="anchored">Software</h2>
+</summary>
+<div class="section-body">
 <ul>
-<li><p><strong>Röseler, L.</strong>, Wallrich, L. (2024).&nbsp;<em>FReD: Interfaces to the FORRT Replication Database</em>. R package version 0.0.0.9001,&nbsp;<a href="http://forrt.org/FReD/" class="uri">http://forrt.org/FReD/</a>.</p></li>
-<li><p><strong>Röseler, L.</strong>, Kaiser, L., Doetsch, C., Weber, L., Klett, N., Krapp, J., Seida, C., Schütz, A., Barth, C., Cummins, J., Dienlin, T., Elsherif, M., Förster, N., Genschow, O., Gnambs, T., Hartmann, H., Hilbert, L., Holgado, D., Hussey, I., Korbmacher, M., Kulke, L., Liu, Y., Lohkamp, F., Lou, N., Oomen, D., Papenmeier, F., Paruzel-Czachura, M., Pavlov, Y., Pavlović, Z., Pypno, K., Rausch, M., Rebholz, T., Ross, R., Sperl, M., Thürmer, L., Vaughn, L., Zaneva, M. (2024).<em>ReD: Replication Database, Version 0.4.22</em>. <a href="https://dx.doi.org/10.17605/OSF.IO/9r62x" class="uri">https://dx.doi.org/10.17605/OSF.IO/9r62x</a></p></li>
-<li><p><strong>Röseler, L.</strong>, Weber, L., Stich, E., Günther, M., Helgerth, K. A. C., Wagner, F. S., Antunovic, M., Bahník, S., Barrera, F., Baumeister, R. F., Bermeitinger, C., Bickenbach, S. L. C., Blank, P. A., Blower, F. B. N., Bögler, H. L., Boo, F. L., Boruchowicz, C., Bühler, R. L., Burgmer, P., Cheek, N., N., Dohle, S., Dorsch, L., Dück, M. S., Halali, E.., Fels, S.-A., Fischer, A. L., Frech, M.-L., Freira, L., Friedinger, K., Genschow, O., Harris, A., Häusser, J. A., Hedgebeth, M., Henkel, M., Horvath, D., Hügel, J. C., Igna, E. L. E., Imhoff, R., Intelmann, P., Ioannidis, K., Karg, A. H., Klamar, A., Klein, C., Klusmann, B., Knappe, E., Köppel, L.-M., Koßmann, L., Kraft, P., Kroworsch, M. K., Krueger, S. M., Kühling, S., Lagator, S., Lammers, J., Loschelder, D. D., Milstein, N., Molden, D. C., Navajas, J., Norem, J., K., Novak, J. Onuki, Y., Page, E., Panse, F., Papenmeier, F., Pavlovic, Z., Rebholz, T. R., Rinn, R., Rodgers, S., Röseler, J. J., Roßmaier, K. V., Sartorio, M., Scheelje, L., Schindler, S., Schreiner, N. B., Schreiter, M. L., Seida, C., Shanks, D. R., Siems, M.-C., Stitz, M., Starkulla, M., Stäglich, M., Thies, K., Thum, E., Undorf, M., Unger, B. D., Urlichich, D., Vadillo, M. A., Wackershauser-Sablotny, V., Wagner, F. S., Wessel, I., Wolf, H., Zhou, A., Zimdahl, M., &amp; Schütz, A. (2022). OpAQ: Open Anchoring Quest, Version 1.1.42.94. <a href="https://dx.doi.org/10.17605/OSF.IO/YGNVB" class="uri">https://dx.doi.org/10.17605/OSF.IO/YGNVB</a>. Available online at <a href="https://metaanalyses.shinyapps.io/OpAQ/" class="uri">https://metaanalyses.shinyapps.io/OpAQ/</a>.</p></li>
-<li><p><strong>Röseler, L.</strong>, Adler, S., Schöniger, M. (2022). A Toolbox to Identify P-Hacking. Version 0.0.5. Available online at <a href="https://metaanalyses.shinyapps.io/toolbox/" class="uri">https://metaanalyses.shinyapps.io/toolbox/</a>.</p></li>
-<li><p><strong>Röseler, L.</strong>, Körner, R., &amp; Schütz, A. (2021). Dynamic Meta-Analysis of Body Position Effects ShinyApp. Available online at <a href="https://metaanalyses.shinyapps.io/bodypositions/" class="uri">https://metaanalyses.shinyapps.io/bodypositions/</a>.</p></li>
-<li><p><strong>Röseler, L.</strong>, Röseler, J. J. (2020). Studienfeedback ShinyApp. Available online at <a href="https://l-air.shinyapps.io/feedback/" class="uri">https://l-air.shinyapps.io/feedback/</a>.</p></li>
+<li><p>Tondlekar, R., Wallrich, L., Weinerova, J., et al.&nbsp;(2026). Zotero Replication Checker (0.1.12). Zenodo. <a href="https://doi.org/10.5281/zenodo.18671300" class="uri">https://doi.org/10.5281/zenodo.18671300</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Wallrich, L. (2024). <em>FReD: Interfaces to the FORRT Replication Database</em>. <a href="http://forrt.org/FReD/" class="uri">http://forrt.org/FReD/</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Kaiser, L., Doetsch, C., et al.&nbsp;(2024). <em>ReD: Replication Database, Version 0.4.22.</em> <a href="https://dx.doi.org/10.17605/OSF.IO/9r62x" class="uri">https://dx.doi.org/10.17605/OSF.IO/9r62x</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Weber, L., Stich, E., et al.&nbsp;(2022). <em>OpAQ: Open Anchoring Quest, Version 1.1.42.94.</em> <a href="https://dx.doi.org/10.17605/OSF.IO/YGNVB" class="uri">https://dx.doi.org/10.17605/OSF.IO/YGNVB</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Adler, S., Schöniger, M. (2022). A Toolbox to Identify P-Hacking. <a href="https://metaanalyses.shinyapps.io/toolbox/" class="uri">https://metaanalyses.shinyapps.io/toolbox/</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Körner, R., &amp; Schütz, A. (2021). Dynamic Meta-Analysis of Body Position Effects ShinyApp. <a href="https://metaanalyses.shinyapps.io/bodypositions/" class="uri">https://metaanalyses.shinyapps.io/bodypositions/</a></p></li>
+<li><p><strong>Röseler, L.</strong>, Röseler, J. J. (2020). Studienfeedback ShinyApp. <a href="https://l-air.shinyapps.io/feedback/" class="uri">https://l-air.shinyapps.io/feedback/</a></p></li>
 </ul>
-</section>
-<section id="research-proposals" class="level1">
-<h1>Research proposals</h1>
-<p>This is a selection of research proposals that I created alone or together with other researchers as the first author. Most proposals for which I am not the first author are not listed.</p>
+</div></details>
+
+<details class="collapsible-section">
+<summary class="collapsible-trigger">
+  <div class="coll-chevron"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem" class="anchored">Research Proposals</h2>
+</summary>
+<div class="section-body">
+<p>This is a selection of research proposals that I created alone or together with other researchers as the first author.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Proposal</th>
-<th>Year of submission</th>
+<th>Year</th>
 <th>Role</th>
-<th>Program and Funder</th>
+<th>Program &amp; Funder</th>
 <th>Link</th>
 <th>Status</th>
 </tr>
@@ -316,168 +561,388 @@ Ongoing project: Interdisciplinary Journal for Replication Research
 <td>2022</td>
 <td>First author</td>
 <td>DFG, Sachbeihilfe</td>
-<td><a href="https://osf.io/x6bqh/" class="uri">https://osf.io/x6bqh</a></td>
-<td>rejected</td>
+<td><a href="https://osf.io/x6bqh/">osf.io/x6bqh</a></td>
+<td>Rejected</td>
 </tr>
 <tr class="even">
 <td>Formation of a Replication Journal</td>
 <td>2024</td>
 <td>First author</td>
-<td>Topical Program, University of Münster</td>
-<td><a href="https://osf.io/9vgx7/" class="uri">https://osf.io/9vgx7</a></td>
-<td>accepted</td>
+<td>Topical Program, Uni Münster</td>
+<td><a href="https://osf.io/9vgx7/">osf.io/9vgx7</a></td>
+<td>Accepted</td>
 </tr>
 <tr class="odd">
 <td>Diamond Open Access Journal Support</td>
 <td>2024</td>
 <td>First author</td>
 <td>openaccess.nrw</td>
-<td><a href="https://osf.io/a82fe" class="uri">https://osf.io/a82fe</a></td>
-<td>accepted</td>
+<td><a href="https://osf.io/a82fe">osf.io/a82fe</a></td>
+<td>Accepted</td>
 </tr>
 <tr class="even">
-<td>Diamond Open Access Journal Support (expression of interest)</td>
+<td>Diamond OA Journal Support (expression of interest)</td>
 <td>2025</td>
 <td>First author</td>
 <td>ZBW Olecon</td>
-<td><hr></td>
-<td>rejected</td>
+<td>—</td>
+<td>Rejected</td>
 </tr>
 <tr class="odd">
 <td>Expanding the Replication Database</td>
 <td>2023</td>
 <td>First author</td>
-<td>Ideenlabor, University of Münster</td>
-<td><a href="https://osf.io/854vt/" class="uri">https://osf.io/854vt</a></td>
-<td>rejected</td>
+<td>Ideenlabor, Uni Münster</td>
+<td><a href="https://osf.io/854vt/">osf.io/854vt</a></td>
+<td>Rejected</td>
 </tr>
 <tr class="even">
 <td>Expanding the FORRT Replication Database</td>
 <td>2024</td>
 <td>Second author</td>
 <td>DFG, Meta-REP Priority Program</td>
-<td><hr></td>
-<td>rejected</td>
+<td>—</td>
+<td>Rejected</td>
 </tr>
 <tr class="odd">
 <td>Creating a university-wide Open Science Strategy</td>
 <td>2024</td>
 <td>Second author</td>
 <td>Road2Openness, Stifterverband</td>
-<td><hr></td>
-<td>rejected</td>
+<td>—</td>
+<td>Rejected</td>
 </tr>
 <tr class="even">
 <td>Making Replications Count</td>
 <td>2024</td>
 <td>Co-Investigator</td>
 <td>UKRI</td>
-<td><hr></td>
-<td>accepted</td>
+<td>—</td>
+<td>Accepted</td>
 </tr>
 <tr class="odd">
 <td>Breaking the Wall of the Urge for Innovation</td>
 <td>2025</td>
 <td>Shared first author</td>
 <td>Falling Walls Lab Münster</td>
-<td><a href="https://osf.io/f486v" class="uri">https://osf.io/f486v</a></td>
-<td>rejected</td>
+<td><a href="https://osf.io/f486v">osf.io/f486v</a></td>
+<td>Rejected</td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="invited-talks" class="level1">
-<h1>Invited Talks</h1>
+</div></details>
+
+<details class="collapsible-section">
+<summary class="collapsible-trigger">
+  <div class="coll-chevron"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem" class="anchored">Invited Talks</h2>
+</summary>
+<div class="section-body">
 <ul>
-<li><p><strong>Röseler, L.</strong> (2025, July). Building your career on solid ground: The power of repetitive research for ECRs. Invited key note talk at the 1st Oldenburg Open Science Conference 2025. <a href="https://osf.io/u7f2e" class="uri">https://osf.io/u7f2e</a></p></li>
-<li><p><strong>Röseler, L.</strong> (2025, May). Panelist in Keynote Panel 1: The Future of Open Science. SIPS online 2025. Recording: <a href="https://www.youtube.com/watch?v=MpLbeLTcw6E" class="uri">https://www.youtube.com/watch?v=MpLbeLTcw6E</a></p></li>
-<li><p><strong>Röseler, L.</strong> (2025, March). The FORRT Replication Hub: A Comprehensive Approach to Support Replication Research. Invited talk at the RWI Essen. <a href="https://osf.io/9fkw7" class="uri">https://osf.io/9fkw7</a></p></li>
-<li><p><strong>Röseler, L.</strong>&nbsp;(2024, November). Die FORRT Replication Hub: Ein Ansatz zur Unterstützung interdisziplinärer Replikationsforschung. Invited talk at the Technical University of Dortmund. <a href="https://osf.io/g3wke" class="uri">https://osf.io/g3wke</a></p></li>
-<li><p><strong>Röseler, L.</strong>&nbsp;(2024, September). Creating the Münster Center for Open Science. Invited talk (online) at the Open Science Day in Mannheim. <a href="https://osf.io/ha46c" class="uri">https://osf.io/ha46c</a></p></li>
-<li><p><strong>Röseler, L.</strong>&nbsp;(2024, August). Open Science als Annäherung von Wissenschaft an ihre Ideale. Invited talk (online) at the meeting of Open Access Representativeness of Nordrhein-Westfalen. <a href="#0">https://osf.io/sv9xw</a></p></li>
-<li><p><strong>Röseler, L.</strong>&nbsp;(2022, August). How to resist anchoring? Invited talk at the Seeburg Castle University, Austria.</p></li>
-<li><p><strong>Röseler, L.</strong>&nbsp;(2022, June). The Open Anchoring Quest: Centralizing a Whole Research Field in the Name of Open Science. Invited talk at the Leuphana University, Lüneburg.</p></li>
-<li><p><strong>Röseler, L.</strong>&nbsp;(2022, April). Die Open Science Bewegung in der Psychologie. Invited talk (online) at the Harz University of Applied Sciences, Wernigerode.</p></li>
-<li><p><strong>Röseler, L.</strong>&nbsp;(2020, August). <em>Auflösung der Widersprüche aus mehr oder weniger als 10 Jahren Ankereffekt-Forschung</em>. Invited talk (online) at the University of Magdeburg, Magdeburg.</p></li>
+<li><strong>Röseler, L.</strong> (2025, July). Building your career on solid ground. Keynote, 1st Oldenburg Open Science Conference. <a href="https://osf.io/u7f2e" class="uri">https://osf.io/u7f2e</a></li>
+<li><strong>Röseler, L.</strong> (2025, May). Panelist, Future of Open Science. SIPS online 2025. <a href="https://www.youtube.com/watch?v=MpLbeLTcw6E" class="uri">https://www.youtube.com/watch?v=MpLbeLTcw6E</a></li>
+<li><strong>Röseler, L.</strong> (2025, March). The FORRT Replication Hub. RWI Essen. <a href="https://osf.io/9fkw7" class="uri">https://osf.io/9fkw7</a></li>
+<li><strong>Röseler, L.</strong> (2024, November). Die FORRT Replication Hub. TU Dortmund. <a href="https://osf.io/g3wke" class="uri">https://osf.io/g3wke</a></li>
+<li><strong>Röseler, L.</strong> (2024, September). Creating the Münster Center for Open Science. Open Science Day Mannheim. <a href="https://osf.io/ha46c" class="uri">https://osf.io/ha46c</a></li>
+<li><strong>Röseler, L.</strong> (2024, August). Open Science als Annäherung von Wissenschaft an ihre Ideale. Open Access NRW. <a href="https://osf.io/sv9xw" class="uri">https://osf.io/sv9xw</a></li>
+<li><strong>Röseler, L.</strong> (2022, August). How to resist anchoring? Seeburg Castle University, Austria.</li>
+<li><strong>Röseler, L.</strong> (2022, June). The Open Anchoring Quest. Leuphana University, Lüneburg.</li>
+<li><strong>Röseler, L.</strong> (2022, April). Die Open Science Bewegung in der Psychologie. Harz University.</li>
+<li><strong>Röseler, L.</strong> (2020, August). Auflösung der Widersprüche aus Ankereffekt-Forschung. University of Magdeburg.</li>
 </ul>
-</section>
-<section id="presentations" class="level1">
-<h1>Presentations</h1>
+</div></details>
+
+<details class="collapsible-section">
+<summary class="collapsible-trigger">
+  <div class="coll-chevron"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem" class="anchored">Presentations</h2>
+</summary>
+<div class="section-body">
 <ul>
-<li><p><strong>Röseler, L.</strong> (2026, March 4). Replication Journal Showcase: Replication Research (R2). Love Replications Week (LRW). Zenodo. <a href="https://doi.org/10.5281/zenodo.18864153" class="uri">https://doi.org/10.5281/zenodo.18864153</a></p></li>
-<li><p><strong>Röseler, L.</strong> (2026, March 4). Getting your replication report ready for submission. Love Replications Week (LRW), Online. Zenodo. <a href="https://doi.org/10.5281/zenodo.18757230" class="uri">https://doi.org/10.5281/zenodo.18757230</a></p></li>
-<li><p><strong>Röseler, L.</strong> (2025, June). Metascience won’t solve the replication crisis: Replications across the pyramid of culture change. Virtual symposium at Metascience online 2025. <a href="https://osf.io/zq2rc" class="uri">https://osf.io/zq2rc</a></p></li>
-<li><p><strong>Röseler, L.</strong> (2025, May). We cannot solve the replication crisis without replications. Talk at SIPS online 2025. <a href="#0">https://osf.io/xat5s</a></p></li>
-<li><p><strong>Röseler, L.</strong> (2025, May). Expanding and Strengthening the FORRT Replication Hub. Hackathon at SIPS online 2025. <a href="https://osf.io/c6uak" class="uri">https://osf.io/c6uak</a></p></li>
-<li><p><strong>Röseler, L.</strong> (2025, May). Das Münster Center for Open Science. Presentation at the CDSC Colloquium. <a href="https://osf.io/hwbf6" class="uri">https://osf.io/hwbf6</a></p></li>
-<li><p><strong>Röseler, L.</strong> (2025, April). Wie wir mit Open Science Probleme des Wissenschaftssystems lösen. Presentation in a M. Sc. seminar Science Communication. <a href="https://osf.io/2e7bf" class="uri">https://osf.io/2e7bf</a></p></li>
-<li><p><strong>Röseler, L.</strong>&nbsp;(2024, November). Und was wir heute finden, werden wir morgen von der Tafel streichen und erst wieder anschreiben, wenn wir es noch einmal gefunden haben: Die Bedeutung von Replikationen in den Sozialwissenschaften. Talk at the Philosophy of Science Public Lecture Series. <a href="#0">https://osf.io/zexb7</a>, recording available (<a href="https://www.uni-muenster.de/Wissenschaftstheorie/ringvorlesung/aktuelleRV.html" class="uri">https://www.uni-muenster.de/Wissenschaftstheorie/ringvorlesung/aktuelleRV.html</a>)</p></li>
-<li><p><strong>Röseler, L.</strong>&nbsp;(2024, November). Open Science Info-Chunks. Talk (online) at the Institute for Institute for Translational Psychiatry. <a href="#0">https://osf.io/c6jxp</a></p></li>
-<li><p><strong>Röseler, L.</strong>&nbsp;(2024, September). The FORRT Replication Database: Documenting the Replicabiltiy of Social Science and Making Replications Mainstream. Talk (online) at the DGPs-Kongress. <a href="https://osf.io/wec8t" class="uri">https://osf.io/wec8t</a></p></li>
-<li><p><strong>Röseler, L.</strong> (2024, March). Creating a Nexus for Replication Research across the Scoial, Behavioral, and Cognitive Sciences. Talk (online) at the Year of Open Science Conference. <a href="https://osf.io/n5vae" class="uri">https://osf.io/n5vae</a></p></li>
-<li><p><strong>Röseler, L.</strong> (2023, November). Eine Replikationendatenbank als Fundament vertrauenswürdiger Sozialwissenschaften. Talk (online) at the Annual Day of Research Data, Münster, Germany.</p></li>
-<li><p><strong>Röseler, L.</strong>, Wallrich, L., &amp; Bushman, B., J. (2023, March).&nbsp;<em>Creating interactive ShinyApps for Meta-Analyses with metaUI.</em> Talk (online) at the Evidence Synthesis and Meta-Analysis in R Conference (ESMARConf). <a href="https://www.youtube.com/watch?v=yRmjBBiE2Io" class="uri">https://www.youtube.com/watch?v=yRmjBBiE2Io</a></p></li>
-<li><p>Wallrich, L.,&nbsp;<strong>Röseler, L.</strong>, &amp; Bushman, B., J. (2023, March).&nbsp;<em>Live</em>&nbsp;<em>Tutorial for</em>&nbsp;<em>Creating interactive ShinyApps for Meta-Analyses with metaUI.</em> Talk (online) at the Evidence Synthesis and Meta-Analysis in R Conference (ESMARConf). <a href="https://www.youtube.com/watch?v=iaTMFzWfCe0" class="uri">https://www.youtube.com/watch?v=iaTMFzWfCe0</a></p></li>
-<li><p>Tegethoff, P., Klug, C., &amp;&nbsp;<strong>Röseler, L.</strong>&nbsp;(2023, March).&nbsp;<em>How strong is Psychology’s fundament? A Meta-Analysis of Classical Psychological Findings.</em> Talk at the 64th Conference of Experimental Psychologists, Trier, Germany.</p></li>
-<li><p><strong>Röseler, L.</strong>, Gendlina, T., Klett, N., Krapp, J., Labusch, N., &amp; Schütz, A. (2023, March). <em>The Replication Database: Making transparent what replicated and what did not.</em> Talk at the 64th Conference of Experimental Psychologists, Trier, Germany.</p></li>
-<li><p>Förster, N.,&nbsp;<strong>Röseler, L.</strong>, &amp; Felser, G. (2023, March).&nbsp;<em>Replication of the Chameleon Effect (Chartrand &amp; Bargh, 1999, Study 1)</em>. Talk at the 64th Conference of Experimental Psychologists, Trier, Germany.</p></li>
-<li><p><strong>Röseler, L.,</strong>&nbsp;Weber, L., Stich, E., Günther, M., &amp; Schütz, A. (2022, March).&nbsp;<em>The Open Anchoring Quest (OpAQ): Explaining variance of the heterogeneous but large anchoring effects</em>. Talk (online) at the 64<sup>th</sup>Conference of Experimental Psychologists, Köln, Germany.</p></li>
-<li><p><strong>Röseler, L.,</strong>&nbsp;Weber, L., Stich, E., Günther, M., &amp; Schütz, A. (2021, September).&nbsp;<em>The Open Anchoring Quest (OpAQ): Tackling the reliability problem and boosting the power of anchoring research</em>. Talk (online) at the Biennial Conference of the German Psychological Society - Personality Psychology and Psychological Diagnostics (DPPD) Section, Ulm, Germany.</p></li>
-<li><p><strong>Röseler, L.</strong>&nbsp;(2021, March). <em>Are some people more susceptible to anchoring effects than others?</em> Talk (online) at the 63<sup>rd</sup>&nbsp;Conference of Experimental Psychologists, Ulm, Germany.</p></li>
-<li><p>Körner, R.,&nbsp;<strong>Röseler, L.</strong>, &amp; Schütz, A. (2021, March). <em>A comprehensive and preregistered meta-analysis on the effects of experimentally induced body positions: Effects on self-perception but not on physiology.</em>Talk (online) at the 63<sup>rd</sup>&nbsp;Conference of Experimental Psychologists, Ulm, Germany.</p></li>
-<li><p><strong>Röseler, L.</strong>&nbsp;(2019, July).&nbsp;<em>Erwartungen an Produkte und ihr Einfluss auf die Bewertung</em>. Präsentation von Forschungsergebnissen an der Hochschule Harz, Wernigerode.</p></li>
-<li><p><strong>Röseler, L.</strong>&nbsp;(2017, November).&nbsp;<em>Psychologische Aspekte des Kritisierens</em>. ‘Positive’ Kritik: Ermöglichende Perspektiven in Wissenschaften, Künsten und sozialen Praktiken, Bamberg.</p></li>
-<li><p><strong>Röseler, L.</strong>&nbsp;(2016, September).&nbsp;<em>Ein Anker ist nicht wie der andere: Die Abhängigkeit des Ankereffekts von Aufgabentyp und Anwendungssituation.</em> In G. Felser (Chair),&nbsp;<em>Konsumentenpsychologie</em>. 50. Kongress der Deutschen Gesellschaft für Psychologie, Leipzig.</p></li>
-<li><p><strong>Röseler, L.</strong>&nbsp;(2016, April).&nbsp;<em>Emotion und Kognition</em>. Presentation at Planspieltagung Simulation und Wirklichkeit, Wernigerode.</p></li>
+<li><strong>Röseler, L.</strong> (2026). Replication Journal Showcase: R2. Love Replications Week. <a href="https://doi.org/10.5281/zenodo.18864153" class="uri">https://doi.org/10.5281/zenodo.18864153</a></li>
+<li><strong>Röseler, L.</strong> (2026). Getting your replication report ready for submission. LRW, Online. <a href="https://doi.org/10.5281/zenodo.18757230" class="uri">https://doi.org/10.5281/zenodo.18757230</a></li>
+<li><strong>Röseler, L.</strong> (2025). Metascience won’t solve the replication crisis. Metascience online 2025. <a href="https://osf.io/zq2rc" class="uri">https://osf.io/zq2rc</a></li>
+<li><strong>Röseler, L.</strong> (2025). We cannot solve the replication crisis without replications. SIPS online 2025. <a href="https://osf.io/xat5s" class="uri">https://osf.io/xat5s</a></li>
+<li><strong>Röseler, L.</strong> (2025). Das Münster Center for Open Science. CDSC Colloquium. <a href="https://osf.io/hwbf6" class="uri">https://osf.io/hwbf6</a></li>
+<li><strong>Röseler, L.</strong> (2024). Die Bedeutung von Replikationen in den Sozialwissenschaften. Philosophy of Science Public Lecture Series. <a href="https://osf.io/zexb7" class="uri">https://osf.io/zexb7</a></li>
+<li><strong>Röseler, L.</strong> (2024). The FORRT Replication Database. DGPs-Kongress. <a href="https://osf.io/wec8t" class="uri">https://osf.io/wec8t</a></li>
+<li><strong>Röseler, L.</strong> (2024). Creating a Nexus for Replication Research. Year of Open Science Conference. <a href="https://osf.io/n5vae" class="uri">https://osf.io/n5vae</a></li>
+<li><strong>Röseler, L.</strong>, Wallrich, L., &amp; Bushman, B. J. (2023). Creating interactive ShinyApps for Meta-Analyses. ESMARConf. <a href="https://www.youtube.com/watch?v=yRmjBBiE2Io" class="uri">https://www.youtube.com/watch?v=yRmjBBiE2Io</a></li>
 </ul>
-</section>
-<section id="posters" class="level1">
-<h1>Posters</h1>
+</div></details>
+
+<details class="collapsible-section">
+<summary class="collapsible-trigger">
+  <div class="coll-chevron"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem" class="anchored">Posters</h2>
+</summary>
+<div class="section-body">
 <ul>
-<li><p><strong>Röseler, L.</strong>, Moser, V., &amp; Oppong Boakye, P. (2026). Poster: Münster Center for Open Science. Zenodo. <a href="https://doi.org/10.5281/zenodo.18537522" class="uri">https://doi.org/10.5281/zenodo.18537522</a></p></li>
-<li><p>Hoghe, J.,&nbsp;<strong>Röseler, L.</strong>, Limmer, R. E., Walther, C., Schütz, A. (2022).&nbsp;<em>Die sozialpsychiatrische Versorgungsorganisation aus Sicht von Mitarbeitenden. Welche Potenziale und Risiken nehmen Beschäftigte in Peer-Arbeit bezüglich ihrer Arbeitsbedingungen wahr?</em>&nbsp;Poster session presented at the 21. Deutscher Kongress für Versorgungsforschung (DKVF).&nbsp;<a href="https://doi.org/10.3205/22dkvf185" class="uri">https://doi.org/10.3205/22dkvf185</a>&nbsp;(German Medical Science GMS Publishing House).</p></li>
-<li><p><strong>Röseler, L.</strong>, Schütz, A., Seida, C., Fels, S., Prinz, E., Heller, A.,&nbsp;… Wieczorek, S. (2020, March).&nbsp;<em>Tidying up the Anchoring Shelf: Failures to Replicate Subliminal Anchoring.</em> Poster session to be presented at the cancelled 62nd Conference of Experimental Psychologists, Jena.&nbsp;<a href="https://doi.org/10.13140/RG.2.2.24734.89928/1">https://doi.org/13140/RG.2.2.24734.89928/1</a></p></li>
-<li><p><strong>Röseler, L.</strong>, Wolf, D., &amp; Leder, J. (2019).&nbsp;<em>Test-Retest Reliability is not a Measure of Reliability or Stability.</em> Poster session presented at the DPPD conference.&nbsp;<a href="https://doi.org/10.17605/OSF.IO/A7D5K10.13140/RG.2.2.24734.89928/1">https://doi.org/17605/OSF.IO/A7D5K10.13140/RG.2.2.24734.89928/1</a></p></li>
-<li><p><strong>Röseler, L.</strong>, Schütz, A., Starker, U. (2018, September).&nbsp;<em>Cognitive Ability and the Susceptibility to Anchoring Effects</em>. Poster session to be presented at the 51. Kongress der Deutschen Gesellschaft für Psychologie, Frankfurt am Main.&nbsp;<a href="https://doi.org/10.13140/RG.2.2.35328.07684">https://doi.org/13140/RG.2.2.35328.07684</a></p></li>
-<li><p>Wolf, D.,&nbsp;<strong>Röseler, L.</strong>, &amp; Schütz, A. (2018, September).&nbsp;<em>Sehen wir „rot”? Gesichtsfarbe und Emotionswahrnehmung</em>. Poster session presented at the 51st Congress of the German Psychological Society (DGPs), Frankfurt am Main.</p></li>
-<li><p><strong>Röseler, L.</strong>&nbsp;(2018, July).&nbsp;<em>The Concept of Generalizability in Psychology and Economics</em>. Poster session presented at the European Congress of Methodology, Jena.&nbsp;<a href="https://doi.org/10.13140/RG.2.2.14400.64007">https://doi.org/13140/RG.2.2.14400.64007</a></p></li>
-<li><p>Lichters, M., Lantz, I., Glassl, S., Möslein, R., Nährig, K.,&nbsp;<strong>Röseler, L.</strong>, &amp; Scharf, A. (2016, September).&nbsp;<em>The use of immersive technologies in consumer testing revised: The role of contextual cues in evaluating cappuccinos in Sensory Labs, Virtual Realities, and at the actual Point of Consumption</em>. Poster session presented at the European Conference on Sensory and Consumer Research Eurosense, Dijon.&nbsp;<a href="https://doi.org/10.13140/RG.2.2.19699.32809" class="uri">https://doi.org/10.13140/RG.2.2.19699.32809</a></p></li>
+<li><strong>Röseler, L.</strong>, Moser, V., &amp; Oppong Boakye, P. (2026). Poster: Münster Center for Open Science. Zenodo. <a href="https://doi.org/10.5281/zenodo.18537522" class="uri">https://doi.org/10.5281/zenodo.18537522</a></li>
+<li>Hoghe, J., <strong>Röseler, L.</strong>, et al.&nbsp;(2022). Die sozialpsychiatrische Versorgungsorganisation. DKVF. <a href="https://doi.org/10.3205/22dkvf185" class="uri">https://doi.org/10.3205/22dkvf185</a></li>
+<li><strong>Röseler, L.</strong>, et al.&nbsp;(2020). Tidying up the Anchoring Shelf. 62nd Conference of Experimental Psychologists. <a href="https://doi.org/10.13140/RG.2.2.24734.89928/1" class="uri">https://doi.org/10.13140/RG.2.2.24734.89928/1</a></li>
 </ul>
-</section>
-<section id="workshop-and-conference-materials" class="level1">
-<h1>Workshop and Conference Materials</h1>
+</div></details>
+
+<details class="collapsible-section">
+<summary class="collapsible-trigger">
+  <div class="coll-chevron"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem" class="anchored">Workshop and Conference Materials</h2>
+</summary>
+<div class="section-body">
 <ul>
-<li><p><strong>Röseler, L.</strong> (2026, March). Love Replications Week, online. <a href="https://forrt.org/LoveReplicationsWeek/" class="uri">https://forrt.org/LoveReplicationsWeek/</a></p></li>
-<li><p><strong>Röseler, L.</strong> (2026, January). Open Science Professional at the Center for Emerging Researchers, online.</p></li>
-<li><p><strong>Röseler, L.</strong> (2025, June). Workshop on Reproductions and Replications, online.</p></li>
-<li><p><strong>Röseler, L.</strong> (2025, June). Workshop on Open Science as a Career Asset at the Center for Emerging Researchers, Münster, online. <a href="https://osf.io/g7yz4" class="uri">https://osf.io/g7yz4</a></p></li>
-<li><p><strong>Röseler, L.</strong>, Moser, V., Schüller, S., &amp; Förster, C. (2025, May). Replication Research Symposium: Book of Abstracts. Replication Research Symposium (R2S), Münster, Germany.&nbsp;<a href="https://doi.org/10.5281/zenodo.15487804" class="uri">https://doi.org/10.5281/zenodo.15487804</a></p></li>
-<li><p><strong>Röseler*, L.</strong> &amp; Hätscher*, O. (2025, April). Opening up your research with OSF and Github. Workshop at the FDM-Werkstatt. <a href="https://osf.io/gwkfm" class="uri">https://osf.io/gwkfm</a> *shared first authorhip.</p></li>
-<li><p><strong>Röseler, L.</strong> (2024). Workshop on Preregistration at the Center for Emerging Researchers, Münster (online): <a href="https://osf.io/64teq" class="uri">https://osf.io/64teq</a></p></li>
+<li><strong>Röseler, L.</strong> (2026). Love Replications Week, online. <a href="https://forrt.org/LoveReplicationsWeek/" class="uri">https://forrt.org/LoveReplicationsWeek/</a></li>
+<li><strong>Röseler, L.</strong> (2025). Workshop on Open Science as a Career Asset. Center for Emerging Researchers, Münster. <a href="https://osf.io/g7yz4" class="uri">https://osf.io/g7yz4</a></li>
+<li><strong>Röseler, L.</strong>, Moser, V., Schüller, S., &amp; Förster, C. (2025). Replication Research Symposium: Book of Abstracts. <a href="https://doi.org/10.5281/zenodo.15487804" class="uri">https://doi.org/10.5281/zenodo.15487804</a></li>
+<li><strong>Röseler, L.</strong>, &amp; Hätscher, O. (2025). Opening up your research with OSF and Github. FDM-Werkstatt. <a href="https://osf.io/gwkfm" class="uri">https://osf.io/gwkfm</a></li>
+<li><strong>Röseler, L.</strong> (2024). Workshop on Preregistration, Center for Emerging Researchers. <a href="https://osf.io/64teq" class="uri">https://osf.io/64teq</a></li>
 </ul>
-</section>
-<section id="blog-post-interviews-science-communication" class="level1">
-<h1>Blog Post, Interviews, Science Communication</h1>
+</div></details>
+
+<details class="collapsible-section">
+<summary class="collapsible-trigger">
+  <div class="coll-chevron"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem" class="anchored">Blog Posts &amp; Science Communication</h2>
+</summary>
+<div class="section-body">
 <ul>
-<li><p>Q&amp;A for Center for Open Science’s Blog: “Building a Publishing Model for Replication: Q&amp;A with the Senior Editors of Replication Research”. <a href="https://www.cos.io/blog/building-a-publishing-model-for-replication-qa-with-the-senior-editors-of-replication-research" class="uri">https://www.cos.io/blog/building-a-publishing-model-for-replication-qa-with-the-senior-editors-of-replication-research</a></p></li>
-<li><p>Interview for Laborjournal. “Wiederholung wird gesellschaftsfähig” [“Repetition becomes socially acceptable”]. <a href="https://www.laborjournal.de/editorials/3363.php" class="uri">https://www.laborjournal.de/editorials/3363.php</a></p></li>
-<li><p>Interview for University of Münster Newsportal. “Das System ist nicht auf Wiederholungen ausgelegt” [“The system is not made for repetitions”]. <a href="https://www.uni-muenster.de/news/view.php?cmdid=15002&amp;lang=de" class="uri">https://www.uni-muenster.de/news/view.php?cmdid=15002&amp;lang=de</a></p></li>
-<li><p>Interview for Public Marketing on “Why Open Science?”, <a href="https://www.publicmarketing.eu/_rubric/detail.php?rubric=Kultur-Bildung&amp;nr=62970" class="uri">https://www.publicmarketing.eu/_rubric/detail.php?rubric=Kultur-Bildung&amp;nr=62970</a>. Unpaywalled version and English translation available at <a href="#0">https://doi.org/10.5281/zenodo.15772307</a>.</p></li>
-<li><p>Interview for Nature Index on the FORRT Replication Database “No more hunting for replication studies”, <a href="https://doi.org/10.1038/d41586-024-02598-w" class="uri">https://doi.org/10.1038/d41586-024-02598-w</a>.</p></li>
-<li><p>Interview on FORRT’s activities for the ZBW (together with Flavio Azevedo: Lukas Wallrich, Leticia Micheli, Kelly Lloyd, Helena Hartmann, and John Shaw.): <a href="https://open-science-future.zbw.eu/en/forrt-open-science-initiative/" class="uri">https://open-science-future.zbw.eu/en/forrt-open-science-initiative/</a></p></li>
-<li><p>Blog post on the FORRT Replication Hub for The Replication Network: <a href="https://replicationnetwork.com/2025/02/08/roseler-replication-research-symposium-and-journal/" class="uri">https://replicationnetwork.com/2025/02/08/roseler-replication-research-symposium-and-journal/</a></p></li>
+<li>Q&amp;A for COS Blog: “Building a Publishing Model for Replication.” <a href="https://www.cos.io/blog/building-a-publishing-model-for-replication-qa-with-the-senior-editors-of-replication-research" class="uri">https://www.cos.io/blog/building-a-publishing-model-for-replication-qa-with-the-senior-editors-of-replication-research</a></li>
+<li>Interview for Laborjournal. “Wiederholung wird gesellschaftsfähig.” <a href="https://www.laborjournal.de/editorials/3363.php" class="uri">https://www.laborjournal.de/editorials/3363.php</a></li>
+<li>Interview for University of Münster Newsportal. “Das System ist nicht auf Wiederholungen ausgelegt.” <a href="https://www.uni-muenster.de/news/view.php?cmdid=15002&amp;lang=de" class="uri">https://www.uni-muenster.de/news/view.php?cmdid=15002&amp;lang=de</a></li>
+<li>Interview for Nature Index. “No more hunting for replication studies.” <a href="https://doi.org/10.1038/d41586-024-02598-w" class="uri">https://doi.org/10.1038/d41586-024-02598-w</a></li>
+<li>Interview on FORRT’s activities for the ZBW. <a href="https://open-science-future.zbw.eu/en/forrt-open-science-initiative/" class="uri">https://open-science-future.zbw.eu/en/forrt-open-science-initiative/</a></li>
+<li>Blog post on the FORRT Replication Hub, The Replication Network. <a href="https://replicationnetwork.com/2025/02/08/roseler-replication-research-symposium-and-journal/" class="uri">https://replicationnetwork.com/2025/02/08/roseler-replication-research-symposium-and-journal/</a></li>
 </ul>
+</div></details>
 <hr>
-</section>
-<section id="research-articles-table" class="level1">
-<h1>Research articles (table)</h1>
-<p><em>Scroll right to see more variables. <strong>Open Access Types</strong>: Diamond: No fees for publishing or reading. Gold: Fees for publishing, no fees for reading. Green: Only pre-print is available. <strong>Student collaboration</strong> indicates whether student researchers were involved as co-authors.</em></p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-20dc6d6867cfcf1a90ff" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-20dc6d6867cfcf1a90ff">{"x":{"filter":"none","vertical":false,"data":[[41,40,39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8.5,8,7,6,5,4,3,2,1],["Publishing","Meta-Science","Replication","Replication","Replication","Anchoring","Replication","Replication","Other","Other","Replication","Replication / Anchoring","Anchoring","Replication / Meta-Analysis","Replication","Anchoring / Meta-Analysis","Meta-Science / Meta-Analysis","Anchoring / Meta-Analysis","Meta-Science","Meta-Analysis","Replication","Replication / Anchoring","Self-Control","Meta-Analysis","Meta-Science / Replication","Replication / Self-Control","Meta-Science","Anchoring / Meta-Analysis","Replication / Assimilation &amp; Contrast","Assimilation &amp; Contrast","Assimilation &amp; Contrast","Meta-Science / Meta-Analysis","Anchoring","Open Scholarship","Replication / Meta-Analysis","Anchoring / Meta-Analysis","Replication","Anchoring / Meta-Analysis","Assimilation &amp; Contrast","Anchoring","Meta-Science","Anchoring / Replication"],["Müller, M., Röseler, L., &amp; Wallrich, L. (2025). Initial Editorial Assessment Form (Replication Research) (1.0). Zenodo. https://doi.org/10.5281/zenodo.17911973","Röseler, L. (2025, November 24). Preregistrations without Code do not Prevent P-Hacking. MetaArxiv. https://doi.org/10.31222/osf.io/v259t_v1  ","Röseler, L., Wallrich, L., Adler, S., Back, M., Busch, N., Dienlin, T., Evans, T. R., Goltermann, J., Hartmann, H., Horstmann, J., Korbmacher, M., Oppong Boakye, P., Richter, H., Richter, M., Silverstein, P., Steltenpohl, C. N., Syed, M., Vaidis, D., Verheyen, S., … Azevedo, F. (2025). Replication Research: Journal Description (R2 Launch). Zenodo. https://doi.org/10.5281/zenodo.17241396","Röseler, L., Wallrich, L., Adler, S., Evans, T. R., Goltermann, J., Gut, U., Korbmacher, M., Oppong Boakye, P., Verheyen, S., Visser, I., &amp; Azevedo, F. (2025). Replication Research Constitution (R2 Launch). Zenodo. https://doi.org/10.5281/zenodo.17279413","Röseler, L., Wallrich, L., Adler, S., Oppong Boakye, P., Evans, T. R., Goltermann, J., Haven, T., Horstmann, J., Korbmacher, M., Müller, M., Verheyen, S., Visser, I., &amp; Azevedo, F. (2025). A Community Model for Rigorous and Inclusive Scholarship: Inaugural Editorial of Replication Research (R2). Replication Research, 1. https://doi.org/10.17879/replicationresearch-2025-9022","Rebholz, T. R., Groß, J., &amp; Röseler, L. (2025, June 24). Assimilation to External Cues: Comparing the Reliability of Anchoring Effects, Advice Taking, and Hindsight Bias and Exploring its Determinants. https://doi.org/10.31234/osf.io/5u8br_v1","Röseler, L., Moser, V., Schüller, S., &amp; Förster, C. (2025, Mai 22). Replication Research Symposium: Book of Abstracts. Replication Research Symposium (R2S), Münster, Germany. https://doi.org/10.5281/zenodo.15487804","Reed, W. R., Röseler, L., Saam, M., Wallrich, L. (2025). No Room at the Inn? The Case for Specialized Replication Journals. Working Papers in Economics 25/10, University of Canterbury, Department of Economics and Finance. https://www.wiso.uni-hamburg.de/forschung/forschungslabor/working-papers/pdfs-wp/wp88.pdf","Hoghe, J., Röseler, L., Limmer, R., Walther, C., &amp; Schütz, A. (2025). Die Bedeutung personaler Ressourcen und personaler Risikofaktoren für die Bewältigung beruflicher Belastungen bei Genesungsbegleiter/-innen/Peer Berater/-innen. In Zeitschrift für Arbeitswissenschaft. https://doi.org/10.1007/s41449-025-00460-x ","Hoghe, J., Röseler, L., Limmer, R., Walther, C., &amp; Schütz, A. (2024). Berufliche Stressoren und Ressourcen von Genesungsbegleiter* innen/Peer-Berater* innen in der Sozialpsychiatrie. Psychiatrische Praxis. https://doi.org/10.1055/a-2383-8057","Röseler, L. (2024). CODECHECK certificate 2024-005. Zenodo. https://doi.org/10.5281/zenodo.13945051","Röseler, L., Bögler, H. L., Koßmann, L., Krueger, S., Bickenbach, S., Bühler, R., della Guardia, J., Köppel, L.-M. A, Möhring, J., Ponader, S., Roßmaier, K., Sing, J. (2024). Need for Cognition, Cognitive Load, and Forewarning do not Moderate Anchoring Effects. A Replication Study of Epley &amp; Gilovich (Journal of Behavioral Decision Making, 2005; Psychological Science, 2006). Journal of Comments and Replications in Economics, 3(2024-6). https://doi.org/10.18718/81781.38","Röseler, L., Weber, L., Helgerth, K. A., Stich, E., Günther, M., Tegethoff, P., Wagner, F.-S., &amp; Schütz, A. (2024). Measurements of Susceptibility to Anchoring are Unreliable: Meta-Analytic Evidence From More Than 50,000 Anchored Estimates. Meta-Psychology, 8. https://doi.org/10.15626/MP.2022.3236","Röseler, L., Kaiser, L., Doetsch, C., Klett, N., Seida, C., Schütz, A., Aczel, B., Adelina, N., Agostini, V., Alarie, S., Albayrak-Aydemir, N., Aldoh, A., Al-Hoorie, A. H., Azevedo, F., Baker, B. J., Barth, C. L., Beitner, J., Brick, C., Brohmer, H., Chandrashekar, S. P., Chung, K. L., Cockcroft, J. P., Cummins, J., Diveica, V., Dumbalska, T., Efendic, E., Elsherif, M., Evans, T., Feldman, G., Fillon, A., Förster, N., Frese, J., Genschow, O., Giannouli, V., Gjoneska, B., Gnambs, T., Gourdon-Kanhukamwe, A., Graham, C. J., Hartmann, H., Haviva, C., Herderich, A., Hilbert, L. P., Holgado, D., Hussey, I., Ilchovska, Z. G., Kalandadze, T., Karhulahti, V.-M., Kasseckert, L., Klingelhöfer-Jens, M., Koppold, A., Korbmacher, M., Kulke, L., Kuper, N., LaPlume, A., Leech, G., Lohkamp, F., Lou, N. M., Lynott, D., Maier, M., Meier, M., Montefinese, M., Moreau, D., Mrkva, K., Nemcova, M., Oomen, D., Packheiser, J., Pandey, S., Papenmeier, F., Paruzel-Czachura, M., Pavlov, Y. G., Pavlović, Z., Pennington, C. R., Pittelkow, M.-M., Plomp, W., Plonski, P. E., Pronizius, E., Pua, A. A., Pypno-Blajda, K., Rausch, M., Rebholz, T. R., Richert, E., Röer, J. P., Ross, R., Schmidt, K., Skvortsova, A., Sperl, M. F. J., Tan, A. W. M., Thürmer, J. L., Tołopiło, A., Vanpaemel, W., Vaughn, L. A., Verheyen, S., Wallrich, L., Weber, L., Wolska, J. K., Zaneva, M., &amp; Zhang, Y. (2024). The Replication Database: Documenting the Replicability of Psychological Science. Journal of Open Psychology Data, 12: 8, pp. 1--23. https://doi.org/10.5334/jopd.101","Röseler, L., Felser, G., Asberger, J., &amp; Schütz, A. (2024). The Effect of Variety on Perceived Quantity: Failures to Replicate Redden and Hoch (2009). Meta-Psychology, 8. https://doi.org/10.15626/MP.2020.2639","Röseler, L., Weber, L., Helgerth, K., Stich, E., Günther, M., Tegethoff, P., Wagner, F. S., Ambrus, E., Antunovic, M., Barrera-Lemarchand, F., Halali, E., Ioannidis, K., Genschow, O., McKay, R., Milstein, N., Molden, D. C., Papenmeier, F., Pavlovic, Z., Rinn, R., Schreiter, M. L., Zimdahl, M. F., Allen, E., Bahník, Š., Bermeitinger, C., Blower, F. B. N., Bögler, H. L., Burgmer, P., Cheek, N. N., Dorsch, L., Fels, S. A., Frech, M.-L., Freira, L., Harris, A. J. L., Hartig, B., Häusser, J. A., Hedgebeth, M. V., Henkel, M., Horvath, D., Imhoff, R., Intelmann, P., Klamar, A., Knappe, E., Köppel, L.-M., Krueger, S. M., Lagator, S., López Bóo, F., Navajas, J., Norem, J. K., Novak, J., Onuki, Y., Page, E., Pearton, J., Ponader, S., Rebholz, T. R., Rostekova, A., Sartorio, M., Schindler, S., Seida, C., Shanks, D. R., Siems, M.-C., Speekenbrink, M., Stäglich, P., Starkulla, M., Stitz, M., Straube, T., Thies, K., Thum, E., Ueda, K., Undorf, M., Urlichich, D., Vadillo, M. A., Wolf, H., Zhou, A., &amp; Schütz, A. (2024). Correction: The Open Anchoring Quest Dataset: Anchored Estimates from 96 Studies on Anchoring Effects. Journal of Open Psychology Data, 12: 8, pp. 1--3. https://doi.org/10.5334/jopd.92","Adler, S. J., Röseler, L., &amp; Schöniger, M. K. (2023). A toolbox to evaluate the trustworthiness of published findings. Journal of Business Research, 167, 114189. https://doi.org/10.1016/j.jbusres.2023.114189","Röseler, L., Weber, L., Helgerth, K., Stich, E., Günther, M., Tegethoff, P., Wagner, F., Antunovic, M., BarreraLemarchand, F., Halali, E., Ioannidis, K., Genschow, O., Milstein, N., Molden, D. C., Papenmeier, F., Pavlovic, Z., Rinn, R., Schreiter, M. L., Zimdahl, M. F., Bahník, Š., Bermeitinger, C., Blower, F. B. N., Bögler, H. L., Burgmer, P., Cheek, N. N., Dorsch, L., Fels, S., Frech, M.-L., Freira, L., Harris, A. J. L., Häusser, J. A., Hedgebeth, M. V., Henkel, M., Horvath, D., Intelmann, P., Klamar, A., Knappe, E., Köppel, L.-M., Krueger, S. M., Lagator, S., Lopez-Boo, F., Navajas, J., Norem, J. K., Novak, J., Onuki, Y., Page, E., Rebholz, T. R., Sartorio, M., Schindler, S., Shanks, D. R., Siems, M.-C., Stäglich, P., Starkulla, M., Stitz, M., Straube, T., Thies, K., Thum, E., Ueda, K., Undorf, M., Urlichich, D., Vadillo, M. A., Wolf, H., Zhou, A., &amp; Schütz, A. (2022). The Open Anchoring Quest Dataset: Anchored Estimates from 96 Studies on Anchoring Effects. Journal of Open Psychology Data, 10(16), pp. 1--12. http://doi.org/10.5334/jopd.67","Delios, A., Clemente, E., Wu, T., Tan, H., Wang, Y., Gordon, M., Viganola, D., Chen, Z., Dreber, A., Johannesson, M., Pfeiffer, T., Generalizability Tests Forecasting Collaboration, &amp; Uhlmann, E.L. (2022). Examining the context sensitivity of research findings from archival data. Proceedings of the National Academy of Sciences. https://doi.org/10.1073/pnas.2120377119","Körner*, R., Röseler*, L., Schütz, A., &amp; Bushman, B. J. (2022). Dominance and prestige: Meta-analytic review of experimentally induced body position effects on behavioral, self-report, and physiological dependent variables.Psychological Bulletin, 148(1-2), 67--85. https://doi.org/10.1037/bul0000356 *shared first authorship","Wolf, D., Leder, J., Röseler, L., &amp; Schütz, A. (2021). Does Facial Redness Really Affect Emotion Perception? Evidence for Limited Generalisability of Effects of Facial Redness on Emotion Perception in a Large Sample. Cognition and Emotion. 35(8), 1607--1617. https://doi.org/10.1080/02699931.2021.1979473","Röseler, L., Schütz, A., Blank, P. A., Dück, M., Fels, S., Kupfer, J., Scheelje, L., &amp; Seida, C. (2021). Evidence against subliminal anchoring: Two close, highly powered, preregistered, and failed replication attempts. Journal of Experimental Social Psychology, 92, 104066. https://doi.org/10.1016/j.jesp.2020.104066","Röseler, L., Ebert, J., Schütz, A., &amp; Baumeister, R. F. (2021). The upsides and downsides of high self-control: Evidence for effects of similarity and situation dependency. Europe's Journal of Psychology, 17(1), 1--16. https://doi.org/10.5964/ejop.2639","Körner, R., Röseler, L., &amp; Schütz, A. (2021). Commentary on Elkjær et al.'s (2020) meta-analysis on expansive versus contractive nonverbal displays.Perspectives on Psychological Science, 17(1), 305--307. https://doi.org/10.1177/1745691620984474","Tierney, W., Hardy, J. H., III., Ebersole, C., Viganola, D., Clemente, E., Gordon, M., Hoogeveen, S., Haaf, J., Dreber, A.A., Johannesson, M., Pfeiffer, T., Chapman, H., Gantman, A., Vanaman, M., DeMarree, K., Igou, E., Wylie, J., Storbeck J., Andreychik, M.R., McPhetres, J., Vaughn, L.A., ... Röseler, L., ...Uhlmann, E. L.(2021). A creative destruction approach to replication: Implicit work and sex morality across cultures. Journal of Experimental Social Psychology, 93, 104060. https://doi.org/10.1016/j.jesp.2020.104060","Röseler, L., Schütz, A., Baumeister, R. F., &amp; Starker, U. (2020). Does ego depletion reduce judgment adjustment for both internally and externally generated anchors? Journal of Experimental Social Psychology, 87, 103942. https://doi.org/10.1016/j.jesp.2019.103942","Landy, J. F., Jia, M. L., Ding, I. L., Viganola, D., Tierney, W., Dreber, A., Johannesson, M., Pfeiffer, T., Ebersole, C. R., Gronau, Q. F., Ly, A., van den Bergh, D., Marsman, M., Derks, K., Wagenmakers, E.-J., Proctor, A., Bartels, D. M., Bauman, C. W., Brady, W. J.,... Röseler, L., ... Uhlmann, E. L. (2020). Crowdsourcing hypothesis tests: Making transparent how design choices shape research results. Psychological Bulletin, 146(5), 451--479. https://doi.org/10.1037/bul0000220","Röseler, L. (2020, September). Anchoring Effects: Resolving the Contradictions of Personality Moderator Research (Doctoral Thesis). University of Bamberg. https://osf.io/34sv6","Röseler, L., Doetsch, C. A., Förster, N., Bruzsa, A., Deublein, M., Rieger, E., Schmidt, C., Seitz, A., &amp; Wild, A. (2024). No Evidence for the Affective Expectation Model: Replication of Geers and Lassiter (2003). https://doi.org/10.31234/osf.io/akfzh","Röseler, L. (2024). Exploring Categorical Colors. https://doi.org/10.31234/osf.io/gj76p","Röseler, L., &amp; Schütz, A. (2024). Assimilation and Contrast are Everywhere. https://doi.org/10.31234/osf.io/krwcn","Röseler, L. (2023). Predicting Replication Rates with Z-Curve: A Brief Exploratory Validation Study Using the Replication Database. https://osf.io/preprints/metaarxiv/ewb2t","Röseler, L., Incerti, L., Rebholz, T. R., Seida, C., &amp; Papenmeier, F. (2025). Falsifying the insufficient adjustment model: No evidence for unidirectional adjustment from anchors. Meta-Psychology, 9. https://doi.org/10.15626/MP.2024.4137","Röseler, L., Carbon, C., &amp; Schütz, A. (2023, January 24). Stellungnahme zum Positionspapier der Psychologie-Fachschaften-Konferenz (PsyFaKo e.V.) zum Thema Autor*innenschaft. https://doi.org/10.31234/osf.io/cbkzp","Röseler, L., Gendlina, T., Krapp, J., Labusch, N., &amp; Schütz, A. (2022). Successes and Failures of Replications: A Meta-Analysis of Independent Replication Studies Based on the OSF Registries. https://doi.org/10.31222/osf.io/8psw2","Weber, L., &amp; Röseler, L. (2025). Testing the Reliability of Anchoring Susceptibility Scores. Europe’s Journal of Psychology, 21(1), 1-10. https://doi.org/10.5964/ejop.9891","Wolf, D., Röseler, L., Leder, J., &amp; Schütz, A. (2022). The Red-Anger Effect: Is it Nothing More Than Demand Characteristics? https://doi.org/10.31234/osf.io/ntukz","Röseler, L., &amp; Schütz, A. (2022). Hanging the Anchor Off a New Ship: A Meta-Analysis of Anchoring Effects. https://doi.org/10.31234/osf.io/wf2tn","Röseler, L., Schütz, A. (2021). What You Expect is What You Get: The Role of Affective Expectations in Real-World Experiences. https://doi.org/10.31219/osf.io/2tr6q","Röseler, L., Schütz, A., Dolling, I. K., Friedinger, K., Hösch, Y., Hügel, J. C., Igna, E., Karg, A., Kühling, S., Schäffer, D., Zhou, A., &amp; Röseler, J. J. (2020). The Stepwise Anchoring Paradigm: Measuring Reliable Components of Anchoring and Adjustment as the Next Step in Moderator Research. https://doi.org/10.31234/osf.io/hjbwp","Röseler, L., Wolf, D., Leder, J., &amp; Schütz, A. (2020). Test-Retest Reliability is not a Measure of Reliability or Stability: A Friendly Reminder. https://doi.org/10.31234/osf.io/mt49r","Röseler, L., Schütz, A., &amp; Starker, U. (2019). Cognitive Ability does not and cannot Correlate with Susceptibility to Anchoring Effects. https://doi.org/10.31234/osf.io/bnsx2"],["Preprint","Preprint","Preprint","Preprint","Diamond","Preprint","Preprint","Gold (APC: 3060 USD)","Gold (APC: 2790.00€)","Closed","Preprint","Diamond","Diamond","Gold (APC: 450 pounds)","Diamond","Gold (no APCs)","Closed","Gold (APC: 450 pounds)","Gold (APC: approx. 5300 - 5800 USD)","Closed","Closed","Closed","Diamond","Closed","Gold (APCs: approx. 3070 USD)","Closed","Closed","Diamond","Preprint","Preprint","Preprint","Preprint","Diamond","Preprint","Preprint","Diamond","Preprint","Preprint","Preprint","Preprint","Preprint","Preprint"],["https://doi.org/10.5281/zenodo.17911973",null,null,null,null,"https://osf.io/4n3am/","https://osf.io/meetings/R2SYMPOSIUM/",null,"https://osf.io/kypnd/","https://osf.io/kypnd/","https://github.com/codecheckers/sample-size-codecheck","https://osf.io/prwu6/","https://osf.io/ygnvb/","https://osf.io/bzx2q/","https://osf.io/9s4w7","Does not apply.","https://osf.io/tqgw4/","https://osf.io/ygnvb/",null,"https://osf.io/vz4a6/","https://osf.io/4xqet/","https://osf.io/96de2/",null,"Does not apply.","https://osf.io/t79v8/","https://osf.io/2c75d/","https://osf.io/9jzy4/","https://osf.io/9gju4/","https://osf.io/rge23/","https://osf.io/86zv9/","Does not apply.","https://osf.io/k4d6w/","https://osf.io/8cwpy","https://osf.io/gkhbt/","https://osf.io/9r62x/","https://osf.io/sz5b9/","https://osf.io/7ezvb/","https://osf.io/4t5mu/","https://osf.io/hzcuf/","https://osf.io/fjxmw/","https://osf.io/jvrn5/","https://osf.io/n8d6v/"],["Does not apply.",null,null,null,null,"tbd",null,null,"https://osf.io/5fm8u","https://osf.io/5fm8u",null,"https://osf.io/8k9nt/\nhttps://osf.io/b7nt8/\nhttps://osf.io/f5sj8/",null,null,null,"Does not apply.",null,null,null,"https://osf.io/cx2q3","https://osf.io/2gpn9","https://osf.io/qxwhv\nhttps://osf.io/8urxv",null,"Does not apply.","https://osf.io/xwu4v","https://osf.io/97gaf","https://osf.io/tac5u",null,"https://osf.io/kx5gw",null,"Does not apply.",null,"https://osf.io/c2ynz\nhttps://osf.io/56vte\nhttps://osf.io/3qu6b\nhttps://osf.io/yhrua","Does not apply.","https://osf.io/4yce7","https://osf.io/4aev5","https://osf.io/7pw4c/\nhttps://osf.io/caf6h/",null,"https://osf.io/9qz3d\nhttps://osf.io/5bfwg\nhttps://osf.io/jhycr\nhttps://osf.io/7eq93\nhttps://osf.io/d83mf","https://osf.io/7r3da\nhttps://osf.io/5ua98","Does not apply.","https://osf.io/4s2pe"],["https://doi.org/10.5281/zenodo.17911973","https://doi.org/10.31222/osf.io/v259t_v1  ","https://doi.org/10.5281/zenodo.17241396","https://doi.org/10.5281/zenodo.17279413",null,"https://osf.io/preprints/psyarxiv/5u8br_v1","https://doi.org/10.5281/zenodo.15487804","https://www.wiso.uni-hamburg.de/forschung/forschungslabor/working-papers/pdfs-wp/wp88.pdf",null,null,"https://doi.org/10.5281/zenodo.13945051","https://doi.org/10.31234/osf.io/bgp3m","https://doi.org/10.31234/osf.io/b6t35","https://doi.org/10.31222/osf.io/me2ub","https://doi.org/10.31234/osf.io/v643q","Does not apply.","https://doi.org/10.1016/j.jbusres.2023.114189","https://doi.org/10.31234/osf.io/b6t35",null,null,null,null,null,null,null,null,"Link","https://osf.io/34sv6","https://doi.org/10.31234/osf.io/akfzh","https://doi.org/10.31234/osf.io/gj76p","https://doi.org/10.31234/osf.io/krwcn","https://osf.io/preprints/metaarxiv/ewb2t","https://doi.org/10.31234/osf.io/jztk2","https://doi.org/10.31234/osf.io/cbkzp","https://doi.org/10.31222/osf.io/8psw2","https://doi.org/10.31234/osf.io/2kfh3","https://doi.org/10.31234/osf.io/ntukz","https://doi.org/10.31234/osf.io/wf2tn","https://doi.org/10.31219/osf.io/2tr6q","https://doi.org/10.31234/osf.io/hjbwp","https://doi.org/10.31234/osf.io/mt49r","https://doi.org/10.31234/osf.io/bnsx2"],["yes","no","no","no","no","no","yes","no","no","no","no","yes","yes","yes","yes","yes","no","yes","no","no","no","yes","yes","no","no","no","no","no","no","no","no","no","yes","No","yes","yes","no","no","no","yes","no","no"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>#<\/th>\n      <th>Topic<\/th>\n      <th>Reference<\/th>\n      <th>OA-Type<\/th>\n      <th>Materials/Data<\/th>\n      <th>Preregistration<\/th>\n      <th>Pre-Print<\/th>\n      <th>Student-collaboration?<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":40,"dom":"tip","bPaginate":false,"columnDefs":[{"className":"dt-right","targets":0},{"name":"#","targets":0},{"name":"Topic","targets":1},{"name":"Reference","targets":2},{"name":"OA-Type","targets":3},{"name":"Materials/Data","targets":4},{"name":"Preregistration","targets":5},{"name":"Pre-Print","targets":6},{"name":"Student-collaboration?","targets":7}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[10,25,40,50,100]}},"evals":[],"jsHooks":[]}</script>
+<section id="research-articles-searchable-table" class="level2">
+<h2 class="anchored" data-anchor-id="research-articles-searchable-table">Research Articles — Searchable Table</h2>
+<p><em>Filter by topic, search by author or title, and click any row to expand details. Open access type and available links are shown per entry.</em></p>
+<!-- SVG icon defs for table -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg" id="rt-icon-defs">
+  <symbol id="ic-search" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></symbol>
+  <symbol id="ic-chevron-down" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></symbol>
+  <symbol id="ic-link" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"></path></symbol>
+  <symbol id="ic-data" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></symbol>
+  <symbol id="ic-prereg" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></symbol>
+  <symbol id="ic-preprint" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"></path></symbol>
+  <symbol id="ic-oa" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></symbol>
+  <symbol id="ic-code" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></symbol>
+  <symbol id="ic-anchor" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="5" r="3"></circle><line x1="12" y1="8" x2="12" y2="21"></line><path d="M5 12H2a10 10 0 0020 0h-3"></path></symbol>
+  <symbol id="ic-refresh" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 102.13-9.36L1 10"></path></symbol>
+  <symbol id="ic-science" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v11l-4 7h14l-4-7V3"></path></symbol>
+  <symbol id="ic-book" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"></path></symbol>
+</svg>
+
+<div class="research-table-wrapper">
+
+  <!-- Search bar -->
+  <div class="rt-search-bar">
+    <svg width="16" height="16"><use href="#ic-search"></use></svg>
+    <input type="text" id="rt-search" placeholder="Search by author, title, keyword…" oninput="rtFilter()" autocomplete="off">
+    <span id="rt-count" style="color:var(--text-muted);font-size:0.78rem;white-space:nowrap;font-family:'DM Sans',sans-serif"></span>
+  </div>
+
+  <!-- Topic chips -->
+  <div class="rt-filter-chips">
+    <span class="rt-filter-label">Topic</span>
+    <button class="rt-chip active" onclick="rtSetTopic('all',this)">
+      All
+    </button>
+    <button class="rt-chip" onclick="rtSetTopic('Anchoring',this)">
+      <svg width="11" height="11"><use href="#ic-anchor"></use></svg> Anchoring
+    </button>
+    <button class="rt-chip" onclick="rtSetTopic('Replication',this)">
+      <svg width="11" height="11"><use href="#ic-refresh"></use></svg> Replication
+    </button>
+    <button class="rt-chip" onclick="rtSetTopic('Meta-Science',this)">
+      <svg width="11" height="11"><use href="#ic-science"></use></svg> Meta-Science
+    </button>
+    <button class="rt-chip" onclick="rtSetTopic('Publishing',this)">
+      <svg width="11" height="11"><use href="#ic-book"></use></svg> Publishing
+    </button>
+  </div>
+
+  <!-- Table -->
+  <div style="overflow-x:auto">
+  
+<table id="rt-table" class="rt-table caption-top" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="width: 42px">#</th>
+<th data-quarto-table-cell-role="th" style="width: 110px">Topic</th>
+<th data-quarto-table-cell-role="th" style="min-width: 320px">Reference</th>
+<th data-quarto-table-cell-role="th" style="width: 130px">OA Type</th>
+<th data-quarto-table-cell-role="th" style="min-width: 200px">Links</th>
+<th data-quarto-table-cell-role="th" style="width: 30px"></th>
+</tr>
+</thead>
+<tbody id="rt-tbody">
+</tbody>
+</table>
+
+  </div>
+  <div id="rt-no-results" class="rt-no-results" style="display:none">No entries match your search or filter.</div>
+
 </div>
-</div>
+
+<script>
+var RT_DATA = [
+  {num:43,topic:"Meta-Science",student:false,
+   ref:"Aczel, B., Szaszi, B., Clelland, H.T. et al. Investigating the analytical robustness of the social and behavioural sciences. <em>Nature</em> 652, 135–142 (2026).",
+   doi:"https://doi.org/10.1038/s41586-025-09844-9",oa:"gold",oaLabel:"Gold",
+   materials:"https://osf.io/ed8pj/overview",preprint:"https://osf.io/preprints/metaarxiv/twqsv_v1",prereg:"",data:""},
+  {num:42,topic:"Replication",student:true,
+   ref:"Tondlekar, R., Wallrich, L., Weinerova, J., et al. Zotero Replication Checker (0.1.12). Zenodo (2026).",
+   doi:"https://doi.org/10.5281/zenodo.18671300",oa:"software",oaLabel:"Software",
+   materials:"https://forrt.org/flora_zotero/",preprint:"",prereg:"",data:""},
+  {num:41,topic:"Publishing",student:true,
+   ref:"Müller, M., Röseler, L., & Wallrich, L. Initial Editorial Assessment Form (Replication Research) (1.0). Zenodo (2025).",
+   doi:"https://doi.org/10.5281/zenodo.17911973",oa:"preprint",oaLabel:"Preprint",
+   materials:"https://doi.org/10.5281/zenodo.17911973",preprint:"https://doi.org/10.5281/zenodo.17911973",prereg:"",data:""},
+  {num:40,topic:"Meta-Science",student:false,
+   ref:"Röseler, L. Preregistrations without Code do not Prevent P-Hacking. <em>MetaArxiv</em> (2025).",
+   doi:"https://doi.org/10.31222/osf.io/v259t_v1",oa:"preprint",oaLabel:"Preprint",
+   materials:"",preprint:"https://doi.org/10.31222/osf.io/v259t_v1",prereg:"",data:""},
+  {num:39,topic:"Replication",student:false,
+   ref:"Röseler, L., Wallrich, L., Adler, S., et al. Replication Research: Journal Description (R2 Launch). Zenodo (2025).",
+   doi:"https://doi.org/10.5281/zenodo.17241396",oa:"preprint",oaLabel:"Preprint",
+   materials:"",preprint:"https://doi.org/10.5281/zenodo.17241396",prereg:"",data:""},
+  {num:38,topic:"Replication",student:false,
+   ref:"Röseler, L., Wallrich, L., Adler, S., et al. Replication Research Constitution (R2 Launch). Zenodo (2025).",
+   doi:"https://doi.org/10.5281/zenodo.17279413",oa:"preprint",oaLabel:"Preprint",
+   materials:"",preprint:"https://doi.org/10.5281/zenodo.17279413",prereg:"",data:""},
+  {num:37,topic:"Replication",student:false,
+   ref:"Röseler, L., Wallrich, L., Adler, S., et al. A Community Model for Rigorous and Inclusive Scholarship: Inaugural Editorial of Replication Research (R2). <em>Replication Research</em>, 1 (2025).",
+   doi:"https://doi.org/10.17879/replicationresearch-2025-9022",oa:"diamond",oaLabel:"Diamond",
+   materials:"",preprint:"",prereg:"",data:""},
+  {num:36,topic:"Anchoring",student:false,
+   ref:"Rebholz, T. R., Groß, J., & Röseler, L. Assimilation to External Cues: Comparing the Reliability of Anchoring Effects, Advice Taking, and Hindsight Bias (2025).",
+   doi:"https://doi.org/10.31234/osf.io/5u8br_v1",oa:"preprint",oaLabel:"Preprint",
+   materials:"https://osf.io/4n3am/",preprint:"https://osf.io/preprints/psyarxiv/5u8br_v1",prereg:"",data:""},
+  {num:35,topic:"Replication",student:true,
+   ref:"Röseler, L., Moser, V., Schüller, S., & Förster, C. Replication Research Symposium: Book of Abstracts. Zenodo (2025).",
+   doi:"https://doi.org/10.5281/zenodo.15487804",oa:"preprint",oaLabel:"Preprint",
+   materials:"https://osf.io/meetings/R2SYMPOSIUM/",preprint:"https://doi.org/10.5281/zenodo.15487804",prereg:"",data:""},
+  {num:34,topic:"Replication",student:false,
+   ref:"Reed, W. R., Röseler, L., Saam, M., Wallrich, L. No Room at the Inn? The Case for Specialized Replication Journals. <em>Journal of Behavioral and Experimental Economics</em> (2025).",
+   doi:"https://doi.org/10.1016/j.socec.2025.102502",oa:"gold",oaLabel:"Gold",
+   materials:"",preprint:"https://www.wiso.uni-hamburg.de/forschung/forschungslabor/working-papers/pdfs-wp/wp88.pdf",prereg:"",data:""},
+  {num:33,topic:"Meta-Science",student:false,
+   ref:"Hoghe, J., Röseler, L., Limmer, R., Walther, C., & Schütz, A. Die Bedeutung personaler Ressourcen… <em>Zeitschrift für Arbeitswissenschaft</em> (2025).",
+   doi:"https://doi.org/10.1007/s41449-025-00460-x",oa:"gold",oaLabel:"Gold",
+   materials:"https://osf.io/kypnd/",preprint:"",prereg:"https://osf.io/5fm8u",data:""},
+  {num:32,topic:"Meta-Science",student:false,
+   ref:"Hoghe, J., Röseler, L., Limmer, R., Walther, C., & Schütz, A. Berufliche Stressoren und Ressourcen von Genesungsbegleiter*innen. <em>Psychiatrische Praxis</em> (2024).",
+   doi:"https://doi.org/10.1055/a-2383-8057",oa:"closed",oaLabel:"Closed",
+   materials:"https://osf.io/kypnd/",preprint:"",prereg:"https://osf.io/5fm8u",data:""},
+  {num:31,topic:"Replication",student:false,
+   ref:"Röseler, L. CODECHECK certificate 2024-005. Zenodo (2024).",
+   doi:"https://doi.org/10.5281/zenodo.13945051",oa:"preprint",oaLabel:"Preprint",
+   materials:"https://github.com/codecheckers/sample-size-codecheck",preprint:"https://doi.org/10.5281/zenodo.13945051",prereg:"",data:""},
+  {num:30,topic:"Anchoring",student:true,
+   ref:"Röseler, L., Bögler, H. L., Koßmann, L., et al. Need for Cognition, Cognitive Load, and Forewarning do not Moderate Anchoring Effects. <em>Journal of Comments and Replications in Economics</em>, 3(2024-6) (2024).",
+   doi:"https://doi.org/10.18718/81781.38",oa:"diamond",oaLabel:"Diamond",
+   materials:"https://osf.io/prwu6/",preprint:"https://doi.org/10.31234/osf.io/bgp3m",prereg:"https://osf.io/8k9nt/",data:""}
+];
+
+var rtCurrentTopic = 'all';
+var rtCurrentSearch = '';
+
+var OA_ICONS = {
+  diamond: '#ic-oa', gold: '#ic-oa', green: '#ic-oa',
+  preprint: '#ic-preprint', closed: '#ic-oa', software: '#ic-code'
+};
+
+function iconLink(url, iconId, label) {
+  if (!url || url === 'N/A' || url === 'TBD') return '';
+  return '<a class="rt-icon-link" href="'+url+'" target="_blank" rel="noopener">'
+    +'<svg><use href="'+iconId+'"/></svg> '+label+'</a>';
+}
+
+function buildRow(d) {
+  var topics = d.topic.split('/').map(function(t){ return t.trim(); });
+  var topicBadges = topics.map(function(t){ return '<span class="rt-topic">'+t+'</span>'; }).join(' ');
+
+  var icons = [
+    iconLink(d.doi,      '#ic-link',     'DOI'),
+    iconLink(d.materials,'#ic-data',     'Materials'),
+    iconLink(d.prereg,   '#ic-prereg',   'Prereg'),
+    iconLink(d.preprint, '#ic-preprint', 'Preprint'),
+  ].filter(Boolean).join('');
+
+  var expandId = 'rt-exp-'+d.num;
+  var searchStr = (d.ref + ' ' + d.topic).toLowerCase().replace(/<[^>]+>/g,'');
+
+  return '<tr class="rt-main-row" '
+    +'data-topic="'+d.topic+'" data-student="'+d.student+'" '
+    +'data-search="'+searchStr+'" '
+    +'onclick="rtToggle(\''+expandId+'\',this)" '
+    +'title="Click to expand details">'
+    +'<td><strong style="color:var(--accent);font-size:0.9rem">'+d.num+'</strong></td>'
+    +'<td>'+topicBadges+'</td>'
+    +'<td style="font-size:0.855rem">'+d.ref+'</td>'
+    +'<td><span class="rt-oa '+d.oa+'"><svg><use href="'+OA_ICONS[d.oa]+'"/></svg>'+d.oaLabel+'</span></td>'
+    +'<td><div class="rt-icons">'+(icons||'<span style="color:var(--text-muted);font-size:0.8rem">—</span>')+'</div></td>'
+    +'<td><button class="rt-expand-btn" id="btn-'+expandId+'" title="Expand"><svg><use href="#ic-chevron-down"/></svg></button></td>'
+    +'</tr>'
+    +'<tr class="rt-expanded-row hidden" id="'+expandId+'">'
+    +'<td colspan="6">'
+    +'<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start">'
+    +'<div style="flex:1;min-width:220px"><strong style="color:var(--accent);font-size:0.75rem;letter-spacing:0.05em;text-transform:uppercase">Reference</strong><br><span style="color:var(--text);font-size:0.875rem">'+d.ref+'</span></div>'
+    +'<div style="display:flex;flex-direction:column;gap:7px;font-size:0.855rem">'
+    +(d.student?'<div style="display:flex;align-items:center;gap:6px"><span style="background:var(--accent-dim);color:var(--accent);border-radius:5px;padding:2px 8px;font-size:0.72rem;font-weight:600">Student collaboration</span></div>':'')
+    +(d.doi?'<div><a href="'+d.doi+'" target="_blank" style="color:var(--accent)">Published version / DOI</a></div>':'')
+    +(d.materials?'<div><a href="'+d.materials+'" target="_blank" style="color:var(--accent)">Materials &amp; Data</a></div>':'')
+    +(d.prereg&&d.prereg!=='N/A'&&d.prereg!=='TBD'?'<div><a href="'+d.prereg+'" target="_blank" style="color:var(--accent)">Preregistration</a></div>':'')
+    +(d.preprint?'<div><a href="'+d.preprint+'" target="_blank" style="color:var(--accent)">Preprint</a></div>':'')
+    +'</div></div></td></tr>';
+}
+
+function rtToggle(id, row) {
+  var expRow = document.getElementById(id);
+  var btn = document.getElementById('btn-'+id);
+  if (!expRow) return;
+  var isOpen = !expRow.classList.contains('hidden');
+  expRow.classList.toggle('hidden', isOpen);
+  if (btn) btn.classList.toggle('open', !isOpen);
+}
+
+function rtRender() {
+  var tbody = document.getElementById('rt-tbody');
+  var noResults = document.getElementById('rt-no-results');
+  var countEl = document.getElementById('rt-count');
+  var tbl = document.getElementById('rt-table');
+
+  var filtered = RT_DATA.filter(function(d) {
+    var topicMatch = rtCurrentTopic === 'all' ||
+      d.topic.toLowerCase().includes(rtCurrentTopic.toLowerCase());
+    var searchMatch = !rtCurrentSearch ||
+      d.topic.toLowerCase().includes(rtCurrentSearch) ||
+      d.ref.toLowerCase().replace(/<[^>]+>/g,'').includes(rtCurrentSearch);
+    return topicMatch && searchMatch;
+  });
+
+  tbody.innerHTML = filtered.map(buildRow).join('');
+  noResults.style.display = filtered.length === 0 ? 'block' : 'none';
+  tbl.style.display = filtered.length === 0 ? 'none' : '';
+  countEl.textContent = filtered.length + ' of ' + RT_DATA.length + ' entries';
+}
+
+function rtFilter() {
+  rtCurrentSearch = document.getElementById('rt-search').value.toLowerCase();
+  rtRender();
+}
+
+function rtSetTopic(topic, btn) {
+  rtCurrentTopic = topic;
+  document.querySelectorAll('.rt-chip').forEach(function(c){ c.classList.remove('active'); });
+  btn.classList.add('active');
+  rtRender();
+}
+
+document.addEventListener('DOMContentLoaded', rtRender);
+</script>
 
 
 </section>
@@ -503,6 +968,150 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -907,13 +1516,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© Copyright 2026, Lukas Röseler</p>
+<p>© 2026, Lukas Röseler</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Built with <a href="https://quarto.org/">Quarto</a> and <a href="https://github.com/jtr13/website-template">Joyce Robbins’ website template</a>.</p>
+<p>Built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
   </div>
 </footer>
