@@ -126,6 +126,14 @@ body {
 /* ── Page ── */
 main, .page-columns { background: var(--bg) !important; }
 
+/* Hide Quarto's built-in color-scheme toggle — we use our own moon/sun button */
+#quarto-color-scheme-toggle,
+.quarto-color-scheme-toggle,
+button.quarto-color-scheme-toggle,
+.navbar .quarto-color-scheme-toggle {
+  display: none !important;
+}
+
 /* Hide Quarto's sidebar TOC entirely */
 #quarto-sidebar-toc-left,
 .sidebar.sidebar-navigation,

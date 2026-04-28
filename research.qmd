@@ -291,6 +291,222 @@ document.addEventListener('DOMContentLoaded', function(){
 </div></details>
 ```
 
+## Research Articles — Searchable Table
+
+```{=html}
+<p style="font-family:'DM Sans',sans-serif;color:var(--text-muted);font-size:0.95rem;margin-bottom:1.2rem">
+Filter by topic or search by author and title. Click any row to expand full details and open science badges.
+</p>
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| results: asis
+
+library(openxlsx)
+library(jsonlite)
+
+tbl <- openxlsx::read.xlsx("research.xlsx")
+
+# Clean column names
+raw_names <- names(tbl)
+clean     <- tolower(trimws(raw_names))
+clean     <- gsub("[^a-z0-9]+", "_", clean)
+clean     <- gsub("_+", "_", clean)
+clean     <- gsub("^_|_$", "", clean)
+
+# Map to JS keys
+map_name <- function(n) {
+  if (grepl("^x$|^x_$|^_$",        n)) return("num")
+  if (grepl("topic",                 n)) return("topic")
+  if (grepl("reference|^ref",        n)) return("ref")
+  if (grepl("oa.type|oa_type|oatype",n)) return("oatype")
+  if (grepl("materials|data",        n)) return("materials")
+  if (grepl("preregistration|prereg",n)) return("prereg")
+  if (grepl("pre.print|preprint",    n)) return("preprint")
+  if (grepl("student",               n)) return("student")
+  return(n)
+}
+
+names(tbl) <- sapply(clean, map_name)
+
+for (col in c("num","topic","ref","oatype","materials","prereg","preprint","student")) {
+  if (!col %in% names(tbl)) tbl[[col]] <- ""
+}
+
+if (!"num" %in% names(tbl)) tbl$num <- seq_len(nrow(tbl))
+
+tbl[is.na(tbl)] <- ""
+
+out <- data.frame(
+  num       = as.character(tbl$num),
+  topic     = as.character(tbl$topic),
+  ref       = as.character(tbl$ref),
+  oatype    = as.character(tbl$oatype),
+  materials = as.character(tbl$materials),
+  prereg    = as.character(tbl$prereg),
+  preprint  = as.character(tbl$preprint),
+  student   = as.character(tbl$student),
+  stringsAsFactors = FALSE
+)
+
+json <- jsonlite::toJSON(out, auto_unbox = TRUE)
+cat(paste0('<script>\nvar RT_DATA = ', json, ';\n</script>\n'))
+invisible(NULL)
+```
+
+```{=html}
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ic-search"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+  <symbol id="ic-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></symbol>
+  <symbol id="ic-anchor"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="5" r="3"/><line x1="12" y1="8" x2="12" y2="21"/><path d="M5 12H2a10 10 0 0020 0h-3"/></symbol>
+  <symbol id="ic-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></symbol>
+  <symbol id="ic-flask"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v11l-4 7h14l-4-7V3"/></symbol>
+  <symbol id="ic-book"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></symbol>
+</svg>
+
+<script>
+var BADGE = {
+  openmaterials: 'https://github.com/LukasRoeseler/home/blob/main/images/openmaterials.png?raw=true',
+  preregistered: 'https://github.com/LukasRoeseler/home/blob/main/images/preregistered.png?raw=true',
+  opencode:      'https://github.com/LukasRoeseler/home/blob/main/images/opencode.png?raw=true',
+  opendata:      'https://github.com/LukasRoeseler/home/blob/main/images/opendata.png?raw=true'
+};
+var rtCurTopic = 'all', rtCurSearch = '';
+
+function oaClass(s){
+  if(!s) return 'green'; var l=s.toLowerCase();
+  if(l.includes('diamond')) return 'diamond';
+  if(l.includes('gold'))    return 'gold';
+  if(l.includes('software'))return 'software';
+  if(l.includes('preprint'))return 'preprint';
+  if(l.includes('closed'))  return 'closed';
+  return 'green';
+}
+function oaShort(s){
+  if(!s) return '—';
+  if(s.toLowerCase().includes('diamond'))  return 'Diamond';
+  if(s.toLowerCase().includes('gold'))     return 'Gold';
+  if(s.toLowerCase().includes('software')) return 'Software';
+  if(s.toLowerCase().includes('preprint')) return 'Preprint';
+  if(s.toLowerCase().includes('closed'))   return 'Closed';
+  return s.split(' ')[0];
+}
+function isValid(v){
+  return v && v.trim() && v.trim()!=='NA'
+    && v.trim()!=='Does not apply.' && v.trim()!=='Link';
+}
+function osBadges(d){
+  var b='';
+  if(isValid(d.materials))
+    b+='<a class="os-badge-link" href="'+d.materials.trim()+'" target="_blank" title="Open Materials / Data"><img class="os-badge-img" src="'+BADGE.openmaterials+'" alt="Open Materials"></a>';
+  if(isValid(d.prereg)){
+    var pu=d.prereg.trim().split(/\s+/)[0];
+    b+='<a class="os-badge-link" href="'+pu+'" target="_blank" title="Preregistered"><img class="os-badge-img" src="'+BADGE.preregistered+'" alt="Preregistered"></a>';
+  }
+  if(isValid(d.preprint))
+    b+='<a class="os-badge-link" href="'+d.preprint.trim()+'" target="_blank" title="Preprint available"><img class="os-badge-img" src="'+BADGE.opendata+'" alt="Preprint"></a>';
+  return b||'<span style="color:var(--text-muted);font-size:0.8rem">—</span>';
+}
+function buildRow(d){
+  var topics=String(d.topic||'').split('/').map(function(t){return t.trim();});
+  var topicBadges=topics.map(function(t){return '<span class="rt-topic">'+t+'</span>';}).join(' ');
+  var num=d.num||'';
+  var expId='rt-exp-'+num+'-'+Math.random().toString(36).slice(2,6);
+  var links='';
+  if(isValid(d.materials)) links+='<div><a href="'+d.materials.trim()+'" target="_blank" style="color:var(--accent)">Materials &amp; Data</a></div>';
+  if(isValid(d.prereg)){
+    var purls=d.prereg.trim().split(/\s+/).filter(function(u){return u.length>4;});
+    purls.forEach(function(u,i){
+      links+='<div><a href="'+u+'" target="_blank" style="color:var(--accent)">Preregistration'+(purls.length>1?' '+(i+1):'')+'</a></div>';
+    });
+  }
+  if(isValid(d.preprint)) links+='<div><a href="'+d.preprint.trim()+'" target="_blank" style="color:var(--accent)">Preprint</a></div>';
+  var sb=(d.student&&String(d.student).toLowerCase().includes('yes'))
+    ?'<div><span style="background:var(--accent-dim);color:var(--accent);border-radius:5px;padding:2px 8px;font-size:0.71rem;font-weight:600">Student collaboration</span></div>':'';
+  return '<tr class="rt-main-row" data-topic="'+String(d.topic||'')+'" data-search="'+(String(d.ref||'')+' '+String(d.topic||'')).toLowerCase()+'" onclick="rtToggle(\''+expId+'\',this)" title="Click for details">'
+    +'<td><strong style="color:var(--accent)">'+num+'</strong></td>'
+    +'<td>'+topicBadges+'</td>'
+    +'<td style="font-size:0.85rem">'+String(d.ref||'')+'</td>'
+    +'<td><span class="rt-oa '+oaClass(d.oatype)+'">'+oaShort(d.oatype)+'</span></td>'
+    +'<td><div class="os-badges">'+osBadges(d)+'</div></td>'
+    +'<td><button class="rt-expand-btn" id="btn-'+expId+'" title="Expand"><svg width="13" height="13"><use href="#ic-chevron"/></svg></button></td>'
+    +'</tr>'
+    +'<tr class="rt-expanded-row hidden" id="'+expId+'"><td colspan="6">'
+    +'<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start">'
+    +'<div style="flex:1;min-width:200px"><strong style="color:var(--accent);font-size:0.72rem;letter-spacing:.05em;text-transform:uppercase">Reference</strong><br>'
+    +'<span style="color:var(--text);font-size:0.875rem">'+String(d.ref||'')+'</span></div>'
+    +'<div style="display:flex;flex-direction:column;gap:6px;font-size:0.855rem;min-width:170px">'+sb+links+'</div>'
+    +'</div></td></tr>';
+}
+function rtToggle(id,row){
+  var exp=document.getElementById(id),btn=document.getElementById('btn-'+id);
+  if(!exp) return;
+  var open=!exp.classList.contains('hidden');
+  exp.classList.toggle('hidden',open);
+  if(btn) btn.classList.toggle('open',!open);
+}
+function rtRender(){
+  var tbody=document.getElementById('rt-tbody'),noRes=document.getElementById('rt-no-results'),
+      tbl=document.getElementById('rt-table'),cntEl=document.getElementById('rt-count');
+  if(!tbody||typeof RT_DATA==='undefined') return;
+  var filtered=RT_DATA.filter(function(d){
+    var topicOk=rtCurTopic==='all'||String(d.topic||'').toLowerCase().includes(rtCurTopic.toLowerCase());
+    var searchOk=!rtCurSearch||(String(d.ref||'')+' '+String(d.topic||'')).toLowerCase().includes(rtCurSearch);
+    return topicOk&&searchOk;
+  });
+  tbody.innerHTML=filtered.map(buildRow).join('');
+  noRes.style.display=filtered.length===0?'block':'none';
+  tbl.style.display=filtered.length===0?'none':'';
+  cntEl.textContent=filtered.length+' of '+RT_DATA.length+' entries';
+}
+function rtFilter(){ rtCurSearch=document.getElementById('rt-search').value.toLowerCase(); rtRender(); }
+function rtSetTopic(t,btn){
+  rtCurTopic=t;
+  document.querySelectorAll('.rt-chip').forEach(function(c){c.classList.remove('active');});
+  btn.classList.add('active'); rtRender();
+}
+document.addEventListener('DOMContentLoaded', function(){ setTimeout(rtRender, 50); });
+</script>
+
+<div class="research-table-wrapper">
+  <div class="rt-search-bar">
+    <svg width="16" height="16"><use href="#ic-search"/></svg>
+    <input type="text" id="rt-search" placeholder="Search by author, title, keyword…"
+           oninput="rtFilter()" autocomplete="off"/>
+    <span id="rt-count" style="color:var(--text-muted);font-size:0.78rem;white-space:nowrap"></span>
+  </div>
+  <div class="rt-filter-chips">
+    <span class="rt-filter-label">Topic</span>
+    <button class="rt-chip active" onclick="rtSetTopic('all',this)">All</button>
+    <button class="rt-chip" onclick="rtSetTopic('Anchoring',this)"><svg width="11" height="11"><use href="#ic-anchor"/></svg> Anchoring</button>
+    <button class="rt-chip" onclick="rtSetTopic('Replication',this)"><svg width="11" height="11"><use href="#ic-refresh"/></svg> Replication</button>
+    <button class="rt-chip" onclick="rtSetTopic('Meta-Science',this)"><svg width="11" height="11"><use href="#ic-flask"/></svg> Meta-Science</button>
+    <button class="rt-chip" onclick="rtSetTopic('Publishing',this)"><svg width="11" height="11"><use href="#ic-book"/></svg> Publishing</button>
+  </div>
+  <div style="overflow-x:auto">
+  <table class="rt-table" id="rt-table">
+    <thead>
+      <tr>
+        <th style="width:42px">#</th>
+        <th style="width:120px">Topic</th>
+        <th style="min-width:300px">Reference</th>
+        <th style="width:110px">OA Type</th>
+        <th style="width:130px">Open Science</th>
+        <th style="width:26px"></th>
+      </tr>
+    </thead>
+    <tbody id="rt-tbody"></tbody>
+  </table>
+  </div>
+  <div id="rt-no-results" class="rt-no-results" style="display:none">No entries match your search or filter.</div>
+</div>
+```
+
+---
+
 ```{=html}
 <details class="collapsible-section">
 <summary>
@@ -545,295 +761,4 @@ document.addEventListener('DOMContentLoaded', function(){
 </div></details>
 ```
 
----
 
-## Research Articles — Searchable Table
-
-```{=html}
-<p style="font-family:'DM Sans',sans-serif;color:var(--text-muted);font-size:0.95rem;margin-bottom:1.2rem">
-Filter by topic or search by author and title. Click any row to expand full details and open science badges.
-</p>
-```
-
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-#| results: asis
-
-library(openxlsx)
-library(jsonlite)
-
-tbl <- openxlsx::read.xlsx("research.xlsx")
-
-# Clean column names
-raw_names <- names(tbl)
-clean     <- tolower(trimws(raw_names))
-clean     <- gsub("[^a-z0-9]+", "_", clean)
-clean     <- gsub("_+", "_", clean)
-clean     <- gsub("^_|_$", "", clean)
-
-# Map to JS keys
-map_name <- function(n) {
-  if (grepl("^x$|^x_$|^_$",        n)) return("num")
-  if (grepl("topic",                 n)) return("topic")
-  if (grepl("reference|^ref",        n)) return("ref")
-  if (grepl("oa.type|oa_type|oatype",n)) return("oatype")
-  if (grepl("materials|data",        n)) return("materials")
-  if (grepl("preregistration|prereg",n)) return("prereg")
-  if (grepl("pre.print|preprint",    n)) return("preprint")
-  if (grepl("student",               n)) return("student")
-  return(n)
-}
-
-names(tbl) <- sapply(clean, map_name)
-
-# Ensure all columns present
-for (col in c("num","topic","ref","oatype","materials","prereg","preprint","student")) {
-  if (!col %in% names(tbl)) tbl[[col]] <- ""
-}
-
-# The row number column is the unnamed first column (shows as X__ or similar)
-# Use the actual numeric index from the xlsx "_" column if available,
-# otherwise use row index
-if ("num" %in% names(tbl)) {
-  # already mapped
-} else {
-  tbl$num <- seq_len(nrow(tbl))
-}
-
-# Replace NA / literal "NA"
-tbl[is.na(tbl)] <- ""
-
-# Keep only our known columns in a clean data frame
-out <- data.frame(
-  num       = as.character(tbl$num),
-  topic     = as.character(tbl$topic),
-  ref       = as.character(tbl$ref),
-  oatype    = as.character(tbl$oatype),
-  materials = as.character(tbl$materials),
-  prereg    = as.character(tbl$prereg),
-  preprint  = as.character(tbl$preprint),
-  student   = as.character(tbl$student),
-  stringsAsFactors = FALSE
-)
-
-json <- jsonlite::toJSON(out, auto_unbox = TRUE)
-
-cat(paste0(
-  '<script>\n',
-  'var RT_DATA = ', json, ';\n',
-  '</script>\n'
-))
-```
-
-```{=html}
-<!-- SVG symbol defs -->
-<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="ic-search"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
-  <symbol id="ic-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></symbol>
-  <symbol id="ic-anchor"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="5" r="3"/><line x1="12" y1="8" x2="12" y2="21"/><path d="M5 12H2a10 10 0 0020 0h-3"/></symbol>
-  <symbol id="ic-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></symbol>
-  <symbol id="ic-flask"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v11l-4 7h14l-4-7V3"/></symbol>
-  <symbol id="ic-book"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></symbol>
-</svg>
-
-<!-- Badge paths -->
-<script>
-var BADGE = {
-  openmaterials: 'images/openmaterials.png',
-  preregistered: 'images/preregistered.png',
-  opencode:      'images/opencode.png',
-  opendata:      'images/opendata.png'
-};
-
-var rtCurTopic  = 'all';
-var rtCurSearch = '';
-
-function oaClass(s){
-  if(!s) return 'green';
-  var l = s.toLowerCase();
-  if(l.includes('diamond'))  return 'diamond';
-  if(l.includes('gold'))     return 'gold';
-  if(l.includes('software')) return 'software';
-  if(l.includes('preprint')) return 'preprint';
-  if(l.includes('closed'))   return 'closed';
-  return 'green';
-}
-
-function oaShort(s){
-  if(!s) return '—';
-  if(s.toLowerCase().includes('diamond'))  return 'Diamond';
-  if(s.toLowerCase().includes('gold'))     return 'Gold';
-  if(s.toLowerCase().includes('software')) return 'Software';
-  if(s.toLowerCase().includes('preprint')) return 'Preprint';
-  if(s.toLowerCase().includes('closed'))   return 'Closed';
-  return s.split(' ')[0];
-}
-
-function isValid(v){
-  return v && v.trim() && v.trim() !== 'NA'
-    && v.trim() !== 'Does not apply.' && v.trim() !== 'Link';
-}
-
-function osBadges(d){
-  var b = '';
-  if(isValid(d.materials))
-    b += '<a class="os-badge-link" href="'+d.materials.trim()+'" target="_blank" title="Open Materials / Data">'
-      +'<img class="os-badge-img" src="'+BADGE.openmaterials+'" alt="Open Materials"></a>';
-  /* First URL only if multiple prereg links */
-  if(isValid(d.prereg)){
-    var preregUrl = d.prereg.trim().split(/\s+/)[0];
-    b += '<a class="os-badge-link" href="'+preregUrl+'" target="_blank" title="Preregistered">'
-      +'<img class="os-badge-img" src="'+BADGE.preregistered+'" alt="Preregistered"></a>';
-  }
-  if(isValid(d.preprint))
-    b += '<a class="os-badge-link" href="'+d.preprint.trim()+'" target="_blank" title="Preprint available">'
-      +'<img class="os-badge-img" src="'+BADGE.opendata+'" alt="Preprint"></a>';
-  return b || '<span style="color:var(--text-muted);font-size:0.8rem">—</span>';
-}
-
-function buildRow(d){
-  var topics = String(d.topic||'').split('/').map(function(t){return t.trim();});
-  var topicBadges = topics.map(function(t){
-    return '<span class="rt-topic">'+t+'</span>';
-  }).join(' ');
-
-  var num = d.num || d['_'] || '';
-  var expId = 'rt-exp-'+num+'-'+Math.random().toString(36).slice(2,6);
-  var searchStr = (String(d.ref||'')+' '+String(d.topic||'')).toLowerCase();
-
-  /* Expanded detail links */
-  var links = '';
-  if(isValid(d.materials))
-    links += '<div><a href="'+d.materials.trim()+'" target="_blank" style="color:var(--accent)">Materials &amp; Data</a></div>';
-  if(isValid(d.prereg)){
-    /* handle multi-line prereg urls */
-    var purls = d.prereg.trim().split(/\s+/).filter(function(u){return u.length>4;});
-    purls.forEach(function(u,i){
-      links += '<div><a href="'+u+'" target="_blank" style="color:var(--accent)">Preregistration'+(purls.length>1?' '+(i+1):'')+'</a></div>';
-    });
-  }
-  if(isValid(d.preprint))
-    links += '<div><a href="'+d.preprint.trim()+'" target="_blank" style="color:var(--accent)">Preprint</a></div>';
-
-  var studentBadge = (d.student && String(d.student).toLowerCase().includes('yes'))
-    ? '<div><span style="background:var(--accent-dim);color:var(--accent);border-radius:5px;padding:2px 8px;font-size:0.71rem;font-weight:600;font-family:\'DM Sans\',sans-serif">Student collaboration</span></div>'
-    : '';
-
-  return '<tr class="rt-main-row" data-topic="'+String(d.topic||'')+'" '
-    +'data-search="'+searchStr+'" '
-    +'onclick="rtToggle(\''+expId+'\',this)" title="Click for details">'
-    +'<td><strong style="color:var(--accent);font-family:\'DM Sans\',sans-serif">'+num+'</strong></td>'
-    +'<td>'+topicBadges+'</td>'
-    +'<td style="font-size:0.85rem;font-family:\'DM Sans\',sans-serif">'+String(d.ref||'')+'</td>'
-    +'<td><span class="rt-oa '+oaClass(d.oatype)+'">'+oaShort(d.oatype)+'</span></td>'
-    +'<td><div class="os-badges">'+osBadges(d)+'</div></td>'
-    +'<td><button class="rt-expand-btn" id="btn-'+expId+'" title="Expand">'
-    +'<svg width="13" height="13"><use href="#ic-chevron"/></svg></button></td>'
-    +'</tr>'
-    +'<tr class="rt-expanded-row hidden" id="'+expId+'">'
-    +'<td colspan="6">'
-    +'<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start;font-family:\'DM Sans\',sans-serif">'
-    +'<div style="flex:1;min-width:200px">'
-    +'<strong style="color:var(--accent);font-size:0.72rem;letter-spacing:.05em;text-transform:uppercase">Reference</strong><br>'
-    +'<span style="color:var(--text);font-size:0.875rem">'+String(d.ref||'')+'</span></div>'
-    +'<div style="display:flex;flex-direction:column;gap:6px;font-size:0.855rem;min-width:170px">'
-    +studentBadge+links
-    +'</div></div></td></tr>';
-}
-
-function rtToggle(id, row){
-  var exp = document.getElementById(id);
-  var btn = document.getElementById('btn-'+id);
-  if(!exp) return;
-  var open = !exp.classList.contains('hidden');
-  exp.classList.toggle('hidden', open);
-  if(btn) btn.classList.toggle('open', !open);
-}
-
-function rtRender(){
-  var tbody = document.getElementById('rt-tbody');
-  var noRes = document.getElementById('rt-no-results');
-  var tbl   = document.getElementById('rt-table');
-  var cntEl = document.getElementById('rt-count');
-  if(!tbody || typeof RT_DATA === 'undefined') return;
-
-  var filtered = RT_DATA.filter(function(d){
-    var topicStr = String(d.topic||'').toLowerCase();
-    var topicOk  = rtCurTopic === 'all' || topicStr.includes(rtCurTopic.toLowerCase());
-    var searchStr = (String(d.ref||'')+' '+String(d.topic||'')).toLowerCase();
-    var searchOk  = !rtCurSearch || searchStr.includes(rtCurSearch);
-    return topicOk && searchOk;
-  });
-
-  tbody.innerHTML = filtered.map(buildRow).join('');
-  noRes.style.display = filtered.length === 0 ? 'block' : 'none';
-  tbl.style.display   = filtered.length === 0 ? 'none'  : '';
-  cntEl.textContent   = filtered.length + ' of ' + RT_DATA.length + ' entries';
-}
-
-function rtFilter(){
-  rtCurSearch = document.getElementById('rt-search').value.toLowerCase();
-  rtRender();
-}
-function rtSetTopic(t, btn){
-  rtCurTopic = t;
-  document.querySelectorAll('.rt-chip').forEach(function(c){ c.classList.remove('active'); });
-  btn.classList.add('active');
-  rtRender();
-}
-
-/* Run once RT_DATA is available */
-if(typeof RT_DATA !== 'undefined'){
-  document.addEventListener('DOMContentLoaded', rtRender);
-} else {
-  document.addEventListener('DOMContentLoaded', function(){
-    setTimeout(rtRender, 100);
-  });
-}
-</script>
-
-<div class="research-table-wrapper">
-  <div class="rt-search-bar">
-    <svg width="16" height="16"><use href="#ic-search"/></svg>
-    <input type="text" id="rt-search" placeholder="Search by author, title, keyword…"
-           oninput="rtFilter()" autocomplete="off"/>
-    <span id="rt-count" style="color:var(--text-muted);font-size:0.78rem;white-space:nowrap;font-family:'DM Sans',sans-serif"></span>
-  </div>
-
-  <div class="rt-filter-chips">
-    <span class="rt-filter-label">Topic</span>
-    <button class="rt-chip active" onclick="rtSetTopic('all',this)">All</button>
-    <button class="rt-chip" onclick="rtSetTopic('Anchoring',this)">
-      <svg width="11" height="11"><use href="#ic-anchor"/></svg> Anchoring
-    </button>
-    <button class="rt-chip" onclick="rtSetTopic('Replication',this)">
-      <svg width="11" height="11"><use href="#ic-refresh"/></svg> Replication
-    </button>
-    <button class="rt-chip" onclick="rtSetTopic('Meta-Science',this)">
-      <svg width="11" height="11"><use href="#ic-flask"/></svg> Meta-Science
-    </button>
-    <button class="rt-chip" onclick="rtSetTopic('Publishing',this)">
-      <svg width="11" height="11"><use href="#ic-book"/></svg> Publishing
-    </button>
-  </div>
-
-  <div style="overflow-x:auto">
-  <table class="rt-table" id="rt-table">
-    <thead>
-      <tr>
-        <th style="width:42px">#</th>
-        <th style="width:120px">Topic</th>
-        <th style="min-width:300px">Reference</th>
-        <th style="width:110px">OA Type</th>
-        <th style="width:130px">Open Science</th>
-        <th style="width:26px"></th>
-      </tr>
-    </thead>
-    <tbody id="rt-tbody"></tbody>
-  </table>
-  </div>
-  <div id="rt-no-results" class="rt-no-results" style="display:none">No entries match your search or filter.</div>
-</div>
-```
