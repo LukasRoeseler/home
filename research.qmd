@@ -5,212 +5,174 @@ bibliographystyle: apa
 ---
 
 ```{=html}
-<!-- ═══ DARK MODE TOGGLE (injected into navbar) ═══ -->
+<!--
+  ═══════════════════════════════════════════════════════
+  DARK MODE — one toggle button, injected into the navbar
+  ═══════════════════════════════════════════════════════
+-->
 <script>
+/* Restore saved theme immediately (avoids flash) */
 (function(){
-  /* restore saved preference immediately to avoid flash */
-  var saved = localStorage.getItem('lr-theme');
-  if(saved) document.documentElement.setAttribute('data-bs-theme', saved);
+  var t = localStorage.getItem('lr-theme');
+  if(t) document.documentElement.setAttribute('data-bs-theme', t);
 })();
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
-  /* Build toggle button */
+  /* Prevent double-injection if this script runs twice */
+  if(document.getElementById('darkmode-toggle')) return;
+
   var btn = document.createElement('button');
   btn.id = 'darkmode-toggle';
   btn.title = 'Toggle light / dark mode';
   btn.setAttribute('aria-label', 'Toggle light/dark mode');
-  btn.innerHTML = `
-    <!-- Moon icon (shown in light mode) -->
-    <svg class="moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-    </svg>
-    <!-- Sun icon (shown in dark mode) -->
-    <svg class="sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="5"/>
-      <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    </svg>`;
-  btn.onclick = function(){
-    var isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
-    var next = isDark ? 'light' : 'dark';
+  /* Moon SVG (light mode) */
+  btn.innerHTML =
+    '<svg class="dm-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">' +
+      '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>' +
+    '</svg>' +
+    /* Sun SVG (dark mode) */
+    '<svg class="dm-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">' +
+      '<circle cx="12" cy="12" r="5"/>' +
+      '<line x1="12" y1="1"  x2="12" y2="3"/>' +
+      '<line x1="12" y1="21" x2="12" y2="23"/>' +
+      '<line x1="4.22" y1="4.22"   x2="5.64" y2="5.64"/>' +
+      '<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>' +
+      '<line x1="1"  y1="12" x2="3"  y2="12"/>' +
+      '<line x1="21" y1="12" x2="23" y2="12"/>' +
+      '<line x1="4.22" y1="19.78"  x2="5.64" y2="18.36"/>' +
+      '<line x1="18.36" y1="5.64"  x2="19.78" y2="4.22"/>' +
+    '</svg>';
+
+  btn.addEventListener('click', function(){
+    var dark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
+    var next = dark ? 'light' : 'dark';
     document.documentElement.setAttribute('data-bs-theme', next);
     localStorage.setItem('lr-theme', next);
-  };
+  });
 
-  /* Append to right side of navbar */
-  var navRight = document.querySelector('.navbar-nav.ms-auto, .navbar .navbar-collapse .navbar-nav:last-child, .navbar-collapse');
-  if(navRight){
+  /* Find the rightmost navbar list and append */
+  var navLists = document.querySelectorAll('.navbar-nav');
+  var target = navLists[navLists.length - 1];
+  if(target){
     var li = document.createElement('li');
     li.className = 'nav-item d-flex align-items-center';
     li.appendChild(btn);
-    navRight.appendChild(li);
-  } else {
-    /* fallback: append to navbar container */
-    var nb = document.querySelector('.navbar .container, .navbar .container-fluid');
-    if(nb) nb.appendChild(btn);
+    target.appendChild(li);
   }
 });
 </script>
 
-<!-- ═══ WORD CLOUD ═══ -->
+<!--
+  ═══════════════════════
+  WORD CLOUD
+  ═══════════════════════
+-->
 <div id="wordcloud-wrapper">
-  <canvas id="wc-canvas" width="800" height="220" style="width:100%;height:auto;display:block"></canvas>
-  <p class="wc-note">Key topics from my research — based on Google Scholar profile</p>
+  <canvas id="wc-canvas" width="900" height="230"
+          style="width:100%;height:auto;display:block"></canvas>
+  <p class="wc-note">Key topics based on Google Scholar profile</p>
 </div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.1.0/wordcloud2.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
-  /* Word list derived from Google Scholar profile keywords & publication titles */
   var words = [
-    ['Anchoring Effects', 42],
-    ['Replication', 38],
-    ['Meta-Analysis', 30],
-    ['Open Science', 28],
-    ['Judgment & Decision Making', 24],
-    ['Reproducibility', 22],
-    ['Preregistration', 18],
-    ['Replication Database', 18],
-    ['Susceptibility', 16],
-    ['Adjustment', 15],
-    ['Ego Depletion', 13],
-    ['Open Data', 12],
-    ['Self-Control', 12],
-    ['Body Position', 11],
-    ['Psychological Science', 10],
-    ['Effect Sizes', 10],
-    ['Meta-Science', 10],
-    ['P-Hacking', 9],
-    ['Subliminal Priming', 8],
-    ['Publication Bias', 8],
-    ['Social Psychology', 8],
-    ['Personality', 7],
-    ['Dominance', 7],
-    ['Prestige', 6],
-    ['Generalizability', 6],
-    ['Emotion', 6],
-    ['FLoRA', 6],
-    ['FORRT', 5],
-    ['Validity', 5],
-    ['Transparency', 5]
+    ['Anchoring Effects',38],['Replication',34],['Meta-Analysis',28],
+    ['Open Science',26],['Judgment & Decision Making',22],['Reproducibility',20],
+    ['Preregistration',17],['Replication Database',17],['Susceptibility',15],
+    ['Adjustment',14],['Ego Depletion',12],['Open Data',11],
+    ['Self-Control',11],['Body Position',10],['Effect Sizes',10],
+    ['Meta-Science',10],['P-Hacking',9],['Publication Bias',8],
+    ['Social Psychology',8],['Personality',7],['Dominance',7],
+    ['Prestige',6],['Generalizability',6],['FLoRA',6],
+    ['FORRT',5],['Validity',5],['Transparency',5],['Subliminal Priming',7]
   ];
-
-  function getAccent(){
-    return getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#03a1fc';
-  }
-  function getText(){
-    return getComputedStyle(document.documentElement).getPropertyValue('--text-muted').trim() || '#5a6278';
-  }
-
-  function drawCloud(){
-    var canvas = document.getElementById('wc-canvas');
-    if(!canvas) return;
-    var ctx = canvas.getContext('2d');
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-
-    var accent = getAccent();
-    var muted  = getText();
-
-    /* Generate shades of accent + muted */
-    var palette = [accent, accent, accent, muted, muted,
-                   accent+'cc', accent+'99', muted+'dd', muted+'aa'];
-
-    WordCloud(canvas, {
+  function css(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+  function draw(){
+    var c = document.getElementById('wc-canvas');
+    if(!c) return;
+    c.getContext('2d').clearRect(0,0,c.width,c.height);
+    var a = css('--accent')||'#03a1fc', m = css('--text-muted')||'#5a6278';
+    var pal = [a,a,a,m,m,a+'cc',a+'99',m+'dd',m+'bb'];
+    WordCloud(c,{
       list: words,
-      gridSize: Math.round(16 * canvas.offsetWidth / 800),
-      weightFactor: function(size){ return Math.pow(size, 0.85) * (canvas.offsetWidth / 800) * 2.2; },
-      fontFamily: 'DM Sans, sans-serif',
-      fontWeight: '600',
-      color: function(){ return palette[Math.floor(Math.random()*palette.length)]; },
-      rotateRatio: 0,
-      rotationSteps: 1,
-      backgroundColor: 'transparent',
-      drawOutOfBound: false,
-      shrinkToFit: true,
-      shuffle: false
+      gridSize: Math.round(14*(c.offsetWidth/900)),
+      weightFactor: function(s){ return Math.pow(s,0.82)*(c.offsetWidth/900)*2.4; },
+      fontFamily:'DM Sans,sans-serif', fontWeight:'600',
+      color: function(){ return pal[Math.floor(Math.random()*pal.length)]; },
+      rotateRatio:0, rotationSteps:1,
+      backgroundColor:'transparent',
+      drawOutOfBound:false, shrinkToFit:true, shuffle:false
     });
   }
-
-  drawCloud();
-
-  /* Redraw on theme change */
-  var obs = new MutationObserver(function(){ setTimeout(drawCloud, 80); });
-  obs.observe(document.documentElement, { attributes: true, attributeFilter: ['data-bs-theme'] });
+  draw();
+  new MutationObserver(function(){ setTimeout(draw,80); })
+    .observe(document.documentElement,{attributes:true,attributeFilter:['data-bs-theme']});
 });
 </script>
 
-<!-- ═══ PROJECT SLIDESHOW (Karteikarten) ═══ -->
+<!--
+  ═══════════════════════════════════════════
+  PROJECT SLIDESHOW  (Karteikarten)
+  To add a card: copy one .project-card block
+  and update ssTotal in the script below.
+  ═══════════════════════════════════════════
+-->
 <div class="project-slideshow">
   <div class="project-cards-outer">
     <div class="project-cards-track" id="ss-track">
 
-      <!-- Card 1: FLoRA / FORRT Replication Hub -->
+      <!-- ── CARD 1 : FLoRA / FORRT Replication Hub ── -->
       <div class="project-card">
         <div class="card-logo-wrap">
-          <img src="https://forrt.org/flora-explorer/logo.svg"
-               alt="FLoRA logo"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
-               style="max-height:52px;width:auto">
-          <!-- fallback text logo if SVG fails -->
-          <div style="display:none;align-items:center;gap:8px">
-            <svg viewBox="0 0 40 40" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="20" cy="20" r="18" stroke="#03a1fc" stroke-width="2.5"/>
-              <text x="50%" y="55%" text-anchor="middle" fill="#03a1fc" font-size="14" font-family="DM Sans,sans-serif" font-weight="700" dy=".1em">FL</text>
-            </svg>
-            <span style="font-weight:700;font-size:1.1rem;color:var(--accent)">FLoRA</span>
-          </div>
+          <img src="images/flora.svg" alt="FLoRA logo"
+               style="max-height:56px;width:auto"
+               onerror="this.style.display='none'">
         </div>
         <h3>FORRT Replication Hub &amp; FLoRA Database</h3>
-        <p>I am a lead on the FORRT Replication Hub, home to <strong>FLoRA</strong> — the world's largest curated database of replication studies, tracking reproductions and replications across the sciences and humanities. Get in touch if you would like to contribute data or expertise.</p>
+        <p>I am a lead on the <strong>FORRT Replication Hub</strong>, home to
+           <strong>FLoRA</strong> — the world's largest curated database of replication
+           studies, tracking reproductions and replications across the sciences and
+           humanities. Get in touch if you would like to contribute.</p>
         <a href="https://forrt.org/replication-hub" target="_blank" class="card-cta">
-          <svg viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="13" height="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
           Visit FORRT Replication Hub
         </a>
       </div>
 
-      <!-- Card 2: Replication Research Journal (R2) -->
+      <!-- ── CARD 2 : Replication Research Journal ── -->
       <div class="project-card">
         <div class="card-logo-wrap">
           <img src="images/rr_blue.jpg" alt="Replication Research logo"
-               style="max-height:52px;width:auto;border-radius:6px"
+               style="max-height:56px;width:auto;border-radius:6px"
                onerror="this.style.display='none'">
         </div>
         <h3>Replication Research (R2) — Diamond Open Access Journal</h3>
-        <p>Together with an interdisciplinary team of Open Science experts, I am founding and editing <strong>Replication Research (R2)</strong> — a diamond open access journal dedicated to publishing replication and reproduction studies. No fees for authors or readers. Get in touch if you want to submit replication work or support the initiative.</p>
+        <p>Together with an interdisciplinary team of Open Science experts, I am founding
+           and editing <strong>Replication Research (R2)</strong> — a diamond open access
+           journal dedicated to replication and reproduction studies. No fees for authors
+           or readers. Get in touch to submit or support the initiative.</p>
         <a href="https://replicationresearch.org" target="_blank" class="card-cta">
-          <svg viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="13" height="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
           Visit Replication Research
         </a>
       </div>
 
-      <!-- Card 3: Replication Journal Federation -->
+      <!-- ── CARD 3 : Replication Journal Federation ── -->
       <div class="project-card">
         <div class="card-logo-wrap">
-          <!-- Inline SVG recreation of the RJF logo (coloured circles) -->
-          <svg width="56" height="56" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Replication Journal Federation logo">
-            <!-- central light circle -->
-            <circle cx="60" cy="60" r="18" fill="#d6eaf8" stroke="#aed6f1" stroke-width="1.5"/>
-            <!-- 6 surrounding coloured circles -->
-            <circle cx="60"  cy="22"  r="14" stroke="#2471a3" stroke-width="2.2" fill="none"/>
-            <circle cx="93"  cy="41"  r="14" stroke="#e67e22" stroke-width="2.2" fill="none"/>
-            <circle cx="93"  cy="79"  r="14" stroke="#16a085" stroke-width="2.2" fill="none"/>
-            <circle cx="60"  cy="98"  r="14" stroke="#c0392b" stroke-width="2.2" fill="none"/>
-            <circle cx="27"  cy="79"  r="14" stroke="#8e44ad" stroke-width="2.2" fill="none"/>
-            <circle cx="27"  cy="41"  r="14" stroke="#f1c40f" stroke-width="2.2" fill="none"/>
-          </svg>
-          <span style="font-weight:700;font-size:1.05rem;color:var(--text);margin-left:10px;line-height:1.3">Replication Journal<br>Federation</span>
+          <img src="images/rjf_logo_6_circles.svg" alt="Replication Journal Federation logo"
+               style="max-height:56px;width:auto"
+               onerror="this.style.display='none'">
+          <span style="font-weight:700;font-size:1rem;color:var(--text);line-height:1.3;margin-left:10px">Replication Journal<br>Federation</span>
         </div>
         <h3>Replication Journal Federation</h3>
-        <p>I am coordinating the <strong>Replication Journal Federation</strong> — a growing international network of journals committed to publishing replication and reproduction studies. The Federation promotes cross-journal standards, visibility, and discoverability of replication research across disciplines.</p>
+        <p>I am coordinating the <strong>Replication Journal Federation</strong> — a
+           growing international network of journals committed to publishing replication
+           and reproduction studies. The Federation promotes cross-journal standards,
+           visibility, and discoverability of replication research across disciplines.</p>
         <a href="https://replicationresearch.org" target="_blank" class="card-cta">
-          <svg viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="13" height="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
           Learn more
         </a>
       </div>
@@ -218,47 +180,52 @@ document.addEventListener('DOMContentLoaded', function(){
     </div><!-- /track -->
   </div><!-- /outer -->
 
-  <!-- Navigation -->
   <div class="slideshow-nav">
-    <button class="ss-btn" id="ss-prev" onclick="ssPrev()" aria-label="Previous card">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+    <button class="ss-btn" onclick="ssPrev()" aria-label="Previous">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
     </button>
     <div class="ss-dots" id="ss-dots"></div>
-    <button class="ss-btn" id="ss-next" onclick="ssNext()" aria-label="Next card">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+    <button class="ss-btn" onclick="ssNext()" aria-label="Next">
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
   </div>
 </div>
 
 <script>
 (function(){
+  /* ── UPDATE THIS NUMBER when adding/removing cards ── */
+  var ssTotal = 3;
+
   var track = document.getElementById('ss-track');
   var dotsEl = document.getElementById('ss-dots');
-  var total = 3, current = 0;
+  var cur = 0, timer;
 
   /* Build dots */
-  for(var i=0;i<total;i++){
-    var d = document.createElement('button');
-    d.className = 'ss-dot' + (i===0?' active':'');
-    d.setAttribute('aria-label','Card '+(i+1));
-    d.dataset.idx = i;
-    d.onclick = function(){ ssGoTo(+this.dataset.idx); };
-    dotsEl.appendChild(d);
+  for(var i=0;i<ssTotal;i++){
+    (function(idx){
+      var d = document.createElement('button');
+      d.className = 'ss-dot' + (idx===0?' active':'');
+      d.setAttribute('aria-label','Card '+(idx+1));
+      d.addEventListener('click',function(){ ssGoTo(idx); });
+      dotsEl.appendChild(d);
+    })(i);
   }
 
   function ssGoTo(n){
-    current = (n+total)%total;
-    track.style.transform = 'translateX(-'+current*100+'%)';
+    cur = ((n%ssTotal)+ssTotal)%ssTotal;
+    track.style.transform = 'translateX(-'+cur*100+'%)';
     dotsEl.querySelectorAll('.ss-dot').forEach(function(d,i){
-      d.classList.toggle('active', i===current);
+      d.classList.toggle('active',i===cur);
     });
+    /* reset auto-advance */
+    clearInterval(timer);
+    timer = setInterval(function(){ ssGoTo(cur+1); },7000);
   }
 
-  window.ssPrev = function(){ ssGoTo(current-1); };
-  window.ssNext = function(){ ssGoTo(current+1); };
+  window.ssPrev = function(){ ssGoTo(cur-1); };
+  window.ssNext = function(){ ssGoTo(cur+1); };
 
-  /* Auto-advance every 7 s */
-  setInterval(function(){ ssGoTo(current+1); }, 7000);
+  timer = setInterval(function(){ ssGoTo(cur+1); },7000);
 })();
 </script>
 ```
@@ -266,81 +233,145 @@ document.addEventListener('DOMContentLoaded', function(){
 My research covers Replications, Meta-Science, and Judgment and Decision Making (e.g., Anchoring Effects).
 
 ```{=html}
-<!-- helper SVGs used throughout the page -->
-<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="ico-chevron" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-</svg>
+<!--
+  ═══════════════════════════════════════════════════════════
+  OPEN EDUCATIONAL RESOURCES  (4-column grid)
 
-<!-- collapsible section macro (reused below) -->
-<script>
-function makeCollapsible(el){
-  /* wraps an existing <h2> + following siblings into a <details> */
-  /* — we use static HTML <details> elements instead, see below — */
-}
-</script>
-```
-
-```{=html}
+  To add a card: copy one <a class="oer-card"> block.
+  The grid auto-wraps at 2 columns (tablet) and 1 (mobile).
+  ═══════════════════════════════════════════════════════════
+-->
 <details class="collapsible-section" open>
-<summary class="collapsible-trigger">
-  <div class="coll-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem">Open Educational Resources</h2>
+<summary>
+  <div class="coll-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+  <h2>Open Educational Resources</h2>
 </summary>
 <div class="section-body">
-```
 
--   Together with a team of experts, I have published an open access handbook for reproduction and replication studies: <https://forrt.org/replication_handbook>
+<div class="oer-grid">
 
--   I have been writing a [German book on Open Science, which is available online](https://lukasroeseler.github.io/opensciencebuch/).
+  <!-- Card 1: Replication Handbook -->
+  <a class="oer-card" href="https://forrt.org/replication_handbook" target="_blank">
+    <img class="oer-img" src="images/handbook.png"
+         alt="Handbook for Reproduction and Replication Studies"
+         onerror="this.style.display='none'">
+    <div class="oer-body">
+      <div class="oer-title">Handbook for Reproduction &amp; Replication Studies</div>
+      <div class="oer-desc">Open access handbook co-authored with international experts. Covers methods, standards, and best practices for replication research.</div>
+      <span class="oer-link">
+        Read online
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </div>
+  </a>
 
--   I upload most slides and materials from my workshops, lectures, talks, and seminars to this OSF repository: [https://osf.io/at29b/](https://osf.io/at29b/){.uri}
+  <!-- Card 2: German Open Science Book -->
+  <a class="oer-card" href="https://lukasroeseler.github.io/opensciencebuch/" target="_blank">
+    <img class="oer-img" src="images/opensciencebuch.jpg"
+         alt="Open Science Buch"
+         onerror="this.style.display='none'">
+    <div class="oer-body">
+      <div class="oer-title">Open Science: Wie sich die Wissenschaft öffnet</div>
+      <div class="oer-desc">A German-language open access book on Open Science — freely available online and continuously updated.</div>
+      <span class="oer-link">
+        Read online
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </div>
+  </a>
 
--   Together with experts from the University of Münster's psychology open science commission, I have been preparing an interdisciplinary guide to Open Science (German, WIP): <https://lukasroeseler.github.io/MueCOS-Infomodule/>
+  <!-- Card 3: MueCOS Infomodule -->
+  <a class="oer-card" href="https://lukasroeseler.github.io/MueCOS-Infomodule/" target="_blank">
+    <img class="oer-img" src="images/infomodule.jpg"
+         alt="MueCOS Infomodule"
+         onerror="this.style.display='none'">
+    <div class="oer-body">
+      <div class="oer-title">Interdisciplinary Open Science Guide (MueCOS)</div>
+      <div class="oer-desc">An interdisciplinary guide to Open Science prepared with experts from the University of Münster. German, work in progress.</div>
+      <span class="oer-link">
+        Open guide
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </div>
+  </a>
 
-```{=html}
+  <!-- Card 4: Teaching slides / OSF repository -->
+  <a class="oer-card" href="https://osf.io/at29b/" target="_blank">
+    <!-- Teaching pictogram (SVG, no external dependency) -->
+    <div class="oer-pictogram">
+      <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Board -->
+        <rect x="8" y="10" width="64" height="40" rx="4"
+              fill="var(--bg-card2)" stroke="var(--accent)" stroke-width="2.5"/>
+        <!-- Lines on board -->
+        <line x1="18" y1="24" x2="50" y2="24" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+        <line x1="18" y1="32" x2="44" y2="32" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+        <line x1="18" y1="40" x2="38" y2="40" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" opacity=".35"/>
+        <!-- Easel legs -->
+        <line x1="22" y1="50" x2="14" y2="68" stroke="var(--text-muted)" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="58" y1="50" x2="66" y2="68" stroke="var(--text-muted)" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="40" y1="50" x2="40" y2="68" stroke="var(--text-muted)" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+        <!-- Person silhouette -->
+        <circle cx="62" cy="22" r="5" fill="var(--text-muted)" opacity=".6"/>
+        <path d="M58 38 Q62 28 66 38" fill="var(--text-muted)" opacity=".45"/>
+      </svg>
+    </div>
+    <div class="oer-body">
+      <div class="oer-title">Workshops, Lectures &amp; Teaching Slides</div>
+      <div class="oer-desc">Slides and materials from workshops, lectures, talks, and seminars on Open Science and replication methods. Hosted on OSF.</div>
+      <span class="oer-link">
+        Browse OSF repository
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </div>
+  </a>
+
+</div><!-- /oer-grid -->
 </div></details>
+```
 
+```{=html}
 <details class="collapsible-section" open>
-<summary class="collapsible-trigger">
-  <div class="coll-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem">Research Articles (Peer-Reviewed)</h2>
+<summary>
+  <div class="coll-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+  <h2>Research Articles (Peer-Reviewed)</h2>
 </summary>
 <div class="section-body">
 ```
 
--   Aczel, B., Szaszi, B., Clelland, H.T. ... **Röseler, L.**, ... et al. Investigating the analytical robustness of the social and behavioural sciences. Nature 652, 135–142 (2026). <https://doi.org/10.1038/s41586-025-09844-9>
+-   Aczel, B., Szaszi, B., Clelland, H.T. ... **Röseler, L.**, ... et al. Investigating the analytical robustness of the social and behavioural sciences. *Nature* 652, 135–142 (2026). <https://doi.org/10.1038/s41586-025-09844-9>
 
--   **Röseler, L.**, Incerti, L., Rebholz, T. R., Seida, C., & Papenmeier, F. (2025). Falsifying the insufficient adjustment model: No evidence for unidirectional adjustment from anchors. *Meta-Psychology*, *9*. <https://doi.org/10.15626/MP.2024.4137>
+-   **Röseler, L.**, Incerti, L., Rebholz, T. R., Seida, C., & Papenmeier, F. (2025). Falsifying the insufficient adjustment model. *Meta-Psychology*, *9*. <https://doi.org/10.15626/MP.2024.4137>
 
 -   Reed, W. R., **Röseler, L.**, Saam, M., & Wallrich, L. (2025). No Room at the Inn? The Case for Dedicated Replication Journals. *Journal of Behavioral and Experimental Economics*, 102502. <https://doi.org/10.1016/j.socec.2025.102502>
 
--   Hoghe, J., **Röseler, L.**, Limmer, R., Walther, C., & Schütz, A. (2025). Die Bedeutung personaler Ressourcen und personaler Risikofaktoren für die Bewältigung beruflicher Belastungen bei Genesungsbegleiter/-innen/Peer Berater/-innen. *Zeitschrift für Arbeitswissenschaft.* <https://doi.org/10.1007/s41449-025-00460-x>
+-   Hoghe, J., **Röseler, L.**, Limmer, R., Walther, C., & Schütz, A. (2025). Die Bedeutung personaler Ressourcen. *Zeitschrift für Arbeitswissenschaft.* <https://doi.org/10.1007/s41449-025-00460-x>
 
 -   Weber, L., & **Röseler, L.** (2025). Testing the Reliability of Anchoring Susceptibility Scores. *Europe's Journal of Psychology*, *21*(1), 1-10. <https://doi.org/10.5964/ejop.9891>
 
--   **Röseler, L.**, Weber, L., Helgerth, K. A., Stich, E., Günther, M., Tegethoff, P., Wagner, F., & Schütz, A. (2024). Measurements of Susceptibility to Anchoring are Unreliable: Meta-Analytic Evidence From More Than 50,000 Anchored Estimates. *Meta-Psychology*, *8*. <https://doi.org/10.15626/MP.2022.3236>
+-   **Röseler, L.**, Weber, L., Helgerth, K. A., Stich, E., Günther, M., Tegethoff, P., Wagner, F., & Schütz, A. (2024). Measurements of Susceptibility to Anchoring are Unreliable. *Meta-Psychology*, *8*. <https://doi.org/10.15626/MP.2022.3236>
 
--   Hoghe, J., **Röseler, L.**, Limmer, R., Walther, C., & Schütz, A. (2024). Berufliche Stressoren und Ressourcen von Genesungsbegleiter\* innen/Peer-Berater\* innen in der Sozialpsychiatrie. *Psychiatrische Praxis*. https://doi.org/10.1055/a-2383-8057
+-   Hoghe, J., **Röseler, L.**, et al. (2024). Berufliche Stressoren und Ressourcen von Genesungsbegleiter*innen. *Psychiatrische Praxis.* https://doi.org/10.1055/a-2383-8057
 
--   **Röseler, L.**, Bögler, H. L., Koßmann, L., Krueger, S., Bickenbach, S., Bühler, R., della Guardia, J., Köppel, L.-M. A, Möhring, J., Ponader, S., Roßmaier, K., Sing, J. (2024). Need for Cognition, Cognitive Load, and Forewarning do not Moderate Anchoring Effects. *Journal of Comments and Replications in Economics, 3*(2024-6). <https://doi.org/10.18718/81781.38>
+-   **Röseler, L.**, Bögler, H. L., et al. (2024). Need for Cognition, Cognitive Load, and Forewarning do not Moderate Anchoring Effects. *Journal of Comments and Replications in Economics, 3*(2024-6). <https://doi.org/10.18718/81781.38>
 
--   **Röseler, L.**, Kaiser, L., Doetsch, C., et al. (2024). The Replication Database: Documenting the Replicability of Psychological Science. *Journal of Open Psychology Data,* 12: 8, pp. 1–23. <https://doi.org/10.5334/jopd.101>
+-   **Röseler, L.**, Kaiser, L., Doetsch, C., et al. (2024). The Replication Database. *Journal of Open Psychology Data,* 12: 8, pp. 1–23. <https://doi.org/10.5334/jopd.101>
 
--   **Röseler, L.**, Felser, G., Asberger, J., & Schütz, A. (2024). The Effect of Variety on Perceived Quantity: Failures to Replicate Redden and Hoch (2009). *Meta-Psychology*, 8. <https://doi.org/10.15626/MP.2020.2639>
+-   **Röseler, L.**, Felser, G., Asberger, J., & Schütz, A. (2024). The Effect of Variety on Perceived Quantity. *Meta-Psychology*, 8. <https://doi.org/10.15626/MP.2020.2639>
 
 -   **Röseler, L.**, Weber, L., Helgerth, K., et al. (2024). Correction: The Open Anchoring Quest Dataset. *Journal of Open Psychology Data,* 12: 8, pp. 1–3. <https://doi.org/10.5334/jopd.92>
 
 -   Adler, S. J., **Röseler, L.**, & Schöniger, M. K. (2023). A toolbox to evaluate the trustworthiness of published findings. *Journal of Business Research*, *167*, 114189. <https://doi.org/10.1016/j.jbusres.2023.114189>
 
--   **Röseler, L.**, Weber, L., Helgerth, K., et al. (2022). The Open Anchoring Quest Dataset: Anchored Estimates from 96 Studies on Anchoring Effects. *Journal of Open Psychology Data, 10*(16), pp. 1–12. <http://doi.org/10.5334/jopd.67>
+-   **Röseler, L.**, Weber, L., Helgerth, K., et al. (2022). The Open Anchoring Quest Dataset. *Journal of Open Psychology Data, 10*(16), pp. 1–12. <http://doi.org/10.5334/jopd.67>
 
--   Delios, A., Clemente, E., Wu, T., et al. (2022). Examining the context sensitivity of research findings from archival data. *PNAS*. <https://doi.org/10.1073/pnas.212037711>
+-   Delios, A., Clemente, E., Wu, T., et al. (2022). Examining the context sensitivity of research findings. *PNAS.* <https://doi.org/10.1073/pnas.212037711>
 
--   Körner\*, R., **Röseler\*, L.**, Schütz, A., & Bushman, B. J. (2022). Dominance and prestige: Meta-analytic review of experimentally induced body position effects. *Psychological Bulletin, 148*(1-2), 67–85. <https://doi.org/10.1037/bul0000356>
+-   Körner\*, R., **Röseler\*, L.**, Schütz, A., & Bushman, B. J. (2022). Dominance and prestige. *Psychological Bulletin, 148*(1-2), 67–85. <https://doi.org/10.1037/bul0000356>
 
 -   Wolf, D., Leder, J., **Röseler, L.**, & Schütz, A. (2021). Does Facial Redness Really Affect Emotion Perception? *Cognition and Emotion*, 35(8), 1607–1617. <https://doi.org/10.1080/02699931.2021.1979473>
 
--   **Röseler, L.**, Schütz, A., Blank, P. A., Dück, M., Fels, S., Kupfer, J., Scheelje, L., & Seida, C. (2021). Evidence against subliminal anchoring. *Journal of Experimental Social Psychology*, *92*, 104066. <https://doi.org/10.1016/j.jesp.2020.104066>
+-   **Röseler, L.**, Schütz, A., Blank, P. A., et al. (2021). Evidence against subliminal anchoring. *Journal of Experimental Social Psychology*, *92*, 104066. <https://doi.org/10.1016/j.jesp.2020.104066>
 
 -   **Röseler, L.**, Ebert, J., Schütz, A., & Baumeister, R. F. (2021). The upsides and downsides of high self-control. *Europe's Journal of Psychology*, *17*(1), 1–16. <https://doi.org/10.5964/ejop.2639>
 
@@ -352,136 +383,107 @@ function makeCollapsible(el){
 
 -   Landy, J. F., Jia, M. L., Ding, I. L., et al. (2020). Crowdsourcing hypothesis tests. *Psychological Bulletin*, *146*(5), 451–479. <https://doi.org/10.1037/bul0000220>
 
--   **Röseler, L.** (2020, September). *Anchoring Effects: Resolving the Contradictions of Personality Moderator Research (Doctoral Thesis)*. University of Bamberg. <https://osf.io/34sv6>
+-   **Röseler, L.** (2020). *Anchoring Effects: Resolving the Contradictions of Personality Moderator Research (Doctoral Thesis)*. University of Bamberg. <https://osf.io/34sv6>
 
 ```{=html}
 </div></details>
 
 <details class="collapsible-section">
-<summary class="collapsible-trigger">
-  <div class="coll-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem">Research Articles (Preprints)</h2>
+<summary>
+  <div class="coll-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+  <h2>Research Articles (Preprints)</h2>
 </summary>
 <div class="section-body">
 ```
 
--   Wallrich, L., vaz, K. G., Weinerova, J., **Röseler, L.**, et al. (2026). FLoRA-Notify: A Protocol for a Cluster-Randomised Controlled Trial. <https://doi.org/10.31222/osf.io/qnckf_v1>
-
+-   Wallrich, L., vaz, K. G., Weinerova, J., **Röseler, L.**, et al. (2026). FLoRA-Notify. <https://doi.org/10.31222/osf.io/qnckf_v1>
 -   Rebholz, T. R., Groß, J., & **Röseler, L.** (2026). Assimilation to External Cues. <https://doi.org/10.31234/osf.io/5u8br_v3>
-
--   Hartmann, H., Azevedo, F., **Röseler, L.**, et al. (2025). Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences. <https://doi.org/10.31222/osf.io/ad2w6_v2>
-
--   **Röseler, L.** (2025). Preregistrations without Code do not Prevent P-Hacking. *MetaArxiv.* <https://doi.org/10.31222/osf.io/v259t_v1>
-
--   **Röseler, L.** (2024). CODECHECK certificate 2024-005. Zenodo. <https://doi.org/10.5281/zenodo.13945051>
-
+-   Hartmann, H., Azevedo, F., **Röseler, L.**, et al. (2025). Tracking and mainstreaming replications. <https://doi.org/10.31222/osf.io/ad2w6_v2>
+-   **Röseler, L.** (2025). Preregistrations without Code do not Prevent P-Hacking. <https://doi.org/10.31222/osf.io/v259t_v1>
+-   **Röseler, L.** (2024). CODECHECK certificate 2024-005. <https://doi.org/10.5281/zenodo.13945051>
 -   **Röseler, L.**, Doetsch, C. A., Förster, N., et al. (2024). No Evidence for the Affective Expectation Model. <https://doi.org/10.31234/osf.io/akfzh>
-
 -   **Röseler, L.** (2024). Exploring Categorical Colors. <https://doi.org/10.31234/osf.io/gj76p>
-
 -   **Röseler, L.**, & Schütz, A. (2024). Assimilation and Contrast are Everywhere. <https://doi.org/10.31234/osf.io/krwcn>
-
 -   **Röseler, L.** (2023). Predicting Replication Rates with Z-Curve. <https://osf.io/preprints/metaarxiv/ewb2t>
-
--   **Röseler, L.**, Gendlina, T., Krapp, J., Labusch, N., & Schütz, A. (2022). Successes and Failures of Replications. <https://doi.org/10.31222/osf.io/8psw2>
-
+-   **Röseler, L.**, Gendlina, T., et al. (2022). Successes and Failures of Replications. <https://doi.org/10.31222/osf.io/8psw2>
 -   Wolf, D., **Röseler, L.**, Leder, J., & Schütz, A. (2022). The Red-Anger Effect. <https://doi.org/10.31234/osf.io/ntukz>
-
--   **Röseler, L.**, & Schütz, A. (2022). Hanging the Anchor Off a New Ship: A Meta-Analysis of Anchoring Effects. <https://doi.org/10.31234/osf.io/wf2tn>
-
+-   **Röseler, L.**, & Schütz, A. (2022). Hanging the Anchor Off a New Ship. <https://doi.org/10.31234/osf.io/wf2tn>
 -   **Röseler, L.**, Schütz, A. (2021). What You Expect is What You Get. <https://doi.org/10.31219/osf.io/2tr6q>
-
 -   **Röseler, L.**, Schütz, A., Dolling, I. K., et al. (2020). The Stepwise Anchoring Paradigm. <https://doi.org/10.31234/osf.io/hjbwp>
-
--   **Röseler, L.**, Wolf, D., Leder, J., & Schütz, A. (2020). Test-Retest Reliability is not a Measure of Reliability or Stability. <https://doi.org/10.31234/osf.io/mt49r>
-
--   **Röseler, L.**, Schütz, A., & Starker, U. (2019). Cognitive Ability does not and cannot Correlate with Susceptibility to Anchoring Effects. <https://doi.org/10.31234/osf.io/bnsx2>
+-   **Röseler, L.**, Wolf, D., Leder, J., & Schütz, A. (2020). Test-Retest Reliability. <https://doi.org/10.31234/osf.io/mt49r>
+-   **Röseler, L.**, Schütz, A., & Starker, U. (2019). Cognitive Ability does not Correlate with Anchoring Susceptibility. <https://doi.org/10.31234/osf.io/bnsx2>
 
 ```{=html}
 </div></details>
 
 <details class="collapsible-section">
-<summary class="collapsible-trigger">
-  <div class="coll-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem">Books and Book Chapters</h2>
+<summary>
+  <div class="coll-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+  <h2>Books and Book Chapters</h2>
 </summary>
 <div class="section-body">
 ```
 
--   **Röseler, L.\***, Wallrich, L.\*, Hartmann, H., et al. (2025). *Handbook for Reproduction and Replication Studies.* <https://forrt.org/replication_handbook> \*shared first authorship
-
--   **Röseler, L.** (2025). Open Science: Wie sich die Wissenschaft öffnet (0.2). Zenodo. <https://doi.org/10.17605/OSF.IO/2QXWV>
-
+-   **Röseler, L.\***, Wallrich, L.\*, Hartmann, H., et al. (2025). *Handbook for Reproduction and Replication Studies.* <https://forrt.org/replication_handbook>
+-   **Röseler, L.** (2025). Open Science: Wie sich die Wissenschaft öffnet (0.2). <https://doi.org/10.17605/OSF.IO/2QXWV>
 -   Jané, M., Xiao, Q., Yeung, S., et al. (2024). Guide to Effect Sizes and Confidence Intervals. <http://dx.doi.org/10.17605/OSF.IO/D8C4G>
-
--   **Röseler, L.**, & Schütz, A. (2022). Open Science. In A. Schütz, M. Brand, S. Steins-Loeber (Eds.), *Psychologie: Eine Einführung* (6th ed., pp. 187–198). Kohlhammer.
-
-```{=html}
-</div></details>
-
-<details class="collapsible-section">
-<summary class="collapsible-trigger">
-  <div class="coll-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem">Editorial Activities</h2>
-</summary>
-<div class="section-body">
-```
-
--   **Röseler, L.**, Wallrich, L., Adler, S., et al. (2025). A Community Model for Rigorous and Inclusive Scholarship: Inaugural Editorial of Replication Research (R2). *Replication Research*, *1*. <https://doi.org/10.17879/replicationresearch-2025-9022>
-
--   Müller, M., **Röseler, L.**, & Wallrich, L. (2025). Initial Editorial Assessment Form (Replication Research) (1.0). Zenodo. <https://doi.org/10.5281/zenodo.17911973>
-
--   **Röseler, L.**, Wallrich, L., Adler, S., et al. (2025). Replication Research Constitution (R2 Launch). Zenodo. <https://doi.org/10.5281/zenodo.17279413>
-
--   **Röseler, L.**, Wallrich, L., Adler, S., et al. (2025). Replication Research: Journal Description (R2 Launch). Zenodo. <https://doi.org/10.5281/zenodo.17241396>
+-   **Röseler, L.**, & Schütz, A. (2022). Open Science. In *Psychologie: Eine Einführung* (6th ed., pp. 187–198). Kohlhammer.
 
 ```{=html}
 </div></details>
 
 <details class="collapsible-section">
-<summary class="collapsible-trigger">
-  <div class="coll-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem">Software</h2>
+<summary>
+  <div class="coll-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+  <h2>Editorial Activities</h2>
 </summary>
 <div class="section-body">
 ```
 
--   Tondlekar, R., Wallrich, L., Weinerova, J., et al. (2026). Zotero Replication Checker (0.1.12). Zenodo. <https://doi.org/10.5281/zenodo.18671300>
+-   **Röseler, L.**, Wallrich, L., Adler, S., et al. (2025). Inaugural Editorial of Replication Research (R2). *Replication Research*, *1*. <https://doi.org/10.17879/replicationresearch-2025-9022>
+-   Müller, M., **Röseler, L.**, & Wallrich, L. (2025). Initial Editorial Assessment Form. Zenodo. <https://doi.org/10.5281/zenodo.17911973>
+-   **Röseler, L.**, Wallrich, L., Adler, S., et al. (2025). Replication Research Constitution. Zenodo. <https://doi.org/10.5281/zenodo.17279413>
+-   **Röseler, L.**, Wallrich, L., Adler, S., et al. (2025). Replication Research: Journal Description. Zenodo. <https://doi.org/10.5281/zenodo.17241396>
 
--   **Röseler, L.**, Wallrich, L. (2024). *FReD: Interfaces to the FORRT Replication Database*. <http://forrt.org/FReD/>
+```{=html}
+</div></details>
 
--   **Röseler, L.**, Kaiser, L., Doetsch, C., et al. (2024). *ReD: Replication Database, Version 0.4.22.* <https://dx.doi.org/10.17605/OSF.IO/9r62x>
+<details class="collapsible-section">
+<summary>
+  <div class="coll-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+  <h2>Software</h2>
+</summary>
+<div class="section-body">
+```
 
--   **Röseler, L.**, Weber, L., Stich, E., et al. (2022). *OpAQ: Open Anchoring Quest, Version 1.1.42.94.* <https://dx.doi.org/10.17605/OSF.IO/YGNVB>
-
+-   Tondlekar, R., Wallrich, L., et al. (2026). Zotero Replication Checker (0.1.12). <https://doi.org/10.5281/zenodo.18671300>
+-   **Röseler, L.**, Wallrich, L. (2024). *FReD: Interfaces to the FORRT Replication Database.* <http://forrt.org/FReD/>
+-   **Röseler, L.**, Kaiser, L., et al. (2024). *ReD: Replication Database, Version 0.4.22.* <https://dx.doi.org/10.17605/OSF.IO/9r62x>
+-   **Röseler, L.**, Weber, L., et al. (2022). *OpAQ: Open Anchoring Quest, Version 1.1.42.94.* <https://dx.doi.org/10.17605/OSF.IO/YGNVB>
 -   **Röseler, L.**, Adler, S., Schöniger, M. (2022). A Toolbox to Identify P-Hacking. <https://metaanalyses.shinyapps.io/toolbox/>
-
--   **Röseler, L.**, Körner, R., & Schütz, A. (2021). Dynamic Meta-Analysis of Body Position Effects ShinyApp. <https://metaanalyses.shinyapps.io/bodypositions/>
-
+-   **Röseler, L.**, Körner, R., & Schütz, A. (2021). Dynamic Meta-Analysis of Body Position Effects. <https://metaanalyses.shinyapps.io/bodypositions/>
 -   **Röseler, L.**, Röseler, J. J. (2020). Studienfeedback ShinyApp. <https://l-air.shinyapps.io/feedback/>
 
 ```{=html}
 </div></details>
 
 <details class="collapsible-section">
-<summary class="collapsible-trigger">
-  <div class="coll-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem">Research Proposals</h2>
+<summary>
+  <div class="coll-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+  <h2>Research Proposals</h2>
 </summary>
 <div class="section-body">
 ```
-
-This is a selection of research proposals that I created alone or together with other researchers as the first author.
 
 | Proposal | Year | Role | Program & Funder | Link | Status |
 |---|---|---|---|---|---|
 | Moderators of Anchoring Effects | 2022 | First author | DFG, Sachbeihilfe | [osf.io/x6bqh](https://osf.io/x6bqh/) | Rejected |
 | Formation of a Replication Journal | 2024 | First author | Topical Program, Uni Münster | [osf.io/9vgx7](https://osf.io/9vgx7/) | Accepted |
 | Diamond Open Access Journal Support | 2024 | First author | openaccess.nrw | [osf.io/a82fe](https://osf.io/a82fe) | Accepted |
-| Diamond OA Journal Support (expression of interest) | 2025 | First author | ZBW Olecon | — | Rejected |
+| Diamond OA Journal (expression of interest) | 2025 | First author | ZBW Olecon | — | Rejected |
 | Expanding the Replication Database | 2023 | First author | Ideenlabor, Uni Münster | [osf.io/854vt](https://osf.io/854vt/) | Rejected |
-| Expanding the FORRT Replication Database | 2024 | Second author | DFG, Meta-REP Priority Program | — | Rejected |
-| Creating a university-wide Open Science Strategy | 2024 | Second author | Road2Openness, Stifterverband | — | Rejected |
+| Expanding the FORRT Replication Database | 2024 | Second author | DFG, Meta-REP | — | Rejected |
+| University-wide Open Science Strategy | 2024 | Second author | Road2Openness, Stifterverband | — | Rejected |
 | Making Replications Count | 2024 | Co-Investigator | UKRI | — | Accepted |
 | Breaking the Wall of the Urge for Innovation | 2025 | Shared first author | Falling Walls Lab Münster | [osf.io/f486v](https://osf.io/f486v) | Rejected |
 
@@ -489,9 +491,9 @@ This is a selection of research proposals that I created alone or together with 
 </div></details>
 
 <details class="collapsible-section">
-<summary class="collapsible-trigger">
-  <div class="coll-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem">Invited Talks</h2>
+<summary>
+  <div class="coll-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+  <h2>Invited Talks</h2>
 </summary>
 <div class="section-body">
 ```
@@ -500,8 +502,8 @@ This is a selection of research proposals that I created alone or together with 
 -   **Röseler, L.** (2025, May). Panelist, Future of Open Science. SIPS online 2025. <https://www.youtube.com/watch?v=MpLbeLTcw6E>
 -   **Röseler, L.** (2025, March). The FORRT Replication Hub. RWI Essen. <https://osf.io/9fkw7>
 -   **Röseler, L.** (2024, November). Die FORRT Replication Hub. TU Dortmund. <https://osf.io/g3wke>
--   **Röseler, L.** (2024, September). Creating the Münster Center for Open Science. Open Science Day Mannheim. <https://osf.io/ha46c>
--   **Röseler, L.** (2024, August). Open Science als Annäherung von Wissenschaft an ihre Ideale. Open Access NRW. <https://osf.io/sv9xw>
+-   **Röseler, L.** (2024, September). Creating the Münster Center for Open Science. Mannheim. <https://osf.io/ha46c>
+-   **Röseler, L.** (2024, August). Open Science als Annäherung. Open Access NRW. <https://osf.io/sv9xw>
 -   **Röseler, L.** (2022, August). How to resist anchoring? Seeburg Castle University, Austria.
 -   **Röseler, L.** (2022, June). The Open Anchoring Quest. Leuphana University, Lüneburg.
 -   **Röseler, L.** (2022, April). Die Open Science Bewegung in der Psychologie. Harz University.
@@ -511,19 +513,19 @@ This is a selection of research proposals that I created alone or together with 
 </div></details>
 
 <details class="collapsible-section">
-<summary class="collapsible-trigger">
-  <div class="coll-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem">Presentations</h2>
+<summary>
+  <div class="coll-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+  <h2>Presentations</h2>
 </summary>
 <div class="section-body">
 ```
 
 -   **Röseler, L.** (2026). Replication Journal Showcase: R2. Love Replications Week. <https://doi.org/10.5281/zenodo.18864153>
--   **Röseler, L.** (2026). Getting your replication report ready for submission. LRW, Online. <https://doi.org/10.5281/zenodo.18757230>
+-   **Röseler, L.** (2026). Getting your replication report ready. LRW, Online. <https://doi.org/10.5281/zenodo.18757230>
 -   **Röseler, L.** (2025). Metascience won't solve the replication crisis. Metascience online 2025. <https://osf.io/zq2rc>
--   **Röseler, L.** (2025). We cannot solve the replication crisis without replications. SIPS online 2025. <https://osf.io/xat5s>
+-   **Röseler, L.** (2025). We cannot solve the replication crisis without replications. SIPS 2025. <https://osf.io/xat5s>
 -   **Röseler, L.** (2025). Das Münster Center for Open Science. CDSC Colloquium. <https://osf.io/hwbf6>
--   **Röseler, L.** (2024). Die Bedeutung von Replikationen in den Sozialwissenschaften. Philosophy of Science Public Lecture Series. <https://osf.io/zexb7>
+-   **Röseler, L.** (2024). Die Bedeutung von Replikationen. Philosophy of Science Lecture Series. <https://osf.io/zexb7>
 -   **Röseler, L.** (2024). The FORRT Replication Database. DGPs-Kongress. <https://osf.io/wec8t>
 -   **Röseler, L.** (2024). Creating a Nexus for Replication Research. Year of Open Science Conference. <https://osf.io/n5vae>
 -   **Röseler, L.**, Wallrich, L., & Bushman, B. J. (2023). Creating interactive ShinyApps for Meta-Analyses. ESMARConf. <https://www.youtube.com/watch?v=yRmjBBiE2Io>
@@ -532,14 +534,14 @@ This is a selection of research proposals that I created alone or together with 
 </div></details>
 
 <details class="collapsible-section">
-<summary class="collapsible-trigger">
-  <div class="coll-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem">Posters</h2>
+<summary>
+  <div class="coll-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+  <h2>Posters</h2>
 </summary>
 <div class="section-body">
 ```
 
--   **Röseler, L.**, Moser, V., & Oppong Boakye, P. (2026). Poster: Münster Center for Open Science. Zenodo. <https://doi.org/10.5281/zenodo.18537522>
+-   **Röseler, L.**, Moser, V., & Oppong Boakye, P. (2026). Münster Center for Open Science. Zenodo. <https://doi.org/10.5281/zenodo.18537522>
 -   Hoghe, J., **Röseler, L.**, et al. (2022). Die sozialpsychiatrische Versorgungsorganisation. DKVF. <https://doi.org/10.3205/22dkvf185>
 -   **Röseler, L.**, et al. (2020). Tidying up the Anchoring Shelf. 62nd Conference of Experimental Psychologists. <https://doi.org/10.13140/RG.2.2.24734.89928/1>
 
@@ -547,26 +549,26 @@ This is a selection of research proposals that I created alone or together with 
 </div></details>
 
 <details class="collapsible-section">
-<summary class="collapsible-trigger">
-  <div class="coll-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem">Workshop and Conference Materials</h2>
+<summary>
+  <div class="coll-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+  <h2>Workshop and Conference Materials</h2>
 </summary>
 <div class="section-body">
 ```
 
 -   **Röseler, L.** (2026). Love Replications Week, online. <https://forrt.org/LoveReplicationsWeek/>
--   **Röseler, L.** (2025). Workshop on Open Science as a Career Asset. Center for Emerging Researchers, Münster. <https://osf.io/g7yz4>
+-   **Röseler, L.** (2025). Workshop on Open Science as a Career Asset. CER, Münster. <https://osf.io/g7yz4>
 -   **Röseler, L.**, Moser, V., Schüller, S., & Förster, C. (2025). Replication Research Symposium: Book of Abstracts. <https://doi.org/10.5281/zenodo.15487804>
 -   **Röseler, L.**, & Hätscher, O. (2025). Opening up your research with OSF and Github. FDM-Werkstatt. <https://osf.io/gwkfm>
--   **Röseler, L.** (2024). Workshop on Preregistration, Center for Emerging Researchers. <https://osf.io/64teq>
+-   **Röseler, L.** (2024). Workshop on Preregistration, CER Münster. <https://osf.io/64teq>
 
 ```{=html}
 </div></details>
 
 <details class="collapsible-section">
-<summary class="collapsible-trigger">
-  <div class="coll-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></div>
-  <h2 style="margin:0;border:none;padding:0;font-size:1.35rem">Blog Posts &amp; Science Communication</h2>
+<summary>
+  <div class="coll-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+  <h2>Blog Posts &amp; Science Communication</h2>
 </summary>
 <div class="section-body">
 ```
@@ -586,40 +588,48 @@ This is a selection of research proposals that I created alone or together with 
 
 ## Research Articles — Searchable Table
 
-*Filter by topic, search by author or title, and click any row to expand details. Open access type and available links are shown per entry.*
+*Filter by topic, search by author or title. Click any row to expand full details and open science badges.*
 
 ```{=html}
-<!-- SVG icon defs for table -->
-<svg style="display:none" xmlns="http://www.w3.org/2000/svg" id="rt-icon-defs">
-  <symbol id="ic-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
-  <symbol id="ic-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></symbol>
-  <symbol id="ic-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></symbol>
-  <symbol id="ic-data" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></symbol>
-  <symbol id="ic-prereg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></symbol>
-  <symbol id="ic-preprint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></symbol>
-  <symbol id="ic-oa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></symbol>
-  <symbol id="ic-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
-  <symbol id="ic-anchor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="5" r="3"/><line x1="12" y1="8" x2="12" y2="21"/><path d="M5 12H2a10 10 0 0020 0h-3"/></symbol>
-  <symbol id="ic-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></symbol>
-  <symbol id="ic-science" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v11l-4 7h14l-4-7V3"/></symbol>
-  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></symbol>
+<!--
+  The table data is read from research.xlsx via R (see the R chunk below).
+  The JS below renders whatever RT_DATA contains — adding rows to the
+  spreadsheet automatically adds them to the table.
+-->
+
+<!-- Badge image paths -->
+<script>
+var BADGE = {
+  opendata:     'images/opendata.png',
+  openmaterials:'images/openmaterials.png',
+  opencode:     'images/opencode.png',
+  preregistered:'images/preregistered.png'
+};
+</script>
+
+<!-- SVG symbol defs -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ic-search"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+  <symbol id="ic-chevron"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></symbol>
+  <symbol id="ic-anchor"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="5" r="3"/><line x1="12" y1="8" x2="12" y2="21"/><path d="M5 12H2a10 10 0 0020 0h-3"/></symbol>
+  <symbol id="ic-refresh"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></symbol>
+  <symbol id="ic-flask"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v11l-4 7h14l-4-7V3"/></symbol>
+  <symbol id="ic-book"     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></symbol>
 </svg>
 
 <div class="research-table-wrapper">
-
-  <!-- Search bar -->
+  <!-- Search -->
   <div class="rt-search-bar">
     <svg width="16" height="16"><use href="#ic-search"/></svg>
-    <input type="text" id="rt-search" placeholder="Search by author, title, keyword…" oninput="rtFilter()" autocomplete="off"/>
+    <input type="text" id="rt-search" placeholder="Search by author, title, keyword…"
+           oninput="rtFilter()" autocomplete="off"/>
     <span id="rt-count" style="color:var(--text-muted);font-size:0.78rem;white-space:nowrap;font-family:'DM Sans',sans-serif"></span>
   </div>
 
   <!-- Topic chips -->
   <div class="rt-filter-chips">
     <span class="rt-filter-label">Topic</span>
-    <button class="rt-chip active" onclick="rtSetTopic('all',this)">
-      All
-    </button>
+    <button class="rt-chip active"         onclick="rtSetTopic('all',this)">All</button>
     <button class="rt-chip" onclick="rtSetTopic('Anchoring',this)">
       <svg width="11" height="11"><use href="#ic-anchor"/></svg> Anchoring
     </button>
@@ -627,7 +637,7 @@ This is a selection of research proposals that I created alone or together with 
       <svg width="11" height="11"><use href="#ic-refresh"/></svg> Replication
     </button>
     <button class="rt-chip" onclick="rtSetTopic('Meta-Science',this)">
-      <svg width="11" height="11"><use href="#ic-science"/></svg> Meta-Science
+      <svg width="11" height="11"><use href="#ic-flask"/></svg> Meta-Science
     </button>
     <button class="rt-chip" onclick="rtSetTopic('Publishing',this)">
       <svg width="11" height="11"><use href="#ic-book"/></svg> Publishing
@@ -641,174 +651,221 @@ This is a selection of research proposals that I created alone or together with 
       <tr>
         <th style="width:42px">#</th>
         <th style="width:110px">Topic</th>
-        <th style="min-width:320px">Reference</th>
-        <th style="width:130px">OA Type</th>
-        <th style="min-width:200px">Links</th>
-        <th style="width:30px"></th>
+        <th style="min-width:300px">Reference</th>
+        <th style="width:120px">OA Type</th>
+        <th style="width:140px">Open Science</th>
+        <th style="width:26px"></th>
       </tr>
     </thead>
     <tbody id="rt-tbody"></tbody>
   </table>
   </div>
   <div id="rt-no-results" class="rt-no-results" style="display:none">No entries match your search or filter.</div>
-
 </div>
 
 <script>
-var RT_DATA = [
-  {num:43,topic:"Meta-Science",student:false,
-   ref:"Aczel, B., Szaszi, B., Clelland, H.T. et al. Investigating the analytical robustness of the social and behavioural sciences. <em>Nature</em> 652, 135–142 (2026).",
-   doi:"https://doi.org/10.1038/s41586-025-09844-9",oa:"gold",oaLabel:"Gold",
-   materials:"https://osf.io/ed8pj/overview",preprint:"https://osf.io/preprints/metaarxiv/twqsv_v1",prereg:"",data:""},
-  {num:42,topic:"Replication",student:true,
-   ref:"Tondlekar, R., Wallrich, L., Weinerova, J., et al. Zotero Replication Checker (0.1.12). Zenodo (2026).",
-   doi:"https://doi.org/10.5281/zenodo.18671300",oa:"software",oaLabel:"Software",
-   materials:"https://forrt.org/flora_zotero/",preprint:"",prereg:"",data:""},
-  {num:41,topic:"Publishing",student:true,
-   ref:"Müller, M., Röseler, L., & Wallrich, L. Initial Editorial Assessment Form (Replication Research) (1.0). Zenodo (2025).",
-   doi:"https://doi.org/10.5281/zenodo.17911973",oa:"preprint",oaLabel:"Preprint",
-   materials:"https://doi.org/10.5281/zenodo.17911973",preprint:"https://doi.org/10.5281/zenodo.17911973",prereg:"",data:""},
-  {num:40,topic:"Meta-Science",student:false,
-   ref:"Röseler, L. Preregistrations without Code do not Prevent P-Hacking. <em>MetaArxiv</em> (2025).",
-   doi:"https://doi.org/10.31222/osf.io/v259t_v1",oa:"preprint",oaLabel:"Preprint",
-   materials:"",preprint:"https://doi.org/10.31222/osf.io/v259t_v1",prereg:"",data:""},
-  {num:39,topic:"Replication",student:false,
-   ref:"Röseler, L., Wallrich, L., Adler, S., et al. Replication Research: Journal Description (R2 Launch). Zenodo (2025).",
-   doi:"https://doi.org/10.5281/zenodo.17241396",oa:"preprint",oaLabel:"Preprint",
-   materials:"",preprint:"https://doi.org/10.5281/zenodo.17241396",prereg:"",data:""},
-  {num:38,topic:"Replication",student:false,
-   ref:"Röseler, L., Wallrich, L., Adler, S., et al. Replication Research Constitution (R2 Launch). Zenodo (2025).",
-   doi:"https://doi.org/10.5281/zenodo.17279413",oa:"preprint",oaLabel:"Preprint",
-   materials:"",preprint:"https://doi.org/10.5281/zenodo.17279413",prereg:"",data:""},
-  {num:37,topic:"Replication",student:false,
-   ref:"Röseler, L., Wallrich, L., Adler, S., et al. A Community Model for Rigorous and Inclusive Scholarship: Inaugural Editorial of Replication Research (R2). <em>Replication Research</em>, 1 (2025).",
-   doi:"https://doi.org/10.17879/replicationresearch-2025-9022",oa:"diamond",oaLabel:"Diamond",
-   materials:"",preprint:"",prereg:"",data:""},
-  {num:36,topic:"Anchoring",student:false,
-   ref:"Rebholz, T. R., Groß, J., & Röseler, L. Assimilation to External Cues: Comparing the Reliability of Anchoring Effects, Advice Taking, and Hindsight Bias (2025).",
-   doi:"https://doi.org/10.31234/osf.io/5u8br_v1",oa:"preprint",oaLabel:"Preprint",
-   materials:"https://osf.io/4n3am/",preprint:"https://osf.io/preprints/psyarxiv/5u8br_v1",prereg:"",data:""},
-  {num:35,topic:"Replication",student:true,
-   ref:"Röseler, L., Moser, V., Schüller, S., & Förster, C. Replication Research Symposium: Book of Abstracts. Zenodo (2025).",
-   doi:"https://doi.org/10.5281/zenodo.15487804",oa:"preprint",oaLabel:"Preprint",
-   materials:"https://osf.io/meetings/R2SYMPOSIUM/",preprint:"https://doi.org/10.5281/zenodo.15487804",prereg:"",data:""},
-  {num:34,topic:"Replication",student:false,
-   ref:"Reed, W. R., Röseler, L., Saam, M., Wallrich, L. No Room at the Inn? The Case for Specialized Replication Journals. <em>Journal of Behavioral and Experimental Economics</em> (2025).",
-   doi:"https://doi.org/10.1016/j.socec.2025.102502",oa:"gold",oaLabel:"Gold",
-   materials:"",preprint:"https://www.wiso.uni-hamburg.de/forschung/forschungslabor/working-papers/pdfs-wp/wp88.pdf",prereg:"",data:""},
-  {num:33,topic:"Meta-Science",student:false,
-   ref:"Hoghe, J., Röseler, L., Limmer, R., Walther, C., & Schütz, A. Die Bedeutung personaler Ressourcen… <em>Zeitschrift für Arbeitswissenschaft</em> (2025).",
-   doi:"https://doi.org/10.1007/s41449-025-00460-x",oa:"gold",oaLabel:"Gold",
-   materials:"https://osf.io/kypnd/",preprint:"",prereg:"https://osf.io/5fm8u",data:""},
-  {num:32,topic:"Meta-Science",student:false,
-   ref:"Hoghe, J., Röseler, L., Limmer, R., Walther, C., & Schütz, A. Berufliche Stressoren und Ressourcen von Genesungsbegleiter*innen. <em>Psychiatrische Praxis</em> (2024).",
-   doi:"https://doi.org/10.1055/a-2383-8057",oa:"closed",oaLabel:"Closed",
-   materials:"https://osf.io/kypnd/",preprint:"",prereg:"https://osf.io/5fm8u",data:""},
-  {num:31,topic:"Replication",student:false,
-   ref:"Röseler, L. CODECHECK certificate 2024-005. Zenodo (2024).",
-   doi:"https://doi.org/10.5281/zenodo.13945051",oa:"preprint",oaLabel:"Preprint",
-   materials:"https://github.com/codecheckers/sample-size-codecheck",preprint:"https://doi.org/10.5281/zenodo.13945051",prereg:"",data:""},
-  {num:30,topic:"Anchoring",student:true,
-   ref:"Röseler, L., Bögler, H. L., Koßmann, L., et al. Need for Cognition, Cognitive Load, and Forewarning do not Moderate Anchoring Effects. <em>Journal of Comments and Replications in Economics</em>, 3(2024-6) (2024).",
-   doi:"https://doi.org/10.18718/81781.38",oa:"diamond",oaLabel:"Diamond",
-   materials:"https://osf.io/prwu6/",preprint:"https://doi.org/10.31234/osf.io/bgp3m",prereg:"https://osf.io/8k9nt/",data:""}
-];
+/* ──────────────────────────────────────────────────────────────
+   RT_DATA is populated by the R chunk below via jsonlite.
+   Column mapping from research.xlsx:
+     #, Topic, Reference, OA-Type,
+     Materials/Data  → materials
+     Preregistration → prereg
+     Pre-Print       → preprint
+     Student-collaboration? → student
+   ────────────────────────────────────────────────────────────── */
 
-var rtCurrentTopic = 'all';
-var rtCurrentSearch = '';
+var rtCurTopic  = 'all';
+var rtCurSearch = '';
 
-var OA_ICONS = {
-  diamond: '#ic-oa', gold: '#ic-oa', green: '#ic-oa',
-  preprint: '#ic-preprint', closed: '#ic-oa', software: '#ic-code'
-};
-
-function iconLink(url, iconId, label) {
-  if (!url || url === 'N/A' || url === 'TBD') return '';
-  return '<a class="rt-icon-link" href="'+url+'" target="_blank" rel="noopener">'
-    +'<svg><use href="'+iconId+'"/></svg> '+label+'</a>';
+function oaClass(s){
+  if(!s) return 'green';
+  var l = s.toLowerCase();
+  if(l.includes('diamond'))  return 'diamond';
+  if(l.includes('gold'))     return 'gold';
+  if(l.includes('software')) return 'software';
+  if(l.includes('preprint')) return 'preprint';
+  if(l.includes('closed'))   return 'closed';
+  return 'green';
 }
 
-function buildRow(d) {
-  var topics = d.topic.split('/').map(function(t){ return t.trim(); });
-  var topicBadges = topics.map(function(t){ return '<span class="rt-topic">'+t+'</span>'; }).join(' ');
+function oaShort(s){
+  if(!s) return '—';
+  if(s.toLowerCase().includes('diamond'))  return 'Diamond';
+  if(s.toLowerCase().includes('gold'))     return 'Gold';
+  if(s.toLowerCase().includes('software')) return 'Software';
+  if(s.toLowerCase().includes('preprint')) return 'Preprint';
+  if(s.toLowerCase().includes('closed'))   return 'Closed';
+  return s.split(' ')[0];
+}
 
-  var icons = [
-    iconLink(d.doi,      '#ic-link',     'DOI'),
-    iconLink(d.materials,'#ic-data',     'Materials'),
-    iconLink(d.prereg,   '#ic-prereg',   'Prereg'),
-    iconLink(d.preprint, '#ic-preprint', 'Preprint'),
-  ].filter(Boolean).join('');
+/* Build OS badge images */
+function osBadges(d){
+  var badges = '';
+  /* Data / Materials badge */
+  if(d.materials && d.materials.trim() && d.materials.trim() !== 'NA'){
+    badges += '<a class="os-badge-link" href="'+d.materials+'" target="_blank" title="Open Materials/Data">'
+      +'<img class="os-badge-img" src="'+BADGE.openmaterials+'" alt="Open Materials">'
+      +'</a>';
+  }
+  /* Preregistration badge */
+  if(d.prereg && d.prereg.trim() && d.prereg.trim() !== 'NA' && d.prereg.trim() !== 'Does not apply.'){
+    badges += '<a class="os-badge-link" href="'+d.prereg+'" target="_blank" title="Preregistered">'
+      +'<img class="os-badge-img" src="'+BADGE.preregistered+'" alt="Preregistered">'
+      +'</a>';
+  }
+  /* Preprint = open access to manuscript */
+  if(d.preprint && d.preprint.trim() && d.preprint.trim() !== 'NA'){
+    badges += '<a class="os-badge-link" href="'+d.preprint+'" target="_blank" title="Preprint available">'
+      +'<img class="os-badge-img" src="'+BADGE.opendata+'" alt="Preprint">'
+      +'</a>';
+  }
+  return badges || '<span style="color:var(--text-muted);font-size:0.8rem">—</span>';
+}
 
-  var expandId = 'rt-exp-'+d.num;
-  var searchStr = (d.ref + ' ' + d.topic).toLowerCase().replace(/<[^>]+>/g,'');
+function buildRow(d){
+  var topics = String(d.topic||'').split('/').map(function(t){return t.trim();});
+  var topicBadges = topics.map(function(t){return '<span class="rt-topic">'+t+'</span>';}).join(' ');
+  var expId = 'rt-exp-'+d.num;
+  var searchStr = (String(d.ref||'')+' '+String(d.topic||'')).toLowerCase().replace(/<[^>]+>/g,'');
 
-  return '<tr class="rt-main-row" '
-    +'data-topic="'+d.topic+'" data-student="'+d.student+'" '
+  var expandedLinks = '';
+  if(d.doi      && d.doi.trim()      && d.doi.trim()!=='NA')
+    expandedLinks += '<div><a href="'+d.doi+'" target="_blank" style="color:var(--accent)">Published version / DOI</a></div>';
+  if(d.materials && d.materials.trim() && d.materials.trim()!=='NA')
+    expandedLinks += '<div><a href="'+d.materials+'" target="_blank" style="color:var(--accent)">Materials &amp; Data</a></div>';
+  if(d.prereg   && d.prereg.trim()   && d.prereg.trim()!=='NA' && d.prereg.trim()!=='Does not apply.')
+    expandedLinks += '<div><a href="'+d.prereg+'" target="_blank" style="color:var(--accent)">Preregistration</a></div>';
+  if(d.preprint && d.preprint.trim() && d.preprint.trim()!=='NA')
+    expandedLinks += '<div><a href="'+d.preprint+'" target="_blank" style="color:var(--accent)">Preprint</a></div>';
+
+  var studentBadge = (d.student && String(d.student).toLowerCase().includes('yes'))
+    ? '<span style="background:var(--accent-dim);color:var(--accent);border-radius:5px;padding:2px 8px;font-size:0.71rem;font-weight:600">Student collaboration</span>'
+    : '';
+
+  return '<tr class="rt-main-row" data-topic="'+String(d.topic||'')+'" '
     +'data-search="'+searchStr+'" '
-    +'onclick="rtToggle(\''+expandId+'\',this)" '
-    +'title="Click to expand details">'
-    +'<td><strong style="color:var(--accent);font-size:0.9rem">'+d.num+'</strong></td>'
+    +'onclick="rtToggle(\''+expId+'\',this)" title="Click for details">'
+    +'<td><strong style="color:var(--accent)">'+d.num+'</strong></td>'
     +'<td>'+topicBadges+'</td>'
-    +'<td style="font-size:0.855rem">'+d.ref+'</td>'
-    +'<td><span class="rt-oa '+d.oa+'"><svg><use href="'+OA_ICONS[d.oa]+'"/></svg>'+d.oaLabel+'</span></td>'
-    +'<td><div class="rt-icons">'+(icons||'<span style="color:var(--text-muted);font-size:0.8rem">—</span>')+'</div></td>'
-    +'<td><button class="rt-expand-btn" id="btn-'+expandId+'" title="Expand"><svg><use href="#ic-chevron-down"/></svg></button></td>'
+    +'<td style="font-size:0.85rem">'+String(d.ref||'')+'</td>'
+    +'<td><span class="rt-oa '+oaClass(d.oatype)+'">'+oaShort(d.oatype)+'</span></td>'
+    +'<td><div class="os-badges">'+osBadges(d)+'</div></td>'
+    +'<td><button class="rt-expand-btn" id="btn-'+expId+'" title="Expand details">'
+    +'<svg width="13" height="13"><use href="#ic-chevron"/></svg></button></td>'
     +'</tr>'
-    +'<tr class="rt-expanded-row hidden" id="'+expandId+'">'
+    +'<tr class="rt-expanded-row hidden" id="'+expId+'">'
     +'<td colspan="6">'
     +'<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start">'
-    +'<div style="flex:1;min-width:220px"><strong style="color:var(--accent);font-size:0.75rem;letter-spacing:0.05em;text-transform:uppercase">Reference</strong><br><span style="color:var(--text);font-size:0.875rem">'+d.ref+'</span></div>'
-    +'<div style="display:flex;flex-direction:column;gap:7px;font-size:0.855rem">'
-    +(d.student?'<div style="display:flex;align-items:center;gap:6px"><span style="background:var(--accent-dim);color:var(--accent);border-radius:5px;padding:2px 8px;font-size:0.72rem;font-weight:600">Student collaboration</span></div>':'')
-    +(d.doi?'<div><a href="'+d.doi+'" target="_blank" style="color:var(--accent)">Published version / DOI</a></div>':'')
-    +(d.materials?'<div><a href="'+d.materials+'" target="_blank" style="color:var(--accent)">Materials &amp; Data</a></div>':'')
-    +(d.prereg&&d.prereg!=='N/A'&&d.prereg!=='TBD'?'<div><a href="'+d.prereg+'" target="_blank" style="color:var(--accent)">Preregistration</a></div>':'')
-    +(d.preprint?'<div><a href="'+d.preprint+'" target="_blank" style="color:var(--accent)">Preprint</a></div>':'')
+    +'<div style="flex:1;min-width:200px"><strong style="color:var(--accent);font-size:0.72rem;letter-spacing:.05em;text-transform:uppercase">Reference</strong><br>'
+    +'<span style="color:var(--text);font-size:0.875rem">'+String(d.ref||'')+'</span></div>'
+    +'<div style="display:flex;flex-direction:column;gap:7px;font-size:0.855rem;min-width:180px">'
+    +(studentBadge?'<div>'+studentBadge+'</div>':'')
+    +expandedLinks
     +'</div></div></td></tr>';
 }
 
-function rtToggle(id, row) {
-  var expRow = document.getElementById(id);
+function rtToggle(id, row){
+  var exp = document.getElementById(id);
   var btn = document.getElementById('btn-'+id);
-  if (!expRow) return;
-  var isOpen = !expRow.classList.contains('hidden');
-  expRow.classList.toggle('hidden', isOpen);
-  if (btn) btn.classList.toggle('open', !isOpen);
+  if(!exp) return;
+  var open = !exp.classList.contains('hidden');
+  exp.classList.toggle('hidden', open);
+  if(btn) btn.classList.toggle('open', !open);
 }
 
-function rtRender() {
+function rtRender(){
   var tbody = document.getElementById('rt-tbody');
-  var noResults = document.getElementById('rt-no-results');
-  var countEl = document.getElementById('rt-count');
-  var tbl = document.getElementById('rt-table');
+  var noRes = document.getElementById('rt-no-results');
+  var tbl   = document.getElementById('rt-table');
+  var cntEl = document.getElementById('rt-count');
+  if(!tbody || typeof RT_DATA === 'undefined') return;
 
-  var filtered = RT_DATA.filter(function(d) {
-    var topicMatch = rtCurrentTopic === 'all' ||
-      d.topic.toLowerCase().includes(rtCurrentTopic.toLowerCase());
-    var searchMatch = !rtCurrentSearch ||
-      d.topic.toLowerCase().includes(rtCurrentSearch) ||
-      d.ref.toLowerCase().replace(/<[^>]+>/g,'').includes(rtCurrentSearch);
+  var filtered = RT_DATA.filter(function(d){
+    var topicMatch = rtCurTopic === 'all' ||
+      String(d.topic||'').toLowerCase().includes(rtCurTopic.toLowerCase());
+    var searchStr  = (String(d.ref||'')+' '+String(d.topic||'')).toLowerCase().replace(/<[^>]+>/g,'');
+    var searchMatch = !rtCurSearch || searchStr.includes(rtCurSearch);
     return topicMatch && searchMatch;
   });
 
   tbody.innerHTML = filtered.map(buildRow).join('');
-  noResults.style.display = filtered.length === 0 ? 'block' : 'none';
-  tbl.style.display = filtered.length === 0 ? 'none' : '';
-  countEl.textContent = filtered.length + ' of ' + RT_DATA.length + ' entries';
+  noRes.style.display = filtered.length === 0 ? 'block' : 'none';
+  tbl.style.display   = filtered.length === 0 ? 'none'  : '';
+  cntEl.textContent   = filtered.length + ' of ' + RT_DATA.length + ' entries';
 }
 
-function rtFilter() {
-  rtCurrentSearch = document.getElementById('rt-search').value.toLowerCase();
+function rtFilter(){
+  rtCurSearch = document.getElementById('rt-search').value.toLowerCase();
   rtRender();
 }
-
-function rtSetTopic(topic, btn) {
-  rtCurrentTopic = topic;
+function rtSetTopic(t, btn){
+  rtCurTopic = t;
   document.querySelectorAll('.rt-chip').forEach(function(c){ c.classList.remove('active'); });
   btn.classList.add('active');
   rtRender();
 }
-
-document.addEventListener('DOMContentLoaded', rtRender);
 </script>
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+
+library(openxlsx)
+library(jsonlite)
+
+tbl <- openxlsx::read.xlsx("research.xlsx")
+
+# Normalise column names (strip spaces/special chars)
+names(tbl) <- trimws(names(tbl))
+names(tbl) <- gsub("\\.", "_", names(tbl))
+names(tbl) <- gsub("[^A-Za-z0-9_]", "_", names(tbl))
+names(tbl) <- gsub("_+", "_", names(tbl))
+names(tbl) <- tolower(names(tbl))
+
+# Map columns to JS-friendly names
+col_map <- function(df) {
+  lookup <- c(
+    "x_"        = "num",
+    "num"       = "num",
+    "topic"     = "topic",
+    "reference" = "ref",
+    "oa_type"   = "oatype",
+    "oa.type"   = "oatype",
+    "materials_data" = "materials",
+    "materials.data" = "materials",
+    "preregistration" = "prereg",
+    "pre_print"  = "preprint",
+    "pre.print"  = "preprint",
+    "student_collaboration_" = "student",
+    "student.collaboration." = "student"
+  )
+  newnames <- names(df)
+  for(i in seq_along(newnames)){
+    n <- newnames[i]
+    for(pat in names(lookup)){
+      if(grepl(pat, n, fixed=TRUE)){
+        newnames[i] <- lookup[pat]
+        break
+      }
+    }
+  }
+  names(df) <- newnames
+  df
+}
+
+tbl <- col_map(tbl)
+
+# Ensure required columns exist
+for(col in c("num","topic","ref","oatype","materials","prereg","preprint","student")){
+  if(!col %in% names(tbl)) tbl[[col]] <- NA_character_
+}
+
+# Replace NA with empty string for JS
+tbl[is.na(tbl)] <- ""
+
+json <- jsonlite::toJSON(tbl, auto_unbox = TRUE)
+
+cat(sprintf('<script>var RT_DATA = %s;\ndocument.addEventListener("DOMContentLoaded", rtRender);\n</script>', json))
 ```

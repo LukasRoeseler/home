@@ -28,7 +28,7 @@ format:
       dark:  [darkly, custom.scss]
     fontsize: 1.05em
     linestretch: 1.65
-    toc: true
+    toc: false
     mainfont: "DM Sans, Outfit, system-ui, sans-serif"
 
 editor: source

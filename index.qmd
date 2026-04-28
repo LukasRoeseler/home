@@ -33,7 +33,7 @@ toc: false # Turns off the Table of Contents specifically for the homepage to ke
 
 :::{#me}
 
-*(He/Him)* | [🔊 Pronunciation](#) 
+*(He/Him)* | [Pronunciation](#) 
 
 ## About Me
 I am a postdoctoral researcher at the University of Münster, Germany, and the managing director of the Münster Center for Open Science. I see myself as a strong proponent for Open Science and Open Scholarship.
