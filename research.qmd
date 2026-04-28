@@ -6,12 +6,11 @@ bibliographystyle: apa
 
 ```{=html}
 <!--
-  ═══════════════════════════════════════════════════════
-  DARK MODE — one toggle button, injected into the navbar
-  ═══════════════════════════════════════════════════════
+  ══════════════════════════════════════════════════
+  DARK MODE — single toggle injected into navbar
+  ══════════════════════════════════════════════════
 -->
 <script>
-/* Restore saved theme immediately (avoids flash) */
 (function(){
   var t = localStorage.getItem('lr-theme');
   if(t) document.documentElement.setAttribute('data-bs-theme', t);
@@ -19,39 +18,20 @@ bibliographystyle: apa
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
-  /* Prevent double-injection if this script runs twice */
   if(document.getElementById('darkmode-toggle')) return;
-
   var btn = document.createElement('button');
   btn.id = 'darkmode-toggle';
   btn.title = 'Toggle light / dark mode';
   btn.setAttribute('aria-label', 'Toggle light/dark mode');
-  /* Moon SVG (light mode) */
   btn.innerHTML =
-    '<svg class="dm-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">' +
-      '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>' +
-    '</svg>' +
-    /* Sun SVG (dark mode) */
-    '<svg class="dm-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">' +
-      '<circle cx="12" cy="12" r="5"/>' +
-      '<line x1="12" y1="1"  x2="12" y2="3"/>' +
-      '<line x1="12" y1="21" x2="12" y2="23"/>' +
-      '<line x1="4.22" y1="4.22"   x2="5.64" y2="5.64"/>' +
-      '<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>' +
-      '<line x1="1"  y1="12" x2="3"  y2="12"/>' +
-      '<line x1="21" y1="12" x2="23" y2="12"/>' +
-      '<line x1="4.22" y1="19.78"  x2="5.64" y2="18.36"/>' +
-      '<line x1="18.36" y1="5.64"  x2="19.78" y2="4.22"/>' +
-    '</svg>';
-
+    '<svg class="dm-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>' +
+    '<svg class="dm-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
   btn.addEventListener('click', function(){
     var dark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
     var next = dark ? 'light' : 'dark';
     document.documentElement.setAttribute('data-bs-theme', next);
     localStorage.setItem('lr-theme', next);
   });
-
-  /* Find the rightmost navbar list and append */
   var navLists = document.querySelectorAll('.navbar-nav');
   var target = navLists[navLists.length - 1];
   if(target){
@@ -64,9 +44,9 @@ document.addEventListener('DOMContentLoaded', function(){
 </script>
 
 <!--
-  ═══════════════════════
+  ══════════════════════════════════════════
   WORD CLOUD
-  ═══════════════════════
+  ══════════════════════════════════════════
 -->
 <div id="wordcloud-wrapper">
   <canvas id="wc-canvas" width="900" height="230"
@@ -95,34 +75,33 @@ document.addEventListener('DOMContentLoaded', function(){
     var a = css('--accent')||'#03a1fc', m = css('--text-muted')||'#5a6278';
     var pal = [a,a,a,m,m,a+'cc',a+'99',m+'dd',m+'bb'];
     WordCloud(c,{
-      list: words,
-      gridSize: Math.round(14*(c.offsetWidth/900)),
-      weightFactor: function(s){ return Math.pow(s,0.82)*(c.offsetWidth/900)*2.4; },
-      fontFamily:'DM Sans,sans-serif', fontWeight:'600',
-      color: function(){ return pal[Math.floor(Math.random()*pal.length)]; },
-      rotateRatio:0, rotationSteps:1,
-      backgroundColor:'transparent',
-      drawOutOfBound:false, shrinkToFit:true, shuffle:false
+      list:words,
+      gridSize:Math.round(14*(c.offsetWidth/900)),
+      weightFactor:function(s){return Math.pow(s,0.82)*(c.offsetWidth/900)*2.4;},
+      fontFamily:'DM Sans,sans-serif',fontWeight:'600',
+      color:function(){return pal[Math.floor(Math.random()*pal.length)];},
+      rotateRatio:0,rotationSteps:1,backgroundColor:'transparent',
+      drawOutOfBound:false,shrinkToFit:true,shuffle:false
     });
   }
   draw();
-  new MutationObserver(function(){ setTimeout(draw,80); })
+  new MutationObserver(function(){setTimeout(draw,80);})
     .observe(document.documentElement,{attributes:true,attributeFilter:['data-bs-theme']});
 });
 </script>
 
 <!--
-  ═══════════════════════════════════════════
+  ══════════════════════════════════════════════════════
   PROJECT SLIDESHOW  (Karteikarten)
-  To add a card: copy one .project-card block
-  and update ssTotal in the script below.
-  ═══════════════════════════════════════════
+  To add a card: copy a .project-card block and
+  increment ssTotal in the script.
+  ══════════════════════════════════════════════════════
 -->
 <div class="project-slideshow">
   <div class="project-cards-outer">
     <div class="project-cards-track" id="ss-track">
 
-      <!-- ── CARD 1 : FLoRA / FORRT Replication Hub ── -->
+      <!-- CARD 1: FLoRA / FORRT Replication Hub -->
       <div class="project-card">
         <div class="card-logo-wrap">
           <img src="images/flora.svg" alt="FLoRA logo"
@@ -140,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function(){
         </a>
       </div>
 
-      <!-- ── CARD 2 : Replication Research Journal ── -->
+      <!-- CARD 2: Replication Research Journal -->
       <div class="project-card">
         <div class="card-logo-wrap">
           <img src="images/rr_blue.jpg" alt="Replication Research logo"
@@ -158,13 +137,13 @@ document.addEventListener('DOMContentLoaded', function(){
         </a>
       </div>
 
-      <!-- ── CARD 3 : Replication Journal Federation ── -->
+      <!-- CARD 3: Replication Journal Federation -->
       <div class="project-card">
         <div class="card-logo-wrap">
           <img src="images/rjf_logo_6_circles.svg" alt="Replication Journal Federation logo"
                style="max-height:56px;width:auto"
                onerror="this.style.display='none'">
-          <span style="font-weight:700;font-size:1rem;color:var(--text);line-height:1.3;margin-left:10px">Replication Journal<br>Federation</span>
+          <span style="font-weight:700;font-size:1rem;color:var(--text);line-height:1.3;margin-left:10px;font-family:'DM Sans',sans-serif">Replication Journal<br>Federation</span>
         </div>
         <h3>Replication Journal Federation</h3>
         <p>I am coordinating the <strong>Replication Journal Federation</strong> — a
@@ -177,8 +156,8 @@ document.addEventListener('DOMContentLoaded', function(){
         </a>
       </div>
 
-    </div><!-- /track -->
-  </div><!-- /outer -->
+    </div>
+  </div>
 
   <div class="slideshow-nav">
     <button class="ss-btn" onclick="ssPrev()" aria-label="Previous">
@@ -193,53 +172,43 @@ document.addEventListener('DOMContentLoaded', function(){
 
 <script>
 (function(){
-  /* ── UPDATE THIS NUMBER when adding/removing cards ── */
-  var ssTotal = 3;
-
+  var ssTotal = 3; /* ← increment when adding cards */
   var track = document.getElementById('ss-track');
   var dotsEl = document.getElementById('ss-dots');
   var cur = 0, timer;
-
-  /* Build dots */
   for(var i=0;i<ssTotal;i++){
     (function(idx){
       var d = document.createElement('button');
-      d.className = 'ss-dot' + (idx===0?' active':'');
+      d.className = 'ss-dot'+(idx===0?' active':'');
       d.setAttribute('aria-label','Card '+(idx+1));
       d.addEventListener('click',function(){ ssGoTo(idx); });
       dotsEl.appendChild(d);
     })(i);
   }
-
   function ssGoTo(n){
     cur = ((n%ssTotal)+ssTotal)%ssTotal;
     track.style.transform = 'translateX(-'+cur*100+'%)';
     dotsEl.querySelectorAll('.ss-dot').forEach(function(d,i){
       d.classList.toggle('active',i===cur);
     });
-    /* reset auto-advance */
     clearInterval(timer);
     timer = setInterval(function(){ ssGoTo(cur+1); },7000);
   }
-
   window.ssPrev = function(){ ssGoTo(cur-1); };
   window.ssNext = function(){ ssGoTo(cur+1); };
-
   timer = setInterval(function(){ ssGoTo(cur+1); },7000);
 })();
 </script>
 ```
 
-My research covers Replications, Meta-Science, and Judgment and Decision Making (e.g., Anchoring Effects).
+<p style="font-family:'DM Sans',sans-serif">My research covers Replications, Meta-Science, and Judgment and Decision Making (e.g., Anchoring Effects).</p>
 
 ```{=html}
 <!--
-  ═══════════════════════════════════════════════════════════
+  ══════════════════════════════════════════════════════════
   OPEN EDUCATIONAL RESOURCES  (4-column grid)
-
-  To add a card: copy one <a class="oer-card"> block.
-  The grid auto-wraps at 2 columns (tablet) and 1 (mobile).
-  ═══════════════════════════════════════════════════════════
+  To add a card: copy an <a class="oer-card"> block.
+  ══════════════════════════════════════════════════════════
 -->
 <details class="collapsible-section" open>
 <summary>
@@ -252,8 +221,7 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 
   <!-- Card 1: Replication Handbook -->
   <a class="oer-card" href="https://forrt.org/replication_handbook" target="_blank">
-    <img class="oer-img" src="images/handbook.png"
-         alt="Handbook for Reproduction and Replication Studies"
+    <img class="oer-img" src="images/handbook.png" alt="Replication Handbook"
          onerror="this.style.display='none'">
     <div class="oer-body">
       <div class="oer-title">Handbook for Reproduction &amp; Replication Studies</div>
@@ -267,8 +235,7 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 
   <!-- Card 2: German Open Science Book -->
   <a class="oer-card" href="https://lukasroeseler.github.io/opensciencebuch/" target="_blank">
-    <img class="oer-img" src="images/opensciencebuch.jpg"
-         alt="Open Science Buch"
+    <img class="oer-img" src="images/opensciencebuch.jpg" alt="Open Science Buch"
          onerror="this.style.display='none'">
     <div class="oer-body">
       <div class="oer-title">Open Science: Wie sich die Wissenschaft öffnet</div>
@@ -282,8 +249,7 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 
   <!-- Card 3: MueCOS Infomodule -->
   <a class="oer-card" href="https://lukasroeseler.github.io/MueCOS-Infomodule/" target="_blank">
-    <img class="oer-img" src="images/infomodule.jpg"
-         alt="MueCOS Infomodule"
+    <img class="oer-img" src="images/infomodule.png" alt="MueCOS Infomodule"
          onerror="this.style.display='none'">
     <div class="oer-body">
       <div class="oer-title">Interdisciplinary Open Science Guide (MueCOS)</div>
@@ -297,21 +263,16 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 
   <!-- Card 4: Teaching slides / OSF repository -->
   <a class="oer-card" href="https://osf.io/at29b/" target="_blank">
-    <!-- Teaching pictogram (SVG, no external dependency) -->
     <div class="oer-pictogram">
       <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Board -->
         <rect x="8" y="10" width="64" height="40" rx="4"
               fill="var(--bg-card2)" stroke="var(--accent)" stroke-width="2.5"/>
-        <!-- Lines on board -->
         <line x1="18" y1="24" x2="50" y2="24" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" opacity=".7"/>
         <line x1="18" y1="32" x2="44" y2="32" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" opacity=".5"/>
         <line x1="18" y1="40" x2="38" y2="40" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" opacity=".35"/>
-        <!-- Easel legs -->
         <line x1="22" y1="50" x2="14" y2="68" stroke="var(--text-muted)" stroke-width="2.5" stroke-linecap="round"/>
         <line x1="58" y1="50" x2="66" y2="68" stroke="var(--text-muted)" stroke-width="2.5" stroke-linecap="round"/>
         <line x1="40" y1="50" x2="40" y2="68" stroke="var(--text-muted)" stroke-width="2" stroke-linecap="round" opacity=".5"/>
-        <!-- Person silhouette -->
         <circle cx="62" cy="22" r="5" fill="var(--text-muted)" opacity=".6"/>
         <path d="M58 38 Q62 28 66 38" fill="var(--text-muted)" opacity=".45"/>
       </svg>
@@ -331,7 +292,7 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 ```
 
 ```{=html}
-<details class="collapsible-section" open>
+<details class="collapsible-section">
 <summary>
   <div class="coll-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
   <h2>Research Articles (Peer-Reviewed)</h2>
@@ -343,27 +304,27 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 
 -   **Röseler, L.**, Incerti, L., Rebholz, T. R., Seida, C., & Papenmeier, F. (2025). Falsifying the insufficient adjustment model. *Meta-Psychology*, *9*. <https://doi.org/10.15626/MP.2024.4137>
 
--   Reed, W. R., **Röseler, L.**, Saam, M., & Wallrich, L. (2025). No Room at the Inn? The Case for Dedicated Replication Journals. *Journal of Behavioral and Experimental Economics*, 102502. <https://doi.org/10.1016/j.socec.2025.102502>
+-   Reed, W. R., **Röseler, L.**, Saam, M., & Wallrich, L. (2025). No Room at the Inn? *Journal of Behavioral and Experimental Economics*, 102502. <https://doi.org/10.1016/j.socec.2025.102502>
 
 -   Hoghe, J., **Röseler, L.**, Limmer, R., Walther, C., & Schütz, A. (2025). Die Bedeutung personaler Ressourcen. *Zeitschrift für Arbeitswissenschaft.* <https://doi.org/10.1007/s41449-025-00460-x>
 
 -   Weber, L., & **Röseler, L.** (2025). Testing the Reliability of Anchoring Susceptibility Scores. *Europe's Journal of Psychology*, *21*(1), 1-10. <https://doi.org/10.5964/ejop.9891>
 
--   **Röseler, L.**, Weber, L., Helgerth, K. A., Stich, E., Günther, M., Tegethoff, P., Wagner, F., & Schütz, A. (2024). Measurements of Susceptibility to Anchoring are Unreliable. *Meta-Psychology*, *8*. <https://doi.org/10.15626/MP.2022.3236>
+-   **Röseler, L.**, Weber, L., Helgerth, K. A., et al. (2024). Measurements of Susceptibility to Anchoring are Unreliable. *Meta-Psychology*, *8*. <https://doi.org/10.15626/MP.2022.3236>
 
 -   Hoghe, J., **Röseler, L.**, et al. (2024). Berufliche Stressoren und Ressourcen von Genesungsbegleiter*innen. *Psychiatrische Praxis.* https://doi.org/10.1055/a-2383-8057
 
 -   **Röseler, L.**, Bögler, H. L., et al. (2024). Need for Cognition, Cognitive Load, and Forewarning do not Moderate Anchoring Effects. *Journal of Comments and Replications in Economics, 3*(2024-6). <https://doi.org/10.18718/81781.38>
 
--   **Röseler, L.**, Kaiser, L., Doetsch, C., et al. (2024). The Replication Database. *Journal of Open Psychology Data,* 12: 8, pp. 1–23. <https://doi.org/10.5334/jopd.101>
+-   **Röseler, L.**, Kaiser, L., et al. (2024). The Replication Database. *Journal of Open Psychology Data,* 12: 8, pp. 1–23. <https://doi.org/10.5334/jopd.101>
 
 -   **Röseler, L.**, Felser, G., Asberger, J., & Schütz, A. (2024). The Effect of Variety on Perceived Quantity. *Meta-Psychology*, 8. <https://doi.org/10.15626/MP.2020.2639>
 
--   **Röseler, L.**, Weber, L., Helgerth, K., et al. (2024). Correction: The Open Anchoring Quest Dataset. *Journal of Open Psychology Data,* 12: 8, pp. 1–3. <https://doi.org/10.5334/jopd.92>
+-   **Röseler, L.**, Weber, L., et al. (2024). Correction: The Open Anchoring Quest Dataset. *Journal of Open Psychology Data,* 12: 8, pp. 1–3. <https://doi.org/10.5334/jopd.92>
 
 -   Adler, S. J., **Röseler, L.**, & Schöniger, M. K. (2023). A toolbox to evaluate the trustworthiness of published findings. *Journal of Business Research*, *167*, 114189. <https://doi.org/10.1016/j.jbusres.2023.114189>
 
--   **Röseler, L.**, Weber, L., Helgerth, K., et al. (2022). The Open Anchoring Quest Dataset. *Journal of Open Psychology Data, 10*(16), pp. 1–12. <http://doi.org/10.5334/jopd.67>
+-   **Röseler, L.**, Weber, L., et al. (2022). The Open Anchoring Quest Dataset. *Journal of Open Psychology Data, 10*(16). <http://doi.org/10.5334/jopd.67>
 
 -   Delios, A., Clemente, E., Wu, T., et al. (2022). Examining the context sensitivity of research findings. *PNAS.* <https://doi.org/10.1073/pnas.212037711>
 
@@ -383,7 +344,7 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 
 -   Landy, J. F., Jia, M. L., Ding, I. L., et al. (2020). Crowdsourcing hypothesis tests. *Psychological Bulletin*, *146*(5), 451–479. <https://doi.org/10.1037/bul0000220>
 
--   **Röseler, L.** (2020). *Anchoring Effects: Resolving the Contradictions of Personality Moderator Research (Doctoral Thesis)*. University of Bamberg. <https://osf.io/34sv6>
+-   **Röseler, L.** (2020). *Anchoring Effects: Resolving the Contradictions (Doctoral Thesis)*. University of Bamberg. <https://osf.io/34sv6>
 
 ```{=html}
 </div></details>
@@ -588,91 +549,103 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 
 ## Research Articles — Searchable Table
 
-*Filter by topic, search by author or title. Click any row to expand full details and open science badges.*
+```{=html}
+<p style="font-family:'DM Sans',sans-serif;color:var(--text-muted);font-size:0.95rem;margin-bottom:1.2rem">
+Filter by topic or search by author and title. Click any row to expand full details and open science badges.
+</p>
+```
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| results: asis
+
+library(openxlsx)
+library(jsonlite)
+
+tbl <- openxlsx::read.xlsx("research.xlsx")
+
+# Clean column names
+raw_names <- names(tbl)
+clean     <- tolower(trimws(raw_names))
+clean     <- gsub("[^a-z0-9]+", "_", clean)
+clean     <- gsub("_+", "_", clean)
+clean     <- gsub("^_|_$", "", clean)
+
+# Map to JS keys
+map_name <- function(n) {
+  if (grepl("^x$|^x_$|^_$",        n)) return("num")
+  if (grepl("topic",                 n)) return("topic")
+  if (grepl("reference|^ref",        n)) return("ref")
+  if (grepl("oa.type|oa_type|oatype",n)) return("oatype")
+  if (grepl("materials|data",        n)) return("materials")
+  if (grepl("preregistration|prereg",n)) return("prereg")
+  if (grepl("pre.print|preprint",    n)) return("preprint")
+  if (grepl("student",               n)) return("student")
+  return(n)
+}
+
+names(tbl) <- sapply(clean, map_name)
+
+# Ensure all columns present
+for (col in c("num","topic","ref","oatype","materials","prereg","preprint","student")) {
+  if (!col %in% names(tbl)) tbl[[col]] <- ""
+}
+
+# The row number column is the unnamed first column (shows as X__ or similar)
+# Use the actual numeric index from the xlsx "_" column if available,
+# otherwise use row index
+if ("num" %in% names(tbl)) {
+  # already mapped
+} else {
+  tbl$num <- seq_len(nrow(tbl))
+}
+
+# Replace NA / literal "NA"
+tbl[is.na(tbl)] <- ""
+
+# Keep only our known columns in a clean data frame
+out <- data.frame(
+  num       = as.character(tbl$num),
+  topic     = as.character(tbl$topic),
+  ref       = as.character(tbl$ref),
+  oatype    = as.character(tbl$oatype),
+  materials = as.character(tbl$materials),
+  prereg    = as.character(tbl$prereg),
+  preprint  = as.character(tbl$preprint),
+  student   = as.character(tbl$student),
+  stringsAsFactors = FALSE
+)
+
+json <- jsonlite::toJSON(out, auto_unbox = TRUE)
+
+cat(paste0(
+  '<script>\n',
+  'var RT_DATA = ', json, ';\n',
+  '</script>\n'
+))
+```
 
 ```{=html}
-<!--
-  The table data is read from research.xlsx via R (see the R chunk below).
-  The JS below renders whatever RT_DATA contains — adding rows to the
-  spreadsheet automatically adds them to the table.
--->
-
-<!-- Badge image paths -->
-<script>
-var BADGE = {
-  opendata:     'images/opendata.png',
-  openmaterials:'images/openmaterials.png',
-  opencode:     'images/opencode.png',
-  preregistered:'images/preregistered.png'
-};
-</script>
-
 <!-- SVG symbol defs -->
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
-  <symbol id="ic-search"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
-  <symbol id="ic-chevron"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></symbol>
-  <symbol id="ic-anchor"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="5" r="3"/><line x1="12" y1="8" x2="12" y2="21"/><path d="M5 12H2a10 10 0 0020 0h-3"/></symbol>
-  <symbol id="ic-refresh"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></symbol>
-  <symbol id="ic-flask"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v11l-4 7h14l-4-7V3"/></symbol>
-  <symbol id="ic-book"     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></symbol>
+  <symbol id="ic-search"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+  <symbol id="ic-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></symbol>
+  <symbol id="ic-anchor"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="5" r="3"/><line x1="12" y1="8" x2="12" y2="21"/><path d="M5 12H2a10 10 0 0020 0h-3"/></symbol>
+  <symbol id="ic-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 102.13-9.36L1 10"/></symbol>
+  <symbol id="ic-flask"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v11l-4 7h14l-4-7V3"/></symbol>
+  <symbol id="ic-book"    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></symbol>
 </svg>
 
-<div class="research-table-wrapper">
-  <!-- Search -->
-  <div class="rt-search-bar">
-    <svg width="16" height="16"><use href="#ic-search"/></svg>
-    <input type="text" id="rt-search" placeholder="Search by author, title, keyword…"
-           oninput="rtFilter()" autocomplete="off"/>
-    <span id="rt-count" style="color:var(--text-muted);font-size:0.78rem;white-space:nowrap;font-family:'DM Sans',sans-serif"></span>
-  </div>
-
-  <!-- Topic chips -->
-  <div class="rt-filter-chips">
-    <span class="rt-filter-label">Topic</span>
-    <button class="rt-chip active"         onclick="rtSetTopic('all',this)">All</button>
-    <button class="rt-chip" onclick="rtSetTopic('Anchoring',this)">
-      <svg width="11" height="11"><use href="#ic-anchor"/></svg> Anchoring
-    </button>
-    <button class="rt-chip" onclick="rtSetTopic('Replication',this)">
-      <svg width="11" height="11"><use href="#ic-refresh"/></svg> Replication
-    </button>
-    <button class="rt-chip" onclick="rtSetTopic('Meta-Science',this)">
-      <svg width="11" height="11"><use href="#ic-flask"/></svg> Meta-Science
-    </button>
-    <button class="rt-chip" onclick="rtSetTopic('Publishing',this)">
-      <svg width="11" height="11"><use href="#ic-book"/></svg> Publishing
-    </button>
-  </div>
-
-  <!-- Table -->
-  <div style="overflow-x:auto">
-  <table class="rt-table" id="rt-table">
-    <thead>
-      <tr>
-        <th style="width:42px">#</th>
-        <th style="width:110px">Topic</th>
-        <th style="min-width:300px">Reference</th>
-        <th style="width:120px">OA Type</th>
-        <th style="width:140px">Open Science</th>
-        <th style="width:26px"></th>
-      </tr>
-    </thead>
-    <tbody id="rt-tbody"></tbody>
-  </table>
-  </div>
-  <div id="rt-no-results" class="rt-no-results" style="display:none">No entries match your search or filter.</div>
-</div>
-
+<!-- Badge paths -->
 <script>
-/* ──────────────────────────────────────────────────────────────
-   RT_DATA is populated by the R chunk below via jsonlite.
-   Column mapping from research.xlsx:
-     #, Topic, Reference, OA-Type,
-     Materials/Data  → materials
-     Preregistration → prereg
-     Pre-Print       → preprint
-     Student-collaboration? → student
-   ────────────────────────────────────────────────────────────── */
+var BADGE = {
+  openmaterials: 'images/openmaterials.png',
+  preregistered: 'images/preregistered.png',
+  opencode:      'images/opencode.png',
+  opendata:      'images/opendata.png'
+};
 
 var rtCurTopic  = 'all';
 var rtCurSearch = '';
@@ -698,69 +671,75 @@ function oaShort(s){
   return s.split(' ')[0];
 }
 
-/* Build OS badge images */
+function isValid(v){
+  return v && v.trim() && v.trim() !== 'NA'
+    && v.trim() !== 'Does not apply.' && v.trim() !== 'Link';
+}
+
 function osBadges(d){
-  var badges = '';
-  /* Data / Materials badge */
-  if(d.materials && d.materials.trim() && d.materials.trim() !== 'NA'){
-    badges += '<a class="os-badge-link" href="'+d.materials+'" target="_blank" title="Open Materials/Data">'
-      +'<img class="os-badge-img" src="'+BADGE.openmaterials+'" alt="Open Materials">'
-      +'</a>';
+  var b = '';
+  if(isValid(d.materials))
+    b += '<a class="os-badge-link" href="'+d.materials.trim()+'" target="_blank" title="Open Materials / Data">'
+      +'<img class="os-badge-img" src="'+BADGE.openmaterials+'" alt="Open Materials"></a>';
+  /* First URL only if multiple prereg links */
+  if(isValid(d.prereg)){
+    var preregUrl = d.prereg.trim().split(/\s+/)[0];
+    b += '<a class="os-badge-link" href="'+preregUrl+'" target="_blank" title="Preregistered">'
+      +'<img class="os-badge-img" src="'+BADGE.preregistered+'" alt="Preregistered"></a>';
   }
-  /* Preregistration badge */
-  if(d.prereg && d.prereg.trim() && d.prereg.trim() !== 'NA' && d.prereg.trim() !== 'Does not apply.'){
-    badges += '<a class="os-badge-link" href="'+d.prereg+'" target="_blank" title="Preregistered">'
-      +'<img class="os-badge-img" src="'+BADGE.preregistered+'" alt="Preregistered">'
-      +'</a>';
-  }
-  /* Preprint = open access to manuscript */
-  if(d.preprint && d.preprint.trim() && d.preprint.trim() !== 'NA'){
-    badges += '<a class="os-badge-link" href="'+d.preprint+'" target="_blank" title="Preprint available">'
-      +'<img class="os-badge-img" src="'+BADGE.opendata+'" alt="Preprint">'
-      +'</a>';
-  }
-  return badges || '<span style="color:var(--text-muted);font-size:0.8rem">—</span>';
+  if(isValid(d.preprint))
+    b += '<a class="os-badge-link" href="'+d.preprint.trim()+'" target="_blank" title="Preprint available">'
+      +'<img class="os-badge-img" src="'+BADGE.opendata+'" alt="Preprint"></a>';
+  return b || '<span style="color:var(--text-muted);font-size:0.8rem">—</span>';
 }
 
 function buildRow(d){
   var topics = String(d.topic||'').split('/').map(function(t){return t.trim();});
-  var topicBadges = topics.map(function(t){return '<span class="rt-topic">'+t+'</span>';}).join(' ');
-  var expId = 'rt-exp-'+d.num;
-  var searchStr = (String(d.ref||'')+' '+String(d.topic||'')).toLowerCase().replace(/<[^>]+>/g,'');
+  var topicBadges = topics.map(function(t){
+    return '<span class="rt-topic">'+t+'</span>';
+  }).join(' ');
 
-  var expandedLinks = '';
-  if(d.doi      && d.doi.trim()      && d.doi.trim()!=='NA')
-    expandedLinks += '<div><a href="'+d.doi+'" target="_blank" style="color:var(--accent)">Published version / DOI</a></div>';
-  if(d.materials && d.materials.trim() && d.materials.trim()!=='NA')
-    expandedLinks += '<div><a href="'+d.materials+'" target="_blank" style="color:var(--accent)">Materials &amp; Data</a></div>';
-  if(d.prereg   && d.prereg.trim()   && d.prereg.trim()!=='NA' && d.prereg.trim()!=='Does not apply.')
-    expandedLinks += '<div><a href="'+d.prereg+'" target="_blank" style="color:var(--accent)">Preregistration</a></div>';
-  if(d.preprint && d.preprint.trim() && d.preprint.trim()!=='NA')
-    expandedLinks += '<div><a href="'+d.preprint+'" target="_blank" style="color:var(--accent)">Preprint</a></div>';
+  var num = d.num || d['_'] || '';
+  var expId = 'rt-exp-'+num+'-'+Math.random().toString(36).slice(2,6);
+  var searchStr = (String(d.ref||'')+' '+String(d.topic||'')).toLowerCase();
+
+  /* Expanded detail links */
+  var links = '';
+  if(isValid(d.materials))
+    links += '<div><a href="'+d.materials.trim()+'" target="_blank" style="color:var(--accent)">Materials &amp; Data</a></div>';
+  if(isValid(d.prereg)){
+    /* handle multi-line prereg urls */
+    var purls = d.prereg.trim().split(/\s+/).filter(function(u){return u.length>4;});
+    purls.forEach(function(u,i){
+      links += '<div><a href="'+u+'" target="_blank" style="color:var(--accent)">Preregistration'+(purls.length>1?' '+(i+1):'')+'</a></div>';
+    });
+  }
+  if(isValid(d.preprint))
+    links += '<div><a href="'+d.preprint.trim()+'" target="_blank" style="color:var(--accent)">Preprint</a></div>';
 
   var studentBadge = (d.student && String(d.student).toLowerCase().includes('yes'))
-    ? '<span style="background:var(--accent-dim);color:var(--accent);border-radius:5px;padding:2px 8px;font-size:0.71rem;font-weight:600">Student collaboration</span>'
+    ? '<div><span style="background:var(--accent-dim);color:var(--accent);border-radius:5px;padding:2px 8px;font-size:0.71rem;font-weight:600;font-family:\'DM Sans\',sans-serif">Student collaboration</span></div>'
     : '';
 
   return '<tr class="rt-main-row" data-topic="'+String(d.topic||'')+'" '
     +'data-search="'+searchStr+'" '
     +'onclick="rtToggle(\''+expId+'\',this)" title="Click for details">'
-    +'<td><strong style="color:var(--accent)">'+d.num+'</strong></td>'
+    +'<td><strong style="color:var(--accent);font-family:\'DM Sans\',sans-serif">'+num+'</strong></td>'
     +'<td>'+topicBadges+'</td>'
-    +'<td style="font-size:0.85rem">'+String(d.ref||'')+'</td>'
+    +'<td style="font-size:0.85rem;font-family:\'DM Sans\',sans-serif">'+String(d.ref||'')+'</td>'
     +'<td><span class="rt-oa '+oaClass(d.oatype)+'">'+oaShort(d.oatype)+'</span></td>'
     +'<td><div class="os-badges">'+osBadges(d)+'</div></td>'
-    +'<td><button class="rt-expand-btn" id="btn-'+expId+'" title="Expand details">'
+    +'<td><button class="rt-expand-btn" id="btn-'+expId+'" title="Expand">'
     +'<svg width="13" height="13"><use href="#ic-chevron"/></svg></button></td>'
     +'</tr>'
     +'<tr class="rt-expanded-row hidden" id="'+expId+'">'
     +'<td colspan="6">'
-    +'<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start">'
-    +'<div style="flex:1;min-width:200px"><strong style="color:var(--accent);font-size:0.72rem;letter-spacing:.05em;text-transform:uppercase">Reference</strong><br>'
+    +'<div style="display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start;font-family:\'DM Sans\',sans-serif">'
+    +'<div style="flex:1;min-width:200px">'
+    +'<strong style="color:var(--accent);font-size:0.72rem;letter-spacing:.05em;text-transform:uppercase">Reference</strong><br>'
     +'<span style="color:var(--text);font-size:0.875rem">'+String(d.ref||'')+'</span></div>'
-    +'<div style="display:flex;flex-direction:column;gap:7px;font-size:0.855rem;min-width:180px">'
-    +(studentBadge?'<div>'+studentBadge+'</div>':'')
-    +expandedLinks
+    +'<div style="display:flex;flex-direction:column;gap:6px;font-size:0.855rem;min-width:170px">'
+    +studentBadge+links
     +'</div></div></td></tr>';
 }
 
@@ -781,11 +760,11 @@ function rtRender(){
   if(!tbody || typeof RT_DATA === 'undefined') return;
 
   var filtered = RT_DATA.filter(function(d){
-    var topicMatch = rtCurTopic === 'all' ||
-      String(d.topic||'').toLowerCase().includes(rtCurTopic.toLowerCase());
-    var searchStr  = (String(d.ref||'')+' '+String(d.topic||'')).toLowerCase().replace(/<[^>]+>/g,'');
-    var searchMatch = !rtCurSearch || searchStr.includes(rtCurSearch);
-    return topicMatch && searchMatch;
+    var topicStr = String(d.topic||'').toLowerCase();
+    var topicOk  = rtCurTopic === 'all' || topicStr.includes(rtCurTopic.toLowerCase());
+    var searchStr = (String(d.ref||'')+' '+String(d.topic||'')).toLowerCase();
+    var searchOk  = !rtCurSearch || searchStr.includes(rtCurSearch);
+    return topicOk && searchOk;
   });
 
   tbody.innerHTML = filtered.map(buildRow).join('');
@@ -804,68 +783,57 @@ function rtSetTopic(t, btn){
   btn.classList.add('active');
   rtRender();
 }
+
+/* Run once RT_DATA is available */
+if(typeof RT_DATA !== 'undefined'){
+  document.addEventListener('DOMContentLoaded', rtRender);
+} else {
+  document.addEventListener('DOMContentLoaded', function(){
+    setTimeout(rtRender, 100);
+  });
+}
 </script>
-```
 
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
+<div class="research-table-wrapper">
+  <div class="rt-search-bar">
+    <svg width="16" height="16"><use href="#ic-search"/></svg>
+    <input type="text" id="rt-search" placeholder="Search by author, title, keyword…"
+           oninput="rtFilter()" autocomplete="off"/>
+    <span id="rt-count" style="color:var(--text-muted);font-size:0.78rem;white-space:nowrap;font-family:'DM Sans',sans-serif"></span>
+  </div>
 
-library(openxlsx)
-library(jsonlite)
+  <div class="rt-filter-chips">
+    <span class="rt-filter-label">Topic</span>
+    <button class="rt-chip active" onclick="rtSetTopic('all',this)">All</button>
+    <button class="rt-chip" onclick="rtSetTopic('Anchoring',this)">
+      <svg width="11" height="11"><use href="#ic-anchor"/></svg> Anchoring
+    </button>
+    <button class="rt-chip" onclick="rtSetTopic('Replication',this)">
+      <svg width="11" height="11"><use href="#ic-refresh"/></svg> Replication
+    </button>
+    <button class="rt-chip" onclick="rtSetTopic('Meta-Science',this)">
+      <svg width="11" height="11"><use href="#ic-flask"/></svg> Meta-Science
+    </button>
+    <button class="rt-chip" onclick="rtSetTopic('Publishing',this)">
+      <svg width="11" height="11"><use href="#ic-book"/></svg> Publishing
+    </button>
+  </div>
 
-tbl <- openxlsx::read.xlsx("research.xlsx")
-
-# Normalise column names (strip spaces/special chars)
-names(tbl) <- trimws(names(tbl))
-names(tbl) <- gsub("\\.", "_", names(tbl))
-names(tbl) <- gsub("[^A-Za-z0-9_]", "_", names(tbl))
-names(tbl) <- gsub("_+", "_", names(tbl))
-names(tbl) <- tolower(names(tbl))
-
-# Map columns to JS-friendly names
-col_map <- function(df) {
-  lookup <- c(
-    "x_"        = "num",
-    "num"       = "num",
-    "topic"     = "topic",
-    "reference" = "ref",
-    "oa_type"   = "oatype",
-    "oa.type"   = "oatype",
-    "materials_data" = "materials",
-    "materials.data" = "materials",
-    "preregistration" = "prereg",
-    "pre_print"  = "preprint",
-    "pre.print"  = "preprint",
-    "student_collaboration_" = "student",
-    "student.collaboration." = "student"
-  )
-  newnames <- names(df)
-  for(i in seq_along(newnames)){
-    n <- newnames[i]
-    for(pat in names(lookup)){
-      if(grepl(pat, n, fixed=TRUE)){
-        newnames[i] <- lookup[pat]
-        break
-      }
-    }
-  }
-  names(df) <- newnames
-  df
-}
-
-tbl <- col_map(tbl)
-
-# Ensure required columns exist
-for(col in c("num","topic","ref","oatype","materials","prereg","preprint","student")){
-  if(!col %in% names(tbl)) tbl[[col]] <- NA_character_
-}
-
-# Replace NA with empty string for JS
-tbl[is.na(tbl)] <- ""
-
-json <- jsonlite::toJSON(tbl, auto_unbox = TRUE)
-
-cat(sprintf('<script>var RT_DATA = %s;\ndocument.addEventListener("DOMContentLoaded", rtRender);\n</script>', json))
+  <div style="overflow-x:auto">
+  <table class="rt-table" id="rt-table">
+    <thead>
+      <tr>
+        <th style="width:42px">#</th>
+        <th style="width:120px">Topic</th>
+        <th style="min-width:300px">Reference</th>
+        <th style="width:110px">OA Type</th>
+        <th style="width:130px">Open Science</th>
+        <th style="width:26px"></th>
+      </tr>
+    </thead>
+    <tbody id="rt-tbody"></tbody>
+  </table>
+  </div>
+  <div id="rt-no-results" class="rt-no-results" style="display:none">No entries match your search or filter.</div>
+</div>
 ```

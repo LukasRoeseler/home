@@ -33,8 +33,30 @@ $font-size-base: 1rem;
 
 *, *::before, *::after { box-sizing: border-box; }
 
-body {
+/* ── Universal sans-serif override ──
+   Quarto's litera theme sets a serif stack on p, li, blockquote etc.
+   We override every text-bearing element explicitly.              */
+body,
+p, li, ul, ol, dl, dt, dd,
+blockquote, figcaption,
+.content, .page-content,
+section, article, aside,
+td, th, caption,
+label, input, textarea, select, button,
+summary, details,
+em, strong, span, div,
+.collapsible-section, .section-body,
+.oer-card, .oer-title, .oer-desc, .oer-link,
+.project-card,
+.rt-table, .rt-expanded-row,
+.research-table-wrapper {
   font-family: 'DM Sans', sans-serif !important;
+}
+
+/* italic text stays italic but in DM Sans */
+em, i { font-style: italic; }
+
+body {
   background-color: var(--bg) !important;
   color: var(--text) !important;
   transition: background-color var(--tr), color var(--tr);
