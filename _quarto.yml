@@ -1,7 +1,6 @@
 project:
   type: website
   output-dir: docs
-  pre-render: _pre-render.R
 
 website:
   title: "Lukas Röseler"
