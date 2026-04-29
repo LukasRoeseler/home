@@ -88,6 +88,62 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<!-- ═══════════════════════════════════════════════════════════
+     GLOBAL DARK MODE — injected on every page via _quarto.yml
+     include-in-header: _include-header.html
+     ═══════════════════════════════════════════════════════════ -->
+<script>
+/* Restore saved theme immediately to avoid flash-of-wrong-theme */
+(function(){
+  var t = localStorage.getItem('lr-theme');
+  if(t) document.documentElement.setAttribute('data-bs-theme', t);
+})();
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  /* Guard: only inject once even if script runs twice */
+  if(document.getElementById('darkmode-toggle')) return;
+
+  var btn = document.createElement('button');
+  btn.id = 'darkmode-toggle';
+  btn.title = 'Toggle light / dark mode';
+  btn.setAttribute('aria-label', 'Toggle light/dark mode');
+
+  /* Moon = shown in light mode; Sun = shown in dark mode */
+  btn.innerHTML =
+    '<svg class="dm-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">' +
+      '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>' +
+    '</svg>' +
+    '<svg class="dm-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">' +
+      '<circle cx="12" cy="12" r="5"/>' +
+      '<line x1="12" y1="1"  x2="12" y2="3"/>' +
+      '<line x1="12" y1="21" x2="12" y2="23"/>' +
+      '<line x1="4.22"  y1="4.22"  x2="5.64"  y2="5.64"/>' +
+      '<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>' +
+      '<line x1="1"  y1="12" x2="3"  y2="12"/>' +
+      '<line x1="21" y1="12" x2="23" y2="12"/>' +
+      '<line x1="4.22"  y1="19.78" x2="5.64"  y2="18.36"/>' +
+      '<line x1="18.36" y1="5.64"  x2="19.78" y2="4.22"/>' +
+    '</svg>';
+
+  btn.addEventListener('click', function(){
+    var isDark = document.documentElement.getAttribute('data-bs-theme') === 'dark';
+    var next = isDark ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-bs-theme', next);
+    localStorage.setItem('lr-theme', next);
+  });
+
+  /* Append to the rightmost .navbar-nav list */
+  var navLists = document.querySelectorAll('.navbar-nav');
+  var target = navLists[navLists.length - 1];
+  if(target){
+    var li = document.createElement('li');
+    li.className = 'nav-item d-flex align-items-center';
+    li.appendChild(btn);
+    target.appendChild(li);
+  }
+});
+</script>
 
 
 </head>

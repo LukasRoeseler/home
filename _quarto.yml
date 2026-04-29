@@ -1,6 +1,7 @@
 project:
   type: website
   output-dir: docs
+  pre-render: _pre-render.R
 
 website:
   title: "Lukas Röseler"
@@ -30,5 +31,6 @@ format:
     linestretch: 1.65
     toc: false
     mainfont: "DM Sans, Outfit, system-ui, sans-serif"
+    include-in-header: _include-header.html
 
 editor: source
