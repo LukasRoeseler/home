@@ -261,42 +261,7 @@ Filter by topic or search by author and title. Click any row to expand full deta
 </p>
 ```
 
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-#| results: asis
-
-library(openxlsx)
-library(jsonlite)
-library(dplyr)
-
-tbl <- openxlsx::read.xlsx("research.xlsx")
-
-# Standardise column names to known JS keys
-names(tbl) <- dplyr::case_when(
-  grepl("^X\\.|^\\.",          names(tbl)) ~ "num",
-  grepl("Topic",               names(tbl), ignore.case=TRUE) ~ "topic",
-  grepl("Reference",           names(tbl), ignore.case=TRUE) ~ "ref",
-  grepl("OA",                  names(tbl), ignore.case=TRUE) ~ "oatype",
-  grepl("Materials|Data",      names(tbl), ignore.case=TRUE) ~ "materials",
-  grepl("Preregistration",     names(tbl), ignore.case=TRUE) ~ "prereg",
-  grepl("Pre.Print|Preprint",  names(tbl), ignore.case=TRUE) ~ "preprint",
-  grepl("Student",             names(tbl), ignore.case=TRUE) ~ "student",
-  TRUE ~ names(tbl)
-)
-
-# Keep only the columns we need, fill missing
-for (col in c("num","topic","ref","oatype","materials","prereg","preprint","student")) {
-  if (!col %in% names(tbl)) tbl[[col]] <- ""
-}
-tbl[is.na(tbl)] <- ""
-
-out <- tbl[, c("num","topic","ref","oatype","materials","prereg","preprint","student")]
-out[] <- lapply(out, as.character)
-
-cat('<script>\nvar RT_DATA =', jsonlite::toJSON(out, auto_unbox=TRUE), ';\n</script>')
-```
+<script src="research_data.js"></script>
 
 ```{=html}
 <svg style="display:none" xmlns="http://www.w3.org/2000/svg">
@@ -426,7 +391,19 @@ function rtSetTopic(t,btn){
   document.querySelectorAll('.rt-chip').forEach(function(c){c.classList.remove('active');});
   btn.classList.add('active'); rtRender();
 }
-document.addEventListener('DOMContentLoaded', function(){ setTimeout(rtRender, 50); });
+document.addEventListener('DOMContentLoaded', function(){
+  /* RT_DATA is written by the R chunk above this block.
+     Poll briefly in case script execution order varies. */
+  var attempts = 0;
+  function tryRender(){
+    if(typeof RT_DATA !== 'undefined'){
+      rtRender();
+    } else if(attempts++ < 20){
+      setTimeout(tryRender, 50);
+    }
+  }
+  tryRender();
+});
 </script>
 
 <div class="research-table-wrapper">
