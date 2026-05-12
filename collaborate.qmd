@@ -2,48 +2,89 @@
 title: "Collaborate"
 ---
 
-Most of the projects that I am contributing to are open to enthusiastic and diligent researchers. Please get in touch if you would like to collaborate.
+Most of the projects that I am contributing to are open to enthusiastic
+and diligent researchers. Please get in touch if you would like to
+collaborate.
 
 **Current examples of open projects:**
 
-+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| Project                                                                                                | Description                                                                                                                                                                                   | Tasks                                                             |
-+========================================================================================================+===============================================================================================================================================================================================+===================================================================+
-| [FORRT Replication Hub](https://forrt.org/replication-hub/)                                            | A collection of projects to support repetitive research across multiple disciplines.                                                                                                          | -   Data curation and validation (volunteer and paid work)        |
-|                                                                                                        |                                                                                                                                                                                               |                                                                   |
-|                                                                                                        |                                                                                                                                                                                               | -   Programming of software tools                                 |
-|                                                                                                        |                                                                                                                                                                                               |                                                                   |
-|                                                                                                        |                                                                                                                                                                                               | -   Documentation (tutorials, video recordings to facilitate use) |
-+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| [FReD Lighthouse](https://forrt.org/reversals/)                                                        | An educational interface that summarizes replications, reproductions, meta-analyses, and comments/critiques based on central findings.                                                        | -   Data curation and validation (volunteer and paid work)        |
-|                                                                                                        |                                                                                                                                                                                               |                                                                   |
-|                                                                                                        |                                                                                                                                                                                               | -   Website creation (concept and coding)                         |
-|                                                                                                        |                                                                                                                                                                                               |                                                                   |
-|                                                                                                        |                                                                                                                                                                                               | -   Organization of community meetings to crowdsource data        |
-+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| [Replication Research (R2)](https://www.uni-muenster.de/Ejournals/index.php/replicationresearch/index) | A multidisciplinary, researcher-led, diamond open access journal.                                                                                                                             | -   Editorial assistance (e.g., copy-editing)                     |
-|                                                                                                        |                                                                                                                                                                                               |                                                                   |
-|                                                                                                        |                                                                                                                                                                                               | -   Reproducibility checks                                        |
-|                                                                                                        |                                                                                                                                                                                               |                                                                   |
-|                                                                                                        |                                                                                                                                                                                               | -   Call for submissions                                          |
-|                                                                                                        |                                                                                                                                                                                               |                                                                   |
-|                                                                                                        |                                                                                                                                                                                               | -   Call for editorial members                                    |
-+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| [Open Journal Database](https://metaanalyses.shinyapps.io/openjournals/)                               | Currently, merely a proof of concept that allows researchers to choose a journal for their articles based on more than just intransparent citation metrics such as the journal impact factor. | -   Data wrangling                                                |
-|                                                                                                        |                                                                                                                                                                                               |                                                                   |
-|                                                                                                        |                                                                                                                                                                                               | -   Website development (design and programming)                  |
-|                                                                                                        |                                                                                                                                                                                               |                                                                   |
-|                                                                                                        |                                                                                                                                                                                               | -   Documentation (tutorial, instructions, scientific article)    |
-+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| [Replication Journal Federation](https://forrt.org/rjf/)                                               | We are currently setting up a global network of (open) journals that focus on replication and reproduction studies.                                                                           | -   Administration (e.g., mailing list creation)                  |
-|                                                                                                        |                                                                                                                                                                                               |                                                                   |
-|                                                                                                        |                                                                                                                                                                                               | -   Website design                                                |
-|                                                                                                        |                                                                                                                                                                                               |                                                                   |
-|                                                                                                        |                                                                                                                                                                                               | -   Member recruitment                                            |
-+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
-| [Open Science Book](https://lukasroeseler.github.io/opensciencebuch/)                                  | I am planning to translate my German open science book into English.                                                                                                                          | -   Translation                                                   |
-|                                                                                                        |                                                                                                                                                                                               |                                                                   |
-|                                                                                                        |                                                                                                                                                                                               | -   Coding (R, Quarto Markdown, quartobabel package)              |
-|                                                                                                        |                                                                                                                                                                                               |                                                                   |
-|                                                                                                        |                                                                                                                                                                                               | -   Support in publishing the book at the local library           |
-+--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
++----------------------+----------------------+----------------------+
+| Project              | Description          | Tasks                |
++======================+======================+======================+
+| [FORRT Replication   | A collection of      | -   Data curation    |
+| Hub](https://forrt.o | projects to support  |     and validation   |
+| rg/replication-hub/) | repetitive research  |     (volunteer and   |
+|                      | across multiple      |     paid work)       |
+|                      | disciplines.         |                      |
+|                      |                      | -   Programming of   |
+|                      |                      |     software tools   |
+|                      |                      |                      |
+|                      |                      | -   Documentation    |
+|                      |                      |     (tutorials,      |
+|                      |                      |     video recordings |
+|                      |                      |     to facilitate    |
+|                      |                      |     use)             |
++----------------------+----------------------+----------------------+
+| [FReD                | An educational       | -   Data curation    |
+| L                    | interface that       |     and validation   |
+| ighthouse](https://f | summarizes           |     (volunteer and   |
+| orrt.org/reversals/) | replications,        |     paid work)       |
+|                      | reproductions,       |                      |
+|                      | meta-analyses, and   | -   Website creation |
+|                      | comments/critiques   |     (concept and     |
+|                      | based on central     |     coding)          |
+|                      | findings.            |                      |
+|                      |                      | -   Organization of  |
+|                      |                      |     community        |
+|                      |                      |     meetings to      |
+|                      |                      |     crowdsource data |
++----------------------+----------------------+----------------------+
+| [Replication         | A multidisciplinary, | -   Editorial        |
+| Research             | researcher-led,      |     assistance       |
+| (R2)](https://www.un | diamond open access  |     (e.g.,           |
+| i-muenster.de/Ejourn | journal.             |     copy-editing)    |
+| als/index.php/replic |                      |                      |
+| ationresearch/index) |                      | -   Reproducibility  |
+|                      |                      |     checks           |
+|                      |                      |                      |
+|                      |                      | -   Call for         |
+|                      |                      |     submissions      |
+|                      |                      |                      |
+|                      |                      | -   Call for         |
+|                      |                      |     editorial        |
+|                      |                      |     members          |
++----------------------+----------------------+----------------------+
+| [Open Journal        | Currently, merely a  | -   Data wrangling   |
+| Database](https://   | proof of concept     |                      |
+| metaanalyses.shinyap | that allows          | -   Website          |
+| ps.io/openjournals/) | researchers to       |     development      |
+|                      | choose a journal for |     (design and      |
+|                      | their articles based |     programming)     |
+|                      | on more than just    |                      |
+|                      | intransparent        | -   Documentation    |
+|                      | citation metrics     |     (tutorial,       |
+|                      | such as the journal  |     instructions,    |
+|                      | impact factor.       |     scientific       |
+|                      |                      |     article)         |
++----------------------+----------------------+----------------------+
+| [Replication Journal | We are currently     | -   Administration   |
+| Federation](htt      | setting up a global  |     (e.g., mailing   |
+| ps://forrt.org/rjf/) | network of (open)    |     list creation)   |
+|                      | journals that focus  |                      |
+|                      | on replication and   | -   Website design   |
+|                      | reproduction         |                      |
+|                      | studies.             | -   Member           |
+|                      |                      |     recruitment      |
++----------------------+----------------------+----------------------+
+| [Open Science        | I am planning to     | -   Translation      |
+| Book](https://l      | translate my German  |                      |
+| ukasroeseler.github. | open science book    | -   Coding (R,       |
+| io/opensciencebuch/) | into English.        |     Quarto Markdown, |
+|                      |                      |     quartobabel      |
+|                      |                      |     package)         |
+|                      |                      |                      |
+|                      |                      | -   Support in       |
+|                      |                      |     publishing the   |
+|                      |                      |     book at the      |
+|                      |                      |     local library    |
++----------------------+----------------------+----------------------+
