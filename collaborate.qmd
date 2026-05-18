@@ -12,9 +12,9 @@ collaborate.
 | Project              | Description          | Tasks                |
 +======================+======================+======================+
 | [FORRT Replication   | A collection of      | -   Data curation    |
-| Hub](https://forrt.o | projects to support  |     and validation   |
-| rg/replication-hub/) | repetitive research  |     (volunteer and   |
-|                      | across multiple      |     paid work)       |
+| Hub](h               | projects to support  |     and validation   |
+| ttps://forrt.o%20%20 | repetitive research  |     (volunteer and   |
+| rg/replication-hub/) | across multiple      |     paid work)       |
 |                      | disciplines.         |                      |
 |                      |                      | -   Programming of   |
 |                      |                      |     software tools   |
@@ -25,9 +25,9 @@ collaborate.
 |                      |                      |     to facilitate    |
 |                      |                      |     use)             |
 +----------------------+----------------------+----------------------+
-| [FReD                | An educational       | -   Data curation    |
-| L                    | interface that       |     and validation   |
-| ighthouse](https://f | summarizes           |     (volunteer and   |
+| [FReD L igh          | An educational       | -   Data curation    |
+| tho                  | interface that       |     and validation   |
+| use](https://f%20%20 | summarizes           |     (volunteer and   |
 | orrt.org/reversals/) | replications,        |     paid work)       |
 |                      | reproductions,       |                      |
 |                      | meta-analyses, and   | -   Website creation |
@@ -41,12 +41,12 @@ collaborate.
 +----------------------+----------------------+----------------------+
 | [Replication         | A multidisciplinary, | -   Editorial        |
 | Research             | researcher-led,      |     assistance       |
-| (R2)](https://www.un | diamond open access  |     (e.g.,           |
-| i-muenster.de/Ejourn | journal.             |     copy-editing)    |
-| als/index.php/replic |                      |                      |
-| ationresearch/index) |                      | -   Reproducibility  |
-|                      |                      |     checks           |
-|                      |                      |                      |
+| (                    | diamond open access  |     (e.g.,           |
+| R2)](htt%20ps://www. | journal.             |     copy-editing)    |
+| un%20i-muen%20ster.d |                      |                      |
+| e/Ejourn%20als%20/in |                      | -   Reproducibility  |
+| dex.php/replic%20%20 |                      |     checks           |
+| ationresearch/index) |                      |                      |
 |                      |                      | -   Call for         |
 |                      |                      |     submissions      |
 |                      |                      |                      |
@@ -54,11 +54,11 @@ collaborate.
 |                      |                      |     editorial        |
 |                      |                      |     members          |
 +----------------------+----------------------+----------------------+
-| [Open Journal        | Currently, merely a  | -   Data wrangling   |
-| Database](https://   | proof of concept     |                      |
-| metaanalyses.shinyap | that allows          | -   Website          |
-| ps.io/openjournals/) | researchers to       |     development      |
-|                      | choose a journal for |     (design and      |
+| [Open Journal Data   | Currently, merely a  | -   Data wrangling   |
+| base](               | proof of concept     |                      |
+| https://%20met%20aan | that allows          | -   Website          |
+| alyses.shinyap%20%20 | researchers to       |     development      |
+| ps.io/openjournals/) | choose a journal for |     (design and      |
 |                      | their articles based |     programming)     |
 |                      | on more than just    |                      |
 |                      | intransparent        | -   Documentation    |
@@ -68,19 +68,19 @@ collaborate.
 |                      |                      |     article)         |
 +----------------------+----------------------+----------------------+
 | [Replication Journal | We are currently     | -   Administration   |
-| Federation](htt      | setting up a global  |     (e.g., mailing   |
-| ps://forrt.org/rjf/) | network of (open)    |     list creation)   |
-|                      | journals that focus  |                      |
+| F                    | setting up a global  |     (e.g., mailing   |
+| ederation](htt%20%20 | network of (open)    |     list creation)   |
+| ps://forrt.org/rjf/) | journals that focus  |                      |
 |                      | on replication and   | -   Website design   |
 |                      | reproduction         |                      |
 |                      | studies.             | -   Member           |
 |                      |                      |     recruitment      |
 +----------------------+----------------------+----------------------+
-| [Open Science        | I am planning to     | -   Translation      |
-| Book](https://l      | translate my German  |                      |
-| ukasroeseler.github. | open science book    | -   Coding (R,       |
-| io/opensciencebuch/) | into English.        |     Quarto Markdown, |
-|                      |                      |     quartobabel      |
+| [Open Science B      | I am planning to     | -   Translation      |
+| ook](h               | translate my German  |                      |
+| ttps://l%20uka%20sro | open science book    | -   Coding (R,       |
+| eseler.github.%20%20 | into English.        |     Quarto Markdown, |
+| io/opensciencebuch/) |                      |     quartobabel      |
 |                      |                      |     package)         |
 |                      |                      |                      |
 |                      |                      | -   Support in       |

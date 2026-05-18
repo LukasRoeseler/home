@@ -1,0 +1,104 @@
+---
+title: "Realscientists DE Blog Post"
+---
+
+*This is an English translation (mostly by deepl) of my blog post for
+https://realscientistsde.blogspot.com available
+[here](https://realscientistsde.blogspot.com/2026/05/forschung-uber-wissenschaft-lukas.html).*
+
+# Research on science – Lukas Röseler has joined Real Scientists DE! 
+
+This week, we are delighted to welcome our new curator, Lukas Röseler
+(@aufdroeseler.bsky.social), to the channel! Lukas studied business
+psychology, completed his PhD in psychology in 2021 and works as the
+managing director of the Münster Centre for Open Science at the
+University of Münster. He is editor-in-chief and co-founder of the
+Diamond Open Access journal Replication Research, one of the project
+leaders of the FORRT Replication Hub, and a member of the FORRT Steering
+Committee. He is committed to transparent and reproducible research,
+primarily replication research.
+
+## How did you end up in science? 
+
+I’m really fascinated by the idea of systematically, carefully and
+impartially examining theories about the world. At school, we carried
+out a study on Kohlberg’s theory of moral development, and when I was
+involved in a replication study during my degree (it was about Smarties,
+but perhaps more on that another time), it became clear to me that
+science is something I want to contribute to.
+
+## Why did you choose your current field, and/or what keeps you there?
+
+In fact, I’ve gradually drifted here from other fields, to Open Science
+and meta-science (= ‘research about science’). On the one hand, out of
+frustration that the areas I previously researched lacked transparency,
+something I didn’t understand at first, and on the other hand, driven by
+my idealism and hope that I could help science move a little closer to
+its ideals. One of these ideals that I support is the free availability
+of scientific knowledge.
+
+Tell us a bit about your work! We – because I don’t do any of this alone
+– support researchers in addressing transparency and reproducibility
+within their research. This happens in various ways: \
+1) We engage in dialogue with researchers from many different
+disciplines: How does science work in their field, within what framework
+is transparency meaningful and possible, how can it be achieved, and
+what support is needed to do so? \
+2) We provide infrastructure and information, such as general open
+science resources, a handbook, and a multidisciplinary journal for
+replication research. \
+3) We investigate various ‘open science practices’, asking ourselves
+whether certain proposals aimed at increasing the transparency or
+robustness of scientific findings are sensible and effective.
+
+## Motivation: Why should the public be interested in your research/work?
+
+Science is funded by the public. Within the framework of Open Science,
+we are committed to ensuring that the public benefits from it. Here are
+a few examples:
+
+-   **Open Access**: Too much money goes to commercial publishers
+    (viewers of Mai Think X may have seen the programme on the [tax
+    scandal and
+    paywalls](https://www.zdf.de/video/shows/mai-think-x-die-show-102/maithink-x-publikation-100)).
+    Citizens often have no access at all to research findings, even
+    though these were funded by taxpayers’ money. I found the programme
+    fascinating and very well explained, but was then shocked when,
+    after the problem had been explained, it was suddenly over. Within
+    the framework of Open Science, we have a wide range of proposed
+    solutions to the problems presented in the programme.
+
+-   **Reproducibility**: It is now widely known, far beyond the
+    scientific community, that many scientific findings do not stand up
+    to further scrutiny, for example in the context of replication. This
+    is highly relevant when decisions in everyday life or in the economy
+    are based on them. The first and usually incorrect assumption is
+    then that the research was not good enough. But it’s not that
+    simple. What replication means and how the results should be
+    interpreted is discussed within the framework of Open Science.
+    Sometimes mistakes have been made, sometimes methodological
+    standards change, and sometimes we still need to find out where the
+    limits of our knowledge lie.
+
+-   **Citizen Science**: Another facet of Open Science concerns the
+    active involvement of citizens. Where possible, researchers learn to
+    communicate their findings clearly, and participants gain a deeper
+    understanding of how research works.
+
+## Do you have any interesting external or additional tasks or activities? 
+
+Yes, but these always end up becoming part of my main duties.
+
+## Any interesting hobbies you’d like to tell us about? 
+
+Until a serious accident last year, I rode a BMX for 18 years and am
+still looking for a replacement hobby. If I still have any strength left
+in my fingers after a day at the keyboard, I enjoy solving Rubik’s Cubes
+(though I’m probably too slow to call it speedcubing).
+
+## What does your ideal day off look like (after all, researchers are only human too)?
+
+Time with the children, time with my wife, some exercise, and a trip
+into the countryside or somewhere where we can climb up and look down.
+
+Please give Lukas a warm welcome to Real Scientists DE!
