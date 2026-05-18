@@ -526,7 +526,7 @@ Making (e.g., Anchoring Effects).
 ```
 
 | Proposal | Year | Role | Program & Funder | Link | Status |
-|------------|------------|------------|------------|------------|------------|
+|----|----|----|----|----|----|
 | Moderators of Anchoring Effects | 2022 | First author | DFG, Sachbeihilfe | [osf.io/x6bqh](https://osf.io/x6bqh/) | Rejected |
 | Formation of a Replication Journal | 2024 | First author | Topical Program, Uni Münster | [osf.io/9vgx7](https://osf.io/9vgx7/) | Accepted |
 | Diamond Open Access Journal Support | 2024 | First author | openaccess.nrw | [osf.io/a82fe](https://osf.io/a82fe) | Accepted |

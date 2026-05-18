@@ -12,8 +12,8 @@ collaborate.
 | Project              | Description          | Tasks                |
 +======================+======================+======================+
 | [FORRT Replication   | A collection of      | -   Data curation    |
-| Hub](h               | projects to support  |     and validation   |
-| ttps://forrt.o%20%20 | repetitive research  |     (volunteer and   |
+| Hub](h%20ttp         | projects to support  |     and validation   |
+| s://forrt.o%20%20%20 | repetitive research  |     (volunteer and   |
 | rg/replication-hub/) | across multiple      |     paid work)       |
 |                      | disciplines.         |                      |
 |                      |                      | -   Programming of   |
@@ -25,9 +25,9 @@ collaborate.
 |                      |                      |     to facilitate    |
 |                      |                      |     use)             |
 +----------------------+----------------------+----------------------+
-| [FReD L igh          | An educational       | -   Data curation    |
-| tho                  | interface that       |     and validation   |
-| use](https://f%20%20 | summarizes           |     (volunteer and   |
+| [FReD L igh tho      | An educational       | -   Data curation    |
+| use                  | interface that       |     and validation   |
+| ](https://f%20%20%20 | summarizes           |     (volunteer and   |
 | orrt.org/reversals/) | replications,        |     paid work)       |
 |                      | reproductions,       |                      |
 |                      | meta-analyses, and   | -   Website creation |
@@ -40,12 +40,12 @@ collaborate.
 |                      |                      |     crowdsource data |
 +----------------------+----------------------+----------------------+
 | [Replication         | A multidisciplinary, | -   Editorial        |
-| Research             | researcher-led,      |     assistance       |
-| (                    | diamond open access  |     (e.g.,           |
-| R2)](htt%20ps://www. | journal.             |     copy-editing)    |
-| un%20i-muen%20ster.d |                      |                      |
-| e/Ejourn%20als%20/in |                      | -   Reproducibility  |
-| dex.php/replic%20%20 |                      |     checks           |
+| Research (           | researcher-led,      |     assistance       |
+| R2)](htt%20p         | diamond open access  |     (e.g.,           |
+| s://www.%20un%20i-mu | journal.             |     copy-editing)    |
+| en%20ster.d%20e/Ejou |                      |                      |
+| rn%20als%20/in%20dex |                      | -   Reproducibility  |
+| .php/replic%20%20%20 |                      |     checks           |
 | ationresearch/index) |                      |                      |
 |                      |                      | -   Call for         |
 |                      |                      |     submissions      |
@@ -55,9 +55,9 @@ collaborate.
 |                      |                      |     members          |
 +----------------------+----------------------+----------------------+
 | [Open Journal Data   | Currently, merely a  | -   Data wrangling   |
-| base](               | proof of concept     |                      |
-| https://%20met%20aan | that allows          | -   Website          |
-| alyses.shinyap%20%20 | researchers to       |     development      |
+| base](https:         | proof of concept     |                      |
+| //%20met%20aan%20aly | that allows          | -   Website          |
+| ses.shinyap%20%20%20 | researchers to       |     development      |
 | ps.io/openjournals/) | choose a journal for |     (design and      |
 |                      | their articles based |     programming)     |
 |                      | on more than just    |                      |
@@ -69,17 +69,17 @@ collaborate.
 +----------------------+----------------------+----------------------+
 | [Replication Journal | We are currently     | -   Administration   |
 | F                    | setting up a global  |     (e.g., mailing   |
-| ederation](htt%20%20 | network of (open)    |     list creation)   |
-| ps://forrt.org/rjf/) | journals that focus  |                      |
-|                      | on replication and   | -   Website design   |
+| ede                  | network of (open)    |     list creation)   |
+| ration](htt%20%20%20 | journals that focus  |                      |
+| ps://forrt.org/rjf/) | on replication and   | -   Website design   |
 |                      | reproduction         |                      |
 |                      | studies.             | -   Member           |
 |                      |                      |     recruitment      |
 +----------------------+----------------------+----------------------+
 | [Open Science B      | I am planning to     | -   Translation      |
-| ook](h               | translate my German  |                      |
-| ttps://l%20uka%20sro | open science book    | -   Coding (R,       |
-| eseler.github.%20%20 | into English.        |     Quarto Markdown, |
+| ook](h%20ttps:/      | translate my German  |                      |
+| /l%20uka%20sro%20ese | open science book    | -   Coding (R,       |
+| ler.github.%20%20%20 | into English.        |     Quarto Markdown, |
 | io/opensciencebuch/) |                      |     quartobabel      |
 |                      |                      |     package)         |
 |                      |                      |                      |
