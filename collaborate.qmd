@@ -8,83 +8,73 @@ collaborate.
 
 **Current examples of open projects:**
 
-+----------------------+----------------------+----------------------+
-| Project              | Description          | Tasks                |
-+======================+======================+======================+
-| [FORRT Replication   | A collection of      | -   Data curation    |
-| Hub](h%20ttp         | projects to support  |     and validation   |
-| s://forrt.o%20%20%20 | repetitive research  |     (volunteer and   |
-| rg/replication-hub/) | across multiple      |     paid work)       |
-|                      | disciplines.         |                      |
-|                      |                      | -   Programming of   |
-|                      |                      |     software tools   |
-|                      |                      |                      |
-|                      |                      | -   Documentation    |
-|                      |                      |     (tutorials,      |
-|                      |                      |     video recordings |
-|                      |                      |     to facilitate    |
-|                      |                      |     use)             |
-+----------------------+----------------------+----------------------+
-| [FReD L igh tho      | An educational       | -   Data curation    |
-| use                  | interface that       |     and validation   |
-| ](https://f%20%20%20 | summarizes           |     (volunteer and   |
-| orrt.org/reversals/) | replications,        |     paid work)       |
-|                      | reproductions,       |                      |
-|                      | meta-analyses, and   | -   Website creation |
-|                      | comments/critiques   |     (concept and     |
-|                      | based on central     |     coding)          |
-|                      | findings.            |                      |
-|                      |                      | -   Organization of  |
-|                      |                      |     community        |
-|                      |                      |     meetings to      |
-|                      |                      |     crowdsource data |
-+----------------------+----------------------+----------------------+
-| [Replication         | A multidisciplinary, | -   Editorial        |
-| Research (           | researcher-led,      |     assistance       |
-| R2)](htt%20p         | diamond open access  |     (e.g.,           |
-| s://www.%20un%20i-mu | journal.             |     copy-editing)    |
-| en%20ster.d%20e/Ejou |                      |                      |
-| rn%20als%20/in%20dex |                      | -   Reproducibility  |
-| .php/replic%20%20%20 |                      |     checks           |
-| ationresearch/index) |                      |                      |
-|                      |                      | -   Call for         |
-|                      |                      |     submissions      |
-|                      |                      |                      |
-|                      |                      | -   Call for         |
-|                      |                      |     editorial        |
-|                      |                      |     members          |
-+----------------------+----------------------+----------------------+
-| [Open Journal Data   | Currently, merely a  | -   Data wrangling   |
-| base](https:         | proof of concept     |                      |
-| //%20met%20aan%20aly | that allows          | -   Website          |
-| ses.shinyap%20%20%20 | researchers to       |     development      |
-| ps.io/openjournals/) | choose a journal for |     (design and      |
-|                      | their articles based |     programming)     |
-|                      | on more than just    |                      |
-|                      | intransparent        | -   Documentation    |
-|                      | citation metrics     |     (tutorial,       |
-|                      | such as the journal  |     instructions,    |
-|                      | impact factor.       |     scientific       |
-|                      |                      |     article)         |
-+----------------------+----------------------+----------------------+
-| [Replication Journal | We are currently     | -   Administration   |
-| F                    | setting up a global  |     (e.g., mailing   |
-| ede                  | network of (open)    |     list creation)   |
-| ration](htt%20%20%20 | journals that focus  |                      |
-| ps://forrt.org/rjf/) | on replication and   | -   Website design   |
-|                      | reproduction         |                      |
-|                      | studies.             | -   Member           |
-|                      |                      |     recruitment      |
-+----------------------+----------------------+----------------------+
-| [Open Science B      | I am planning to     | -   Translation      |
-| ook](h%20ttps:/      | translate my German  |                      |
-| /l%20uka%20sro%20ese | open science book    | -   Coding (R,       |
-| ler.github.%20%20%20 | into English.        |     Quarto Markdown, |
-| io/opensciencebuch/) |                      |     quartobabel      |
-|                      |                      |     package)         |
-|                      |                      |                      |
-|                      |                      | -   Support in       |
-|                      |                      |     publishing the   |
-|                      |                      |     book at the      |
-|                      |                      |     local library    |
-+----------------------+----------------------+----------------------+
++---------------------+---------------------+---------------------+
+| Project             | Description         | Tasks               |
++=====================+=====================+=====================+
+| [FORRT Replication  | A collection of     | -   Data curation   |
+| Hu                  | projects to support |     and validation  |
+| b](https://forrt.or | repetitive research |     (volunteer and  |
+| g/replication-hub/) | across multiple     |     paid work)      |
+|                     | disciplines.        |                     |
+|                     |                     | -   Programming of  |
+|                     |                     |     software tools  |
+|                     |                     |                     |
+|                     |                     | -   Documentation   |
+|                     |                     |     (tutorials,     |
+|                     |                     |     video           |
+|                     |                     |     recordings to   |
+|                     |                     |     facilitate use) |
++---------------------+---------------------+---------------------+
+| [FORRT              | An educational      | -   Data curation   |
+| Lightho             | interface that      |     and validation  |
+| use](https://www.li | summarizes          |     (volunteer and  |
+| ghthouse.forrt.org) | replications,       |     paid work)      |
+|                     | reproductions,      |                     |
+|                     | meta-analyses, and  | -   Website         |
+|                     | comments/critiques  |     creation        |
+|                     | based on central    |     (concept and    |
+|                     | findings.           |     coding)         |
+|                     |                     |                     |
+|                     |                     | -   Organization of |
+|                     |                     |     community       |
+|                     |                     |     meetings to     |
+|                     |                     |     crowdsource     |
+|                     |                     |     data            |
++---------------------+---------------------+---------------------+
+| [Replication        | A                   | -   Editorial       |
+| Research            | multidisciplinary,  |     assistance      |
+| (R2)](https://ejour | researcher-led,     |     (e.g.,          |
+| nals.uni-muenster.d | diamond open access |     copy-editing)   |
+| e/index.php/replica | journal.            |                     |
+| tionresearch/index) |                     | -   Reproducibility |
+|                     |                     |     checks          |
+|                     |                     |                     |
+|                     |                     | -   Call for        |
+|                     |                     |     submissions     |
+|                     |                     |                     |
+|                     |                     | -   Call for        |
+|                     |                     |     editorial       |
+|                     |                     |     members         |
++---------------------+---------------------+---------------------+
+| [Open Journal       | Currently, merely a | -   Data wrangling  |
+| Database](https://  | proof of concept    |                     |
+| lukasroeseler.githu | that allows         | -   Website         |
+| b.io/openjournals/) | researchers to      |     development     |
+|                     | choose a journal    |     (design and     |
+|                     | for their articles  |     programming)    |
+|                     | based on more than  |                     |
+|                     | just intransparent  | -   Documentation   |
+|                     | citation metrics    |     (tutorial,      |
+|                     | such as the journal |     instructions,   |
+|                     | impact factor.      |     scientific      |
+|                     |                     |     article)        |
++---------------------+---------------------+---------------------+
+| [Replication        | We are currently    | -   Administration  |
+| Journal             | setting up a global |     (e.g., mailing  |
+| Federation](http    | network of (open)   |     list creation)  |
+| s://forrt.org/rjf/) | journals that focus |                     |
+|                     | on replication and  | -   Website design  |
+|                     | reproduction        |                     |
+|                     | studies.            | -   Member          |
+|                     |                     |     recruitment     |
++---------------------+---------------------+---------------------+

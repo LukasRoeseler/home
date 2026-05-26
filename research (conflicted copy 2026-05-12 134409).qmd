@@ -13,21 +13,21 @@ bibliographystyle: apa
 <div id="wordcloud-wrapper">
   <canvas id="wc-canvas" width="900" height="230"
           style="width:100%;height:auto;display:block"></canvas>
-  <p class="wc-note">My key research topics</p>
+  <p class="wc-note">Key topics based on Google Scholar profile</p>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.1.0/wordcloud2.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
   var words = [
-    ['Anchoring Effects',34],['Replication',38],['Philosophy of Science',12],['Meta-Analysis',28],
+    ['Anchoring Effects',38],['Replication',34],['Meta-Analysis',28],
     ['Open Science',26],['Judgment & Decision Making',22],['Reproducibility',20],
     ['Preregistration',17],['Replication Database',17],['Susceptibility',15],
     ['Adjustment',14],['Ego Depletion',12],['Open Data',11],
     ['Self-Control',11],['Body Position',10],['Effect Sizes',10],
-    ['Meta-Science',22],['P-Hacking',9],['Publication Bias',8],
+    ['Meta-Science',10],['P-Hacking',9],['Publication Bias',8],
     ['Social Psychology',8],['Personality',7],['Dominance',7],
     ['Prestige',6],['Generalizability',6],['FLoRA',6],
-    ['FORRT',18],['Validity',5],['Transparency',5],['Subliminal Priming',7]
+    ['FORRT',5],['Validity',5],['Transparency',5],['Subliminal Priming',7]
   ];
   function css(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
   function draw(){
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function(){
            growing international network of journals committed to publishing replication
            and reproduction studies. The Federation promotes cross-journal standards,
            visibility, and discoverability of replication research across disciplines.</p>
-        <a href="https://forrt.org/rjf" target="_blank" class="card-cta">
+        <a href="https://replicationresearch.org" target="_blank" class="card-cta">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="13" height="13"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
           Learn more
         </a>
@@ -261,8 +261,6 @@ Making (e.g., Anchoring Effects).
 ------------------------------------------------------------------------
 
 ```{=html}
-
-
 <details class="collapsible-section">
 <summary>
   <div class="coll-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
@@ -273,38 +271,44 @@ Making (e.g., Anchoring Effects).
 
 **2026**
 
--   Aczel, B., Szaszi, B., Clelland, H.T. *et al.* (2026). Investigating
-    the analytical robustness of the social and behavioural sciences.
-    *Nature, 652,* 135–142. <https://doi.org/10.1038/s41586-025-09844-9>
+-   Aczel, B., Szaszi, B., Clelland, H.T. ... **Röseler, L.**, ... et
+    al. Investigating the analytical robustness of the social and
+    behavioural sciences. *Nature* 652, 135–142 (2026).
+    <https://doi.org/10.1038/s41586-025-09844-9>
 
 **2025**
 
--   Hoghe, J., **Röseler, L.**, Limmer, R., Walther, C., & Schütz, A.
+-   Hoghe, J., **Röseler, L.**, Limmer, R., Walther, C., & Schütz, A.
     (2025). Die Bedeutung personaler Ressourcen und personaler
     Risikofaktoren für die Bewältigung beruflicher Belastungen bei
     Genesungsbegleiter/-innen/Peer Berater/-innen. *In Zeitschrift für
-    Arbeitswissenschaft.* <https://doi.org/10.1007/s41449-025-00460-x>
+    Arbeitswissenschaft.* <https://doi.org/10.1007/s41449-025-00460-x>
 
 -   Hoghe, J., **Röseler, L.**, Limmer, R., Walther, C., & Schütz, A
     (2025). Occupational stressors and resources of peer workers in
-    social psychiatry. *Psychiatrische Praxis, 52*(1),
-    35-43. <https://doi.org/10.1055/a-2383-8057>
-
--   **Röseler, L.**, Incerti, L., Rebholz, T. R., Seida, C., &
-    Papenmeier, F. (2025). Falsifying the insufficient adjustment model.
-    *Meta-Psychology*, *9*. <https://doi.org/10.15626/MP.2024.4137>
+    social psychiatry. *Psychiatrische Praxis, 52*(1), 35-43.
+    <https://doi.org/10.1055/a-2383-8057>
 
 -   Reed, W. R., **Röseler, L.**, Saam, M., & Wallrich, L. (2025). No
-    Room at the Inn? *Journal of Behavioral and Experimental
-    Economics*, 102502. <https://doi.org/10.1016/j.socec.2025.102502>
+    Room at the Inn? The Case for Dedicated Replication Journals.
+    *Journal of Behavioral and Experimental Economics*, 102502.
+    <https://doi.org/10.1016/j.socec.2025.102502>
 
--   Hoghe, J., **Röseler, L.**, Limmer, R., Walther, C., & Schütz, A.
-    (2025). Die Bedeutung personaler Ressourcen. *Zeitschrift für
-    Arbeitswissenschaft.* <https://doi.org/10.1007/s41449-025-00460-x>
+-   **Röseler, L.**, Incerti, L., Rebholz, T. R., Seida, C., &
+    Papenmeier, F. (2025). Falsifying the insufficient adjustment model:
+    No evidence for unidirectional adjustment from anchors.
+    *Meta-Psychology, 9*. <https://doi.org/10.15626/MP.2024.4137>
 
--   Weber, L., & **Röseler, L.** (2025). Testing the Reliability of
-    Anchoring Susceptibility Scores. *Europe's Journal of Psychology*,
-    *21*(1), 1-10. <https://doi.org/10.5964/ejop.9891>
+-   **Röseler, L.**, Wallrich, L., Adler, S., Oppong Boakye, P.,
+    Evans, T. R., Goltermann, J., Haven, T., Horstmann, J., Korbmacher,
+    M., Müller, M., Verheyen, S., Visser, I., & Azevedo, F. (2025). A
+    Community Model for Rigorous and Inclusive Scholarship: Inaugural
+    Editorial of Replication Research (R2). *Replication Research,
+    1*. <https://doi.org/10.17879/replicationresearch-2025-9022>
+
+-   Weber, L., & **Röseler, L.** (2025). Testing the reliability of
+    anchoring susceptibility scores. *Europe’s Journal of Psychology,
+    21*(1), 1–10. <https://doi.org/10.5964/ejop.9891>
 
 **2024**
 
@@ -313,13 +317,24 @@ Making (e.g., Anchoring Effects).
     cognition, cognitive load, and forewarning do not moderate anchoring
     effects. A replication study of Epley & Gilovich (Journal of
     Behavioral Decision Making, 2005; Psychological Science, 2006).
-    *Journal of Comments and Replications in Economics,
-    3*(8). <https://doi.org/10.18718/81781.38>
+    *Journal of Comments and Replications in Economics, 3*(8).
+    <https://doi.org/10.18718/81781.38>
 
 -   **Röseler, L.**, Felser, G., Asberger, J., & Schütz, A. (2024). The
     effect of variety on perceived quantity: Failures to replicate
-    Redden and Hoch (2009). *Meta-Psychology,
-    8*. <https://doi.org/10.15626/MP.2020.2639>
+    Redden and Hoch (2009). *Meta-Psychology, 8*.
+    <https://doi.org/10.15626/MP.2020.2639>
+
+-   **Röseler, L.,** Kaiser, L., Doetsch, C., Klett, N., Seida, C.,
+    Schütz, A., … Zhang, Y. (2024). The Replication Database:
+    Documenting the replicability of psychological science. *Journal of
+    Open Psychology Data, 12*(1), 8. <https://doi.org/10.5334/jopd.101>
+
+-   **Röseler, L.**, Weber, L., Helgerth, K., Stich, E., Günther, M.,
+    Tegethoff, P., … Schütz, A. (2024). Correction: The open anchoring
+    quest dataset: Anchored estimates from 96 studies on anchoring
+    effects. *Journal of Open Psychology Data, 12*(8), 1–3.
+    <https://doi.org/10.5334/jopd.92>
 
 -   **Röseler, L.**, Weber, L., Helgerth, K. A. C., Stich, E., Günther,
     M., Tegethoff, P., … Schütz, A. (2024). Measurements of
@@ -327,27 +342,12 @@ Making (e.g., Anchoring Effects).
     from more than 50,000 anchored estimates. *Meta Psychology,
     8*. <https://doi.org/10.15626/MP.2022.3236>
 
--   **Röseler, L.,** Kaiser, L., Doetsch, C., Klett, N., Seida, C.,
-    Schütz, A., … Zhang, Y. (2024). The Replication Database:
-    Documenting the replicability of psychological science. *Journal of
-    Open Psychology Data, 12*(1), 8. <https://doi.org/10.5334/jopd.101>
-
--   **Röseler, L.**, Felser, G., Asberger, J., & Schütz, A. (2024). The
-    Effect of Variety on Perceived Quantity. *Meta-Psychology*, 8.
-    <https://doi.org/10.15626/MP.2020.2639>
-
--   **Röseler, L.**, Weber, L., Helgerth, K., Stich, E., Günther, M.,
-    Tegethoff, P., … Schütz, A. (2024). Correction: The open anchoring
-    quest dataset: Anchored estimates from 96 studies on anchoring
-    effects. *Journal of Open Psychology Data, 12*(8),
-    1–3. <https://doi.org/10.5334/jopd.92>
-
 **2023**
 
--   Adler, S. J., **Röseler, L.**, & Schöniger, M. K. (2023). A toolbox
-    to evaluate the trustworthiness of published findings. *Journal of
-    Business Research*, *167*, 114189.
-    <https://doi.org/10.1016/j.jbusres.2023.114189>
+-   Adler, S. J., **Röseler, L.**, & Schöniger, M. K. (2023). A toolbox
+    to evaluate the trustworthiness of published findings. *Journal of
+    Business Research*, *167*,
+    114189. <https://doi.org/10.1016/j.jbusres.2023.114189>
 
 **2022**
 
@@ -456,41 +456,50 @@ Making (e.g., Anchoring Effects).
     Anchoring Effects, Advice Taking, and Hindsight Bias and Exploring
     its Determinants. <https://doi.org/10.31234/osf.io/5u8br_v3>
 
-    Wallrich, L., vaz, K. G., Weinerova, J., **Röseler, L.,** Gupta, A.,
+-   Wallrich, L., vaz, K. G., Weinerova, J., **Röseler, L.,** Gupta, A.,
     Kan-Kilinc, B., … Azevedo, F. (2026, March 9). FLoRA-Notify: A
     Protocol for a Cluster-Randomised Controlled Trial to Assess the
-    Impact of Notifying Preprint Authors About Replication Studies. [
-    https://doi.org/10.31222/osf.io/qnckf_v1](https://doi.org/10.31222/osf.io/qnckf_v1)
-
--   Hartmann, H., Azevedo, F., **Röseler, L.**, Wallrich, L., Aldoh, A.,
-    Elsherif, M. M., … Leech, G. (2026, March 12). Tracking and
-    mainstreaming replications in the social, cognitive, and behavioral
-    sciences. <https://doi.org/10.31222/osf.io/ad2w6_v2>
+    Impact of Notifying Preprint Authors About Replication Studies.
+    <https://doi.org/10.31222/osf.io/qnckf_v1>
 
 **2025**
 
--   **Röseler, L.** (2025, November 24). Preregistrations without Code
-    do not Prevent P-Hacking.
-    MetaArxiv. <https://doi.org/10.31222/osf.io/v259t_v1>
+-   Hartmann, H., Azevedo, F., **Röseler, L.,** Wallrich, L., Aldoh, A.,
+    Elsherif, M. M., … Leech, G. (2025, December 3). Tracking and
+    mainstreaming replications in the social, cognitive, and behavioral
+    sciences. <https://doi.org/10.31222/osf.io/ad2w6_v2>
+
+-   **Röseler, L.** (2025, November 24). Preregistrations without Code
+    do not Prevent P-Hacking. MetaArxiv.
+    <https://doi.org/10.31222/osf.io/v259t_v1>
 
 **2024**
 
--   **Röseler, L.** (2024). CODECHECK certificate 2024-005.
+-   **Röseler, L.** (2024). CODECHECK certificate 2024-005. Zenodo.
     <https://doi.org/10.5281/zenodo.13945051>
+
+-   **Röseler, L.** (2024). Exploring Categorical Colors.
+    <https://doi.org/10.31234/osf.io/gj76p>
 
 -   **Röseler, L.**, Doetsch, C. A., Förster, N., Bruzsa, A., Deublein,
     M., Rieger, E., Schmidt, C., Seitz, A., & Wild, A.(2024). No
     Evidence for the Affective Expectation Model: Replication of Geers
-    and Lassiter (2003).
-     [ https://doi.org/10.31234/osf.io/akfzh](https://doi.org/10.31234/osf.io/akfzh)
+    and Lassiter (2003).  <https://doi.org/10.31234/osf.io/akfzh>
 
--   **Röseler, L.** (2024). Exploring Categorical Colors.
-    <https://doi.org/10.31234/osf.io/gj76p>
-
--   **Röseler, L.**, & Schütz, A. (2024). Assimilation and Contrast are
-    Everywhere. <https://doi.org/10.31234/osf.io/krwcn>
+-   **Röseler, L.** & Schütz, A. (2024). Assimilation and Contrast are
+    Everywhere. <https://doi.org/10.31234/osf.io/krwcn>
 
 **2023**
+
+-   Adler, S. J., **Röseler, L.**, Schöniger, M. K. (2023). *A toolbox
+    to identify p-hacking: Four techniques to evaluate the
+    trustworthiness of published findings*. Manuscript submitted for
+    publication.
+
+-   **Röseler, L.**, Incerti, L., Seida, C., Rebholz, T., Papenmeier, F.
+    (2023). *Falsifying the Insufficient Adjustment Model: No Evidence
+    for Unidirectional Adjustment From Anchors*. Advance online
+    publication. <https://osf.io/8cwpy>
 
 -   **Röseler, L.** (2023). *Predicting Replication Rates with Z-Curve:
     A Brief Exploratory Validation Study Using the Replication
@@ -499,18 +508,27 @@ Making (e.g., Anchoring Effects).
 
 **2022**
 
+-   **Röseler, L.**, Bögler, H. L., Koßmann, L., Krueger, S.,
+    Bickenbach, S., Bühler, R., … Sing, J. (2022). Replicating Epley and
+    Gilovich: Need for Cognition, Cognitive Load, and Forewarning do not
+    Moderate Anchoring Effects. <https://doi.org/10.31234/osf.io/bgp3m>
+
 -   **Röseler, L.**, Gendlina, T., Krapp, J., Labusch, N., & Schütz, A.
     (2022). Successes and Failures of Replications: A Meta-Analysis of
     Independent Replication Studies Based on the OSF Registries. Advance
     online publication. <https://doi.org/10.31222/osf.io/8psw2>
 
--   Wolf, D., **Röseler, L.**, Leder, J., & Schütz, A. (2022). The
-    Red-Anger Effect: Is it Nothing More Than Demand Characteristics?
-    Advance online publication. <https://doi.org/10.31234/osf.io/ntukz>
-
 -   **Röseler, L.**, & Schütz, A. (2022). Hanging the Anchor Off a New
     Ship: A Meta-Analysis of Anchoring
     Effects. <https://doi.org/10.31234/osf.io/wf2tn>
+
+-   Weber, L., & **Röseler, L.** (2022). Testing the Reliability of
+    Anchoring Susceptibility Scores. Advance online
+    publication. <https://doi.org/10.31234/osf.io/2kfh3>
+
+-   Wolf, D., **Röseler, L.**, Leder, J., & Schütz, A. (2022). The
+    Red-Anger Effect: Is it Nothing More Than Demand Characteristics?
+    Advance online publication. <https://doi.org/10.31234/osf.io/ntukz>
 
 **2021**
 
@@ -527,7 +545,7 @@ Making (e.g., Anchoring Effects).
     Next Step in Moderator
     Research. <https://doi.org/10.31234/osf.io/hjbwp>
 
-    **Röseler, L.**, Wolf, D., Leder, J., & Schütz, A. (2020).
+-   **Röseler, L.**, Wolf, D., Leder, J., & Schütz, A. (2020).
     Test-Retest Reliability is not a Measure of Reliability or
     Stability: A Friendly
     Reminder. <https://doi.org/10.31234/osf.io/mt49r>
@@ -535,8 +553,8 @@ Making (e.g., Anchoring Effects).
 **2019**
 
 -   **Röseler, L.**, Schütz, A., & Starker, U. (2019). Cognitive Ability
-    does not Correlate with Anchoring Susceptibility.
-    <https://doi.org/10.31234/osf.io/bnsx2>
+    does not and cannot Correlate with Susceptibility to Anchoring
+    Effects. <https://doi.org/10.31234/osf.io/bnsx2>
 
 ```{=html}
 </div></details>
@@ -558,13 +576,10 @@ Making (e.g., Anchoring Effects).
     first authorship
 -   **Röseler, L.** (2025). Open Science: Wie sich die Wissenschaft
     öffnet (0.2). <https://doi.org/10.17605/OSF.IO/2QXWV>
--   Jané, M., Xiao, Q., Yeung, S., Ben-Shachar, M. S., Caldwell, A.,
-    Cousineau, D., ... & Feldman, G. (2024). Guide to effect sizes and
-    confidence intervals. <https://doi.org/10.17605/OSF.IO/D8C4G>
--   **Röseler, L.**, & Schütz, A. (2022). Open Science. In A. Schütz, M.
-    Brand, S. Steins-Loeber, (Eds.), *Psychologie: Eine Einführung in
-    ihre Grundlagen und Anwendungsfelder* (6th ed., pp. 187–198).
-    Kohlhammer.
+-   Jané, M., Xiao, Q., Yeung, S., et al. (2024). Guide to Effect Sizes
+    and Confidence Intervals. <http://dx.doi.org/10.17605/OSF.IO/D8C4G>
+-   **Röseler, L.**, & Schütz, A. (2022). Open Science. In *Psychologie:
+    Eine Einführung* (6th ed., pp. 187–198). Kohlhammer.
 
 ```{=html}
 </div></details>
@@ -578,11 +593,10 @@ Making (e.g., Anchoring Effects).
 ```
 
 -   **Röseler, L.**, Wallrich, L., Adler, S., Oppong Boakye, P.,
-    Evans, T. R., Goltermann, J., Haven, T., Horstmann, J., Korbmacher,
-    M., Müller, M., Verheyen, S., Visser, I., & Azevedo, F. (2025). A
-    Community Model for Rigorous and Inclusive Scholarship: Inaugural
-    Editorial of Replication Research (R2). *Replication Research,
-    1*. <https://doi.org/10.17879/replicationresearch-2025-9022>
+    Evans, T. R., Goltermann, J., … Azevedo, F. (2025). A Community
+    Model for Rigorous and Inclusive Scholarship: Inaugural Editorial of
+    Replication Research (R2). *Replication Research*, *1*.
+    <https://doi.org/10.17879/replicationresearch-2025-9022>
 -   Müller, M., **Röseler, L.**, & Wallrich, L. (2025). Initial
     Editorial Assessment Form. Zenodo.
     <https://doi.org/10.5281/zenodo.17911973>
@@ -599,135 +613,53 @@ Making (e.g., Anchoring Effects).
 <details class="collapsible-section">
 <summary>
   <div class="coll-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
-  <h2>Software and Data</h2>
+  <h2>Software</h2>
 </summary>
 <div class="section-body">
 ```
 
--   Wallrich, L.\**,* &**Röseler, L.\***, Hartmann, H., Ashcroft-Jones,
-    S., Doetsch, C., Kaiser, L., Schüller, S. M., Aldoh, A., Behbood,
-    H., Elsherif, M. M., Klett, N., Krapp, J., Liu, M., Pavlović, Z.,
-    Pennington, C. R., Schütz, A., Seida, C., Siziva, K., Skvortsova,
-    A., Aczel, B., Adelina, N., Agostini, V., Al-Hoorie, A. H., Alarie,
-    S., Albayrak-Aydemir, N., Alzahawi, S., Anvari, F., Arriaga, P.,
-    Baker, B. J., Barth, C. L., Bauer, D. J., Becker, R., Beitner, J.,
-    Belaus, A., Bhatt, H., Bhogal, J., Boyce, V., Breemer, L., Brick,
-    C., Brohmer, H., Brummernhenrich, B., Budd, E., Butler, A., Casula,
-    A., Chandrashekar, S. P., Chen, S., Chung, K. L., Cockcroft, J. P.,
-    Crowe, P., Cummins, J., Daniel, A., Deane, O., Deressa, T. K.,
-    Dienlin, T., Diveica, V., Draguns, A., Dumbalska, T., Efendic, E.,
-    El Halabi, M., Enright, S., Evans, T. R., Exner, A., Farrar, B. G.,
-    Feldman, G., Fillon, A., Floyd, J., Fontana Vieira, F., Frese, J.,
-    Förster, N., Gattie, M. C., Gemmecke, C., Genschow, O., Giannouli,
-    V., Gjoneska, B., Gnambs, T., Gourdon-Kanhukamwe, A., Graham, C. J.,
-    Greshake Tzovaras, B., Guay, S., Hausenloy, J., Haviva, C.,
-    Henderson, E. L., Herderich, A., Hilbert, L., Holgado, D., Hussey,
-    I., Höfer, L., Ilchovska, Z. G., Imada, H., Imwene, P., Izydorczak,
-    K., Jaubert, S., Jeftić, A., Kalandadze, T., Kamermans, K.,
-    Karhulahti, V., Kasseckert, L., Kastrinogiannis, A.,
-    Klingelhöfer-Jens, M., Kocalar, H. E., Koppel, L., Koppold, A.,
-    Korbmacher, M., Kujawa, Z., Kulke, L., Kumar, P., Kuper, N.,
-    LaPlume, A. A., Lach, R., Lecuona, O., Lee, J., Leech, G., Leksina,
-    E., Lin, C., Liu, Y., Lohkamp, F., Lou, N. M., Lynott, D.,
-    Mackinnon, S., Maier, M., Maiya, S., Makel, M. C., Manrique-Castano,
-    D., Manríquez-Robles, D., Mathes, L., McSharry, D., Meidenbauer, K.
-    L., Meier, M., Micheli, L., Miller, T., Montefinese, M., Moreau, D.,
-    Moser, N., Mrkva, K., Murphy, J., Muthu, J., Narkar, N., Nemcova,
-    M., Nádvorník, J., O’Mahoney, R., O’Mahony, A., Oberholzer, Y.,
-    Oomen, D., Osano, M., Otstavnov, N., Packheiser, J., Pandey, S.,
-    Panton, H., Papenmeier, F., Parsons, S., Paruzel-Czachura, M.,
-    Pavlov, Y. G., Pittelkow, M., Plomp, W., Plonski, P. E.,
-    Pravednikov, A., Pronizius, E., Pua, A., Pypno-Blajda, K., Rausch,
-    M., Raza, H., Reason, R., Rebholz, T. R., Resulbegoviq, H., Richert,
-    E., Ross, R. M., Russo, S., Röer, J. P., Sandkühler, J. F., Schmidt,
-    K., Sempere, N., Sobolak, R., Sperl, M. F., Stevens, J. R.,
-    Stogianni, M., Szekely, R., Tan, A. W., Thürmer, J. L., Tiulpakova,
-    M., Tomczak, J., Tołopiło, A., Tunca, B., Vanpaemel, W., Vaughn, L.
-    A., Verheyen, S., Vineyard, G. H., Weber, L., Weinberg, A., Wingen,
-    S., Wolska, J., Yeung, S. K., Younssi, M., Zaneva, M., Zimmermann,
-    D., Azevedo, F. (2026). FORRT Library of Replication Attempts
-    (FLoRA) \[Data set\]. OSF. <https://doi.org/10.17605/OSF.IO/9R62X>
-
-    **\* These authors contributed equally to this work.**
-
--   Tondlekar, R., Wallrich, L., Weinerova, J., Fouilloux, A., Baldoni,
-    C., Meier, M., Flores Kanter, P. E., Paiva Trajano, I., Vaidis, D.
-    C., Müller, M., Arriaga Ferreira, P., Coulson, H., Röseler, L., &
-    FORRT. (2026). Zotero Replication Checker (0.1.12). Zenodo.
-    <https://doi.org/10.5281/zenodo.18671300>
-
--   **Röseler, L.**, Wallrich, L. (2024). *FReD: Interfaces to the FORRT
-    Replication Database.* <http://forrt.org/FReD/>
-
--   Hartmann\*, H., **Röseler**\*, L., Wallrich, L., Aldoh, A., Doetsch,
-    C., Elsherif, M. M., Kaiser, L., Klett, N., Krapp, J., Liu, M.,
-    Pavlović, Z., Pennington, C. R., Seida, C., Skvortsova, A., Schütz,
-    A., Aczel, B., Agostini, V., Al-Hoorie, A. H., Alarie, S., Anvari,
-    F., Baker, B. J., Barth, C. L., Bauer, D. J., Beitner, J., Belaus,
-    A., Boyce, V., Brick, C., Brohmer, H., Brummernhenrich, B., Butler,
-    A., Chandrashekar, S., Chen, S., Chung, K., Cockcroft, J. P.,
-    Cummins, J., Dienlin, T., Diveica, V., Draguns, A., Dumbalska, T.,
-    Evans, T. R., Exner, A., Farrar, B. G., Feldman, G., Fillon, A.,
-    Fontana Vieira, F., Förster, N., Frese, J., Gattie, M. C., Genschow,
-    O., Giannouli, V., Gjoneska, B., Gnambs, T., Graham, C. J., Greshake
-    Tzovaras, B., Hausenloy, J., Henderson, E. L., Herderich, A.,
-    Hilbert, L., Höfer, L., Holgado, D., Hussey, I., Ilchovska, Z. G.,
-    Imada, H., Izydorczak, K., Jeftic, A., Kalandadze, T., Karhulahti,
-    V., Kasseckert, L., Kastrinogiannis, A., Klingelhöfer-Jens, M.,
-    Kocalar, H. E., Koppel, L., Koppold, A., Korbmacher, M., Kulke, L.,
-    Kuper, N., LaPlume, A., Leech, G., Liu, Y., Lohkamp, F., Lou, N.,
-    Lynott, D., Meier, M., Mackinnon, S., Mathes, L., Meidenbauer, K.
-    L., Micheli, L., Montefinese, M., Moreau, D., Muthu, J., Mrkva, K.,
-    Narkar, N., Nemcova, M., Oberholzer, Y., Oomen, D., Packheiser, J.,
-    Pandey, S., Papenmeier, F., Parsons, S., Paruzel-Czachura, M.,
-    Pavlov, Y. G., Pittelkow, M., Plomp, W., Plonski, P. E., Pronizius,
-    E., Pua, A., Pypno-Blajda, K., Rausch, M., Rebholz, T. R., Röer, J.
-    P., Ross, R. M., Schmidt, K., Sempere, N., Sperl, M. F., Stevens, J.
-    R., Tan, A. W., Thürmer, J., Tiulpakova, M., Tołopiło, A., Tunca,
-    B., Vanpaemel, W., Vaughn, L., Verheyen, S., Weber, L., Wolska, J.,
-    Yeung, S., Zaneva, M., Adelina, N., Albayrak-Aydemir, N., Alzahawi,
-    S., Breemer, L., Efendic, E., El Halabi, M., Floyd, J.,
-    Gourdon-Kanhukamwe, A., Guay, S., Haviva, C., Jaubert, S.,
-    Kamermans, K., Lecuona, O., Lin, C., Maier, M., Makel, M. C.,
-    O'Mahony, A., Richert, E., Tomczak, J., Vineyard, G. H., Weinberg,
-    A., Zimmermann, D., Azevedo, F. (2024). FReD: FORRT Replication
-    Database, version 2.4.0.
-    \[https://dx.doi.org/10.17605/OSF.IO/9r62x\] \*shared first
-    authorship
-
--   Röseler, L., Weber, L., Helgerth, K. A. C., Stich, E., Günther, M.,
-    Tegethoff, P., Wagner, F. S., Ambrus, E., Antunovic, M., Barrera,
-    F., Halali, E., Ioannidis, K., McKay, R., Milstein, N., Molden, D.
-    C., Papenmeier, F., Rinn, R., Schreiter, M. L., Zimdahl, M., Allen,
-    E., Bahník, S., Baumeister, R. F., Bermeitinger, C.,
-    Bickenbach, S. L. C., Blank, P. A., Blower, F. B. N., Bögler, H. L.,
-    Boo, F. L., Boruchowicz, C., Bühler, R. L., Burgmer, P., Cheek, N.,
-    N., Dohle, S., Dorsch, L., Dück, M. S., Fels, S.-A., Fischer, A. L.,
-    Frech, M.-L., Freira, L., Friedinger, K., Genschow, O., Harris, A.,
-    Hartig, B., Häusser, J. A., Hedgebeth, M., Henkel, M., Horvath, D.,
-    Hügel, J. C., Igna, E. L. E., Imhoff, R., Intelmann, P., Karg, A.
+-   Tondlekar, R., Wallrich, L., et al. (2026). Zotero Replication
+    Checker (0.1.12). <https://doi.org/10.5281/zenodo.18671300>
+-   **Röseler, L.**, Doetsch, C., Kaiser, L., Klett, N., Krapp, J.,
+    Seida, C., Schütz, A., Cummins, J., Dienlin, T., Elsherif, M.,
+    Förster, N., Genschow, O., Gnambs, T., Hartmann, H., Holgado, D.,
+    Hussey, ., Korbmacher, M., Kulke, L., Liu, Y., Lou, N., Papenmeier,
+    F., Paruzel-Czachura, M., Pavlov, Y., Pavlović, Z., Pypno, K.,
+    Rausch, M., Rebholz, T., Ross, R., Thürmer, L., Vaughn, L.
+    (2023). *ReD: Replication Database, Version
+    0.3.0*. <https://dx.doi.org/10.17605/OSF.IO/9r62x> Available online
+    at <https://metaanalyses.shinyapps.io/replicationdatabase/>
+-   **Röseler, L.**, Adler, S., Schöniger, M. (2022). A Toolbox to
+    Identify P-Hacking. Version 0.0.5. Available online
+    at <https://metaanalyses.shinyapps.io/toolbox/>.
+-   **Röseler, L.**, Weber, L., Stich, E., Günther, M., Helgerth, K. A.
+    C., Wagner, F. S., Antunovic, M., Bahník, S., Barrera, F.,
+    Baumeister, R. F., Bermeitinger, C., Bickenbach, S. L. C., Blank, P.
+    A., Blower, F. B. N., Bögler, H. L., Boo, F. L., Boruchowicz, C.,
+    Bühler, R. L., Burgmer, P., Cheek, N., N., Dohle, S., Dorsch, L.,
+    Dück, M. S., Halali, E.., Fels, S.-A., Fischer, A. L., Frech, M.-L.,
+    Freira, L., Friedinger, K., Genschow, O., Harris, A., Häusser, J.
+    A., Hedgebeth, M., Henkel, M., Horvath, D., Hügel, J. C.,
+    Igna, E. L. E., Imhoff, R., Intelmann, P., Ioannidis, K., Karg, A.
     H., Klamar, A., Klein, C., Klusmann, B., Knappe, E., Köppel, L.-M.,
     Koßmann, L., Kraft, P., Kroworsch, M. K., Krueger, S. M., Kühling,
-    S., Lagator, S., Lammers, J., Loschelder, D. D., Navajas, J., Norem,
-    J., K., Novak, J. Onuki, Y., Page, E., Panse, F., Pavlovic, Z.,
-    Pearton, J., Rebholz, T. R., Rodgers, S., Röseler, J. J., Rostekova,
-    A., Roßmaier, K. V., Sartorio, M., Scheelje, L., Schindler, S.,
-    Schreiner, N. B., Seida, C., Shanks, D. R., Siems, M.-C., Stitz, M.,
-    Starkulla, M., Stäglich, M., Thies, K., Thum, E., Undorf, M.,
-    Unger, B. D., Urlichich, D., Vadillo, M. A., Wackershauser-Sablotny,
-    V., Wessel, I., Wolf, H., Zhou, A., & Schütz, A. (2022). *OpAQ: Open
-    Anchoring Quest, Version
-    1.1.50.97*. <https://dx.doi.org/10.17605/OSF.IO/YGNVB>
-
--   **Röseler, L.**, Adler, S., Schöniger, M. (2022). A Toolbox to
-    Identify P-Hacking. <https://metaanalyses.shinyapps.io/toolbox/>
-
+    S., Lagator, S., Lammers, J., Loschelder, D. D., Milstein, N.,
+    Molden, D. C., Navajas, J., Norem, J., K., Novak, J. Onuki, Y.,
+    Page, E., Panse, F., Papenmeier, F., Pavlovic, Z., Rebholz, T. R.,
+    Rinn, R., Rodgers, S., Röseler, J. J., Roßmaier, K. V., Sartorio,
+    M., Scheelje, L., Schindler, S., Schreiner, N. B., Schreiter, M. L.,
+    Seida, C., Shanks, D. R., Siems, M.-C., Stitz, M., Starkulla, M.,
+    Stäglich, M., Thies, K., Thum, E., Undorf, M., Unger, B. D.,
+    Urlichich, D., Vadillo, M. A., Wackershauser-Sablotny, V.,
+    Wagner, F. S., Wessel, I., Wolf, H., Zhou, A., Zimdahl, M., &
+    Schütz, A. (2022). OpAQ: Open Anchoring Quest, Version
+    1.1.42.94. <https://dx.doi.org/10.17605/OSF.IO/YGNVB>. Available
+    online at <https://metaanalyses.shinyapps.io/OpAQ/>.
 -   **Röseler, L.**, Körner, R., & Schütz, A. (2021). Dynamic
-    Meta-Analysis of Body Position Effects.
-    <https://metaanalyses.shinyapps.io/bodypositions/>
-
+    Meta-Analysis of Body Position Effects ShinyApp. Available online
+    at <https://metaanalyses.shinyapps.io/bodypositions/>.
 -   **Röseler, L.**, Röseler, J. J. (2020). Studienfeedback ShinyApp.
-    <https://l-air.shinyapps.io/feedback/>
+    Available online at <https://l-air.shinyapps.io/feedback/>.
 
 ```{=html}
 </div></details>
@@ -741,7 +673,7 @@ Making (e.g., Anchoring Effects).
 ```
 
 | Proposal | Year | Role | Program & Funder | Link | Status |
-|------------|------------|------------|------------|------------|------------|
+|----|----|----|----|----|----|
 | Moderators of Anchoring Effects | 2022 | First author | DFG, Sachbeihilfe | [osf.io/x6bqh](https://osf.io/x6bqh/) | Rejected |
 | Formation of a Replication Journal | 2024 | First author | Topical Program, Uni Münster | [osf.io/9vgx7](https://osf.io/9vgx7/) | Accepted |
 | Diamond Open Access Journal Support | 2024 | First author | openaccess.nrw | [osf.io/a82fe](https://osf.io/a82fe) | Accepted |

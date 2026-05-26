@@ -85,10 +85,11 @@ Life of Galileo)
 Conducting research is a complex endeavour. Thereby, errors happen and
 can only be corrected if there is a way to point them out. If you find
 errors or things worth pointing out, I invite you to comment on my
-research publicly via [PubPeer](#0). Moreover, I am open to criticism
-and suggestions surrounding my research, talks, workshops, and other
+research publicly via PubPeer. Moreover, I am open to criticism and
+suggestions surrounding my research, talks, workshops, and other
 interactions surrounding science. You can give me anonymous feedback via
-[this Google form](#0).
+[this Google
+form](https://docs.google.com/forms/d/1Ce4uyr8bRSHZ5yywP3TPdIg8XMLxZqE-mYVL82K6QHI/edit#responses).
 :::
 
 ## Open Educational Resources, Teaching, and Supervision

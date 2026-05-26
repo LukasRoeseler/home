@@ -6,10 +6,10 @@ title: "Realscientists DE Blog Post"
 https://realscientistsde.blogspot.com available
 [here](https://realscientistsde.blogspot.com/2026/05/forschung-uber-wissenschaft-lukas.html).*
 
-# Research on science – Lukas Röseler has joined Real Scientists DE! 
+# Research on science – Lukas Röseler has joined Real Scientists DE!
 
 This week, we are delighted to welcome our new curator, Lukas Röseler
-(@aufdroeseler.bsky.social), to the channel! Lukas studied business
+(aufdroeseler.bsky.social), to the channel! Lukas studied business
 psychology, completed his PhD in psychology in 2021 and works as the
 managing director of the Münster Centre for Open Science at the
 University of Münster. He is editor-in-chief and co-founder of the
@@ -18,7 +18,7 @@ leaders of the FORRT Replication Hub, and a member of the FORRT Steering
 Committee. He is committed to transparent and reproducible research,
 primarily replication research.
 
-## How did you end up in science? 
+## How did you end up in science?
 
 I’m really fascinated by the idea of systematically, carefully and
 impartially examining theories about the world. At school, we carried
@@ -39,14 +39,14 @@ of scientific knowledge.
 
 Tell us a bit about your work! We – because I don’t do any of this alone
 – support researchers in addressing transparency and reproducibility
-within their research. This happens in various ways: \
+within their research. This happens in various ways:\
 1) We engage in dialogue with researchers from many different
 disciplines: How does science work in their field, within what framework
 is transparency meaningful and possible, how can it be achieved, and
-what support is needed to do so? \
+what support is needed to do so?\
 2) We provide infrastructure and information, such as general open
 science resources, a handbook, and a multidisciplinary journal for
-replication research. \
+replication research.\
 3) We investigate various ‘open science practices’, asking ourselves
 whether certain proposals aimed at increasing the transparency or
 robustness of scientific findings are sensible and effective.
@@ -85,11 +85,11 @@ a few examples:
     communicate their findings clearly, and participants gain a deeper
     understanding of how research works.
 
-## Do you have any interesting external or additional tasks or activities? 
+## Do you have any interesting external or additional tasks or activities?
 
 Yes, but these always end up becoming part of my main duties.
 
-## Any interesting hobbies you’d like to tell us about? 
+## Any interesting hobbies you’d like to tell us about?
 
 Until a serious accident last year, I rode a BMX for 18 years and am
 still looking for a replacement hobby. If I still have any strength left
