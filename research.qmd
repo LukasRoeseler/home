@@ -751,6 +751,7 @@ Making (e.g., Anchoring Effects).
 | University-wide Open Science Strategy | 2024 | Second author | Road2Openness, Stifterverband | — | Rejected |
 | Making Replications Count | 2024 | Co-Investigator | UKRI | — | Accepted |
 | Breaking the Wall of the Urge for Innovation | 2025 | Shared first author | Falling Walls Lab Münster | [osf.io/f486v](https://osf.io/f486v) | Rejected |
+| The Age of Replications: Establishing a Multidisciplinary Diamond Open Access Infrastructure and Community Portal | 2026 | First author | DFG LIS | — | Under review |
 
 ```{=html}
 </div></details>
