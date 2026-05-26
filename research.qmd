@@ -459,8 +459,8 @@ Making (e.g., Anchoring Effects).
     Wallrich, L., vaz, K. G., Weinerova, J., **Röseler, L.,** Gupta, A.,
     Kan-Kilinc, B., … Azevedo, F. (2026, March 9). FLoRA-Notify: A
     Protocol for a Cluster-Randomised Controlled Trial to Assess the
-    Impact of Notifying Preprint Authors About Replication Studies. [
-    https://doi.org/10.31222/osf.io/qnckf_v1](https://doi.org/10.31222/osf.io/qnckf_v1)
+    Impact of Notifying Preprint Authors About Replication Studies.
+    <https://doi.org/10.31222/osf.io/qnckf_v1>
 
 -   Hartmann, H., Azevedo, F., **Röseler, L.**, Wallrich, L., Aldoh, A.,
     Elsherif, M. M., … Leech, G. (2026, March 12). Tracking and
@@ -741,7 +741,7 @@ Making (e.g., Anchoring Effects).
 ```
 
 | Proposal | Year | Role | Program & Funder | Link | Status |
-|------------|------------|------------|------------|------------|------------|
+|----|----|----|----|----|----|
 | Moderators of Anchoring Effects | 2022 | First author | DFG, Sachbeihilfe | [osf.io/x6bqh](https://osf.io/x6bqh/) | Rejected |
 | Formation of a Replication Journal | 2024 | First author | Topical Program, Uni Münster | [osf.io/9vgx7](https://osf.io/9vgx7/) | Accepted |
 | Diamond Open Access Journal Support | 2024 | First author | openaccess.nrw | [osf.io/a82fe](https://osf.io/a82fe) | Accepted |
