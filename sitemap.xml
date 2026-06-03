@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://LukasRoeseler.github.io/home/collaborate.html</loc>
-    <lastmod>2026-05-26T14:47:15.028Z</lastmod>
-  </url>
-  <url>
-    <loc>https://LukasRoeseler.github.io/home/projects.html</loc>
-    <lastmod>2026-05-26T14:47:15.044Z</lastmod>
-  </url>
-  <url>
     <loc>https://LukasRoeseler.github.io/home/openscience.html</loc>
-    <lastmod>2026-05-26T14:47:15.044Z</lastmod>
-  </url>
-  <url>
-    <loc>https://LukasRoeseler.github.io/home/realscientistsde.html</loc>
-    <lastmod>2026-05-26T14:47:15.044Z</lastmod>
+    <lastmod>2026-06-03T09:57:48.751Z</lastmod>
   </url>
   <url>
     <loc>https://LukasRoeseler.github.io/home/index.html</loc>
-    <lastmod>2026-05-26T14:47:15.043Z</lastmod>
+    <lastmod>2026-06-03T09:57:48.751Z</lastmod>
+  </url>
+  <url>
+    <loc>https://LukasRoeseler.github.io/home/realscientistsde.html</loc>
+    <lastmod>2026-06-03T09:57:48.751Z</lastmod>
   </url>
   <url>
     <loc>https://LukasRoeseler.github.io/home/research.html</loc>
-    <lastmod>2026-05-26T14:47:15.044Z</lastmod>
+    <lastmod>2026-06-03T09:57:48.752Z</lastmod>
+  </url>
+  <url>
+    <loc>https://LukasRoeseler.github.io/home/collaborate.html</loc>
+    <lastmod>2026-06-03T09:57:48.733Z</lastmod>
+  </url>
+  <url>
+    <loc>https://LukasRoeseler.github.io/home/projects.html</loc>
+    <lastmod>2026-06-03T09:57:48.751Z</lastmod>
   </url>
 </urlset>
