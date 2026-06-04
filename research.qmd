@@ -887,4 +887,32 @@ Making (e.g., Anchoring Effects).
 
 ```{=html}
 </div></details>
+
+<details class="collapsible-section">
+<summary>
+  <div class="coll-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+  <h2>Awards</h2>
+</summary>
+<div class="section-body">
+```
+
+-   2026: [SIPS](https://improvingpsych.org/mission/awards/) Mission
+    Award for the journal Replication Research
+-   2026: [SIPS](https://improvingpsych.org/mission/awards/)
+    Commendation for the Love Replications Week
+-   2024: Promotional award of the [German Psychological
+    Association](https://www.dgps.de/die-dgps/preise-und-ehrungen/foerderpreis-qualitaetssicherung-in-der-psychologie/)
+    for quality assurance in psychology
+-   2023: [SIPS](https://improvingpsych.org/mission/awards/)
+    Commendation for the Replication Database
+-   2022: Dissertation price of the Hans-Löwel Foundation for early
+    career researchers at the University of Bamberg
+-   2021: Dissertation price of the Rotary Club Bamberg-Schloß
+    Geyerswörth for early career researchers of the University of
+    Bamberg
+-   2017: Award for the best thesis from the support association of the
+    Harz University of Applied Sciences
+
+```{=html}
+</div></details>
 ```
