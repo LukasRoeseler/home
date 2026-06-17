@@ -735,6 +735,32 @@ Making (e.g., Anchoring Effects).
 <details class="collapsible-section">
 <summary>
   <div class="coll-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+  <h2>Serious Games</h2>
+</summary>
+<div class="section-body">
+```
+
+-   **Tenure Run**: An endless runner game with a comical take on the
+    "publish or perish" treadmill early-career researchers must
+    navigate. Collect pages for papers, evade paywalls and teaching.
+    Available at <https://forrt.org/tenure-run/>. \
+    ![](images/clipboard-1875951247.png){width="200"}
+
+-   **Guess the Replication** (co-developed with Jessica Röseler):
+    Inspired by [Guess the
+    Correlation](https://www.guessthecorrelation.com) and based on
+    [FLoRA](https://forrt.org/replication-hub/flora/), players must
+    guess whether a presented study (title and abstract) could
+    successfully be replicated or not. Available at
+    <https://lukasroeseler.github.io/GuessTheReplication/>.
+    ![](images/clipboard-3158158600.png){width="400"}
+
+```{=html}
+</div></details>
+
+<details class="collapsible-section">
+<summary>
+  <div class="coll-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
   <h2>Research Proposals</h2>
 </summary>
 <div class="section-body">
@@ -871,6 +897,9 @@ Making (e.g., Anchoring Effects).
 <div class="section-body">
 ```
 
+-   Blog Post on RORi's Go Meta! Blog: "Did you know this study was
+    replicated?"
+    <https://researchonresearchinstitute.substack.com/p/did-you-know-this-study-was-replicated>
 -   Q&A for COS Blog: "Building a Publishing Model for Replication."
     <https://www.cos.io/blog/building-a-publishing-model-for-replication-qa-with-the-senior-editors-of-replication-research>
 -   Interview for Laborjournal. "Wiederholung wird gesellschaftsfähig."
