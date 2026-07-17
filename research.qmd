@@ -611,4 +611,21 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 
 ```{=html}
 </div></details>
+<details class="collapsible-section">
+<summary>   
+    <div class="coll-chevron"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></div>
+    <h2>Media Coverage</h2>
+</summary>
+<div class="section-body">
+```
+
+-   2026: Nature Index on posting \>2K comments on pubpeer: “Will making 'replication studies' easier to find help science self-correct?” <https://doi.org/10.1038/d41586-026-02175-3>
+-   2024: Nature Index Q&A on the Replication Database <https://www.nature.com/articles/d41586-024-02598-w>
+-   2024: Science News In Brief: <https://www.science.org/content/article/news-glance-planning-mentoring-tracking-replications-and-deracializing-lung-tests>
+-   2024: Retractionwatch: <https://retractionwatch.com/2024/08/31/weekend-reads-when-retracted-work-is-cited-another-retraction-for-a-nobelist-should-scientific-fraud-be-illegal/>
+-   2022: The Conversation: <https://theconversation.com/the-idea-that-power-poses-boost-your-confidence-fell-from-favor-but-a-new-review-of-the-research-calls-for-a-second-look-180541>
+-   2022: Psychology Today: <https://www.psychologytoday.com/us/blog/cultural-animal/202204/is-anchoring-and-adjustment-the-best-replicated-finding>
+
+```{=html}
+</div></details>
 ```

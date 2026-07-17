@@ -28,6 +28,9 @@ about:
     - icon: book-fill
       text: ResearchGate
       href: https://www.researchgate.net/profile/Lukas-Roeseler
+    - icon: youtube
+      text: Youtube
+      href: https://www.youtube.com/@replicationresearch
 toc: false # Turns off the Table of Contents specifically for the homepage to keep it clean
 ---
 
