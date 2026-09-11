@@ -60,6 +60,9 @@ Life of Galileo)
     Review](https://cms.metaror.org) and [Peer Community
     in](https://peercommunityin.org/current-pcis/).
 
+-   Together with Steven Verheyen, I initiated the [Diamond Reviewer
+    Pledge](https://forrt.org/diamond-reviewer/) in September 2026.
+
 [![Diamond Reviewer](https://raw.githubusercontent.com/forrtproject/diamond-reviewer/main/assets/diamond-reviewer-badge.png)](https://forrt.org/diamond-reviewer/#home)
 
 ## Reviewing and Scientific Discourse
