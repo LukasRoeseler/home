@@ -60,6 +60,8 @@ Life of Galileo)
     Review](https://cms.metaror.org) and [Peer Community
     in](https://peercommunityin.org/current-pcis/).
 
+[![Diamond Reviewer](https://raw.githubusercontent.com/forrtproject/diamond-reviewer/main/assets/diamond-reviewer-badge.png)](https://forrt.org/diamond-reviewer/#home)
+
 ## Reviewing and Scientific Discourse
 
 -   Open Access, Open Data, Open Materials: As a reviewer, I do not
