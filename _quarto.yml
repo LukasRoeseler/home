@@ -10,6 +10,13 @@ project:
     - favicon-48x48.png
     - favicon-64x64.png
     - favicon-256.png
+  render:
+    - index.qmd
+    - research.qmd
+    - openscience.qmd
+    - collaborate.qmd
+    - projects.qmd
+    - realscientistsde.qmd
 
 website:
   title: "Lukas Röseler"

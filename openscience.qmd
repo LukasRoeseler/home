@@ -44,8 +44,11 @@ Life of Galileo)
     do reviews for non diamond OA journals and if so, I recommend that
     the editors to flip the journal or post them
     [online](https://osf.io/pbnw7/) in my OSF repository or via
-    [PREreview](prereview.org/review-a-preprint). If a commercial
-    journal invites me to review, I prefer to review the preprint.
+    [PREreview](prereview.org/review-a-preprint). You can browse all of
+    my reviews including statistics
+    [here](https://reviews-fb5c76.zivgitlabpages.uni-muenster.de/index.html).
+    If a commercial journal invites me to review, I prefer to review the
+    preprint.
     Please note that some journals' reviewer invitations ask the
     invitees to treat them confidentially. In all other situations, I
     endorse Open Access with the a ranking of Diamond \> Green \> Gold.
@@ -63,7 +66,7 @@ Life of Galileo)
 -   Together with Steven Verheyen, I initiated the [Diamond Reviewer
     Pledge](https://forrt.org/diamond-reviewer/) in September 2026.
 
-[![Diamond Reviewer](https://raw.githubusercontent.com/forrtproject/diamond-reviewer/main/assets/diamond-reviewer-badge.png)](https://forrt.org/diamond-reviewer/#home)
+[![Diamond Reviewer](https://raw.githubusercontent.com/forrtproject/diamond-reviewer/main/assets/diamond-reviewer-badge.png){width="20%"}](https://forrt.org/diamond-reviewer/#home)
 
 ## Reviewing and Scientific Discourse
 
