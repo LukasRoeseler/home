@@ -8,7 +8,7 @@ Personal website of Lukas Röseler, built with **Quarto** and deployed via **Git
 
 ## Project layout
 
-- `*.qmd` — **source** files (edit these). `index.qmd`, `research.qmd`, `openscience.qmd`, `collaborate.qmd`, etc.
+- `*.qmd` — **source** files (edit these). `index.qmd`, `research.qmd`, `openscience.qmd`, `collaborate.qmd`, etc. If you add a new page, also add it to the `project.render` list in `_quarto.yml` (and to the navbar) so it gets built.
 - `_quarto.yml` — site config (navbar, theme, favicon, resources).
 - `custom.scss` — theming (header/nav colors).
 - `_include-header.html` — injected into every page `<head>` (dark-mode toggle, favicon links).
