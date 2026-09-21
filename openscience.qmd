@@ -115,6 +115,9 @@ form](https://docs.google.com/forms/d/1Ce4uyr8bRSHZ5yywP3TPdIg8XMLxZqE-mYVL82K6Q
     replication studies and warn them that depending on their field,
     other researchers may not recognize the value of these studies.
 
--   I have been writing a German book on Open Science and how the
-    sciences are becoming more and more open. You can read it for free
-    [here](https://github.com/LukasRoeseler/opensciencebuch/).
+-   I have written a German book on Open Science and how the sciences
+    are becoming more and more open: *Open Science: Wie sich die
+    Wissenschaft öffnet* (2026). The book is freely available (Diamond
+    Open Access) via the University of Münster's publication series
+    (<https://doi.org/10.17879/08858611273>) and can also be read online
+    [here](https://lukasroeseler.github.io/opensciencebuch/).
