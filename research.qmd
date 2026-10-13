@@ -347,6 +347,8 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
 
 **2026**
 
+-   Breil, S. M., Ramesh, A., Caspers, B. A., Damas-Moreira, I., Feest, U., Kaiser, M. I., Voelcker-Rehage, C., Coenen, J., Dammhahn, M., Diprossimo, L., Fernandez, A. A., Gokhale, C., Hecker, T., Hoffman, J. I., Kärtner, J., Krüger, O., Kuper, N., Kurtz, J., Lemola, S., … **Röseler, L.** … Back, M. D. (2026). Cross-Species Comparisons of Individual Differences in Social Behaviour: Methodological Challenges and Solutions. Zenodo. <https://doi.org/10.5281/ZENODO.23325272>
+
 -   Kolber, N., **Röseler, L.**, Back, M., Evans, T. R., Hartmann, H., Korbmacher, M., Le Foll, E., Müller, M., Rahal, R.-M., Richter, M., Seibold, H., Silverstein, P., Steltenpohl, C. N., Syed, M., Vaidis, D., Visser, I., Verheyen, S., Wallrich, L., & Azevedo, F. (2026). *Creating a journal in the age of open science: The case of Replication Research (R2)*. MetaArXiv. <https://osf.io/preprints/metaarxiv/zctw7_v1>
 
 -   Rebholz, T. R., Groß, J., **Röseler, L.,** (2026, February 10). Assimilation to External Cues: Comparing the Reliability of Anchoring Effects, Advice Taking, and Hindsight Bias and Exploring its Determinants. <https://doi.org/10.31234/osf.io/5u8br_v3>
@@ -354,8 +356,6 @@ My research covers Replications, Meta-Science, and Judgment and Decision Making 
     Wallrich, L., vaz, K. G., Weinerova, J., **Röseler, L.,** Gupta, A., Kan-Kilinc, B., … Azevedo, F. (2026, March 9). FLoRA-Notify: A Protocol for a Cluster-Randomised Controlled Trial to Assess the Impact of Notifying Preprint Authors About Replication Studies. <https://doi.org/10.31222/osf.io/qnckf_v1>
 
 -   Hartmann, H., Azevedo, F., **Röseler, L.**, Wallrich, L., Aldoh, A., Elsherif, M. M., … Leech, G. (2026, March 12). Tracking and mainstreaming replications in the social, cognitive, and behavioral sciences. <https://doi.org/10.31222/osf.io/ad2w6_v2>
-
--   Breil, S. M., Ramesh, A., Caspers, B. A., Damas-Moreira, I., Feest, U., Kaiser, M. I., Voelcker-Rehage, C., Coenen, J., Dammhahn, M., Diprossimo, L., Fernandez, A. A., Gokhale, C., Hecker, T., Hoffman, J. I., Kärtner, J., Krüger, O., Kuper, N., Kurtz, J., Lemola, S., … **Röseler, L.** … Back, M. D. (2026). Cross-Species Comparisons of Individual Differences in Social Behaviour: Methodological Challenges and Solutions. Zenodo. <https://doi.org/10.5281/ZENODO.23325272>
 
 **2025**
 
